@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, Pie, PieChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import { ArrowRight, Database, Download, ListChecks, Network, ShieldAlert, Upload } from "lucide-react";
+import { ArrowRight, Database, Download, FileText, ListChecks, Network, ShieldAlert, Upload } from "lucide-react";
 import { api } from "../api";
 import { BAND_HEX, BandPill, Card, Empty, ErrorNote, Skeleton, Tabs } from "../components/ui";
 import { clusterBasis, date, initials, money, num, pct, profileCurrency, profileName } from "../format";
@@ -52,6 +52,7 @@ export function Overview() {
         </div>
         <div className="actions">
           <Link to="/watchlist" className="btn"><ListChecks size={16} />Open watchlist</Link>
+          <Link to="/memo" className="btn"><FileText size={16} />Risk memo</Link>
           <Link to="/data" className="btn primary"><Upload size={16} />New assessment</Link>
         </div>
       </div>

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import {
-  ArrowUpRight, ChevronsUpDown, Database, HelpCircle, History, LayoutDashboard, ListChecks, Network, Search, Settings,
+  ArrowUpRight, ChevronsUpDown, Database, FileText, HelpCircle, History, LayoutDashboard, ListChecks, Network, Search, Settings,
 } from "lucide-react";
 import { api } from "../api";
 import { date, initials, profileName } from "../format";
@@ -15,6 +15,7 @@ const PAGES: Record<string, { title: string; sub: string }> = {
   "/portfolio": { title: "Portfolio & clusters", sub: "Concentrations of emerging risk" },
   "/data": { title: "Data & validation", sub: "Load portfolios, check quality and run assessments" },
   "/audit": { title: "Audit trail", sub: "Saved assessments and every analyst decision" },
+  "/memo": { title: "Risk memo", sub: "Management summary of this assessment" },
   "/settings": { title: "Settings", sub: "Your analyst profile" },
   "/help": { title: "How scoring works", sub: "Signals, bands, modifiers and decisions" },
 };
@@ -76,6 +77,7 @@ function Sidebar() {
     { to: "/", label: "Overview", icon: LayoutDashboard, end: true },
     { to: "/watchlist", label: "Watchlist", icon: ListChecks, count: pending },
     { to: "/portfolio", label: "Portfolio & clusters", icon: Network },
+    { to: "/memo", label: "Risk memo", icon: FileText },
     { to: "/data", label: "Data & validation", icon: Database },
     { to: "/audit", label: "Audit trail", icon: History },
   ];
