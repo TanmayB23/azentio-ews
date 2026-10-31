@@ -49,3 +49,7 @@ The demo loader only reads data, without validation or quarantine. For the bundl
 Tests exercise CSV/Excel/JSON loading, fake-engine contract consistency, score ordering, missing chart months, SQL immutability, transaction rollback, persistence, review history, and Streamlit analyst flows. The shared contract checks run against Person A's engine automatically when available; until then the real-engine cases are skipped.
 
 Original synthetic assets remain in `files/ews_synthetic_data/ews_synthetic_data/`.
+
+## Interface
+
+The app uses a light workspace with navy navigation, coloured risk bands, risk score bars, and summary cards. Search the watchlist by customer ID or name; select a row to open the customer's **Risk evidence**, **Account activity**, and **Analyst review** tabs. Use **Back to watchlist** to return to the queue. The theme lives in `.streamlit/config.toml`, with presentation components in `app/ui.py`.
