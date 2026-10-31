@@ -60,6 +60,27 @@ Safeguards:
 - **Saved and reused:** notes are add-only and reused when the input hasn't changed.
 - **Fallback:** if the call fails, a rules-based note is shown with the reason.
 
+### Other AI assistants
+
+They use the same OpenAI settings and the same safeguards: limited input, a fixed output schema, checks in code, add-only storage, and a fallback that works without a key.
+
+| Feature | Where | What it does | Without a key |
+|---|---|---|---|
+| **Ask EWS** | Watchlist | Turns a question ("critical SMEs in Tamil Nadu not yet reviewed") into watchlist filters chosen only from the assessment's real values; the applied filters stay visible and editable | Keyword matching |
+| **Cluster briefing** | Portfolio & clusters | Headline, pattern, cited shared drivers, whether it looks segment-wide, segment actions and customers to review first | Built from the cluster's figures |
+| **Risk memo** | Risk memo | One-page management summary with changes since the previous assessment of the same portfolio; downloadable as Markdown | Built from the summary figures |
+| **Column mapping** | Data → Upload files → Map my column names | Maps a bank's own file and column names to ours; you review and edit it before uploading | Fuzzy name matching |
+| **Evidence check** | Customer page | Reads a PDF or image explaining a late payment and reports whether it supports the claim; you accept or reject it, and the score is never changed | Stores the document for manual review |
+
+What is sent to OpenAI:
+- **Ask EWS:** your question and the list of filter values.
+- **Briefings and memos:** aggregated figures and customer IDs.
+- **Column mapping:** file names, column headers and three sample values per column.
+- **Evidence check:** the document and the customer's late instalments.
+- **Customer names:** never sent, unless `EWS_AI_SEND_NAMES=1`.
+
+All outputs are also checked for wording the EWS must not use, such as "default rate" or "probability of default", since it measures deterioration, not default.
+
 ## What the app covers
 
 | Screen | Purpose |
