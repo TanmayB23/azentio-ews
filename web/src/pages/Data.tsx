@@ -1,12 +1,13 @@
 import { useMemo, useRef, useState, type DragEvent } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { CheckCircle2, Database, FileSpreadsheet, Play, Upload, X } from "lucide-react";
+import { CheckCircle2, Columns3, Database, FileSpreadsheet, Play, Upload, X } from "lucide-react";
 import { api } from "../api";
 import { Card, Empty, ErrorNote, MultiFilter, Skeleton, Spinner, Tabs } from "../components/ui";
 import { date, num, profileName } from "../format";
 import { useWorkspace } from "../state";
-import type { DatasetMeta, RunMeta, ValidationIssue } from "../types";
+import type { DatasetMeta, FileMap, MappingProposal, RunMeta, ValidationIssue } from "../types";
+import { MappingEditor } from "../components/MappingEditor";
 
 const ACCEPT = ".csv,.xlsx,.xls,.json";
 
@@ -18,8 +19,21 @@ function SourcePicker({ onLoaded }: { onLoaded: (d: DatasetMeta) => void }) {
   const [over, setOver] = useState(false);
   const input = useRef<HTMLInputElement>(null);
   const sample = useMutation({ mutationFn: (s: { profile: string; variant: string }) => api.loadSample(s.profile, s.variant), onSuccess: onLoaded });
-  const upload = useMutation({ mutationFn: () => api.upload(files, label || files.map((f) => f.name).join(", ")), onSuccess: onLoaded });
-  const add = (list: FileList | null) => list && setFiles((prev) => [...prev, ...Array.from(list).filter((f) => !prev.some((p) => p.name === f.name))]);
+  const [proposal, setProposal] = useState<MappingProposal | null>(null);
+  const [mapped, setMapped] = useState<FileMap[]>([]);
+  const upload = useMutation({
+    mutationFn: () => api.upload(files, label || files.map((f) => f.name).join(", "),
+      proposal ? { files: mapped, notes: proposal.notes } : undefined),
+    onSuccess: onLoaded,
+  });
+  const propose = useMutation({
+    mutationFn: () => api.proposeMapping(files),
+    onSuccess: (p) => { setProposal(p); setMapped(p.files); },
+  });
+  const add = (list: FileList | null) => {
+    setProposal(null);
+    if (list) setFiles((prev) => [...prev, ...Array.from(list).filter((f) => !prev.some((p) => p.name === f.name))]);
+  };
   const drop = (e: DragEvent) => { e.preventDefault(); setOver(false); add(e.dataTransfer.files); };
 
   return (
@@ -63,12 +77,24 @@ function SourcePicker({ onLoaded }: { onLoaded: (d: DatasetMeta) => void }) {
             <label htmlFor="ds-label">Portfolio name</label>
             <input id="ds-label" className="input" value={label} onChange={(e) => setLabel(e.target.value)} placeholder="e.g. Retail book October 2026" />
           </div>
-          <button className="btn dark" disabled={!files.length || upload.isPending} onClick={() => upload.mutate()}>
-            {upload.isPending ? <Spinner /> : <Upload size={16} />}Upload and validate
-          </button>
+          {proposal && <MappingEditor proposal={proposal} value={mapped} onChange={setMapped} />}
+          <div className="row wrap" style={{ gap: 8 }}>
+            <button className="btn dark" disabled={!files.length || upload.isPending} onClick={() => upload.mutate()}>
+              {upload.isPending ? <Spinner /> : <Upload size={16} />}{proposal ? "Upload with this mapping" : "Upload and validate"}
+            </button>
+            {!proposal ? (
+              <button className="btn" disabled={!files.length || propose.isPending} onClick={() => propose.mutate()}
+                title="Use when your files have different file or column names">
+                {propose.isPending ? <Spinner /> : <Columns3 size={16} />}Map my column names
+              </button>
+            ) : (
+              <button className="btn ghost" onClick={() => setProposal(null)}>Discard mapping</button>
+            )}
+          </div>
+          <p className="muted tiny">Files from your own systems with different column names? Use “Map my column names” to match them to ours before uploading.</p>
         </div>
       )}
-      <div style={{ marginTop: 12 }}><ErrorNote error={sample.error ?? upload.error} /></div>
+      <div style={{ marginTop: 12 }}><ErrorNote error={sample.error ?? upload.error ?? propose.error} /></div>
     </Card>
   );
 }
