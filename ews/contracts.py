@@ -81,3 +81,8 @@ class Cluster:
     customer_ids: list[str]
     p_value: float = 1.0                     # one-sided binomial test vs portfolio rate
     basis: str = "elevated risk"             # or "shared signal CF04 (...)" for early-stage clusters
+    # what `lift` measures: customers in the group matching the basis, and the rates compared
+    basis_hits: int = 0                      # e.g. customers with the shared signal active
+    group_rate: float = 0.0                  # basis_hits / n_customers
+    portfolio_rate: float = 0.0              # same measure across all scored customers
+    elevated_lift: float = 0.0               # (n_elevated / n_customers) / portfolio elevated rate

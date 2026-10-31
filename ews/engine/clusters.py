@@ -51,8 +51,8 @@ def detect_clusters(ds: Dataset, results: list[CustomerResult], elevated_score: 
             if n < min_size or base[col] == 0 or k < min_hits:
                 continue
             lift, p = (k / n) / base[col], _binom_tail(k, n, base[col])
-            if lift >= lift_min and p <= p_max and (best is None or p < best[2]):
-                best = (basis, lift, p)
+            if lift >= lift_min and p <= p_max and (best is None or p < best[3]):
+                best = (basis, col, lift, p)
         return best
 
     candidates = []
@@ -61,7 +61,7 @@ def detect_clusters(ds: Dataset, results: list[CustomerResult], elevated_score: 
             best = best_test(g)
             if best:
                 label = "|".join(value) if isinstance(value, tuple) else str(value)
-                candidates.append((best[2], dim, label, g))
+                candidates.append((best[3], dim, label, g))
 
     # strongest first; a broader group must still be significant without the members of
     # stronger clusters inside it, otherwise it only echoes them (e.g. a region holding one hot industry)
@@ -72,10 +72,16 @@ def detect_clusters(ds: Dataset, results: list[CustomerResult], elevated_score: 
         best = best_test(g.drop(index=list(nested))) if nested else best_test(g)
         if not best:
             continue
+        # report the figures on the whole group, for the measure that made it significant
+        basis, col = best[0], best[1]
+        n, hits, elevated = len(g), int(g[col].sum()), int(g["elevated"].sum())
         top = Counter(s for c in g.index for s in fired[c])
-        found.append(Cluster(dimension=dim, value=label, n_customers=len(g), n_elevated=int(g["elevated"].sum()),
-                             lift=round(best[1], 2), top_signals=[s for s, _ in top.most_common(3)],
-                             customer_ids=list(g.index), p_value=round(best[2], 6), basis=best[0]))
+        found.append(Cluster(dimension=dim, value=label, n_customers=n, n_elevated=elevated,
+                             lift=round((hits / n) / base[col], 2), top_signals=[s for s, _ in top.most_common(3)],
+                             customer_ids=list(g.index), p_value=round(_binom_tail(hits, n, base[col]), 6),
+                             basis=basis, basis_hits=hits, group_rate=round(hits / n, 4),
+                             portfolio_rate=round(base[col], 4),
+                             elevated_lift=round((elevated / n) / base["elevated"], 2)))
     return found
 
 

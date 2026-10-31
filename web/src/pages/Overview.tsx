@@ -5,7 +5,7 @@ import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, Pie, PieChart, Ref
 import { ArrowRight, Database, Download, ListChecks, Network, ShieldAlert, Upload } from "lucide-react";
 import { api } from "../api";
 import { BAND_HEX, BandPill, Card, Empty, ErrorNote, Skeleton, Tabs } from "../components/ui";
-import { date, initials, money, num, pct, profileCurrency, profileName } from "../format";
+import { clusterBasis, date, initials, money, num, pct, profileCurrency, profileName } from "../format";
 import { useWorkspace } from "../state";
 import type { Band } from "../types";
 
@@ -212,9 +212,10 @@ export function Overview() {
                 <span className="who-icon"><Network size={16} /></span>
                 <span style={{ flex: 1, minWidth: 0 }}>
                   <strong style={{ display: "block", fontWeight: 500 }}>{c.value.replace("|", " · ")}</strong>
-                  <small className="muted">{c.n_elevated} of {c.n_customers} elevated · {c.dimension}</small>
+                  <small className="muted" style={{ display: "block" }}>{clusterBasis(c)}</small>
+                  <small className="faint">{c.n_elevated} of {c.n_customers} Medium or above (×{num(c.elevated_lift, 1)})</small>
                 </span>
-                <span className="pill lime mono">×{num(c.lift, 1)}</span>
+                <span className="pill lime mono" title={`${clusterBasis(c)}: ${num(c.lift, 1)} times the portfolio rate`}>×{num(c.lift, 1)}</span>
               </Link>
             ))}
             {s && s.clusters.length === 0 && <p className="muted">No significant concentrations detected.</p>}

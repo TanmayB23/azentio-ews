@@ -35,7 +35,8 @@ export interface WatchlistPage { total: number; page: number; page_size: number;
 
 export interface Cluster {
   dimension: string; value: string; n_customers: number; n_elevated: number; lift: number; p_value: number;
-  basis: string; top_signals: string[]; top_signal_names: string[]; customer_ids: string[];
+  basis: string; basis_hits: number; group_rate: number; portfolio_rate: number; elevated_lift: number;
+  top_signals: string[]; top_signal_names: string[]; customer_ids: string[];
   exposure: number; elevated_exposure: number; members: WatchRow[];
 }
 export interface Summary {
