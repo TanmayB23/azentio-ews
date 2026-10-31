@@ -13,7 +13,7 @@ import json
 import pandas as pd
 from pydantic import BaseModel
 
-from api.ai import AIUnavailable, Provider, known_numbers, unverified_numbers
+from api.ai import AIUnavailable, Provider, forbidden_terms, known_numbers, unverified_numbers
 
 BANDS = ["Critical", "High", "Medium", "Low", "Insufficient data"]
 ELEVATED = {"Medium", "High", "Critical"}
@@ -48,6 +48,8 @@ CLUSTER_PROMPT = """You brief a credit committee on one portfolio risk cluster f
 
 The user message is JSON describing the cluster: the measure that flagged it, band counts, exposure, the most common warning signals, recommended actions and its members (IDs, scores, bands, active signals). Rules:
 - Use only facts in the JSON; no invented numbers, causes or names. Quote amounts as written in the input.
+- Field meanings: band_counts = customers in each risk band (use it for any count by band; "Medium or above" is Medium + High + Critical). share_of_members_with_flag_pct = share of cluster members showing the measure in flagged_because; share_of_portfolio_with_flag_pct = the same share across the whole book; lift = the ratio of the two. None of these are default rates.
+- Never mention default rates, probabilities of default or expected losses: the system measures deterioration, not default.
 - headline: one sentence. pattern: 2-3 sentences on what the members have in common and how it differs from the rest of the book.
 - shared_drivers: up to 4, each citing signal IDs from the input.
 - segment_wide: true if the deterioration looks common across the group rather than a few individual cases; explain in segment_wide_reason using the counts.
@@ -64,9 +66,10 @@ def cluster_payload(cluster: dict, signal_names: dict[str, str], actions: dict[s
     return {
         "cluster": {"grouping": cluster["dimension"], "value": cluster["value"].replace("|", " · "),
                     "flagged_because": cluster["basis"], "lift": cluster["lift"],
-                    "basis_hits": cluster.get("basis_hits"), "group_rate_pct": round(100 * cluster.get("group_rate", 0), 1),
-                    "portfolio_rate_pct": round(100 * cluster.get("portfolio_rate", 0), 1),
-                    "customers": cluster["n_customers"], "medium_or_above": cluster["n_elevated"],
+                    "members_with_flag": cluster.get("basis_hits"),
+                    "share_of_members_with_flag_pct": round(100 * cluster.get("group_rate", 0), 1),
+                    "share_of_portfolio_with_flag_pct": round(100 * cluster.get("portfolio_rate", 0), 1),
+                    "customers": cluster["n_customers"], "customers_medium_or_above": cluster["n_elevated"],
                     "elevated_lift": cluster.get("elevated_lift"), "p_value": cluster["p_value"],
                     "exposure": money(cluster["exposure"], currency),
                     "elevated_exposure": money(cluster["elevated_exposure"], currency)},
@@ -90,14 +93,16 @@ def verify_cluster(b: ClusterBriefing, payload: dict) -> tuple[ClusterBriefing, 
     text = " ".join([b.headline, b.pattern, b.segment_wide_reason, *b.segment_actions, *b.caveats,
                      *(d.text for d in b.shared_drivers)])
     numbers = unverified_numbers(text, known_numbers(payload))
-    checks = {"unknown_citations": unknown, "dropped_customers": dropped, "unverified_numbers": numbers}
-    checks["status"] = "verified" if not (unknown or dropped or numbers) else "check"
+    terms = forbidden_terms(text)
+    checks = {"unknown_citations": unknown, "dropped_customers": dropped, "unverified_numbers": numbers,
+              "forbidden_terms": terms}
+    checks["status"] = "verified" if not (unknown or dropped or numbers or terms) else "check"
     return b, checks
 
 
 def template_cluster(payload: dict) -> ClusterBriefing:
     c, bands = payload["cluster"], payload["band_counts"]
-    elevated = c["medium_or_above"]
+    elevated = c["customers_medium_or_above"]
     top = payload["common_signals"][:3]
     widespread = elevated >= max(3, 0.5 * c["customers"])
     return ClusterBriefing(
@@ -151,7 +156,7 @@ The user message is JSON: band counts and exposure, the most common warning sign
 - key_points: 3-5 points on the main risks. changes_since_last: what moved since the previous assessment, or say there is no earlier assessment.
 - clusters: one line per cluster in the input. actions_due: one line per owner with counts.
 - data_quality: one sentence. recommendations: up to 4 management actions consistent with the input.
-- Higher score = higher risk. Be concise and neutral; never predict defaults."""
+- Higher score = higher risk. Be concise and neutral. Never mention default rates, probabilities of default or expected losses: the system measures deterioration, not default."""
 
 
 def memo_payload(summary: dict, previous: dict | None, transitions: dict | None, currency: str) -> dict:
@@ -197,7 +202,9 @@ def verify_memo(m: RiskMemo, payload: dict) -> tuple[RiskMemo, dict]:
     text = " ".join([m.title, m.headline, m.data_quality, *m.changes_since_last, *m.clusters, *m.actions_due,
                      *m.recommendations, *(p.text for p in m.key_points)])
     numbers = unverified_numbers(text, known_numbers(payload))
-    return m, {"unverified_numbers": numbers, "status": "verified" if not numbers else "check"}
+    terms = forbidden_terms(text)
+    return m, {"unverified_numbers": numbers, "forbidden_terms": terms,
+               "status": "verified" if not (numbers or terms) else "check"}
 
 
 def template_memo(payload: dict) -> RiskMemo:

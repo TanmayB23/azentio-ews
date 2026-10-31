@@ -39,7 +39,7 @@ class FakeAI:
         if schema is briefings.ClusterBriefing:
             first = data["members"][0]["id"]
             return briefings.ClusterBriefing(
-                headline="Receivables slowing", pattern=f"Exposure {data['cluster']['exposure']} at risk.",
+                headline="Receivables slowing", pattern=f"Exposure {data['cluster']['exposure']} at risk; the default rate is high.",
                 shared_drivers=[briefings.Driver(text="Slower collections", cites=["SM02", "XX99"])],
                 segment_wide=True, segment_wide_reason="Most members affected", segment_actions=["Sector review"],
                 customers_to_prioritise=[first, "C9999"], caveats=["Losses of 123456789 expected"])
@@ -113,6 +113,7 @@ def test_ai_briefing_mistakes_are_caught(apps):
     assert checks["status"] == "check"
     assert checks["unknown_citations"] == ["XX99"] and checks["dropped_customers"] == ["C9999"]
     assert 123456789 in checks["unverified_numbers"]
+    assert checks["forbidden_terms"] == ["default rate"]
     assert "C9999" not in b["output"]["customers_to_prioritise"]
 
 

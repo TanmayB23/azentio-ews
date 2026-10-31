@@ -43,7 +43,7 @@ class WatchQuery(BaseModel):
 SYSTEM_PROMPT = """You turn a credit analyst's question into filters for an Early Warning System watchlist.
 
 The user message has the question and the allowed values for every filter. Rules:
-- Use only values from the allowed lists, copied exactly. Leave a filter empty when the question does not mention it.
+- Use only values from the allowed lists, copied exactly. Leave a filter empty when the question does not mention it, and never select all values of a filter (leave it empty instead).
 - "signals" holds signal IDs (e.g. "SM02") whose warning should be active; choose them from the catalogue by meaning.
 - Bands: Low, Medium, High, Critical, Insufficient data. "Elevated", "at risk" or "risky" means Medium, High and Critical unless the question says otherwise. Scores run 0-100, higher is riskier.
 - review: "unreviewed" for not yet reviewed, "reviewed" for already reviewed, otherwise "".
@@ -66,7 +66,8 @@ def clean(query: WatchQuery, options: dict) -> tuple[dict, list[str]]:
     filters, dropped = {}, []
     for key in LIST_FILTERS:
         values = getattr(query, key)
-        filters[key] = [v for v in values if v in allowed.get(key, set())]
+        kept = [v for v in values if v in allowed.get(key, set())]
+        filters[key] = [] if allowed.get(key) and set(kept) >= allowed[key] else kept   # "all values" = no filter
         dropped += [f"{key}={v}" for v in values if v not in allowed.get(key, set())]
     for key in ("score_min", "score_max"):
         value = getattr(query, key)

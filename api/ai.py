@@ -114,3 +114,13 @@ def unverified_numbers(text: str, known: set[float], small: float = 12) -> list[
     bad = sorted({n for n in numbers(text)
                   if abs(n) > small and not 1990 <= n <= 2100 and n not in known and round(n) not in known})
     return [int(n) if n == int(n) else n for n in bad]
+
+
+# Wording the EWS must not use: it scores deterioration, it does not estimate default.
+FORBIDDEN = ("default rate", "probability of default", "default probability", "will default", "likely to default",
+             "chance of default", "expected loss")
+
+
+def forbidden_terms(text: str) -> list[str]:
+    low = text.lower()
+    return [t for t in FORBIDDEN if t in low]

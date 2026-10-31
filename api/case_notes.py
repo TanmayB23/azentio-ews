@@ -23,7 +23,7 @@ from ews.contracts import CustomerResult
 from ews.interventions import Recommendation
 from ews.store.db import DECISIONS
 
-PROMPT_VERSION = "case-note-2026-10-31.2"
+PROMPT_VERSION = "case-note-2026-10-31.3"
 Decision = Literal["Continue Monitoring", "Requires Investigation", "False Positive", "Escalate for Review"]
 assert set(Decision.__args__) == set(DECISIONS)
 
@@ -57,7 +57,7 @@ The user message is a JSON record for one customer alert. Write a case note for 
 
 Rules:
 - Use only facts in the JSON. Do not invent numbers, dates, causes, names or customer details. If something is unknown, say so in data_gaps or caveats.
-- The score runs 0-100 and a higher score means higher risk. Never change or re-derive the score or band, and never predict default.
+- The score runs 0-100 and a higher score means higher risk. Never change or re-derive the score or band. Never mention default rates, probabilities of default or expected losses: the system measures deterioration, not default.
 - Each key finding cites the IDs it relies on, copied exactly from the input: signal IDs (e.g. "CF01"), evidence IDs (e.g. "R001168" or "2026-07"), adjustment IDs (e.g. "ADJ1") or action IDs. Cite IDs only, never field names.
 - recommended_actions: choose only from input.recommended_actions by action_id, most urgent first, each with a reason linked to the findings. Never add an action that is not in the input; return an empty list if the input has none.
 - suggested_decision is a suggestion for the analyst, who decides. Escalate for Review fits Critical alerts or roll-forward risk; Requires Investigation fits High alerts or unexplained deterioration; Continue Monitoring fits Medium/Low or recovering customers and insufficient data; False Positive fits alerts where the evidence shows the signals do not reflect real deterioration (for example a documented one-off delay or a seasonal pattern).
@@ -138,9 +138,11 @@ def verify(note: CaseNote, payload: dict) -> tuple[CaseNote, dict]:
     unverified = sorted({n for n in _numbers(text)
                          if n > 12 and not 1990 <= n <= 2100 and n not in known and round(n) not in known})
 
+    from api.ai import forbidden_terms
+    terms = forbidden_terms(text)
     checks = {"unknown_citations": unknown, "dropped_actions": dropped,
-              "unverified_numbers": [int(n) if n == int(n) else n for n in unverified]}
-    checks["status"] = "verified" if not (unknown or dropped or unverified) else "check"
+              "unverified_numbers": [int(n) if n == int(n) else n for n in unverified], "forbidden_terms": terms}
+    checks["status"] = "verified" if not (unknown or dropped or unverified or terms) else "check"
     return note, checks
 
 
