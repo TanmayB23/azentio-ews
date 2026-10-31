@@ -94,6 +94,8 @@ def test_live_features_match_rule_signal_measurements(clean_ds,clean_results):
     for cid in list(clean_results)[::100]:
         row=feature_rows(one_customer(clean_ds,cid),"india","2026-10-31")[cid]
         for signal in clean_results[cid].signals:
+            if signal.signal_id not in FEATURE_IDS:
+                continue   # e.g. UB01 is portfolio-relative and not a model feature
             actual=row["features"][signal.signal_id]
             if signal.applicable and signal.evaluated:
                 assert actual==pytest.approx(signal.value)
