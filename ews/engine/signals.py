@@ -145,9 +145,9 @@ def new_facilities_in_window(v: CustomerViews, as_of, w, s=None) -> Measure:
     f = v.facilities.dropna(subset=["disbursement_date"])
     if f.empty:
         return Measure(None, 0)
-    first = f["disbursement_date"].min()
-    start = as_of - pd.DateOffset(months=int(w))
-    new = f[(f["disbursement_date"] > start) & (f["disbursement_date"] > first + pd.Timedelta(days=30))]
+    dates = pd.to_datetime(f["disbursement_date"])
+    cutoff = max(pd.Timestamp(as_of) - pd.DateOffset(months=int(w)), dates.min() + pd.DateOffset(days=30))
+    new = f[dates > cutoff]
     return Measure(float(len(new)), len(f), list(new["loan_id"]))
 
 
