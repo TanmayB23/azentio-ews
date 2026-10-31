@@ -65,6 +65,13 @@
       "priority": 6,
       "detail": "Obtain the missing repayment, transaction or exposure history so the customer can be scored."
     },
+    "UNUSUAL_ACTIVITY_CHECK": {
+      "title": "Sense-check unusual account behaviour",
+      "owner": "Relationship manager",
+      "due_days": 30,
+      "priority": 6,
+      "detail": "The unusual-behaviour model flagged a combination of changes that no specific rule covers; review the listed drivers and confirm whether there is a benign explanation."
+    },
     "NEXT_CYCLE_CHECK": {
       "title": "Re-check at next monitoring cycle",
       "owner": "Relationship manager",
@@ -92,6 +99,8 @@
      "when": {"in_cluster": true, "bands": ["Medium", "High", "Critical"]}},
     {"action": "COLLECT_DATA", "match": "all",
      "when": {"status": "Insufficient data"}},
+    {"action": "UNUSUAL_ACTIVITY_CHECK", "match": "all",
+     "when": {"signals_active": ["UB01"], "no_other_actions": true, "no_modifier_contains": ["evidence on file"]}},
     {"action": "NEXT_CYCLE_CHECK", "match": "all",
      "when": {"bands": ["Medium"], "no_other_actions": true}}
   ]

@@ -101,6 +101,8 @@ def _check(key, value, result: CustomerResult, facts: Facts, active: dict, fired
             if found and int(found.group(2)) >= value:
                 return (f"Late payment in {found.group(1)} was {found.group(2)} days", _rb(active))
         return None
+    if key == "no_modifier_contains":
+        return None if any(v in m for m in result.modifiers for v in value) else ("", [])
     if key == "current_dpd_gt":
         return (f"Currently {facts.current_dpd:.0f} days past due", ["RB04"]) if facts.current_dpd > value else None
     if key == "pillar_min":
@@ -133,11 +135,11 @@ def _check(key, value, result: CustomerResult, facts: Facts, active: dict, fired
     if key == "actions_not_fired":
         return None if any(a in fired for a in value) else ("", [])
     if key == "no_other_actions":
-        return ("Medium risk with no specific trigger", []) if (not fired) == value else None
+        return ("No more specific action applies", []) if (not fired) == value else None
     raise ValueError(f"Unknown intervention condition '{key}'")
 
 
-_PILLARS = {"RB": "Repayment", "CF": "Cash flow", "EX": "Exposure", "SM": "Business"}
+_PILLARS = {"RB": "Repayment", "CF": "Cash flow", "EX": "Exposure", "SM": "Business", "UB": "Unusual behaviour"}
 
 
 def _pillar_name(code: str) -> str:
