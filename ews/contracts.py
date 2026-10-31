@@ -76,7 +76,7 @@ class Cluster:
     value: str                               # e.g. "Textiles|Tamil Nadu"
     n_customers: int
     n_elevated: int                          # customers scoring Medium or above
-    lift: float                              # elevated rate in group / elevated rate in portfolio
+    lift: float                              # group_rate / portfolio_rate for the basis measure
     top_signals: list[str]
     customer_ids: list[str]
     p_value: float = 1.0                     # one-sided binomial test vs portfolio rate
