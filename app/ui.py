@@ -13,7 +13,18 @@ BAND_COLORS = {
 
 def apply_styles():
     st.markdown("""<style>
+    /* Streamlit's native fixed toolbar must not cover the scrolling workspace.
+       Keep its sidebar opener usable when the navigation is collapsed. */
+    [data-testid="stHeader"] {
+        position: absolute; height: 0; background: transparent; pointer-events: none;
+    }
+    [data-testid="stHeader"] [data-testid="stToolbar"] {visibility: hidden;}
+    [data-testid="stHeader"] [data-testid="stExpandSidebarButton"] {
+        visibility: visible; pointer-events: auto; background: #f5f7fb;
+        border: 1px solid #dce4ef; border-radius: 8px;
+    }
     .block-container {max-width: 1440px; padding-top: 2rem; padding-bottom: 3rem;}
+    .stApp:has([data-testid="stExpandSidebarButton"]) .block-container {padding-top: 4.5rem;}
     h1 {font-size: 2rem !important; letter-spacing: -.055rem; font-weight: 750 !important;}
     h2, h3 {letter-spacing: -.025rem;}
     [data-testid="stSidebar"] {background: #12233f; border-right: 1px solid #223956;}
