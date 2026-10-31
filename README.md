@@ -30,7 +30,26 @@ Then open the app and go to **Data & validation**:
 2. Review the validation report.
 3. Click **Run assessment**.
 
-**Development:** run `python -m api --reload` and, in `web/`, `npm run dev` (http://localhost:5173, with `/api` proxied to the API).
+**Development (from the repository root):**
+
+```powershell
+npm install                            # installs the web dependencies too
+./.venv/Scripts/python -m pip install -r requirements.txt
+```
+
+Start the API in one terminal:
+
+```powershell
+./.venv/Scripts/python -m api --reload  # http://127.0.0.1:8000
+```
+
+Start the front end in a second terminal, also from the repository root:
+
+```powershell
+npm run dev                            # http://localhost:5173
+```
+
+The Vite server proxies `/api` requests to the Python API, so both processes must run. Root-level `npm run build` and `npm run typecheck` also forward to the web app. Running the npm commands directly inside `web/` still works. On macOS/Linux, use `.venv/bin/python` in place of `.venv/Scripts/python`.
 
 | Setting | Default | Purpose |
 |---|---|---|
