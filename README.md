@@ -1,6 +1,6 @@
-# EWS: Early Warning System
+# BreadAhead: Early Warning System
 
-A credit-risk early warning workspace. It ingests customer, facility, repayment, delinquency, exposure and transaction data, then:
+**BreadAhead** is a credit-risk early warning workspace. It ingests customer, facility, repayment, delinquency, exposure and transaction data, then:
 
 - validates and links the data;
 - scores every customer 0–100 (higher = riskier) with an explanation for each score;
