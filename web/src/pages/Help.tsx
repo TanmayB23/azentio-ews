@@ -42,6 +42,10 @@ export function Help() {
         <Card title="5 · Analyst decisions" sub="Recorded against the saved alert">
           <p className="small">Continue Monitoring · Requires Investigation · False Positive · Escalate for Review. A reason is required. Decisions are appended to a history: the original score and evidence are never changed, and the database rejects edits and deletions.</p>
         </Card>
+        <Card title="Unusual behaviour (machine learning)" sub="An isolation forest, signal UB01">
+          <p className="small">Rules catch the patterns we anticipated. To catch combinations nobody wrote a rule for, an isolation forest learns what typical behaviour looks like across comparable customers (individuals and SMEs separately) from 14 measures of the last six months: income trend and volatility, income versus the same months last year, balances, outflows, bounced payments, utilisation, obligations, inquiries, late months, days past due and, for SMEs, receivable days and tax filings.</p>
+          <p className="small" style={{ marginTop: 8 }}>A customer more unusual than 95% of comparable customers gets the signal, at full strength above 99.5%. It adds at most 8 points on top of the score, lists the measures furthest from typical, and is reduced when a documented one-off explains it. Missing data is filled with typical values, so it never looks unusual, and the signal does not affect data confidence.</p>
+        </Card>
         <Card title="6 · Clusters" sub="Portfolio concentrations">
           <p className="small">Customers are grouped by industry, region, product, segment and portfolio. A group is flagged when its share of elevated customers, or of customers sharing the same warning signal, is significantly above the portfolio rate. Broad groups that only echo a stronger cluster inside them are not reported.</p>
         </Card>

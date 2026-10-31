@@ -12,7 +12,7 @@ from ews.contracts import CustomerResult, Dataset
 
 BANDS = ["Critical", "High", "Medium", "Low", "Insufficient data"]
 ELEVATED = {"High", "Critical"}
-PILLARS = {"RB": "Repayment", "CF": "Cash flow", "EX": "Exposure", "SM": "Business"}
+PILLARS = {"RB": "Repayment", "CF": "Cash flow", "EX": "Exposure", "SM": "Business", "UB": "Unusual behaviour"}
 
 
 def _num(v):

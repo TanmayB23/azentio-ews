@@ -25,6 +25,7 @@ class CustomerViews:
     exposure: pd.DataFrame         # one row per month, sorted
     transactions: pd.DataFrame     # one row per month, sorted
     sme: pd.DataFrame              # SME indicators, one row per month (empty for individuals)
+    anomaly: object = None         # anomaly.Anomaly, set when the unusual-behaviour model runs
 
 
 def month_labels(as_of: pd.Timestamp, n: int) -> list[str]:

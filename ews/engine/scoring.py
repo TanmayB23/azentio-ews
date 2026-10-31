@@ -23,6 +23,7 @@ from ews.engine.signals import evaluate_signals
 from ews.engine.views import CustomerViews, build_views, month_labels
 
 PILLARS = ("RB", "CF", "EX", "SM")
+ADDITIVE = ("UB",)          # added on top of the combined score, weight = maximum points
 PILLAR_NAMES = {"RB": "Repayment", "CF": "Cash flow", "EX": "Exposure", "SM": "Business"}
 SEASONAL_SIGNALS = ("consecutive_months_total_inflows_declining", "pct_change_avg_inflow_last3m_vs_prior3m")
 INSUFFICIENT_STATUS = "Collect data"
@@ -33,6 +34,8 @@ def score_portfolio(ds: Dataset, profile: str | dict = "india", as_of: str | Non
     defs = _definitions(ds.signal_config)
     as_of_ts = pd.Timestamp(as_of or prof["as_of"])
     views = build_views(ds, as_of_ts, prof)
+    if any(str(s["metric"]).split()[0] == "unusual_behaviour_percentile" for s in defs["signals"]):
+        _attach_anomalies(views, as_of_ts)
     version = f"signals:{defs.get('version', '?')}|profile:{prof['profile']}@{prof.get('version', '?')}"
     return [score_customer(v, defs, prof, as_of_ts, version) for v in views.values()]
 
@@ -47,7 +50,7 @@ def score_customer(v: CustomerViews, defs: dict, prof: dict, as_of: pd.Timestamp
     if damp:
         mult, text = damp
         for s in signals:
-            if s.pillar == "RB" and s.evaluated:
+            if s.pillar in ("RB", *ADDITIVE) and s.evaluated:   # a documented one-off also explains unusual behaviour
                 s.strength *= mult
         modifiers.append(text)
 
@@ -83,6 +86,9 @@ def score_customer(v: CustomerViews, defs: dict, prof: dict, as_of: pd.Timestamp
         for s in signals:
             if s.pillar == p and s.evaluated:
                 s.points = round(f * 100 * s.weight * s.strength / pillar_weight[p], 2)
+    for s in signals:
+        if s.pillar in ADDITIVE and s.evaluated:
+            s.points = round(s.weight * s.strength, 2)
     score = min(100.0, sum(s.points for s in signals))
 
     rm = v.repay_months
@@ -96,8 +102,9 @@ def score_customer(v: CustomerViews, defs: dict, prof: dict, as_of: pd.Timestamp
             modifiers.append(floor[1])
             score = floor[0]
 
-    app_total = sum(s.weight for s in signals if s.applicable)
-    confidence = sum(s.weight for s in signals if s.applicable and s.evaluated) / app_total if app_total else 0.0
+    core = [s for s in signals if s.applicable and s.pillar not in ADDITIVE]   # supplementary signals don't count
+    app_total = sum(s.weight for s in core)
+    confidence = sum(s.weight for s in core if s.evaluated) / app_total if app_total else 0.0
     insufficient = len(rm) < cfg["min_repayment_months"] or confidence < cfg["min_confidence"]
 
     classification = defs.get("classification") or DEFAULT_CLASSIFICATION
@@ -126,6 +133,9 @@ def _definitions(uploaded: dict | None) -> dict:
     # uploaded thresholds/weights win; tuning keys only in config (e.g. CF01 series) are kept
     base_by_id = {s["signal_id"]: s for s in base["signals"]}
     merged["signals"] = [{**base_by_id.get(s["signal_id"], {}), **s} for s in uploaded["signals"]]
+    # signals the upload doesn't mention keep their default definitions
+    uploaded_ids = {s["signal_id"] for s in uploaded["signals"]}
+    merged["signals"] += [s for s in base["signals"] if s["signal_id"] not in uploaded_ids]
     return merged
 
 
@@ -209,3 +219,13 @@ def _recent_episode(rm: pd.DataFrame, rule: dict, as_of) -> tuple[float, str] | 
         return None
     return rule["min_score"], (f"Recent delinquency episode: {len(late)} late instalments in 6 months, worst "
                                f"{late['dpd'].max():.0f} days: score raised to at least {rule['min_score']}")
+
+
+def _attach_anomalies(views: dict[str, CustomerViews], as_of: pd.Timestamp) -> None:
+    try:
+        from ews.engine.anomaly import score_portfolio_anomalies
+        anomalies = score_portfolio_anomalies(views, as_of)
+    except ImportError:            # scikit-learn not installed: the signal is reported as not evaluated
+        return
+    for cid, v in views.items():
+        v.anomaly = anomalies.get(cid)

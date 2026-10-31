@@ -15,7 +15,7 @@ import pandas as pd
 
 TABLES = ("customers", "facilities", "repayments", "delinquency", "exposure", "transactions", "sme_indicators")
 OPTIONAL_TABLES = ("sme_indicators",)       # absent table = signals not applicable, not an error
-Pillar = Literal["RB", "CF", "EX", "SM"]
+Pillar = Literal["RB", "CF", "EX", "SM", "UB"]   # UB: unusual behaviour (ML), added on top
 Band = Literal["Low", "Medium", "High", "Critical"]
 
 

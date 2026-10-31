@@ -9,3 +9,4 @@ httpx>=0.27,<1
 xgboost>=3.4.1,<4
 scikit-learn>=1.6,<2
 openai>=1.68
+scikit-learn>=1.4

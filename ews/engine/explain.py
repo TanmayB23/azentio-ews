@@ -23,6 +23,7 @@ PHRASES = {
     "new_credit_inquiries_90d_latest": "{v:.0f} credit inquiries in 90 days",
     "tax_filings_late_or_missed_in_window": "{v:.0f} tax return(s) filed late or missed",
     "receivable_days_change_in_window": "receivable days {v:+.0f}",
+    "unusual_behaviour_percentile": "unusual behaviour (more unusual than {v:.0f}% of similar customers)",
 }
 
 

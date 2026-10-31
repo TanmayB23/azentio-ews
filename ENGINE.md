@@ -53,6 +53,19 @@ Quarantined rows are in `ds.quarantined[table]` with an `issue` column. A missin
 Bands: Low 0-24 (Routine), Medium 25-49 (Watch), High 50-74 (Investigate), Critical 75-100 (Escalate).
 Region-specific settings (calendar, scoring factors, rule thresholds) are in `config/profiles/*.json`.
 
+## Unusual behaviour (ML)
+
+`ews/engine/anomaly.py` fits an isolation forest (scikit-learn) per customer type on 14 behaviour measures from the last six months: income trend, volatility and change vs last year, balance change, outflow ratio, bounced payments, utilisation and obligation changes, inquiries, late months, worst DPD, DPD trend, and for SMEs receivable days and late tax filings.
+
+- **Signal:** UB01 is the customer's percentile of unusualness among comparable customers. It triggers at 95 and is at full strength at 99.5.
+- **Effect on the score:** it adds up to its weight (8) in points on top of the combined score and is not counted in confidence.
+- **Explained:** it lists the measures furthest from typical.
+- **Missing data:** filled with the group median, so it never looks unusual.
+- **One-off misses:** the signal is reduced by the same evidence multiplier as the repayment signals when a documented one-off miss explains the behaviour.
+- **Repeatable:** a fixed random seed means the same data always gives the same result.
+
+On the sample data no healthy customer reaches the top 5%. Median percentiles are about 35 for healthy customers and 77–98 for the risky scenarios.
+
 ## Clusters
 
 For each group (industry x region, industry, region, segment, portfolio, main product) two one-sided binomial tests run against the portfolio:
