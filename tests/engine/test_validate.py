@@ -6,8 +6,8 @@ from tests.conftest import DATA
 
 def test_clean_data_has_no_errors(clean_ds):
     assert not [i for i in clean_ds.issues if i.severity == "error"]
-    assert len(clean_ds.tables["customers"]) == 300
-    assert len(clean_ds.tables["repayments"]) == 5889
+    for name, df in clean_ds.tables.items():
+        assert len(df) == len(pd.read_csv(DATA / "clean" / f"{name}.csv")), name
 
 
 def test_every_manifest_defect_is_reported(dirty_ds):
@@ -38,10 +38,12 @@ def test_orphans_and_duplicates_are_quarantined(dirty_ds):
 
 def test_repairs_are_applied(dirty_ds):
     t = dirty_ds.tables
-    assert set(t["customers"]["customer_type"].dropna()) <= {"Individual", "SME"}
-    assert t["customers"]["customer_type"].notna().all()
+    assert set(t["customers"]["customer_type"]) <= {"Individual", "SME"}
     assert t["transactions"]["total_inflows"].ge(0).all()
     assert t["exposure"]["utilisation_pct"].dropna().between(0, 100).all()
+    assert pd.api.types.is_numeric_dtype(t["repayments"]["amount_due"])
+    assert t["repayments"]["amount_due"].notna().all()
+    assert pd.api.types.is_numeric_dtype(t["customers"]["declared_monthly_income"])
     paid_on_time = t["repayments"][t["repayments"]["repayment_status"] == "Paid On Time"]
     assert (paid_on_time["dpd"] == 0).all()
 
@@ -52,9 +54,10 @@ def test_excel_and_json_match_csv(clean_ds):
     for ds in (xl, js):
         for name, df in clean_ds.tables.items():
             assert len(ds.tables[name]) == len(df), name
-    assert xl.signal_config is not None and len(xl.signal_config["signals"]) == 13
+    assert xl.signal_config is not None and len(xl.signal_config["signals"]) == 15
 
 
-def test_missing_table_is_reported():
+def test_missing_required_table_is_reported_optional_is_not():
     ds = load_dataset({"customers.csv": DATA / "clean" / "customers.csv"})
     assert any(i.issue == "table 'repayments' not provided" for i in ds.issues)
+    assert not any("sme_indicators" in i.issue for i in ds.issues)
