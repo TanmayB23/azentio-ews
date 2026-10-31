@@ -1,5 +1,9 @@
 __pycache__/
-*.pyc
 .pytest_cache/
-*.db
 .venv/
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.pyc
+*.db
+artifacts/ui-check/
