@@ -94,6 +94,10 @@ def main():
                     ready("Customer detail")
                     passed("Watchlist search and actual row-checkbox selection")
                     page.locator('[data-testid="stMain"]').evaluate('(el)=>el.scrollTop=0')
+                    expect(page.locator(".customer-dashboard .cd-card")).to_have_count(6)
+                    expect(page.locator(".cd-gauge")).to_be_visible()
+                    expect(page.locator(".cd-gauge")).to_contain_text("Not scored")
+                    assert len(page.locator(".cd-grid").evaluate("el=>getComputedStyle(el).gridTemplateColumns").split()) == 3
                     screenshot("desktop-customer-evidence.png")
                     page.get_by_role("tab", name="Account activity", exact=True).click()
                     expect(page.get_by_role("heading", name="Monthly inflows and outflows", exact=True)).to_be_visible()
@@ -115,9 +119,9 @@ def main():
                     passed("Review validation and two successive decisions")
                     # Scroll the content and ensure its title bar is not fixed.
                     page.locator('[data-testid="stMain"]').evaluate('(el)=>el.scrollTop=0')
-                    before = page.locator('.ews-topbar').bounding_box()["y"]
+                    before = page.locator('.customer-dashboard').bounding_box()["y"]
                     page.locator('[data-testid="stMain"]').evaluate('(el)=>el.scrollTop=400')
-                    after = page.locator('.ews-topbar').bounding_box()["y"]
+                    after = page.locator('.customer-dashboard').bounding_box()["y"]
                     assert after < before - 100, (before, after)
                     assert page.locator('[data-testid="stHeader"]').evaluate('(el)=>getComputedStyle(el).pointerEvents') == "none"
                     passed("Title bar scrolls and native header does not intercept content")
@@ -143,6 +147,15 @@ def main():
                     nav("Portfolio", "Portfolio overview")
                     screenshot("desktop-gulf-portfolio.png")
                     passed("Gulf sample, matching profile and real assessment")
+                    nav("Customer detail", "Customer detail")
+                    page.set_viewport_size({"width": 1672, "height": 1100})
+                    expect(page.locator(".customer-dashboard .cd-card")).to_have_count(6)
+                    assert "out of 100" in page.locator(".cd-gauge").get_attribute("aria-label")
+                    screenshot("customer-dashboard.png")
+                    page.locator(".customer-dashboard").screenshot(path=str(ARTIFACTS / "customer-dashboard-cards.png"))
+                    page.get_by_role("tab", name="SME indicators", exact=True).click()
+                    expect(page.get_by_role("heading", name="SME business indicators", exact=True)).to_be_visible()
+                    passed("Reference-style customer cards, actual risk gauge and SME detail")
                     # Actual mobile viewport and sidebar interactions, after transitions settle.
                     page.set_viewport_size({"width": 390, "height": 844})
                     page.wait_for_timeout(800)
@@ -161,6 +174,7 @@ def main():
                     page.wait_for_timeout(500)
                     screenshot("mobile-customer.png")
                     assert not page.evaluate('document.documentElement.scrollWidth > innerWidth')
+                    assert len(page.locator(".cd-grid").evaluate("el=>getComputedStyle(el).gridTemplateColumns").split()) == 1
                     opener = page.get_by_role("button", name="Expand sidebar", exact=True)
                     expect(opener).to_be_visible()
                     opener.click()

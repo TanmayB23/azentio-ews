@@ -57,3 +57,7 @@ The audit checks real desktop and mobile interactions, row-checkbox navigation, 
 ## Interface
 
 The theme is in `.streamlit/config.toml`; presentation components and scroll-safe header styling are in `app/ui.py`. The app uses navy navigation, a light workspace, risk colours, summary cards, and customer detail tabs. Use **Back to watchlist** to return to the queue.
+
+### Customer dashboard
+
+Customer detail uses a reference-inspired card layout: borrower profile, a 0-100 risk gauge, latest monthly financial snapshot, signal monitoring, scored pillars and customer alerts, followed by exposure/cash-flow/utilisation sparklines. The gauge keeps the engine convention that higher scores mean higher risk; insufficient history shows Not scored. Amounts, manager identity, signals and trends all come from the selected customer's source data and saved assessment. Full evidence, account activity, SME indicators and analyst reviews remain in tabs below the overview. The cards stack vertically on narrow screens.

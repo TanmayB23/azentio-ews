@@ -74,7 +74,7 @@ def test_real_analyst_flow(tmp_path, monkeypatch):
     # Thin history is explained rather than assigned a risk band.
     select(app, "Customer").set_value(thin.customer_id).run()
     assert not app.exception
-    assert any(m.value == "Not scored" for m in app.metric)
+    assert any("Not scored" in m.value and "cd-gauge" in m.value for m in app.markdown)
     assert any(thin.summary in m.value for m in app.markdown)
     # SME-only tab includes tax filing status and receivable/payable days.
     customers = app.session_state.dataset.tables["customers"]

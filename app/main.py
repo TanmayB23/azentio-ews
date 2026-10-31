@@ -12,7 +12,8 @@ if str(ROOT) not in sys.path:
 import pandas as pd
 import streamlit as st
 from app.views import customer_table, monthly_chart, signal_rows, watchlist
-from app.ui import apply_styles, badge, band_style, empty_state, page_header, topbar
+from app.ui import apply_styles, band_style, empty_state, page_header, topbar
+from app.customer import render_customer_dashboard
 from ews import engine
 from app.service import assess, sample_sources, source_bytes, source_hash
 from ews.store.db import DECISIONS, Store
@@ -229,12 +230,9 @@ def review_panel(alert):
 
 
 def detail_page():
-    page_header("Customer detail", "Understand the assessment, explore account activity, and record your decision.", "03 / Investigate")
+    page_header("Customer detail", "Borrower profile, credit risk assessment and account monitoring.", "Credit risk dashboard")
     if not require_scores():
         return
-    if st.button("Back to watchlist"):
-        st.session_state.pending_page = "Watchlist"
-        st.rerun()
     results = {r.customer_id: r for r in st.session_state.results}
     if not results:
         empty_state("No customers in this run", "Load another dataset to start a new assessment.")
@@ -249,27 +247,20 @@ def detail_page():
     detail_key = f"detail_customer_{st.session_state.run_id}"
     if detail_key not in st.session_state:
         st.session_state[detail_key] = selected if selected in ids else ids[0]
-    cid = st.selectbox("Customer", ids, key=detail_key,
+    back, selector = st.columns([1, 4], vertical_alignment="bottom")
+    if back.button("Back to watchlist", width="stretch"):
+        st.session_state.pending_page = "Watchlist"
+        st.rerun()
+    cid = selector.selectbox("Customer", ids, key=detail_key, label_visibility="collapsed",
         format_func=lambda value: f"{value} | {names.get(value, value)}")
     st.session_state.customer_id = cid
     result = results[cid]
     customer = customer_table(ds, "customers", cid)
-    with st.container(border=True):
-        identity, risk = st.columns([4, 1])
-        with identity:
-            st.subheader(str(names.get(cid, cid)))
-            if not customer.empty:
-                info = customer.iloc[0]
-                st.caption(" | ".join(str(info.get(field, "Unknown")) for field in ("segment", "industry", "region")))
-        with risk:
-            badge(result.band or "Insufficient data")
-        st.write(result.summary)
-        st.caption(f"Assessment date: {result.as_of} | Rules: {result.rules_version}")
-    a, b, c, d = st.columns(4)
-    a.metric("Risk score", "Not scored" if result.score is None else f"{result.score:.1f} / 100")
-    b.metric("Band", result.band or result.status)
-    c.metric("Confidence", f"{result.confidence:.0%}")
-    d.metric("Monitoring", result.monitoring_status)
+    frame = portfolio_frame()
+    row = frame.loc[frame.customer_id == cid].iloc[0]
+    render_customer_dashboard(ds, result, row)
+    st.caption(f"Rules: {result.rules_version} | As of {result.as_of}")
+    st.subheader("Detailed evidence")
     is_sme = not customer.empty and str(customer.iloc[0].get("customer_type", "")) == "SME"
     tab_labels = ["Risk evidence", "Account activity"] + (["SME indicators"] if is_sme else []) + ["Analyst review"]
     tabs = st.tabs(tab_labels)
@@ -277,11 +268,12 @@ def detail_page():
     with evidence:
         st.subheader("What is driving this assessment?")
         evaluated = sorted((signal for signal in result.signals if signal.applicable and signal.evaluated), key=lambda signal: signal.points, reverse=True)
-        if evaluated:
-            contributions = pd.DataFrame({"Signal": [signal.name for signal in evaluated], "Points": [signal.points for signal in evaluated]})
+        contributing = [signal for signal in evaluated if signal.points > 0]
+        if contributing:
+            contributions = pd.DataFrame({"Signal": [signal.name for signal in contributing], "Points": [signal.points for signal in contributing]})
             st.bar_chart(contributions.set_index("Signal"), color="#2563eb", height=220)
         else:
-            st.info("No signals could be evaluated. Review the reasons below before taking action.")
+            st.info("No positive signal contributions. Review signal statuses and data coverage below.")
         st.subheader("Signal contributions and evidence")
         rows = signal_rows(result.signals)
         total_points = sum(signal.points for signal in result.signals)
@@ -391,7 +383,8 @@ page = st.sidebar.radio("Navigation", ["Data", "Watchlist", "Customer detail", "
 st.sidebar.divider()
 st.sidebar.caption("AS OF 31 OCT 2026")
 st.sidebar.caption("Review risk. Preserve evidence. Act early.")
-topbar(region, "Real engine")
+if page != "Customer detail":
+    topbar(region, "Real engine")
 if "results" in st.session_state and profile != st.session_state.scored_profile:
     st.info("The displayed run uses the engine and region shown below. Return to Data and score again to apply your new selection.")
 if page == "Data":
