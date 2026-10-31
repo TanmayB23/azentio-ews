@@ -1,0 +1,49 @@
+table,record_key,issue
+customers,C0369,missing customer_type
+customers,C0115,missing customer_type
+customers,C0392,invalid customer_type value 'Individul'
+customers,C0361,customer_type in lowercase 'sme'
+customers,C0436,invalid onboarding_date
+customers,C0400,declared_monthly_income with thousands separators
+customers,C0249,declared_monthly_income with thousands separators
+facilities,L00113,negative sanctioned_amount
+facilities,L00069,outstanding_balance exceeds sanctioned_amount
+facilities,L00653,outstanding_balance exceeds sanctioned_amount
+facilities,L00492,tenure_months = 0
+repayments,R000138,negative amount_paid
+repayments,R002031,negative amount_paid
+repayments,R007856,unparseable payment_date
+repayments,R007356,unparseable payment_date
+repayments,R000462,status 'Paid On Time' inconsistent with dpd
+repayments,R001099,status 'Paid On Time' inconsistent with dpd
+repayments,R007523,status 'Paid On Time' inconsistent with dpd
+repayments,R001617,amount_due with thousands separators
+repayments,R011926,amount_due with thousands separators
+facilities,L99001,orphan facility: customer_id C9999 does not exist
+facilities,L99002,orphan facility: customer_id C9999 does not exist
+repayments,R900000,orphan repayment: loan_id L99999 does not exist
+repayments,R900001,orphan repayment: loan_id L99999 does not exist
+repayments,R900002,orphan repayment: loan_id L99999 does not exist
+repayments,R900003,orphan repayment: loan_id L99999 does not exist
+repayments,R900004,orphan repayment: loan_id L99999 does not exist
+repayments,R006261,duplicate repayment_id
+repayments,R005463,duplicate repayment_id
+repayments,R009200,duplicate repayment_id
+transactions,C0066|2026-02,negative total_inflows
+transactions,C0171|2026-10,negative total_inflows
+transactions,C0192|2025-12,missing total_inflows
+transactions,C0448|2026-10,missing total_inflows
+transactions,C0081|2025-07,missing total_inflows
+transactions,C0429|2026-01,invalid month '2026-13'
+transactions,C0178|2026-09,duplicate customer-month record
+transactions,C0428|2026-09,duplicate customer-month record
+transactions,C9999|2025-08,orphan transaction: customer_id C9999 does not exist
+transactions,C9999|2026-09,orphan transaction: customer_id C9999 does not exist
+exposure,C0283|2026-02,utilisation_pct = 135 (above 100)
+exposure,C0326|2026-09,utilisation_pct = 135 (above 100)
+exposure,C0485|2025-05,missing monthly_obligations
+exposure,C0262|2026-07,missing monthly_obligations
+exposure,C0103|2026-08,missing monthly_obligations
+customers,C0341,duplicate customer row
+customers,C0079,duplicate customer row
+customers,C0409,duplicate customer row

@@ -1,0 +1,501 @@
+customer_id,customer_name,customer_type,employment_or_business_category,industry,region,portfolio_classification,segment,origination_rating,declared_monthly_income,relationship_manager,onboarding_date
+C0001,Vikram Joshi,Individual,,Education,West Bengal,Retail Banking,Prime,A,180000,Anita Rao,2026-07-09
+C0002,Rohan Joshi,Individual,Salaried - Private,Banking & Finance,Telangana,Retail Banking,Near Prime,B,159000,Sana Qureshi,2021-10-03
+C0003,Chawla Construction Industries,SME,Private Limited,Construction,Kerala,SME Banking,SME Emerging,B,2219000,Karthik Iyer,2025-01-07
+C0004,Singh Retail Industries,SME,Partnership,Retail & Trading,Tamil Nadu,SME Banking,SME Emerging,A,3835000,Meera Pillai,2019-06-12
+C0005,Das Agri-processing Enterprises,SME,Private Limited,Agri-processing,West Bengal,SME Banking,SME Core,A,3052000,Karthik Iyer,2022-09-03
+C0006,Das Manufacturing & Sons,SME,Proprietorship,Manufacturing,Kerala,SME Banking,SME Core,B,3299000,Sana Qureshi,2019-05-14
+C0007,Isha Das,Individual,Gig / Platform Worker,Gig Economy,Uttar Pradesh,Retail Banking,Near Prime,A,26000,Meera Pillai,2022-07-17
+C0008,Divya Mehta,Individual,Salaried - Government,Education,Gujarat,Retail Banking,Prime,A,167000,Vikram Shah,2021-01-11
+C0009,Gupta Textiles Traders,SME,Proprietorship,Textiles,Gujarat,SME Banking,SME Emerging,C,1629000,Karthik Iyer,2020-09-21
+C0010,Rao Food Industries,SME,Partnership,Food & Beverage,Telangana,SME Banking,SME Emerging,A,4243000,Vikram Shah,2019-03-13
+C0011,Rajesh Khan,Individual,Salaried - Private,Healthcare,Telangana,Retail Banking,Near Prime,A,86000,Karthik Iyer,2020-06-27
+C0012,Manoj Iyer,Individual,Self-employed Professional,Education,Gujarat,Retail Banking,Prime,A,91000,Karthik Iyer,2021-07-24
+C0013,Mehta Logistics & Sons,SME,Proprietorship,Logistics & Transport,Telangana,SME Banking,SME Core,B,3071000,Karthik Iyer,2018-10-10
+C0014,Neha Bose,Individual,Salaried - Government,Education,Maharashtra,Retail Banking,Near Prime,A,220000,Sana Qureshi,2024-07-30
+C0015,Naidu Manufacturing Industries,SME,Proprietorship,Manufacturing,Telangana,SME Banking,SME Core,A,3729000,Sana Qureshi,2021-04-23
+C0016,Kulkarni Textiles & Sons,SME,Private Limited,Textiles,West Bengal,SME Banking,SME Core,B,1291000,Karthik Iyer,2018-11-14
+C0017,Pillai Retail & Sons,SME,Proprietorship,Retail & Trading,Maharashtra,SME Banking,SME Emerging,A,1275000,Sana Qureshi,2019-06-17
+C0018,Chawla Construction Enterprises,SME,Partnership,Construction,West Bengal,SME Banking,SME Emerging,B,776000,Rahul Verma,2021-11-15
+C0019,Aarav Verma,Individual,Salaried - Government,Education,Gujarat,Retail Banking,Near Prime,A,169000,Meera Pillai,2020-11-25
+C0020,Karthik Iyer,Individual,Salaried - Private,Retail,Kerala,Retail Banking,Near Prime,C,175000,Vikram Shah,2025-01-08
+C0021,Patel Food & Sons,SME,Proprietorship,Food & Beverage,Telangana,SME Banking,SME Emerging,C,3646000,Karthik Iyer,2019-12-15
+C0022,Gupta IT Industries,SME,Private Limited,IT Services,Gujarat,SME Banking,SME Core,B,411000,Karthik Iyer,2023-12-10
+C0023,Sneha Naidu,Individual,Salaried - Private,Banking & Finance,Uttar Pradesh,Retail Banking,Prime,A,73000,Anita Rao,2021-03-01
+C0024,Chawla Retail Industries,SME,Partnership,Retail & Trading,Kerala,SME Banking,SME Core,B,3778000,Vikram Shah,2025-01-19
+C0025,Menon Textiles Enterprises,SME,Partnership,Textiles,Tamil Nadu,SME Banking,SME Core,B,841000,Anita Rao,2019-03-14
+C0026,Meera Nair,Individual,Salaried - Private,Manufacturing,Maharashtra,Retail Banking,Prime,C,95000,Rahul Verma,2024-12-28
+C0027,Rao Agri-processing & Sons,SME,Partnership,Agri-processing,Karnataka,SME Banking,SME Emerging,B,741000,Meera Pillai,2023-05-24
+C0028,Farhan Sharma,Individual,Self-employed Professional,Education,Maharashtra,Retail Banking,Prime,A,181000,Karthik Iyer,2018-10-22
+C0029,Isha Rao,Individual,Self-employed Professional,Education,West Bengal,Retail Banking,Prime,A,36000,Anita Rao,2019-09-20
+C0030,Lakshmi Naidu,Individual,Salaried - Private,IT / Software,Kerala,Retail Banking,Prime,B,84000,Karthik Iyer,2025-02-17
+C0031,Das Food Industries,SME,Partnership,Food & Beverage,West Bengal,SME Banking,SME Core,A,2609000,Meera Pillai,2021-05-11
+C0032,Sharma Manufacturing & Sons,SME,Private Limited,Manufacturing,Karnataka,SME Banking,SME Core,A,361000,Vikram Shah,2019-06-25
+C0033,Pooja Naidu,Individual,Salaried - Private,Manufacturing,West Bengal,Retail Banking,Near Prime,A,176000,Vikram Shah,2021-11-08
+C0034,Meera Shetty,Individual,Gig / Platform Worker,Gig Economy,West Bengal,Retail Banking,Prime,B,41000,Sana Qureshi,2022-07-16
+C0035,Karthik Rao,Individual,Salaried - Private,Manufacturing,Karnataka,Retail Banking,Prime,B,88000,Vikram Shah,2023-12-15
+C0036,Patel Logistics Traders,SME,Private Limited,Logistics & Transport,West Bengal,SME Banking,SME Emerging,A,1061000,Vikram Shah,2023-11-16
+C0037,Karthik Shetty,Individual,Salaried - Private,Healthcare,Maharashtra,Retail Banking,Prime,B,49000,Karthik Iyer,2023-08-30
+C0038,Verma Construction Traders,SME,Proprietorship,Construction,West Bengal,SME Banking,SME Core,A,2955000,Rahul Verma,2022-03-06
+C0039,Pooja Reddy,Individual,Salaried - Private,Manufacturing,Maharashtra,Retail Banking,Near Prime,A,100000,Sana Qureshi,2023-06-11
+C0040,Joshi Textiles & Sons,SME,Partnership,Textiles,Uttar Pradesh,SME Banking,SME Emerging,B,2037000,Vikram Shah,2023-04-30
+C0041,Mehta Textiles Enterprises,SME,Partnership,Textiles,Delhi NCR,SME Banking,SME Emerging,B,4014000,Karthik Iyer,2024-05-08
+C0042,Gupta Logistics Enterprises,SME,Proprietorship,Logistics & Transport,Kerala,SME Banking,SME Emerging,B,1586000,Sana Qureshi,2019-05-20
+C0043,Bose IT Enterprises,SME,Private Limited,IT Services,West Bengal,SME Banking,SME Core,A,2220000,Anita Rao,2024-02-10
+C0044,Vikram Patel,Individual,Salaried - Private,Retail,Gujarat,Retail Banking,Near Prime,A,189000,Karthik Iyer,2024-09-10
+C0045,Neha Sharma,Individual,Salaried - Private,Healthcare,Delhi NCR,Retail Banking,Near Prime,B,33000,Vikram Shah,2019-08-25
+C0046,Singh Retail & Sons,SME,Partnership,Retail & Trading,Maharashtra,SME Banking,SME Core,A,384000,Sana Qureshi,2024-12-18
+C0047,Verma Construction Industries,SME,Proprietorship,Construction,West Bengal,SME Banking,SME Emerging,A,684000,Vikram Shah,2024-06-17
+C0048,Singh Agri-processing Traders,SME,Proprietorship,Agri-processing,Maharashtra,SME Banking,SME Emerging,A,585000,Anita Rao,2020-06-01
+C0049,Farhan Kulkarni,Individual,,Healthcare,Karnataka,Retail Banking,Near Prime,A,112000,Karthik Iyer,2026-07-09
+C0050,Joshi Logistics Industries,SME,Proprietorship,Logistics & Transport,Telangana,SME Banking,SME Emerging,A,2317000,Meera Pillai,2026-07-09
+C0051,Divya Sharma,Individual,Salaried - Government,Public Sector,Telangana,Retail Banking,Prime,B,51000,Vikram Shah,2018-12-07
+C0052,Sneha Patel,Individual,Salaried - Private,Healthcare,Kerala,Retail Banking,Near Prime,C,46000,Vikram Shah,2020-07-14
+C0053,Naidu Textiles & Sons,SME,Partnership,Textiles,Maharashtra,SME Banking,SME Emerging,A,3080000,Karthik Iyer,2024-11-25
+C0054,Pillai Construction Industries,SME,Proprietorship,Construction,Telangana,SME Banking,SME Emerging,B,725000,Karthik Iyer,2019-10-21
+C0055,Reddy Retail Industries,SME,Private Limited,Retail & Trading,Uttar Pradesh,SME Banking,SME Emerging,B,2990000,Karthik Iyer,2020-10-31
+C0056,Imran Shetty,Individual,Self-employed Professional,Healthcare,Telangana,Retail Banking,Prime,A,68000,Anita Rao,2023-12-28
+C0057,Aarav Sharma,Individual,Self-employed Professional,Healthcare,Tamil Nadu,Retail Banking,Near Prime,B,186000,Vikram Shah,2021-05-15
+C0058,Shetty Food Traders,SME,Private Limited,Food & Beverage,Kerala,SME Banking,SME Core,A,3690000,Karthik Iyer,2019-10-26
+C0059,Aarav Iyer,Individual,Self-employed Professional,Healthcare,Uttar Pradesh,Retail Banking,Near Prime,A,153000,Karthik Iyer,2019-12-05
+C0060,Sharma Construction Traders,SME,Proprietorship,Construction,Uttar Pradesh,SME Banking,SME Core,A,1126000,Vikram Shah,2020-11-22
+C0061,Ananya Nair,Individual,Self-employed Professional,Legal & Consulting,West Bengal,Retail Banking,Prime,A,170000,Vikram Shah,2023-04-26
+C0062,Arjun Pillai,Individual,Salaried - Government,Education,Kerala,Retail Banking,Prime,B,138000,Karthik Iyer,2022-04-18
+C0063,Sneha Menon,Individual,Salaried - Government,Education,West Bengal,Retail Banking,Prime,B,199000,Karthik Iyer,2019-08-11
+C0064,Kulkarni Agri-processing & Sons,SME,Proprietorship,Agri-processing,Maharashtra,SME Banking,SME Emerging,B,3307000,Rahul Verma,2023-02-01
+C0065,Rao Textiles Traders,SME,Private Limited,Textiles,Tamil Nadu,SME Banking,SME Emerging,A,1156000,Vikram Shah,2024-09-11
+C0066,Manoj Khan,Individual,Self-employed Professional,Education,Tamil Nadu,Retail Banking,Near Prime,B,150000,Anita Rao,2018-12-29
+C0067,Aarav Shetty,Individual,Salaried - Private,IT / Software,Telangana,Retail Banking,Prime,C,226000,Sana Qureshi,2020-12-22
+C0068,Bose Agri-processing Industries,SME,Proprietorship,Agri-processing,Uttar Pradesh,SME Banking,SME Core,C,3134000,Anita Rao,2022-08-05
+C0069,Sharma Logistics Industries,SME,Partnership,Logistics & Transport,Kerala,SME Banking,SME Core,A,1023000,Vikram Shah,2020-02-07
+C0070,Imran Joshi,Individual,Self-employed Professional,Legal & Consulting,Uttar Pradesh,Retail Banking,Near Prime,A,136000,Sana Qureshi,2024-11-11
+C0071,Joshi Food Traders,SME,Private Limited,Food & Beverage,West Bengal,SME Banking,SME Core,B,3603000,Anita Rao,2022-12-31
+C0072,Priya Das,Individual,Salaried - Private,Banking & Finance,Uttar Pradesh,Retail Banking,Near Prime,C,83000,Rahul Verma,2023-07-19
+C0073,Bose IT Enterprises,SME,Private Limited,IT Services,Uttar Pradesh,SME Banking,SME Core,B,2904000,Anita Rao,2019-09-11
+C0074,Sneha Gupta,Individual,Self-employed Professional,Legal & Consulting,West Bengal,Retail Banking,Prime,B,182000,Rahul Verma,2021-08-30
+C0075,Suresh Menon,Individual,Self-employed Professional,Education,Tamil Nadu,Retail Banking,Prime,A,49000,Vikram Shah,2023-08-24
+C0076,Farhan Iyer,Individual,Salaried - Private,Retail,Telangana,Retail Banking,Near Prime,A,141000,Karthik Iyer,2020-03-02
+C0077,Das Food Traders,SME,Private Limited,Food & Beverage,Gujarat,SME Banking,SME Emerging,C,3881000,Karthik Iyer,2020-01-04
+C0078,Neha Patel,Individual,Salaried - Private,Manufacturing,Uttar Pradesh,Retail Banking,Prime,A,44000,Anita Rao,2020-11-06
+C0079,Naidu Retail Enterprises,SME,Partnership,Retail & Trading,Telangana,SME Banking,SME Core,B,1144000,Anita Rao,2019-12-31
+C0080,Ananya Gupta,Individual,Salaried - Government,Public Sector,Uttar Pradesh,Retail Banking,Near Prime,A,195000,Meera Pillai,2023-03-27
+C0081,Shetty Textiles & Sons,SME,Proprietorship,Textiles,Tamil Nadu,SME Banking,SME Emerging,A,2646000,Meera Pillai,2023-01-02
+C0082,Nair Textiles Enterprises,SME,Private Limited,Textiles,Tamil Nadu,SME Banking,SME Emerging,B,1630000,Karthik Iyer,2022-04-14
+C0083,Sneha Chawla,Individual,Salaried - Private,Banking & Finance,Karnataka,Retail Banking,Prime,B,160000,Karthik Iyer,2024-06-24
+C0084,Rao Agri-processing Enterprises,SME,Partnership,Agri-processing,West Bengal,SME Banking,SME Core,C,338000,Karthik Iyer,2024-03-01
+C0085,Pillai Manufacturing & Sons,SME,Private Limited,Manufacturing,West Bengal,SME Banking,SME Core,A,1197000,Rahul Verma,2019-03-21
+C0086,Sneha Joshi,Individual,Salaried - Government,Education,Karnataka,Retail Banking,Prime,B,98000,Meera Pillai,2023-11-06
+C0087,Das Textiles Traders,SME,Proprietorship,Textiles,Uttar Pradesh,SME Banking,SME Core,A,3442000,Vikram Shah,2025-01-30
+C0088,Neha Kulkarni,Individual,Salaried - Private,Banking & Finance,Gujarat,Retail Banking,Prime,A,210000,Sana Qureshi,2023-03-22
+C0089,Mehta Construction Enterprises,SME,Proprietorship,Construction,Karnataka,SME Banking,SME Core,C,3427000,Anita Rao,2023-12-08
+C0090,Nair Logistics & Sons,SME,Private Limited,Logistics & Transport,Maharashtra,SME Banking,SME Core,B,2156000,Anita Rao,2023-07-16
+C0091,Lakshmi Verma,Individual,Self-employed Professional,Education,Kerala,Retail Banking,Prime,C,181000,Sana Qureshi,2021-05-01
+C0092,Kulkarni Logistics Enterprises,SME,Partnership,Logistics & Transport,West Bengal,SME Banking,SME Core,B,1039000,Rahul Verma,2020-07-02
+C0093,Bose Food Industries,SME,Private Limited,Food & Beverage,Karnataka,SME Banking,SME Core,A,1875000,Rahul Verma,2024-07-13
+C0094,Pillai Construction Enterprises,SME,Private Limited,Construction,West Bengal,SME Banking,SME Emerging,A,2849000,Meera Pillai,2023-03-28
+C0095,Lakshmi Shetty,Individual,Salaried - Government,Public Sector,Karnataka,Retail Banking,Prime,C,53000,Meera Pillai,2023-03-07
+C0096,Gupta Retail & Sons,SME,Private Limited,Retail & Trading,Gujarat,SME Banking,SME Core,B,2777000,Karthik Iyer,2019-08-29
+C0097,Lakshmi Khan,Individual,Salaried - Private,Manufacturing,Uttar Pradesh,Retail Banking,Near Prime,B,41000,Meera Pillai,2021-08-28
+C0098,Lakshmi Joshi,Individual,Self-employed Professional,Healthcare,Gujarat,Retail Banking,Near Prime,B,57000,Sana Qureshi,2019-11-09
+C0099,Khan IT Industries,SME,Partnership,IT Services,Gujarat,SME Banking,SME Core,A,773000,Karthik Iyer,2022-09-29
+C0100,Iyer Logistics Industries,SME,Partnership,Logistics & Transport,Tamil Nadu,SME Banking,SME Core,B,474000,Vikram Shah,2020-05-23
+C0101,Patel Logistics Traders,SME,Partnership,Logistics & Transport,West Bengal,SME Banking,SME Core,A,2914000,Vikram Shah,2021-11-12
+C0102,Rajesh Das,Individual,Salaried - Private,Retail,Gujarat,Retail Banking,Prime,A,212000,Vikram Shah,2021-04-30
+C0103,Sharma IT Traders,SME,Proprietorship,IT Services,Delhi NCR,SME Banking,SME Emerging,B,2066000,Meera Pillai,2020-09-21
+C0104,Suresh Patel,Individual,Salaried - Private,Retail,West Bengal,Retail Banking,Near Prime,A,211000,Rahul Verma,2020-03-27
+C0105,Imran Naidu,Individual,Salaried - Private,Banking & Finance,Uttar Pradesh,Retail Banking,Prime,C,53000,Meera Pillai,2024-07-24
+C0106,Farhan Sharma,Individual,Self-employed Professional,Legal & Consulting,Gujarat,Retail Banking,Near Prime,A,116000,Meera Pillai,2019-02-22
+C0107,Sneha Menon,Individual,Salaried - Private,Healthcare,Delhi NCR,Retail Banking,Prime,B,73000,Rahul Verma,2026-09-19
+C0108,Suresh Pillai,Individual,Salaried - Government,Education,Delhi NCR,Retail Banking,Near Prime,B,171000,Sana Qureshi,2020-05-18
+C0109,Singh Agri-processing & Sons,SME,Private Limited,Agri-processing,Telangana,SME Banking,SME Core,A,1331000,Sana Qureshi,2021-05-04
+C0110,Karthik Pillai,Individual,Salaried - Private,Banking & Finance,Gujarat,Retail Banking,Near Prime,A,185000,Anita Rao,2020-02-14
+C0111,Iyer Retail & Sons,SME,Private Limited,Retail & Trading,Maharashtra,SME Banking,SME Core,B,812000,Sana Qureshi,2021-12-30
+C0112,Ananya Nair,Individual,Salaried - Private,Banking & Finance,Uttar Pradesh,Retail Banking,Near Prime,A,43000,Vikram Shah,2021-10-06
+C0113,Verma Retail Traders,SME,Private Limited,Retail & Trading,West Bengal,SME Banking,SME Core,A,4075000,Vikram Shah,2021-06-26
+C0114,Meera Rao,Individual,Self-employed Professional,Legal & Consulting,Uttar Pradesh,Retail Banking,Near Prime,B,101000,Rahul Verma,2021-03-16
+C0115,Gupta Retail Industries,SME,Partnership,Retail & Trading,Tamil Nadu,SME Banking,SME Core,C,2158000,Rahul Verma,2024-08-27
+C0116,Lakshmi Naidu,Individual,Salaried - Private,Healthcare,Karnataka,Retail Banking,Prime,A,194000,Anita Rao,2021-07-13
+C0117,Lakshmi Naidu,Individual,Salaried - Government,Education,West Bengal,Retail Banking,Near Prime,A,35000,Sana Qureshi,2021-09-01
+C0118,Chawla Logistics Enterprises,SME,Partnership,Logistics & Transport,Kerala,SME Banking,SME Emerging,B,1825000,Karthik Iyer,2021-06-02
+C0119,Chawla Textiles Enterprises,SME,Proprietorship,Textiles,Uttar Pradesh,SME Banking,SME Emerging,A,1991000,Rahul Verma,2021-03-07
+C0120,Meera Das,Individual,Salaried - Government,Public Sector,Maharashtra,Retail Banking,Prime,C,97000,Vikram Shah,2020-03-12
+C0121,Singh Textiles Industries,SME,Proprietorship,Textiles,Tamil Nadu,SME Banking,SME Core,C,1876000,Anita Rao,2024-10-16
+C0122,Neha Sharma,Individual,Self-employed Professional,Education,Gujarat,Retail Banking,Near Prime,A,209000,Anita Rao,2024-03-31
+C0123,Imran Das,Individual,Salaried - Government,Education,Tamil Nadu,Retail Banking,Prime,A,168000,Meera Pillai,2021-09-19
+C0124,Suresh Pillai,Individual,Salaried - Government,Education,Delhi NCR,Retail Banking,Prime,C,186000,Rahul Verma,2023-06-21
+C0125,Sneha Singh,Individual,Salaried - Government,Education,Tamil Nadu,Retail Banking,Prime,B,170000,Karthik Iyer,2024-06-06
+C0126,Suresh Pillai,Individual,Salaried - Private,Retail,Maharashtra,Retail Banking,Prime,A,51000,Anita Rao,2020-01-25
+C0127,Sharma Manufacturing Enterprises,SME,Private Limited,Manufacturing,West Bengal,SME Banking,SME Emerging,B,3022000,Karthik Iyer,2021-11-09
+C0128,Nair IT Enterprises,SME,Partnership,IT Services,West Bengal,SME Banking,SME Emerging,B,2644000,Karthik Iyer,2021-12-25
+C0129,Karthik Iyer,Individual,Gig / Platform Worker,Gig Economy,Gujarat,Retail Banking,Near Prime,C,59000,Rahul Verma,2021-02-07
+C0130,Isha Joshi,Individual,Salaried - Private,Healthcare,Kerala,Retail Banking,Near Prime,B,151000,Meera Pillai,2023-02-19
+C0131,Lakshmi Verma,Individual,Salaried - Private,Banking & Finance,Uttar Pradesh,Retail Banking,Near Prime,C,109000,Anita Rao,2019-11-05
+C0132,Joshi Textiles Industries,SME,Private Limited,Textiles,Tamil Nadu,SME Banking,SME Emerging,A,1476000,Vikram Shah,2022-11-06
+C0133,Manoj Reddy,Individual,Gig / Platform Worker,Gig Economy,Karnataka,Retail Banking,Prime,A,54000,Vikram Shah,2021-02-22
+C0134,Aarav Menon,Individual,Salaried - Government,Education,Uttar Pradesh,Retail Banking,Near Prime,B,181000,Sana Qureshi,2022-11-29
+C0135,Das Retail & Sons,SME,Partnership,Retail & Trading,Tamil Nadu,SME Banking,SME Core,B,1746000,Rahul Verma,2020-12-29
+C0136,Aarav Khan,Individual,Self-employed Professional,Healthcare,Karnataka,Retail Banking,Near Prime,C,159000,Vikram Shah,2019-04-06
+C0137,Iyer IT & Sons,SME,Partnership,IT Services,Gujarat,SME Banking,SME Emerging,C,1192000,Meera Pillai,2020-08-26
+C0138,Priya Gupta,Individual,Salaried - Private,IT / Software,Karnataka,Retail Banking,Near Prime,A,42000,Sana Qureshi,2025-01-01
+C0139,Ananya Sharma,Individual,Salaried - Government,Public Sector,Maharashtra,Retail Banking,Prime,B,49000,Karthik Iyer,2019-11-07
+C0140,Mehta Manufacturing Traders,SME,Proprietorship,Manufacturing,Delhi NCR,SME Banking,SME Emerging,A,3517000,Karthik Iyer,2019-12-07
+C0141,Meera Naidu,Individual,Gig / Platform Worker,Gig Economy,Karnataka,Retail Banking,Near Prime,A,48000,Anita Rao,2018-09-26
+C0142,Iyer Agri-processing & Sons,SME,Partnership,Agri-processing,Telangana,SME Banking,SME Core,B,356000,Meera Pillai,2024-02-01
+C0143,Manoj Reddy,Individual,Salaried - Private,Manufacturing,Telangana,Retail Banking,Near Prime,B,191000,Rahul Verma,2025-01-24
+C0144,Manoj Reddy,Individual,Gig / Platform Worker,Gig Economy,Uttar Pradesh,Retail Banking,Prime,A,38000,Meera Pillai,2020-08-19
+C0145,Verma Manufacturing & Sons,SME,Partnership,Manufacturing,Tamil Nadu,SME Banking,SME Core,A,2226000,Karthik Iyer,2019-04-11
+C0146,Naidu Agri-processing Enterprises,SME,Partnership,Agri-processing,Delhi NCR,SME Banking,SME Core,C,2391000,Meera Pillai,2024-02-26
+C0147,Patel Manufacturing Industries,SME,Partnership,Manufacturing,Telangana,SME Banking,SME Emerging,B,3622000,Sana Qureshi,2024-04-21
+C0148,Rajesh Shetty,Individual,Self-employed Professional,Education,Tamil Nadu,Retail Banking,Prime,A,99000,Anita Rao,2022-05-10
+C0149,Kavya Naidu,Individual,Salaried - Private,Manufacturing,Gujarat,Retail Banking,Near Prime,B,38000,Rahul Verma,2019-05-27
+C0150,Karthik Nair,Individual,Gig / Platform Worker,Gig Economy,Karnataka,Retail Banking,Prime,B,48000,Meera Pillai,2022-12-12
+C0151,Kulkarni Construction Industries,SME,Proprietorship,Construction,Maharashtra,SME Banking,SME Emerging,B,682000,Anita Rao,2021-03-11
+C0152,Rohan Chawla,Individual,Salaried - Private,Retail,Gujarat,Retail Banking,Near Prime,C,128000,Anita Rao,2023-06-30
+C0153,Vikram Gupta,Individual,Salaried - Government,Education,Kerala,Retail Banking,Near Prime,A,118000,Sana Qureshi,2018-12-23
+C0154,Sneha Bose,Individual,Self-employed Professional,Legal & Consulting,Delhi NCR,Retail Banking,Near Prime,A,165000,Vikram Shah,2021-12-17
+C0155,Aarav Menon,Individual,Salaried - Government,Public Sector,Kerala,Retail Banking,Prime,A,221000,Karthik Iyer,2024-06-17
+C0156,Vikram Reddy,Individual,Salaried - Private,Healthcare,Tamil Nadu,Retail Banking,Near Prime,B,122000,Vikram Shah,2022-11-28
+C0157,Patel Textiles Traders,SME,Proprietorship,Textiles,Tamil Nadu,SME Banking,SME Core,B,2646000,Meera Pillai,2024-03-12
+C0158,Farhan Shetty,Individual,Gig / Platform Worker,Gig Economy,Karnataka,Retail Banking,Near Prime,B,56000,Sana Qureshi,2022-05-15
+C0159,Farhan Gupta,Individual,Salaried - Government,Education,Gujarat,Retail Banking,Near Prime,B,64000,Rahul Verma,2020-08-05
+C0160,Joshi Logistics Traders,SME,Private Limited,Logistics & Transport,Delhi NCR,SME Banking,SME Emerging,B,2729000,Karthik Iyer,2021-04-21
+C0161,Isha Menon,Individual,Salaried - Private,IT / Software,Kerala,Retail Banking,Near Prime,B,168000,Rahul Verma,2022-11-05
+C0162,Manoj Reddy,Individual,Salaried - Government,Education,Maharashtra,Retail Banking,Prime,B,114000,Vikram Shah,2021-07-14
+C0163,Suresh Pillai,Individual,Salaried - Private,IT / Software,Gujarat,Retail Banking,Prime,B,80000,Vikram Shah,2024-04-17
+C0164,Joshi Agri-processing Enterprises,SME,Private Limited,Agri-processing,Kerala,SME Banking,SME Emerging,A,661000,Karthik Iyer,2019-03-06
+C0165,Manoj Chawla,Individual,Salaried - Private,IT / Software,Gujarat,Retail Banking,Prime,B,152000,Sana Qureshi,2018-12-30
+C0166,Kavya Reddy,Individual,Salaried - Private,Banking & Finance,Maharashtra,Retail Banking,Near Prime,A,128000,Meera Pillai,2020-09-26
+C0167,Divya Sharma,Individual,Salaried - Government,Education,Tamil Nadu,Retail Banking,Prime,B,185000,Meera Pillai,2023-06-19
+C0168,Isha Khan,Individual,Salaried - Government,Education,Tamil Nadu,Retail Banking,Near Prime,B,138000,Meera Pillai,2024-10-14
+C0169,Rajesh Shetty,Individual,Salaried - Private,Banking & Finance,Maharashtra,Retail Banking,Near Prime,B,98000,Meera Pillai,2022-03-11
+C0170,Meera Rao,Individual,Salaried - Government,Education,Maharashtra,Retail Banking,Prime,B,132000,Anita Rao,2019-10-14
+C0171,Sharma Textiles Traders,SME,Partnership,Textiles,Gujarat,SME Banking,SME Emerging,B,633000,Rahul Verma,2022-09-05
+C0172,Reddy Construction Traders,SME,Private Limited,Construction,Tamil Nadu,SME Banking,SME Emerging,A,1309000,Karthik Iyer,2020-08-05
+C0173,Das Retail & Sons,SME,Partnership,Retail & Trading,West Bengal,SME Banking,SME Core,A,2639000,Karthik Iyer,2022-06-26
+C0174,Manoj Mehta,Individual,Gig / Platform Worker,Gig Economy,Karnataka,Retail Banking,Prime,A,41000,Rahul Verma,2020-08-09
+C0175,Ananya Khan,Individual,Salaried - Private,Healthcare,West Bengal,Retail Banking,Near Prime,A,66000,Anita Rao,2023-02-18
+C0176,Patel Manufacturing Traders,SME,Partnership,Manufacturing,Kerala,SME Banking,SME Emerging,A,477000,Rahul Verma,2022-11-26
+C0177,Shetty IT Enterprises,SME,Proprietorship,IT Services,West Bengal,SME Banking,SME Emerging,A,3301000,Karthik Iyer,2022-12-07
+C0178,Khan Logistics Traders,SME,Private Limited,Logistics & Transport,Gujarat,SME Banking,SME Core,A,1888000,Sana Qureshi,2021-06-18
+C0179,Arjun Iyer,Individual,Salaried - Private,IT / Software,Kerala,Retail Banking,Prime,B,193000,Karthik Iyer,2024-09-30
+C0180,Ananya Rao,Individual,Gig / Platform Worker,Gig Economy,Maharashtra,Retail Banking,Near Prime,B,30000,Rahul Verma,2024-11-23
+C0181,Iyer Construction Industries,SME,Partnership,Construction,Kerala,SME Banking,SME Emerging,A,1083000,Rahul Verma,2019-06-17
+C0182,Menon Agri-processing Industries,SME,Private Limited,Agri-processing,Maharashtra,SME Banking,SME Core,A,3100000,Karthik Iyer,2019-12-13
+C0183,Vikram Iyer,Individual,Salaried - Private,Manufacturing,Kerala,Retail Banking,Prime,C,187000,Sana Qureshi,2022-06-28
+C0184,Priya Menon,Individual,Salaried - Private,IT / Software,West Bengal,Retail Banking,Near Prime,B,74000,Vikram Shah,2023-06-12
+C0185,Shetty Food & Sons,SME,Proprietorship,Food & Beverage,Maharashtra,SME Banking,SME Core,A,2201000,Rahul Verma,2020-06-19
+C0186,Mehta Logistics & Sons,SME,Partnership,Logistics & Transport,Uttar Pradesh,SME Banking,SME Emerging,C,544000,Anita Rao,2022-11-04
+C0187,Meera Rao,Individual,Salaried - Private,IT / Software,Maharashtra,Retail Banking,Near Prime,B,162000,Vikram Shah,2025-03-04
+C0188,Divya Pillai,Individual,Salaried - Private,Manufacturing,West Bengal,Retail Banking,Near Prime,C,101000,Meera Pillai,2022-02-05
+C0189,Neha Chawla,Individual,Salaried - Private,Retail,Telangana,Retail Banking,Prime,A,76000,Vikram Shah,2020-06-18
+C0190,Bose Agri-processing Enterprises,SME,Proprietorship,Agri-processing,Gujarat,SME Banking,SME Emerging,C,3583000,Sana Qureshi,2021-07-16
+C0191,Neha Reddy,Individual,Gig / Platform Worker,Gig Economy,Tamil Nadu,Retail Banking,Near Prime,B,30000,Sana Qureshi,2020-02-26
+C0192,Isha Gupta,Individual,Salaried - Private,IT / Software,West Bengal,Retail Banking,Prime,B,114000,Rahul Verma,2019-06-14
+C0193,Manoj Verma,Individual,Salaried - Private,IT / Software,Gujarat,Retail Banking,Near Prime,A,25000,Karthik Iyer,2023-05-28
+C0194,Arjun Rao,Individual,Salaried - Government,Public Sector,Karnataka,Retail Banking,Near Prime,A,153000,Meera Pillai,2020-08-31
+C0195,Kavya Reddy,Individual,Salaried - Government,Public Sector,Kerala,Retail Banking,Prime,A,146000,Sana Qureshi,2024-11-04
+C0196,Neha Chawla,Individual,Salaried - Private,IT / Software,Kerala,Retail Banking,Near Prime,A,128000,Meera Pillai,2023-11-10
+C0197,Karthik Chawla,Individual,Self-employed Professional,Legal & Consulting,Telangana,Retail Banking,Prime,C,215000,Anita Rao,2022-05-11
+C0198,Joshi Construction Industries,SME,Partnership,Construction,Tamil Nadu,SME Banking,SME Emerging,A,2892000,Sana Qureshi,2021-08-01
+C0199,Karthik Das,Individual,Salaried - Government,Public Sector,Tamil Nadu,Retail Banking,Near Prime,C,75000,Sana Qureshi,2019-07-25
+C0200,Pooja Shetty,Individual,Salaried - Government,Education,Karnataka,Retail Banking,Near Prime,B,87000,Sana Qureshi,2019-12-26
+C0201,Singh IT Enterprises,SME,Partnership,IT Services,Uttar Pradesh,SME Banking,SME Core,A,2748000,Sana Qureshi,2020-03-27
+C0202,Bose Manufacturing Enterprises,SME,Partnership,Manufacturing,Karnataka,SME Banking,SME Core,A,602000,Karthik Iyer,2023-07-11
+C0203,Manoj Verma,Individual,Salaried - Private,Banking & Finance,Uttar Pradesh,Retail Banking,Prime,B,55000,Meera Pillai,2024-07-11
+C0204,Gupta Food Enterprises,SME,Proprietorship,Food & Beverage,Kerala,SME Banking,SME Core,C,1931000,Anita Rao,2019-08-05
+C0205,Divya Kulkarni,Individual,Salaried - Private,IT / Software,Delhi NCR,Retail Banking,Prime,A,141000,Meera Pillai,2019-07-13
+C0206,Arjun Verma,Individual,Salaried - Government,Education,Gujarat,Retail Banking,Prime,A,122000,Vikram Shah,2022-08-31
+C0207,Naidu Food Enterprises,SME,Proprietorship,Food & Beverage,Tamil Nadu,SME Banking,SME Emerging,A,1579000,Rahul Verma,2024-03-24
+C0208,Aarav Gupta,Individual,Gig / Platform Worker,Gig Economy,Karnataka,Retail Banking,Prime,B,25000,Karthik Iyer,2020-04-25
+C0209,Iyer Textiles Industries,SME,Proprietorship,Textiles,Karnataka,SME Banking,SME Core,B,1587000,Anita Rao,2018-11-12
+C0210,Rajesh Singh,Individual,Salaried - Government,Public Sector,Kerala,Retail Banking,Prime,A,91000,Meera Pillai,2023-08-22
+C0211,Suresh Verma,Individual,Salaried - Private,IT / Software,Delhi NCR,Retail Banking,Near Prime,C,103000,Karthik Iyer,2024-08-31
+C0212,Kavya Pillai,Individual,Salaried - Private,Banking & Finance,Telangana,Retail Banking,Near Prime,A,52000,Vikram Shah,2021-06-04
+C0213,Verma Logistics Traders,SME,Proprietorship,Logistics & Transport,Karnataka,SME Banking,SME Emerging,A,2111000,Anita Rao,2022-05-02
+C0214,Ananya Chawla,Individual,Salaried - Government,Education,Tamil Nadu,Retail Banking,Near Prime,B,97000,Sana Qureshi,2018-10-03
+C0215,Rajesh Gupta,Individual,Salaried - Government,Education,Gujarat,Retail Banking,Near Prime,B,45000,Rahul Verma,2021-02-04
+C0216,Rohan Sharma,Individual,Salaried - Government,Public Sector,Kerala,Retail Banking,Near Prime,C,149000,Anita Rao,2020-08-17
+C0217,Vikram Reddy,Individual,Salaried - Government,Education,Telangana,Retail Banking,Prime,B,207000,Vikram Shah,2024-10-14
+C0218,Vikram Nair,Individual,Salaried - Private,Healthcare,Gujarat,Retail Banking,Prime,B,81000,Meera Pillai,2024-03-03
+C0219,Meera Iyer,Individual,Salaried - Private,Retail,Telangana,Retail Banking,Prime,C,60000,Sana Qureshi,2021-01-17
+C0220,Shetty Logistics Enterprises,SME,Private Limited,Logistics & Transport,Tamil Nadu,SME Banking,SME Core,B,2120000,Sana Qureshi,2023-02-27
+C0221,Manoj Verma,Individual,Salaried - Government,Education,Telangana,Retail Banking,Near Prime,A,205000,Sana Qureshi,2021-07-11
+C0222,Meera Reddy,Individual,Salaried - Private,Banking & Finance,Telangana,Retail Banking,Prime,B,172000,Karthik Iyer,2020-07-13
+C0223,Sharma Manufacturing Traders,SME,Private Limited,Manufacturing,Tamil Nadu,SME Banking,SME Core,A,2776000,Vikram Shah,2019-02-11
+C0224,Suresh Sharma,Individual,Self-employed Professional,Healthcare,West Bengal,Retail Banking,Prime,C,122000,Karthik Iyer,2020-08-30
+C0225,Rohan Verma,Individual,Gig / Platform Worker,Gig Economy,Delhi NCR,Retail Banking,Near Prime,B,25000,Rahul Verma,2022-11-18
+C0226,Pooja Rao,Individual,Salaried - Private,Retail,Tamil Nadu,Retail Banking,Prime,B,120000,Sana Qureshi,2022-07-04
+C0227,Menon Logistics Traders,SME,Proprietorship,Logistics & Transport,Uttar Pradesh,SME Banking,SME Core,B,1868000,Rahul Verma,2021-01-18
+C0228,Reddy Retail Traders,SME,Private Limited,Retail & Trading,Delhi NCR,SME Banking,SME Emerging,A,1096000,Meera Pillai,2020-04-30
+C0229,Karthik Menon,Individual,Salaried - Private,Banking & Finance,West Bengal,Retail Banking,Prime,B,78000,Meera Pillai,2026-09-03
+C0230,Rohan Pillai,Individual,Salaried - Private,Manufacturing,West Bengal,Retail Banking,Prime,C,208000,Sana Qureshi,2020-06-04
+C0231,Gupta Logistics Enterprises,SME,Partnership,Logistics & Transport,Telangana,SME Banking,SME Core,A,1571000,Meera Pillai,2020-09-23
+C0232,Arjun Khan,Individual,Gig / Platform Worker,Gig Economy,Gujarat,Retail Banking,Near Prime,C,34000,Vikram Shah,2020-12-03
+C0233,Pillai IT Traders,SME,Proprietorship,IT Services,Maharashtra,SME Banking,SME Core,C,1887000,Rahul Verma,2023-11-27
+C0234,Aarav Kulkarni,Individual,Salaried - Private,IT / Software,Delhi NCR,Retail Banking,Near Prime,A,68000,Rahul Verma,2025-02-21
+C0235,Das IT Traders,SME,Partnership,IT Services,Uttar Pradesh,SME Banking,SME Core,A,1934000,Sana Qureshi,2023-01-30
+C0236,Shetty Retail Industries,SME,Private Limited,Retail & Trading,Kerala,SME Banking,SME Emerging,A,2633000,Vikram Shah,2022-07-08
+C0237,Gupta Retail Enterprises,SME,Proprietorship,Retail & Trading,Karnataka,SME Banking,SME Core,B,3802000,Sana Qureshi,2020-12-10
+C0238,Rao Retail Industries,SME,Private Limited,Retail & Trading,Gujarat,SME Banking,SME Core,C,289000,Karthik Iyer,2023-06-11
+C0239,Isha Sharma,Individual,Salaried - Private,Retail,Karnataka,Retail Banking,Near Prime,A,129000,Anita Rao,2026-08-26
+C0240,Arjun Chawla,Individual,Salaried - Private,Banking & Finance,Delhi NCR,Retail Banking,Prime,B,177000,Meera Pillai,2023-06-09
+C0241,Verma Agri-processing Traders,SME,Partnership,Agri-processing,Uttar Pradesh,SME Banking,SME Core,A,3781000,Sana Qureshi,2024-11-22
+C0242,Verma Food Traders,SME,Private Limited,Food & Beverage,Telangana,SME Banking,SME Emerging,A,703000,Meera Pillai,2021-04-19
+C0243,Kavya Shetty,Individual,Salaried - Private,Retail,Maharashtra,Retail Banking,Near Prime,A,129000,Meera Pillai,2020-04-25
+C0244,Bose IT Enterprises,SME,Partnership,IT Services,West Bengal,SME Banking,SME Core,A,4241000,Sana Qureshi,2021-05-15
+C0245,Khan Textiles Traders,SME,Proprietorship,Textiles,Maharashtra,SME Banking,SME Emerging,B,969000,Vikram Shah,2018-11-05
+C0246,Pooja Joshi,Individual,Salaried - Private,Healthcare,Kerala,Retail Banking,Near Prime,A,181000,Karthik Iyer,2023-05-23
+C0247,Suresh Chawla,Individual,Salaried - Government,Public Sector,Karnataka,Retail Banking,Near Prime,B,138000,Vikram Shah,2023-03-27
+C0248,Rohan Rao,Individual,Salaried - Private,Healthcare,Uttar Pradesh,Retail Banking,Prime,B,49000,Karthik Iyer,2018-09-26
+C0249,Gupta Textiles Traders,SME,Private Limited,Textiles,Tamil Nadu,SME Banking,SME Emerging,C,3698000,Karthik Iyer,2023-05-20
+C0250,Reddy Construction Enterprises,SME,Partnership,Construction,West Bengal,SME Banking,SME Core,C,772000,Anita Rao,2019-11-04
+C0251,Vikram Reddy,Individual,Salaried - Private,IT / Software,Uttar Pradesh,Retail Banking,Prime,A,143000,Meera Pillai,2020-07-22
+C0252,Reddy Retail Enterprises,SME,Proprietorship,Retail & Trading,Telangana,SME Banking,SME Emerging,B,4330000,Rahul Verma,2023-07-19
+C0253,Imran Das,Individual,Salaried - Private,Banking & Finance,Kerala,Retail Banking,Near Prime,B,168000,Vikram Shah,2024-06-11
+C0254,Neha Verma,Individual,Salaried - Government,Education,Tamil Nadu,Retail Banking,Prime,A,212000,Sana Qureshi,2024-08-29
+C0255,Imran Mehta,Individual,Salaried - Private,Healthcare,Karnataka,Retail Banking,Prime,B,97000,Sana Qureshi,2020-03-01
+C0256,Reddy Textiles Enterprises,SME,Partnership,Textiles,West Bengal,SME Banking,SME Core,A,1075000,Meera Pillai,2020-06-22
+C0257,Isha Verma,Individual,Salaried - Government,Public Sector,Maharashtra,Retail Banking,Near Prime,B,28000,Rahul Verma,2021-09-28
+C0258,Menon IT Traders,SME,Private Limited,IT Services,Karnataka,SME Banking,SME Core,B,2519000,Vikram Shah,2024-12-14
+C0259,Rohan Menon,Individual,Salaried - Government,Public Sector,Tamil Nadu,Retail Banking,Near Prime,A,201000,Anita Rao,2023-03-01
+C0260,Vikram Bose,Individual,Salaried - Government,Public Sector,Karnataka,Retail Banking,Prime,B,141000,Meera Pillai,2022-08-09
+C0261,Farhan Mehta,Individual,Salaried - Private,IT / Software,Karnataka,Retail Banking,Near Prime,B,30000,Rahul Verma,2026-08-03
+C0262,Ananya Bose,Individual,Salaried - Government,Education,West Bengal,Retail Banking,Prime,B,207000,Sana Qureshi,2020-07-03
+C0263,Singh Retail Traders,SME,Proprietorship,Retail & Trading,Maharashtra,SME Banking,SME Core,A,2646000,Vikram Shah,2021-04-25
+C0264,Karthik Pillai,Individual,Salaried - Government,Public Sector,Gujarat,Retail Banking,Prime,B,168000,Vikram Shah,2023-05-06
+C0265,Rohan Bose,Individual,Gig / Platform Worker,Gig Economy,Delhi NCR,Retail Banking,Near Prime,C,61000,Vikram Shah,2023-08-21
+C0266,Sharma Manufacturing & Sons,SME,Partnership,Manufacturing,Gujarat,SME Banking,SME Emerging,C,1034000,Karthik Iyer,2018-10-01
+C0267,Joshi Agri-processing Traders,SME,Partnership,Agri-processing,Delhi NCR,SME Banking,SME Emerging,B,683000,Meera Pillai,2024-04-07
+C0268,Neha Shetty,Individual,Gig / Platform Worker,Gig Economy,Telangana,Retail Banking,Prime,C,60000,Karthik Iyer,2022-05-30
+C0269,Naidu Food Traders,SME,Proprietorship,Food & Beverage,Gujarat,SME Banking,SME Core,B,2597000,Meera Pillai,2021-10-30
+C0270,Bose Textiles Industries,SME,Partnership,Textiles,Tamil Nadu,SME Banking,SME Core,A,287000,Rahul Verma,2022-02-28
+C0271,Das Agri-processing Traders,SME,Proprietorship,Agri-processing,Uttar Pradesh,SME Banking,SME Core,B,1488000,Vikram Shah,2026-06-30
+C0272,Chawla Textiles Traders,SME,Private Limited,Textiles,Uttar Pradesh,SME Banking,SME Core,A,1723000,Karthik Iyer,2019-04-14
+C0273,Neha Nair,Individual,Salaried - Private,Banking & Finance,Gujarat,Retail Banking,Prime,B,68000,Karthik Iyer,2024-07-26
+C0274,Farhan Nair,Individual,Gig / Platform Worker,Gig Economy,Telangana,Retail Banking,Near Prime,A,37000,Karthik Iyer,2024-10-17
+C0275,Pooja Sharma,Individual,Self-employed Professional,Education,Tamil Nadu,Retail Banking,Prime,A,81000,Meera Pillai,2018-10-23
+C0276,Das Retail Enterprises,SME,Partnership,Retail & Trading,Delhi NCR,SME Banking,SME Core,B,3288000,Rahul Verma,2022-07-07
+C0277,Pooja Verma,Individual,Salaried - Private,Healthcare,Telangana,Retail Banking,Prime,B,182000,Vikram Shah,2021-10-16
+C0278,Sharma Manufacturing & Sons,SME,Partnership,Manufacturing,Tamil Nadu,SME Banking,SME Core,B,3271000,Anita Rao,2024-02-06
+C0279,Rajesh Gupta,Individual,Salaried - Private,Banking & Finance,Gujarat,Retail Banking,Near Prime,B,187000,Vikram Shah,2021-11-04
+C0280,Neha Kulkarni,Individual,Salaried - Private,Banking & Finance,Gujarat,Retail Banking,Near Prime,A,64000,Rahul Verma,2024-10-01
+C0281,Chawla Textiles Industries,SME,Private Limited,Textiles,Karnataka,SME Banking,SME Emerging,A,414000,Sana Qureshi,2019-02-09
+C0282,Shetty Agri-processing & Sons,SME,Partnership,Agri-processing,Kerala,SME Banking,SME Core,A,334000,Anita Rao,2023-07-02
+C0283,Vikram Kulkarni,Individual,Salaried - Private,Retail,Uttar Pradesh,Retail Banking,Near Prime,B,107000,Meera Pillai,2023-10-20
+C0284,Rajesh Mehta,Individual,Salaried - Government,Public Sector,Tamil Nadu,Retail Banking,Prime,A,162000,Vikram Shah,2021-04-29
+C0285,Manoj Singh,Individual,Salaried - Private,Manufacturing,Karnataka,Retail Banking,Near Prime,C,195000,Rahul Verma,2022-03-23
+C0286,Bose Manufacturing Traders,SME,Private Limited,Manufacturing,Maharashtra,SME Banking,SME Emerging,A,1565000,Anita Rao,2025-01-17
+C0287,Pooja Singh,Individual,Gig / Platform Worker,Gig Economy,Telangana,Retail Banking,Near Prime,C,59000,Rahul Verma,2022-07-01
+C0288,Bose IT Industries,SME,Proprietorship,IT Services,Uttar Pradesh,SME Banking,SME Core,A,1773000,Vikram Shah,2018-10-03
+C0289,Khan IT & Sons,SME,Proprietorship,IT Services,Uttar Pradesh,SME Banking,SME Core,A,1233000,Karthik Iyer,2021-12-12
+C0290,Rajesh Bose,Individual,Salaried - Private,Banking & Finance,Maharashtra,Retail Banking,Near Prime,B,32000,Anita Rao,2018-10-13
+C0291,Isha Das,Individual,Salaried - Private,Healthcare,Telangana,Retail Banking,Prime,B,171000,Rahul Verma,2020-03-24
+C0292,Reddy Manufacturing Enterprises,SME,Partnership,Manufacturing,Tamil Nadu,SME Banking,SME Emerging,A,1931000,Vikram Shah,2022-06-03
+C0293,Gupta Construction Traders,SME,Private Limited,Construction,Karnataka,SME Banking,SME Core,A,2012000,Anita Rao,2021-07-16
+C0294,Neha Menon,Individual,Salaried - Private,Manufacturing,Uttar Pradesh,Retail Banking,Prime,B,32000,Sana Qureshi,2023-04-18
+C0295,Verma Textiles Industries,SME,Proprietorship,Textiles,Uttar Pradesh,SME Banking,SME Core,A,571000,Meera Pillai,2024-05-03
+C0296,Rao Textiles & Sons,SME,Partnership,Textiles,Kerala,SME Banking,SME Emerging,B,834000,Meera Pillai,2022-07-16
+C0297,Isha Reddy,Individual,Salaried - Private,Healthcare,Tamil Nadu,Retail Banking,Near Prime,C,78000,Karthik Iyer,2022-02-12
+C0298,Kavya Iyer,Individual,Self-employed Professional,Healthcare,Maharashtra,Retail Banking,Prime,A,188000,Karthik Iyer,2024-12-06
+C0299,Khan Retail & Sons,SME,Partnership,Retail & Trading,Telangana,SME Banking,SME Emerging,A,640000,Meera Pillai,2020-04-03
+C0300,Menon Manufacturing Industries,SME,Private Limited,Manufacturing,Delhi NCR,SME Banking,SME Core,B,713000,Vikram Shah,2023-07-24
+C0301,Rajesh Gupta,Individual,Gig / Platform Worker,Gig Economy,Uttar Pradesh,Retail Banking,Near Prime,C,40000,Meera Pillai,2021-01-16
+C0302,Das Construction & Sons,SME,Partnership,Construction,Maharashtra,SME Banking,SME Core,C,2086000,Sana Qureshi,2019-10-06
+C0303,Sharma Agri-processing & Sons,SME,Private Limited,Agri-processing,Tamil Nadu,SME Banking,SME Emerging,C,2430000,Vikram Shah,2024-03-06
+C0304,Meera Menon,Individual,Self-employed Professional,Legal & Consulting,Kerala,Retail Banking,Prime,B,125000,Sana Qureshi,2023-09-03
+C0305,Mehta Textiles Traders,SME,Partnership,Textiles,Tamil Nadu,SME Banking,SME Core,A,1228000,Sana Qureshi,2021-04-08
+C0306,Pillai Textiles & Sons,SME,Proprietorship,Textiles,Kerala,SME Banking,SME Core,B,3077000,Anita Rao,2022-06-07
+C0307,Meera Shetty,Individual,,Manufacturing,Delhi NCR,Retail Banking,Near Prime,A,170000,Karthik Iyer,2026-07-15
+C0308,Gupta IT Industries,SME,Proprietorship,IT Services,Telangana,SME Banking,SME Core,A,724000,Meera Pillai,2019-01-14
+C0309,Verma Textiles Enterprises,SME,Partnership,Textiles,Tamil Nadu,SME Banking,SME Core,A,843000,Anita Rao,2022-09-15
+C0310,Sharma Logistics Industries,SME,Partnership,Logistics & Transport,Delhi NCR,SME Banking,SME Emerging,B,2313000,Meera Pillai,2019-11-01
+C0311,Neha Khan,Individual,Salaried - Government,Public Sector,Maharashtra,Retail Banking,Prime,A,202000,Sana Qureshi,2020-03-03
+C0312,Pillai Textiles Enterprises,SME,Partnership,Textiles,Maharashtra,SME Banking,SME Emerging,C,1880000,Vikram Shah,2022-09-04
+C0313,Meera Verma,Individual,Salaried - Private,Manufacturing,Telangana,Retail Banking,Prime,A,87000,Vikram Shah,2019-01-03
+C0314,Imran Menon,Individual,Salaried - Private,Retail,Telangana,Retail Banking,Near Prime,B,125000,Meera Pillai,2020-07-05
+C0315,Singh Food Enterprises,SME,Partnership,Food & Beverage,West Bengal,SME Banking,SME Emerging,A,2592000,Rahul Verma,2019-10-20
+C0316,Sneha Sharma,Individual,Salaried - Private,Banking & Finance,West Bengal,Retail Banking,Near Prime,B,109000,Vikram Shah,2021-08-11
+C0317,Suresh Iyer,Individual,Gig / Platform Worker,Gig Economy,Delhi NCR,Retail Banking,Prime,C,32000,Anita Rao,2019-10-03
+C0318,Mehta Logistics Enterprises,SME,Partnership,Logistics & Transport,Uttar Pradesh,SME Banking,SME Core,B,495000,Sana Qureshi,2019-01-17
+C0319,Isha Singh,Individual,Self-employed Professional,Education,Maharashtra,Retail Banking,Prime,B,193000,Meera Pillai,2023-08-28
+C0320,Karthik Pillai,Individual,Salaried - Private,Banking & Finance,West Bengal,Retail Banking,Prime,C,92000,Karthik Iyer,2021-12-05
+C0321,Khan Logistics & Sons,SME,Partnership,Logistics & Transport,Telangana,SME Banking,SME Core,B,366000,Vikram Shah,2021-09-15
+C0322,Karthik Chawla,Individual,Salaried - Private,IT / Software,Telangana,Retail Banking,Near Prime,C,61000,Vikram Shah,2024-10-09
+C0323,Sharma Food Industries,SME,Partnership,Food & Beverage,Kerala,SME Banking,SME Emerging,A,2905000,Karthik Iyer,2020-05-10
+C0324,Singh Textiles Enterprises,SME,Private Limited,Textiles,Tamil Nadu,SME Banking,SME Core,C,1436000,Rahul Verma,2021-12-03
+C0325,Meera Joshi,Individual,Gig / Platform Worker,Gig Economy,Maharashtra,Retail Banking,Near Prime,A,36000,Meera Pillai,2021-02-24
+C0326,Arjun Pillai,Individual,Self-employed Professional,Healthcare,Maharashtra,Retail Banking,Near Prime,B,129000,Meera Pillai,2022-09-12
+C0327,Divya Gupta,Individual,Self-employed Professional,Legal & Consulting,Maharashtra,Retail Banking,Prime,C,185000,Anita Rao,2018-12-16
+C0328,Joshi Textiles Industries,SME,Proprietorship,Textiles,Delhi NCR,SME Banking,SME Core,B,1134000,Anita Rao,2024-10-06
+C0329,Iyer Agri-processing & Sons,SME,Private Limited,Agri-processing,Tamil Nadu,SME Banking,SME Emerging,A,1147000,Rahul Verma,2022-03-08
+C0330,Shetty Manufacturing & Sons,SME,Private Limited,Manufacturing,Uttar Pradesh,SME Banking,SME Core,A,2303000,Karthik Iyer,2024-06-20
+C0331,Neha Iyer,Individual,Salaried - Private,IT / Software,Delhi NCR,Retail Banking,Near Prime,A,143000,Rahul Verma,2025-03-03
+C0332,Aarav Menon,Individual,Gig / Platform Worker,Gig Economy,Telangana,Retail Banking,Near Prime,C,47000,Anita Rao,2022-06-10
+C0333,Aarav Pillai,Individual,Gig / Platform Worker,Gig Economy,Delhi NCR,Retail Banking,Prime,C,45000,Meera Pillai,2020-10-03
+C0334,Khan Construction Industries,SME,Proprietorship,Construction,Kerala,SME Banking,SME Core,A,2935000,Sana Qureshi,2021-01-12
+C0335,Verma Textiles Industries,SME,Proprietorship,Textiles,Tamil Nadu,SME Banking,SME Core,A,3708000,Meera Pillai,2019-11-30
+C0336,Das Textiles Enterprises,SME,Partnership,Textiles,Karnataka,SME Banking,SME Emerging,C,505000,Vikram Shah,2021-10-07
+C0337,Rajesh Bose,Individual,Salaried - Government,Public Sector,West Bengal,Retail Banking,Near Prime,B,108000,Sana Qureshi,2018-08-25
+C0338,Iyer IT Traders,SME,Partnership,IT Services,Gujarat,SME Banking,SME Emerging,A,3138000,Meera Pillai,2024-05-29
+C0339,Lakshmi Nair,Individual,Salaried - Government,Public Sector,Gujarat,Retail Banking,Near Prime,A,141000,Sana Qureshi,2018-09-16
+C0340,Pooja Sharma,Individual,Salaried - Government,Public Sector,West Bengal,Retail Banking,Prime,B,181000,Karthik Iyer,2025-01-29
+C0341,Shetty Textiles Traders,SME,Proprietorship,Textiles,Karnataka,SME Banking,SME Emerging,B,3323000,Sana Qureshi,2023-01-26
+C0342,Menon Manufacturing Traders,SME,Partnership,Manufacturing,Gujarat,SME Banking,SME Core,A,3735000,Rahul Verma,2021-06-30
+C0343,Suresh Rao,Individual,Gig / Platform Worker,Gig Economy,Delhi NCR,Retail Banking,Prime,A,65000,Rahul Verma,2020-08-02
+C0344,Mehta Retail & Sons,SME,Partnership,Retail & Trading,West Bengal,SME Banking,SME Core,B,3582000,Meera Pillai,2024-12-15
+C0345,Imran Verma,Individual,Salaried - Private,IT / Software,Delhi NCR,Retail Banking,Near Prime,B,84000,Anita Rao,2024-08-17
+C0346,Menon Textiles Traders,SME,Partnership,Textiles,Gujarat,SME Banking,SME Emerging,C,3920000,Sana Qureshi,2022-06-19
+C0347,Manoj Das,Individual,Salaried - Government,Public Sector,Gujarat,Retail Banking,Near Prime,C,34000,Sana Qureshi,2020-03-06
+C0348,Farhan Naidu,Individual,Salaried - Government,Public Sector,Maharashtra,Retail Banking,Near Prime,B,39000,Karthik Iyer,2020-12-31
+C0349,Singh Food Traders,SME,Partnership,Food & Beverage,Delhi NCR,SME Banking,SME Core,B,3357000,Karthik Iyer,2022-07-22
+C0350,Nair Logistics Traders,SME,Private Limited,Logistics & Transport,Tamil Nadu,SME Banking,SME Core,B,3256000,Anita Rao,2020-11-08
+C0351,Chawla IT Traders,SME,Private Limited,IT Services,Maharashtra,SME Banking,SME Emerging,C,2927000,Rahul Verma,2021-08-19
+C0352,Farhan Khan,Individual,Salaried - Private,Manufacturing,Kerala,Retail Banking,Near Prime,B,36000,Meera Pillai,2021-12-13
+C0353,Pillai Logistics Enterprises,SME,Proprietorship,Logistics & Transport,Kerala,SME Banking,SME Emerging,B,2593000,Anita Rao,2022-10-27
+C0354,Neha Khan,Individual,Salaried - Government,Education,Delhi NCR,Retail Banking,Near Prime,B,214000,Sana Qureshi,2023-04-03
+C0355,Farhan Singh,Individual,Gig / Platform Worker,Gig Economy,Maharashtra,Retail Banking,Prime,A,37000,Anita Rao,2019-05-28
+C0356,Kavya Kulkarni,Individual,Salaried - Private,Manufacturing,Kerala,Retail Banking,Near Prime,A,81000,Rahul Verma,2021-01-25
+C0357,Kavya Patel,Individual,Salaried - Private,Healthcare,Delhi NCR,Retail Banking,Prime,A,164000,Sana Qureshi,2023-11-09
+C0358,Rao Manufacturing Traders,SME,Private Limited,Manufacturing,Delhi NCR,SME Banking,SME Emerging,C,1399000,Anita Rao,2021-01-11
+C0359,Karthik Reddy,Individual,Self-employed Professional,Education,Tamil Nadu,Retail Banking,Prime,B,129000,Anita Rao,2023-10-27
+C0360,Rohan Pillai,Individual,Salaried - Private,Banking & Finance,Tamil Nadu,Retail Banking,Near Prime,C,98000,Meera Pillai,2024-03-01
+C0361,Gupta IT Industries,SME,Partnership,IT Services,Maharashtra,SME Banking,SME Emerging,B,1200000,Anita Rao,2020-01-10
+C0362,Arjun Mehta,Individual,Gig / Platform Worker,Gig Economy,Telangana,Retail Banking,Near Prime,A,41000,Rahul Verma,2020-01-22
+C0363,Neha Joshi,Individual,Salaried - Private,Retail,Kerala,Retail Banking,Prime,C,207000,Karthik Iyer,2021-01-19
+C0364,Sneha Pillai,Individual,Salaried - Private,Manufacturing,Gujarat,Retail Banking,Prime,A,158000,Karthik Iyer,2024-06-08
+C0365,Kavya Shetty,Individual,Self-employed Professional,Legal & Consulting,Tamil Nadu,Retail Banking,Near Prime,B,54000,Karthik Iyer,2018-12-12
+C0366,Arjun Shetty,Individual,Salaried - Government,Public Sector,West Bengal,Retail Banking,Prime,A,137000,Karthik Iyer,2024-09-08
+C0367,Priya Chawla,Individual,Salaried - Private,Manufacturing,Karnataka,Retail Banking,Near Prime,B,120000,Karthik Iyer,2023-07-20
+C0368,Isha Shetty,Individual,Salaried - Private,Manufacturing,Gujarat,Retail Banking,Prime,C,79000,Karthik Iyer,2019-05-26
+C0369,Sharma Agri-processing Traders,SME,Private Limited,Agri-processing,Delhi NCR,SME Banking,SME Emerging,A,2152000,Sana Qureshi,2020-03-30
+C0370,Priya Bose,Individual,Salaried - Government,Education,Uttar Pradesh,Retail Banking,Prime,B,28000,Anita Rao,2018-11-08
+C0371,Joshi Construction & Sons,SME,Partnership,Construction,Telangana,SME Banking,SME Core,C,2666000,Rahul Verma,2019-12-01
+C0372,Ananya Gupta,Individual,Salaried - Private,Retail,West Bengal,Retail Banking,Near Prime,A,138000,Vikram Shah,2024-02-08
+C0373,Khan Manufacturing Industries,SME,Private Limited,Manufacturing,Karnataka,SME Banking,SME Emerging,A,1999000,Sana Qureshi,2024-08-28
+C0374,Farhan Singh,Individual,Self-employed Professional,Legal & Consulting,Delhi NCR,Retail Banking,Near Prime,B,186000,Rahul Verma,2022-02-14
+C0375,Patel Logistics Traders,SME,Partnership,Logistics & Transport,Maharashtra,SME Banking,SME Core,A,547000,Anita Rao,2024-06-23
+C0376,Joshi IT & Sons,SME,Partnership,IT Services,Kerala,SME Banking,SME Core,B,3159000,Karthik Iyer,2018-10-22
+C0377,Chawla Logistics Traders,SME,Private Limited,Logistics & Transport,Uttar Pradesh,SME Banking,SME Core,B,1781000,Anita Rao,2025-01-26
+C0378,Meera Nair,Individual,Gig / Platform Worker,Gig Economy,Telangana,Retail Banking,Prime,B,47000,Vikram Shah,2023-10-20
+C0379,Lakshmi Menon,Individual,Self-employed Professional,Healthcare,West Bengal,Retail Banking,Near Prime,A,150000,Rahul Verma,2020-07-12
+C0380,Divya Kulkarni,Individual,Gig / Platform Worker,Gig Economy,Gujarat,Retail Banking,Near Prime,B,39000,Sana Qureshi,2024-01-26
+C0381,Chawla Manufacturing & Sons,SME,Proprietorship,Manufacturing,Uttar Pradesh,SME Banking,SME Emerging,B,3817000,Vikram Shah,2024-01-14
+C0382,Suresh Pillai,Individual,Salaried - Private,Banking & Finance,Gujarat,Retail Banking,Near Prime,C,67000,Vikram Shah,2023-08-21
+C0383,Reddy Logistics Enterprises,SME,Private Limited,Logistics & Transport,Karnataka,SME Banking,SME Emerging,B,2135000,Anita Rao,2020-08-06
+C0384,Bose Logistics & Sons,SME,Proprietorship,Logistics & Transport,Tamil Nadu,SME Banking,SME Emerging,A,747000,Sana Qureshi,2023-04-17
+C0385,Verma Textiles & Sons,SME,Partnership,Textiles,Karnataka,SME Banking,SME Core,C,2356000,Anita Rao,2026-07-05
+C0386,Pillai Logistics Enterprises,SME,Proprietorship,Logistics & Transport,Delhi NCR,SME Banking,SME Emerging,A,3185000,Meera Pillai,2022-01-27
+C0387,Lakshmi Chawla,Individual,Salaried - Private,Retail,Telangana,Retail Banking,Prime,C,199000,Anita Rao,2024-01-02
+C0388,Reddy Construction & Sons,SME,Proprietorship,Construction,West Bengal,SME Banking,SME Emerging,C,2800000,Rahul Verma,2021-08-08
+C0389,Kulkarni IT Industries,SME,Partnership,IT Services,West Bengal,SME Banking,SME Core,B,886000,Anita Rao,2023-03-19
+C0390,Kavya Verma,Individual,Salaried - Private,Healthcare,Delhi NCR,Retail Banking,Prime,A,55000,Meera Pillai,2023-08-05
+C0391,Isha Iyer,Individual,Gig / Platform Worker,Gig Economy,Maharashtra,Retail Banking,Near Prime,B,47000,Vikram Shah,2021-11-12
+C0392,Suresh Verma,Individual,Salaried - Government,Education,Uttar Pradesh,Retail Banking,Near Prime,A,65000,Anita Rao,2024-04-03
+C0393,Joshi Agri-processing Traders,SME,Private Limited,Agri-processing,Tamil Nadu,SME Banking,SME Core,A,1132000,Rahul Verma,2024-07-28
+C0394,Kavya Patel,Individual,Salaried - Private,Retail,Karnataka,Retail Banking,Near Prime,A,108000,Vikram Shah,2020-12-02
+C0395,Farhan Kulkarni,Individual,Salaried - Government,Education,Maharashtra,Retail Banking,Prime,A,89000,Sana Qureshi,2022-10-11
+C0396,Imran Nair,Individual,Salaried - Private,Healthcare,Tamil Nadu,Retail Banking,Prime,A,190000,Anita Rao,2020-09-25
+C0397,Ananya Naidu,Individual,Gig / Platform Worker,Gig Economy,Kerala,Retail Banking,Prime,C,24000,Rahul Verma,2024-10-08
+C0398,Divya Mehta,Individual,Salaried - Government,Education,Uttar Pradesh,Retail Banking,Prime,B,40000,Sana Qureshi,2020-04-30
+C0399,Farhan Khan,Individual,Salaried - Private,Banking & Finance,Delhi NCR,Retail Banking,Near Prime,B,138000,Sana Qureshi,2023-06-17
+C0400,Shetty Logistics Traders,SME,Proprietorship,Logistics & Transport,Maharashtra,SME Banking,SME Emerging,C,824000,Rahul Verma,2020-03-25
+C0401,Farhan Naidu,Individual,Gig / Platform Worker,Gig Economy,Delhi NCR,Retail Banking,Prime,A,44000,Sana Qureshi,2024-10-10
+C0402,Gupta Retail Industries,SME,Partnership,Retail & Trading,Maharashtra,SME Banking,SME Core,A,1319000,Anita Rao,2023-10-12
+C0403,Nair Manufacturing Traders,SME,Proprietorship,Manufacturing,Tamil Nadu,SME Banking,SME Emerging,A,1526000,Meera Pillai,2022-12-02
+C0404,Menon IT Industries,SME,Proprietorship,IT Services,Tamil Nadu,SME Banking,SME Emerging,A,2776000,Karthik Iyer,2019-04-05
+C0405,Das Agri-processing Enterprises,SME,Partnership,Agri-processing,Kerala,SME Banking,SME Core,B,685000,Karthik Iyer,2019-12-13
+C0406,Nair Agri-processing Industries,SME,Private Limited,Agri-processing,West Bengal,SME Banking,SME Emerging,A,3837000,Rahul Verma,2019-02-21
+C0407,Suresh Kulkarni,Individual,Self-employed Professional,Education,Gujarat,Retail Banking,Near Prime,B,47000,Sana Qureshi,2025-02-06
+C0408,Kavya Rao,Individual,Self-employed Professional,Education,West Bengal,Retail Banking,Prime,A,85000,Karthik Iyer,2022-01-02
+C0409,Rajesh Sharma,Individual,Gig / Platform Worker,Gig Economy,Karnataka,Retail Banking,Prime,C,42000,Vikram Shah,2021-06-30
+C0410,Mehta Construction Traders,SME,Proprietorship,Construction,Tamil Nadu,SME Banking,SME Emerging,A,4020000,Anita Rao,2023-02-05
+C0411,Nair Manufacturing & Sons,SME,Partnership,Manufacturing,Karnataka,SME Banking,SME Emerging,B,2801000,Rahul Verma,2021-09-14
+C0412,Rao Food & Sons,SME,Proprietorship,Food & Beverage,Maharashtra,SME Banking,SME Emerging,A,1000000,Rahul Verma,2024-03-22
+C0413,Rajesh Pillai,Individual,Salaried - Private,Manufacturing,Karnataka,Retail Banking,Near Prime,A,106000,Rahul Verma,2024-07-13
+C0414,Pooja Chawla,Individual,Gig / Platform Worker,Gig Economy,Delhi NCR,Retail Banking,Near Prime,B,30000,Anita Rao,2020-07-11
+C0415,Neha Bose,Individual,Salaried - Private,Healthcare,Telangana,Retail Banking,Near Prime,A,208000,Rahul Verma,2018-12-21
+C0416,Verma IT & Sons,SME,Proprietorship,IT Services,Karnataka,SME Banking,SME Emerging,B,674000,Meera Pillai,2023-01-31
+C0417,Suresh Chawla,Individual,Self-employed Professional,Healthcare,Telangana,Retail Banking,Near Prime,B,129000,Sana Qureshi,2020-10-16
+C0418,Ananya Verma,Individual,Self-employed Professional,Healthcare,Uttar Pradesh,Retail Banking,Near Prime,A,92000,Sana Qureshi,2022-03-03
+C0419,Priya Sharma,Individual,Salaried - Private,Healthcare,Gujarat,Retail Banking,Near Prime,A,205000,Karthik Iyer,2022-11-24
+C0420,Sneha Nair,Individual,Salaried - Government,Public Sector,Gujarat,Retail Banking,Prime,A,201000,Rahul Verma,2018-10-14
+C0421,Kavya Gupta,Individual,Salaried - Private,Healthcare,Gujarat,Retail Banking,Near Prime,B,67000,Karthik Iyer,2020-08-30
+C0422,Rohan Naidu,Individual,Salaried - Government,Public Sector,Tamil Nadu,Retail Banking,Prime,B,132000,Meera Pillai,2022-08-17
+C0423,Patel Logistics Industries,SME,Proprietorship,Logistics & Transport,Uttar Pradesh,SME Banking,SME Core,C,1291000,Karthik Iyer,2019-10-31
+C0424,Suresh Shetty,Individual,Gig / Platform Worker,Gig Economy,Kerala,Retail Banking,Near Prime,A,33000,Vikram Shah,2023-10-13
+C0425,Sharma IT & Sons,SME,Partnership,IT Services,Uttar Pradesh,SME Banking,SME Emerging,C,2632000,Rahul Verma,2022-05-02
+C0426,Isha Sharma,Individual,Salaried - Private,IT / Software,Gujarat,Retail Banking,Near Prime,B,194000,Anita Rao,2021-06-02
+C0427,Arjun Chawla,Individual,Salaried - Government,Public Sector,Maharashtra,Retail Banking,Prime,C,57000,Anita Rao,2019-07-03
+C0428,Kulkarni Textiles Traders,SME,Proprietorship,Textiles,Karnataka,SME Banking,SME Emerging,B,3377000,Vikram Shah,2021-01-06
+C0429,Farhan Menon,Individual,Salaried - Government,Education,Tamil Nadu,Retail Banking,Prime,C,152000,Meera Pillai,2019-08-23
+C0430,Arjun Khan,Individual,Self-employed Professional,Legal & Consulting,Kerala,Retail Banking,Prime,B,163000,Karthik Iyer,2022-05-14
+C0431,Rao Agri-processing Enterprises,SME,Private Limited,Agri-processing,Uttar Pradesh,SME Banking,SME Core,A,2483000,Rahul Verma,2022-11-20
+C0432,Rajesh Gupta,Individual,Salaried - Government,Public Sector,Kerala,Retail Banking,Prime,C,142000,Meera Pillai,2023-11-02
+C0433,Ananya Naidu,Individual,Salaried - Government,Public Sector,Tamil Nadu,Retail Banking,Prime,A,103000,Karthik Iyer,2020-03-22
+C0434,Aarav Reddy,Individual,Salaried - Private,Manufacturing,Delhi NCR,Retail Banking,Near Prime,B,42000,Meera Pillai,2020-09-10
+C0435,Menon Retail Enterprises,SME,Proprietorship,Retail & Trading,Kerala,SME Banking,SME Core,B,1967000,Rahul Verma,2021-05-07
+C0436,Khan Construction Enterprises,SME,Private Limited,Construction,West Bengal,SME Banking,SME Emerging,A,1779000,Meera Pillai,2022-07-03
+C0437,Khan Manufacturing & Sons,SME,Proprietorship,Manufacturing,Gujarat,SME Banking,SME Core,A,1812000,Meera Pillai,2021-08-04
+C0438,Neha Kulkarni,Individual,Gig / Platform Worker,Gig Economy,Telangana,Retail Banking,Prime,A,42000,Karthik Iyer,2022-06-05
+C0439,Vikram Naidu,Individual,Gig / Platform Worker,Gig Economy,Maharashtra,Retail Banking,Near Prime,C,37000,Sana Qureshi,2019-09-06
+C0440,Das Logistics & Sons,SME,Private Limited,Logistics & Transport,Maharashtra,SME Banking,SME Core,B,905000,Rahul Verma,2023-10-08
+C0441,Suresh Khan,Individual,Salaried - Government,Education,Telangana,Retail Banking,Prime,C,82000,Sana Qureshi,2021-06-09
+C0442,Isha Singh,Individual,Salaried - Private,IT / Software,Delhi NCR,Retail Banking,Near Prime,C,164000,Meera Pillai,2024-06-21
+C0443,Naidu Retail Industries,SME,Private Limited,Retail & Trading,Maharashtra,SME Banking,SME Core,A,2124000,Meera Pillai,2020-09-17
+C0444,Gupta Textiles & Sons,SME,Partnership,Textiles,Kerala,SME Banking,SME Core,A,1477000,Sana Qureshi,2020-10-22
+C0445,Menon Manufacturing & Sons,SME,Proprietorship,Manufacturing,Karnataka,SME Banking,SME Core,A,3167000,Meera Pillai,2024-07-26
+C0446,Priya Rao,Individual,Salaried - Private,Healthcare,Uttar Pradesh,Retail Banking,Prime,C,99000,Anita Rao,2019-06-28
+C0447,Sharma Retail Traders,SME,Private Limited,Retail & Trading,West Bengal,SME Banking,SME Emerging,B,371000,Vikram Shah,2019-10-08
+C0448,Reddy IT Enterprises,SME,Partnership,IT Services,West Bengal,SME Banking,SME Emerging,B,1240000,Sana Qureshi,2022-10-03
+C0449,Imran Reddy,Individual,Salaried - Government,Education,West Bengal,Retail Banking,Prime,A,70000,Karthik Iyer,2024-03-08
+C0450,Arjun Mehta,Individual,Gig / Platform Worker,Gig Economy,Delhi NCR,Retail Banking,Near Prime,A,28000,Sana Qureshi,2021-08-26
+C0451,Neha Gupta,Individual,Salaried - Private,Retail,Tamil Nadu,Retail Banking,Prime,C,112000,Vikram Shah,2026-08-26
+C0452,Suresh Menon,Individual,Self-employed Professional,Education,West Bengal,Retail Banking,Prime,B,64000,Vikram Shah,2020-06-30
+C0453,Divya Menon,Individual,Salaried - Private,Banking & Finance,Kerala,Retail Banking,Near Prime,A,165000,Vikram Shah,2020-07-23
+C0454,Menon Manufacturing Traders,SME,Private Limited,Manufacturing,Karnataka,SME Banking,SME Core,A,577000,Sana Qureshi,2023-07-20
+C0455,Pooja Chawla,Individual,Salaried - Private,Manufacturing,Karnataka,Retail Banking,Near Prime,B,159000,Karthik Iyer,2023-12-30
+C0456,Farhan Bose,Individual,Salaried - Government,Education,Gujarat,Retail Banking,Prime,A,38000,Karthik Iyer,2026-08-17
+C0457,Meera Reddy,Individual,Salaried - Private,Healthcare,Kerala,Retail Banking,Prime,B,204000,Sana Qureshi,2023-01-16
+C0458,Vikram Iyer,Individual,Salaried - Government,Education,Maharashtra,Retail Banking,Near Prime,B,219000,Meera Pillai,2021-03-30
+C0459,Lakshmi Reddy,Individual,Salaried - Private,IT / Software,Gujarat,Retail Banking,Near Prime,B,210000,Karthik Iyer,2020-12-12
+C0460,Rajesh Gupta,Individual,Salaried - Private,IT / Software,Gujarat,Retail Banking,Near Prime,B,190000,Karthik Iyer,2023-02-20
+C0461,Sneha Reddy,Individual,Salaried - Private,IT / Software,Gujarat,Retail Banking,Near Prime,C,175000,Karthik Iyer,2019-11-01
+C0462,Singh Textiles Traders,SME,Partnership,Textiles,Tamil Nadu,SME Banking,SME Emerging,A,1558000,Vikram Shah,2022-07-08
+C0463,Priya Gupta,Individual,Self-employed Professional,Healthcare,Maharashtra,Retail Banking,Prime,B,116000,Rahul Verma,2022-01-10
+C0464,Lakshmi Bose,Individual,Salaried - Government,Education,Maharashtra,Retail Banking,Near Prime,A,161000,Meera Pillai,2021-10-27
+C0465,Imran Bose,Individual,Salaried - Private,Banking & Finance,Gujarat,Retail Banking,Prime,B,187000,Rahul Verma,2019-01-19
+C0466,Singh Agri-processing Enterprises,SME,Private Limited,Agri-processing,Kerala,SME Banking,SME Core,B,2906000,Rahul Verma,2024-11-18
+C0467,Menon Construction & Sons,SME,Private Limited,Construction,Telangana,SME Banking,SME Emerging,A,2846000,Karthik Iyer,2021-11-29
+C0468,Priya Bose,Individual,Salaried - Private,Healthcare,Telangana,Retail Banking,Prime,A,209000,Anita Rao,2024-06-05
+C0469,Iyer Manufacturing Enterprises,SME,Private Limited,Manufacturing,Gujarat,SME Banking,SME Core,A,2211000,Anita Rao,2025-02-24
+C0470,Arjun Reddy,Individual,Salaried - Government,Public Sector,Gujarat,Retail Banking,Near Prime,A,125000,Karthik Iyer,2019-10-08
+C0471,Priya Nair,Individual,Salaried - Private,Healthcare,Kerala,Retail Banking,Near Prime,B,105000,Anita Rao,2023-12-24
+C0472,Nair Textiles & Sons,SME,Partnership,Textiles,Tamil Nadu,SME Banking,SME Core,A,707000,Vikram Shah,2024-01-24
+C0473,Menon Logistics & Sons,SME,Partnership,Logistics & Transport,Delhi NCR,SME Banking,SME Core,C,4011000,Vikram Shah,2020-11-01
+C0474,Naidu Logistics Enterprises,SME,Proprietorship,Logistics & Transport,Uttar Pradesh,SME Banking,SME Core,B,2178000,Anita Rao,2024-07-05
+C0475,Aarav Khan,Individual,Salaried - Private,Banking & Finance,West Bengal,Retail Banking,Prime,A,35000,Sana Qureshi,2024-06-09
+C0476,Kavya Pillai,Individual,Gig / Platform Worker,Gig Economy,Karnataka,Retail Banking,Prime,B,57000,Sana Qureshi,2021-11-13
+C0477,Ananya Gupta,Individual,Salaried - Private,IT / Software,Kerala,Retail Banking,Near Prime,B,52000,Meera Pillai,2019-03-28
+C0478,Joshi Agri-processing & Sons,SME,Partnership,Agri-processing,Kerala,SME Banking,SME Emerging,B,1976000,Meera Pillai,2019-04-08
+C0479,Isha Pillai,Individual,Salaried - Private,Healthcare,Karnataka,Retail Banking,Near Prime,A,214000,Anita Rao,2021-10-30
+C0480,Neha Shetty,Individual,Self-employed Professional,Legal & Consulting,Uttar Pradesh,Retail Banking,Prime,C,155000,Sana Qureshi,2021-10-01
+C0481,Joshi Textiles Traders,SME,Private Limited,Textiles,West Bengal,SME Banking,SME Core,A,788000,Rahul Verma,2021-02-19
+C0482,Divya Khan,Individual,Gig / Platform Worker,Gig Economy,Karnataka,Retail Banking,Near Prime,A,55000,Meera Pillai,2020-11-23
+C0483,Manoj Mehta,Individual,Gig / Platform Worker,Gig Economy,Karnataka,Retail Banking,Near Prime,B,36000,Anita Rao,2022-10-20
+C0484,Singh Retail Traders,SME,Private Limited,Retail & Trading,Telangana,SME Banking,SME Core,B,2266000,Rahul Verma,2021-06-16
+C0485,Chawla Agri-processing Enterprises,SME,Private Limited,Agri-processing,Maharashtra,SME Banking,SME Emerging,B,3356000,Meera Pillai,2022-10-16
+C0486,Singh Retail Industries,SME,Private Limited,Retail & Trading,Uttar Pradesh,SME Banking,SME Emerging,B,1467000,Anita Rao,2019-01-26
+C0487,Sneha Shetty,Individual,Salaried - Private,Retail,Gujarat,Retail Banking,Prime,A,209000,Vikram Shah,2021-09-24
+C0488,Bose Logistics Traders,SME,Proprietorship,Logistics & Transport,Telangana,SME Banking,SME Core,A,1958000,Vikram Shah,2024-01-25
+C0489,Manoj Shetty,Individual,Salaried - Government,Education,Delhi NCR,Retail Banking,Near Prime,B,63000,Sana Qureshi,2023-03-26
+C0490,Chawla Textiles Enterprises,SME,Partnership,Textiles,Gujarat,SME Banking,SME Emerging,A,944000,Vikram Shah,2020-02-19
+C0491,Das IT & Sons,SME,Private Limited,IT Services,Gujarat,SME Banking,SME Emerging,B,1331000,Vikram Shah,2020-10-14
+C0492,Aarav Das,Individual,Salaried - Private,Banking & Finance,Delhi NCR,Retail Banking,Prime,B,73000,Rahul Verma,2020-02-13
+C0493,Rohan Sharma,Individual,Salaried - Private,Manufacturing,Kerala,Retail Banking,Near Prime,B,169000,Meera Pillai,2020-05-03
+C0494,Naidu IT Industries,SME,Proprietorship,IT Services,Maharashtra,SME Banking,SME Core,A,511000,Sana Qureshi,2019-02-12
+C0495,Farhan Verma,Individual,Salaried - Government,Public Sector,Delhi NCR,Retail Banking,Near Prime,A,35000,Sana Qureshi,2020-02-10
+C0496,Rajesh Pillai,Individual,Salaried - Private,Manufacturing,Maharashtra,Retail Banking,Prime,B,65000,Rahul Verma,2023-12-16
+C0497,Mehta Agri-processing Enterprises,SME,Proprietorship,Agri-processing,Karnataka,SME Banking,SME Emerging,A,3613000,Rahul Verma,2020-11-07
+C0498,Suresh Gupta,Individual,Gig / Platform Worker,Gig Economy,Karnataka,Retail Banking,Near Prime,B,34000,Anita Rao,2021-12-03
+C0499,Karthik Sharma,Individual,Salaried - Government,Education,Delhi NCR,Retail Banking,Near Prime,C,73000,Anita Rao,2022-02-11
+C0500,Aarav Patel,Individual,Self-employed Professional,Healthcare,Tamil Nadu,Retail Banking,Near Prime,C,77000,Meera Pillai,2021-11-12

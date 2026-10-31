@@ -1,0 +1,650 @@
+loan_id,customer_id,product_type,facility_type,sanctioned_amount,credit_limit,outstanding_balance,profit_rate_pct,tenure_months,instalment_amount,repayment_frequency,due_day,disbursement_date,first_due_date,maturity_date,facility_status,contract_type
+L00001,C0001,Murabaha Business Finance,Term Loan,1779000,,391406,7.01,24,79700,Monthly,3,2025-03-03,2025-04-03,2027-03-03,Active,Murabaha
+L00002,C0002,Ijarah Home Finance,Term Loan,1310000,,1194015,4.68,300,7400,Monthly,24,2022-12-24,2023-01-24,2047-12-24,Active,Ijarah
+L00003,C0003,Tawarruq Personal Finance,Term Loan,43000,,14121,7.11,36,1300,Monthly,2,2024-09-02,2024-10-02,2027-09-02,Active,Tawarruq
+L00004,C0004,Ijarah Home Finance,Term Loan,502000,,417625,4.49,180,3800,Monthly,9,2023-06-09,2023-07-09,2038-06-09,Active,Ijarah
+L00005,C0004,Islamic Credit Card,Revolving,90000,90000.0,78548,26.78,12,3900,Monthly,2,2024-10-02,2024-11-02,2027-10-02,Active,Ujrah
+L00006,C0004,Tawarruq Personal Finance,Term Loan,122000,,110975,7.74,48,3000,Monthly,27,2026-05-27,2026-06-27,2030-05-27,Active,Tawarruq
+L00007,C0005,Tawarruq Personal Finance,Term Loan,40000,,11193,7.79,48,1000,Monthly,24,2023-10-24,2023-11-24,2027-10-24,Active,Tawarruq
+L00008,C0005,Tawarruq Personal Finance,Term Loan,9000,,1571,5.66,24,400,Monthly,20,2025-02-20,2025-03-20,2027-02-20,Active,Tawarruq
+L00009,C0005,Islamic Credit Card,Revolving,10000,10000.0,2541,29.37,12,500,Monthly,5,2023-04-05,2023-05-05,2027-04-05,Active,Ujrah
+L00010,C0006,Murabaha Business Finance,Term Loan,3159000,,1495245,6.5,60,61800,Monthly,21,2023-12-21,2024-01-21,2028-12-21,Active,Murabaha
+L00011,C0007,Tawarruq Personal Finance,Term Loan,302000,,132584,6.12,36,9200,Monthly,22,2025-01-22,2025-02-22,2028-01-22,Active,Tawarruq
+L00012,C0008,Ijarah Home Finance,Term Loan,1203000,,1012064,4.94,180,9500,Monthly,16,2023-07-16,2023-08-16,2038-07-16,Active,Ijarah
+L00013,C0009,Murabaha Business Finance,Term Loan,1185000,,105582,7.42,24,53300,Monthly,15,2024-12-15,2025-01-15,2026-12-15,Active,Murabaha
+L00014,C0010,Ijarah Home Finance,Term Loan,1880000,,1754670,4.82,300,10800,Monthly,20,2023-10-20,2023-11-20,2048-10-20,Active,Ijarah
+L00015,C0010,Murabaha Auto Finance,Term Loan,150000,,35220,4.8,36,4500,Monthly,18,2024-06-18,2024-07-18,2027-06-18,Active,Murabaha
+L00016,C0010,Islamic Credit Card,Revolving,140000,140000.0,38727,25.82,12,1900,Monthly,16,2024-04-16,2024-05-16,2027-04-16,Active,Ujrah
+L00017,C0011,Murabaha Auto Finance,Term Loan,357000,,346463,4.94,60,6700,Monthly,8,2026-08-08,2026-09-08,2031-08-08,Active,Murabaha
+L00018,C0011,Tawarruq Personal Finance,Term Loan,90000,,85520,7.63,36,2800,Monthly,16,2026-08-16,2026-09-16,2029-08-16,Active,Tawarruq
+L00019,C0011,Islamic Credit Card,Revolving,90000,90000.0,37420,24.52,12,1900,Monthly,6,2026-08-06,2026-09-06,2027-08-06,Active,Ujrah
+L00020,C0012,Tawarruq Personal Finance,Term Loan,53000,,6472,7.25,36,1600,Monthly,14,2024-02-14,2024-03-14,2027-02-14,Active,Tawarruq
+L00021,C0012,Islamic Credit Card,Revolving,20000,20000.0,6277,28.97,12,500,Monthly,9,2024-08-09,2024-09-09,2027-08-09,Active,Ujrah
+L00022,C0013,Tawarruq Personal Finance,Term Loan,22000,,4557,5.34,36,700,Monthly,7,2024-05-07,2024-06-07,2027-05-07,Active,Tawarruq
+L00023,C0014,Murabaha Auto Finance,Term Loan,287000,,149470,4.17,48,6500,Monthly,11,2024-10-11,2024-11-11,2028-10-11,Active,Murabaha
+L00024,C0014,Islamic Credit Card,Revolving,110000,110000.0,45477,27.02,12,2300,Monthly,8,2023-11-08,2023-12-08,2026-11-08,Active,Ujrah
+L00025,C0015,Murabaha Business Finance,Term Loan,8829000,,4748515,6.08,60,171000,Monthly,6,2024-04-06,2024-05-06,2029-04-06,Active,Murabaha
+L00026,C0015,Murabaha Working Capital Line,Revolving,1310000,1310000.0,1155209,6.46,12,6200,Monthly,1,2021-12-01,2022-01-01,2026-12-01,Active,Murabaha
+L00027,C0015,Murabaha Business Finance,Term Loan,8503000,,7891796,6.29,60,165500,Monthly,6,2026-05-06,2026-06-06,2031-05-06,Active,Murabaha
+L00028,C0016,Murabaha Business Finance,Term Loan,1943000,,170047,5.41,24,85600,Monthly,27,2024-12-27,2025-01-27,2026-12-27,Active,Murabaha
+L00029,C0017,Murabaha Business Finance,Term Loan,3501000,,1449082,6.99,36,108100,Monthly,26,2024-12-26,2025-01-26,2027-12-26,Active,Murabaha
+L00030,C0017,Murabaha Business Finance,Term Loan,1475000,,177768,6.22,36,45000,Monthly,8,2024-02-08,2024-03-08,2027-02-08,Active,Murabaha
+L00031,C0018,Murabaha Business Finance,Term Loan,4968000,,2644269,5.18,60,94200,Monthly,19,2024-04-19,2024-05-19,2029-04-19,Active,Murabaha
+L00032,C0018,Murabaha Working Capital Line,Revolving,2060000,2060000.0,937639,7.61,12,5900,Monthly,15,2021-07-15,2021-08-15,2027-07-15,Active,Murabaha
+L00033,C0019,Ijarah Home Finance,Term Loan,176000,,168875,4.66,300,1000,Monthly,6,2024-12-06,2025-01-06,2049-12-06,Active,Ijarah
+L00034,C0020,Murabaha Business Finance,Term Loan,7649000,,3426382,5.13,60,144800,Monthly,22,2023-11-22,2023-12-22,2028-11-22,Active,Murabaha
+L00035,C0021,Tawarruq Personal Finance,Term Loan,338000,,206360,5.65,48,7900,Monthly,21,2025-02-21,2025-03-21,2029-02-21,Active,Tawarruq
+L00036,C0022,Ijarah Home Finance,Term Loan,1344000,,1091747,5.13,180,10700,Monthly,9,2022-12-09,2023-01-09,2037-12-09,Active,Ijarah
+L00037,C0022,Islamic Credit Card,Revolving,130000,130000.0,31237,29.04,12,1600,Monthly,5,2023-08-05,2023-09-05,2027-08-05,Active,Ujrah
+L00038,C0023,Tawarruq Personal Finance,Term Loan,66000,,32712,7.52,48,1600,Monthly,5,2024-08-05,2024-09-05,2028-08-05,Active,Tawarruq
+L00039,C0024,Murabaha Auto Finance,Term Loan,209000,,73508,5.48,36,6300,Monthly,11,2024-10-11,2024-11-11,2027-10-11,Active,Murabaha
+L00040,C0024,Murabaha Auto Finance,Term Loan,143000,,100781,4.02,60,2600,Monthly,11,2025-03-11,2025-04-11,2030-03-11,Active,Murabaha
+L00041,C0024,Islamic Credit Card,Revolving,100000,100000.0,39167,29.71,12,2000,Monthly,28,2023-12-28,2024-01-28,2026-12-28,Active,Ujrah
+L00042,C0025,Tawarruq Personal Finance,Term Loan,23000,,2692,6.7,48,500,Monthly,18,2023-03-18,2023-04-18,2027-03-18,Active,Tawarruq
+L00043,C0025,Murabaha Auto Finance,Term Loan,10000,,454,4.59,48,200,Monthly,24,2022-12-24,2023-01-24,2026-12-24,Active,Murabaha
+L00044,C0026,Tawarruq Personal Finance,Term Loan,139000,,52736,5.26,36,4200,Monthly,24,2024-11-24,2024-12-24,2027-11-24,Active,Tawarruq
+L00045,C0027,Tawarruq Personal Finance,Term Loan,222000,,13346,5.67,36,6700,Monthly,6,2023-12-06,2024-01-06,2026-12-06,Active,Tawarruq
+L00046,C0027,Islamic Credit Card,Revolving,160000,160000.0,35317,26.68,12,1800,Monthly,13,2024-03-13,2024-04-13,2027-03-13,Active,Ujrah
+L00047,C0028,Murabaha Business Finance,Term Loan,5374000,,2049744,5.47,60,102600,Monthly,5,2023-07-05,2023-08-05,2028-07-05,Active,Murabaha
+L00048,C0029,Tawarruq Personal Finance,Term Loan,146000,,52520,7.85,36,4600,Monthly,18,2024-10-18,2024-11-18,2027-10-18,Active,Tawarruq
+L00049,C0030,Murabaha Auto Finance,Term Loan,277000,,104252,4.82,48,6400,Monthly,24,2024-03-24,2024-04-24,2028-03-24,Active,Murabaha
+L00050,C0031,Tawarruq Personal Finance,Term Loan,161000,,75813,7.14,36,5000,Monthly,18,2025-02-18,2025-03-18,2028-02-18,Active,Tawarruq
+L00051,C0032,Ijarah Home Finance,Term Loan,756000,,689339,4.01,180,5600,Monthly,28,2025-01-28,2025-02-28,2040-01-28,Active,Ijarah
+L00052,C0033,Ijarah Home Finance,Term Loan,555000,,510971,5.15,300,3300,Monthly,5,2023-02-05,2023-03-05,2048-02-05,Active,Ijarah
+L00053,C0033,Islamic Credit Card,Revolving,30000,30000.0,24517,24.47,12,1200,Monthly,4,2024-12-04,2025-01-04,2026-12-04,Active,Ujrah
+L00054,C0033,Islamic Credit Card,Revolving,30000,30000.0,26638,26.46,12,1300,Monthly,19,2026-08-19,2026-09-19,2027-08-19,Active,Ujrah
+L00055,C0033,Tawarruq Personal Finance,Term Loan,43000,,34422,5.44,24,1900,Monthly,17,2026-05-17,2026-06-17,2028-05-17,Active,Tawarruq
+L00056,C0034,Murabaha Business Finance,Term Loan,1114000,,364694,6.79,36,34300,Monthly,27,2024-09-27,2024-10-27,2027-09-27,Active,Murabaha
+L00057,C0035,Murabaha Business Finance,Term Loan,1266000,,222704,6.58,24,56400,Monthly,22,2025-02-22,2025-03-22,2027-02-22,Active,Murabaha
+L00058,C0036,Murabaha Business Finance,Term Loan,3088000,,540060,5.86,24,136700,Monthly,1,2025-02-01,2025-03-01,2027-02-01,Active,Murabaha
+L00059,C0037,Murabaha Business Finance,Term Loan,230000,,40374,6.32,24,10200,Monthly,16,2025-02-16,2025-03-16,2027-02-16,Active,Murabaha
+L00060,C0038,Ijarah Home Finance,Term Loan,442000,,391064,4.46,180,3400,Monthly,21,2024-06-21,2024-07-21,2039-06-21,Active,Ijarah
+L00061,C0038,Murabaha Auto Finance,Term Loan,47000,,15146,5.21,36,1400,Monthly,11,2024-09-11,2024-10-11,2027-09-11,Active,Murabaha
+L00062,C0039,Tawarruq Personal Finance,Term Loan,138000,,12208,6.62,24,6200,Monthly,15,2024-12-15,2025-01-15,2026-12-15,Active,Tawarruq
+L00063,C0039,Islamic Credit Card,Revolving,130000,130000.0,32844,29.13,12,1600,Monthly,28,2022-10-28,2022-11-28,2027-10-28,Active,Ujrah
+L00064,C0040,Murabaha Business Finance,Term Loan,4230000,,1861283,6.63,60,83000,Monthly,4,2023-10-04,2023-11-04,2028-10-04,Active,Murabaha
+L00065,C0041,Murabaha Business Finance,Term Loan,7177000,,270746,5.25,60,136300,Monthly,16,2021-12-16,2022-01-16,2026-12-16,Active,Murabaha
+L00066,C0041,Murabaha Working Capital Line,Revolving,1890000,1890000.0,738040,8.98,12,5500,Monthly,5,2021-09-05,2021-10-05,2027-09-05,Active,Murabaha
+L00067,C0042,Murabaha Business Finance,Term Loan,1560000,,536874,5.02,60,29500,Monthly,1,2023-05-01,2023-06-01,2028-05-01,Active,Murabaha
+L00068,C0042,Murabaha Working Capital Line,Revolving,590000,590000.0,546597,6.75,12,3100,Monthly,13,2022-09-13,2022-10-13,2027-09-13,Active,Murabaha
+L00069,C0042,Murabaha Business Finance,Term Loan,1434000,,1333702,7.42,60,28700,Monthly,4,2026-05-04,2026-06-04,2031-05-04,Active,Murabaha
+L00070,C0043,Tawarruq Personal Finance,Term Loan,45000,,41555,6.1,36,1400,Monthly,6,2026-07-06,2026-08-06,2029-07-06,Active,Tawarruq
+L00071,C0044,Murabaha Auto Finance,Term Loan,190000,,22142,3.62,36,5600,Monthly,13,2024-02-13,2024-03-13,2027-02-13,Active,Murabaha
+L00072,C0045,Ijarah Home Finance,Term Loan,829000,,749481,5.44,300,5100,Monthly,1,2022-04-01,2022-05-01,2047-04-01,Active,Ijarah
+L00073,C0045,Tawarruq Personal Finance,Term Loan,69000,,4170,6.07,36,2100,Monthly,5,2023-12-05,2024-01-05,2026-12-05,Active,Tawarruq
+L00074,C0046,Murabaha Business Finance,Term Loan,7257000,,2789550,6.69,36,223000,Monthly,12,2024-11-12,2024-12-12,2027-11-12,Active,Murabaha
+L00075,C0046,Murabaha Working Capital Line,Revolving,1480000,1480000.0,1232135,6.56,12,6700,Monthly,16,2025-03-16,2025-04-16,2027-03-16,Active,Murabaha
+L00076,C0046,Murabaha Business Finance,Term Loan,6446000,,6354886,6.54,60,126200,Monthly,26,2026-09-26,2026-10-26,2031-09-26,Active,Murabaha
+L00077,C0046,Murabaha Working Capital Line,Revolving,990000,990000.0,732153,6.15,12,3800,Monthly,24,2026-08-24,2026-09-24,2027-08-24,Active,Murabaha
+L00078,C0047,Murabaha Business Finance,Term Loan,4123000,,399528,6.81,60,81300,Monthly,8,2022-03-08,2022-04-08,2027-03-08,Active,Murabaha
+L00079,C0048,Ijarah Home Finance,Term Loan,427000,,409403,4.18,300,2300,Monthly,2,2025-01-02,2025-02-02,2050-01-02,Active,Ijarah
+L00080,C0049,Tawarruq Personal Finance,Term Loan,148000,,39770,6.57,36,4500,Monthly,22,2024-07-22,2024-08-22,2027-07-22,Active,Tawarruq
+L00081,C0049,Ijarah Home Finance,Term Loan,336000,,294943,4.6,300,1900,Monthly,13,2021-09-13,2021-10-13,2046-09-13,Active,Ijarah
+L00082,C0049,Islamic Credit Card,Revolving,50000,50000.0,11949,29.96,12,600,Monthly,15,2022-04-15,2022-05-15,2027-04-15,Active,Ujrah
+L00083,C0050,Tawarruq Personal Finance,Term Loan,274000,,121794,7.62,36,8500,Monthly,26,2025-01-26,2025-02-26,2028-01-26,Active,Tawarruq
+L00084,C0051,Murabaha Business Finance,Term Loan,2090000,,185260,6.84,24,93400,Monthly,6,2024-12-06,2025-01-06,2026-12-06,Active,Murabaha
+L00085,C0051,Murabaha Business Finance,Term Loan,882000,,153903,5.58,24,38900,Monthly,20,2025-02-20,2025-03-20,2027-02-20,Active,Murabaha
+L00086,C0052,Ijarah Home Finance,Term Loan,308000,,269739,5.4,180,2500,Monthly,7,2024-02-07,2024-03-07,2039-02-07,Active,Ijarah
+L00087,C0053,Murabaha Auto Finance,Term Loan,249000,,143882,4.53,60,4600,Monthly,16,2024-07-16,2024-08-16,2029-07-16,Active,Murabaha
+L00088,C0054,Murabaha Business Finance,Term Loan,815000,,363077,7.89,36,25500,Monthly,20,2025-01-20,2025-02-20,2028-01-20,Active,Murabaha
+L00089,C0054,Murabaha Working Capital Line,Revolving,280000,280000.0,231990,8.37,12,1600,Monthly,24,2023-01-24,2023-02-24,2027-01-24,Active,Murabaha
+L00090,C0054,Murabaha Working Capital Line,Revolving,170000,170000.0,131929,6.45,12,700,Monthly,24,2026-09-24,2026-10-24,2027-09-24,Active,Murabaha
+L00091,C0055,Murabaha Auto Finance,Term Loan,47000,,28274,3.78,48,1100,Monthly,18,2025-02-18,2025-03-18,2029-02-18,Active,Murabaha
+L00092,C0055,Islamic Credit Card,Revolving,20000,20000.0,6410,25.52,12,500,Monthly,8,2022-04-08,2022-05-08,2027-04-08,Active,Ujrah
+L00093,C0056,Tawarruq Personal Finance,Term Loan,277000,,83309,7.54,36,8600,Monthly,28,2024-08-28,2024-09-28,2027-08-28,Active,Tawarruq
+L00094,C0057,Murabaha Business Finance,Term Loan,3579000,,1658417,5.11,36,107400,Monthly,22,2025-02-22,2025-03-22,2028-02-22,Active,Murabaha
+L00095,C0058,Murabaha Business Finance,Term Loan,1343000,,436836,6.14,36,40900,Monthly,28,2024-09-28,2024-10-28,2027-09-28,Active,Murabaha
+L00096,C0058,Murabaha Working Capital Line,Revolving,410000,410000.0,142174,7.38,12,900,Monthly,5,2021-09-05,2021-10-05,2027-09-05,Active,Murabaha
+L00097,C0059,Tawarruq Personal Finance,Term Loan,58000,,7727,7.41,24,2600,Monthly,19,2025-01-19,2025-02-19,2027-01-19,Active,Tawarruq
+L00098,C0060,Tawarruq Personal Finance,Term Loan,469000,,166904,5.03,48,10800,Monthly,9,2024-02-09,2024-03-09,2028-02-09,Active,Tawarruq
+L00099,C0060,Islamic Credit Card,Revolving,90000,90000.0,22245,29.49,12,1100,Monthly,4,2022-09-04,2022-10-04,2027-09-04,Active,Ujrah
+L00100,C0061,Murabaha Business Finance,Term Loan,2772000,,984034,6.45,36,84900,Monthly,25,2024-10-25,2024-11-25,2027-10-25,Active,Murabaha
+L00101,C0061,Murabaha Working Capital Line,Revolving,930000,930000.0,442053,7.69,12,2800,Monthly,25,2024-03-25,2024-04-25,2027-03-25,Active,Murabaha
+L00102,C0062,Murabaha Business Finance,Term Loan,3334000,,1739908,6.19,60,64800,Monthly,12,2024-03-12,2024-04-12,2029-03-12,Active,Murabaha
+L00103,C0062,Murabaha Business Finance,Term Loan,602000,,53523,7.18,24,27000,Monthly,25,2024-12-25,2025-01-25,2026-12-25,Active,Murabaha
+L00104,C0063,Murabaha Business Finance,Term Loan,2500000,,532220,7.7,36,78000,Monthly,28,2024-05-28,2024-06-28,2027-05-28,Active,Murabaha
+L00105,C0064,Tawarruq Personal Finance,Term Loan,112000,,56022,7.5,36,3500,Monthly,23,2025-03-23,2025-04-23,2028-03-23,Active,Tawarruq
+L00106,C0065,Ijarah Home Finance,Term Loan,936000,,888595,4.3,300,5100,Monthly,13,2024-08-13,2024-09-13,2049-08-13,Active,Ijarah
+L00107,C0066,Tawarruq Personal Finance,Term Loan,187000,,83259,5.86,48,4400,Monthly,18,2024-06-18,2024-07-18,2028-06-18,Active,Tawarruq
+L00108,C0067,Tawarruq Personal Finance,Term Loan,311000,,101289,6.27,36,9500,Monthly,3,2024-09-03,2024-10-03,2027-09-03,Active,Tawarruq
+L00109,C0067,Tawarruq Personal Finance,Term Loan,89000,,15632,6.39,24,4000,Monthly,13,2025-02-13,2025-03-13,2027-02-13,Active,Tawarruq
+L00110,C0067,Ijarah Home Finance,Term Loan,603000,,570701,4.95,240,4000,Monthly,25,2025-01-25,2025-02-25,2045-01-25,Active,Ijarah
+L00111,C0068,Murabaha Auto Finance,Term Loan,34000,,8426,5.2,48,800,Monthly,21,2023-09-21,2023-10-21,2027-09-21,Active,Murabaha
+L00112,C0069,Murabaha Auto Finance,Term Loan,274000,,10116,4.32,60,5100,Monthly,16,2021-12-16,2022-01-16,2026-12-16,Active,Murabaha
+L00113,C0069,Islamic Credit Card,Revolving,60000,60000.0,26347,24.69,12,1300,Monthly,15,2022-08-15,2022-09-15,2027-08-15,Active,Ujrah
+L00114,C0070,Tawarruq Personal Finance,Term Loan,40000,,7057,6.95,24,1800,Monthly,22,2025-02-22,2025-03-22,2027-02-22,Active,Tawarruq
+L00115,C0071,Murabaha Business Finance,Term Loan,491000,,67647,7.84,60,9900,Monthly,2,2022-05-02,2022-06-02,2027-05-02,Active,Murabaha
+L00116,C0072,Tawarruq Personal Finance,Term Loan,204000,,118176,7.65,48,4900,Monthly,10,2024-12-10,2025-01-10,2028-12-10,Active,Tawarruq
+L00117,C0073,Murabaha Business Finance,Term Loan,1592000,,286292,6.21,36,48600,Monthly,10,2024-04-10,2024-05-10,2027-04-10,Active,Murabaha
+L00118,C0073,Murabaha Business Finance,Term Loan,451000,,40098,7.18,24,20200,Monthly,9,2024-12-09,2025-01-09,2026-12-09,Active,Murabaha
+L00119,C0074,Ijarah Home Finance,Term Loan,132000,,121120,4.92,180,1000,Monthly,19,2025-01-19,2025-02-19,2040-01-19,Active,Ijarah
+L00120,C0075,Murabaha Business Finance,Term Loan,2575000,,227866,6.65,24,114900,Monthly,18,2024-12-18,2025-01-18,2026-12-18,Active,Murabaha
+L00121,C0075,Murabaha Working Capital Line,Revolving,1980000,1980000.0,1657747,7.66,12,10600,Monthly,3,2022-04-03,2022-05-03,2027-04-03,Active,Murabaha
+L00122,C0075,Murabaha Business Finance,Term Loan,3639000,,3063564,6.25,24,161700,Monthly,25,2026-06-25,2026-07-25,2028-06-25,Active,Murabaha
+L00123,C0076,Murabaha Business Finance,Term Loan,583000,,537634,7.4,24,26200,Monthly,1,2026-08-01,2026-09-01,2028-08-01,Active,Murabaha
+L00124,C0076,Murabaha Business Finance,Term Loan,363000,,344300,5.27,36,10900,Monthly,1,2026-08-01,2026-09-01,2029-08-01,Active,Murabaha
+L00125,C0077,Murabaha Business Finance,Term Loan,6741000,,2211636,7.01,36,208200,Monthly,18,2024-09-18,2024-10-18,2027-09-18,Active,Murabaha
+L00126,C0077,Murabaha Working Capital Line,Revolving,1480000,1480000.0,519018,6.33,12,2700,Monthly,11,2022-09-11,2022-10-11,2027-09-11,Active,Murabaha
+L00127,C0078,Murabaha Business Finance,Term Loan,4212000,,737770,6.05,24,186800,Monthly,15,2025-02-15,2025-03-15,2027-02-15,Active,Murabaha
+L00128,C0078,Murabaha Business Finance,Term Loan,1770000,,231444,5.21,24,77800,Monthly,16,2025-01-16,2025-02-16,2027-01-16,Active,Murabaha
+L00129,C0079,Ijarah Home Finance,Term Loan,332000,,306243,4.53,300,1900,Monthly,2,2023-06-02,2023-07-02,2048-06-02,Active,Ijarah
+L00130,C0079,Ijarah Home Finance,Term Loan,115000,,100420,5.18,240,800,Monthly,4,2022-10-04,2022-11-04,2042-10-04,Active,Ijarah
+L00131,C0080,Ijarah Home Finance,Term Loan,933000,,931305,4.47,300,5200,Monthly,12,2026-09-12,2026-10-12,2051-09-12,Active,Ijarah
+L00132,C0081,Murabaha Business Finance,Term Loan,2593000,,435281,5.45,60,49500,Monthly,20,2022-07-20,2022-08-20,2027-07-20,Active,Murabaha
+L00133,C0082,Murabaha Business Finance,Term Loan,1972000,,238856,6.61,36,60500,Monthly,9,2024-02-09,2024-03-09,2027-02-09,Active,Murabaha
+L00134,C0083,Murabaha Business Finance,Term Loan,1471000,,441866,7.42,36,45700,Monthly,19,2024-08-19,2024-09-19,2027-08-19,Active,Murabaha
+L00135,C0083,Murabaha Working Capital Line,Revolving,510000,510000.0,190485,7.65,12,1200,Monthly,22,2021-11-22,2021-12-22,2026-11-22,Active,Murabaha
+L00136,C0084,Tawarruq Personal Finance,Term Loan,300000,,83141,7.1,48,7200,Monthly,22,2023-10-22,2023-11-22,2027-10-22,Active,Tawarruq
+L00137,C0085,Murabaha Business Finance,Term Loan,10179000,,4756609,5.52,60,194500,Monthly,12,2023-12-12,2024-01-12,2028-12-12,Active,Murabaha
+L00138,C0085,Murabaha Business Finance,Term Loan,1797000,,397485,7.71,24,81000,Monthly,9,2025-03-09,2025-04-09,2027-03-09,Active,Murabaha
+L00139,C0086,Murabaha Business Finance,Term Loan,4945000,,2496992,6.16,60,96000,Monthly,5,2024-02-05,2024-03-05,2029-02-05,Active,Murabaha
+L00140,C0087,Murabaha Business Finance,Term Loan,523000,,46656,7.56,24,23500,Monthly,4,2024-12-04,2025-01-04,2026-12-04,Active,Murabaha
+L00141,C0087,Murabaha Working Capital Line,Revolving,230000,230000.0,191211,6.98,12,1100,Monthly,19,2023-11-19,2023-12-19,2026-11-19,Active,Murabaha
+L00142,C0087,Murabaha Working Capital Line,Revolving,170000,170000.0,135280,6.48,12,700,Monthly,18,2026-08-18,2026-09-18,2027-08-18,Active,Murabaha
+L00143,C0087,Murabaha Working Capital Line,Revolving,90000,90000.0,68539,6.39,12,400,Monthly,23,2026-07-23,2026-08-23,2027-07-23,Active,Murabaha
+L00144,C0088,Murabaha Business Finance,Term Loan,7635000,,293547,6.08,60,147900,Monthly,17,2021-12-17,2022-01-17,2026-12-17,Active,Murabaha
+L00145,C0089,Murabaha Business Finance,Term Loan,6417000,,2389148,6.92,60,126800,Monthly,23,2023-06-23,2023-07-23,2028-06-23,Active,Murabaha
+L00146,C0089,Murabaha Working Capital Line,Revolving,1310000,1310000.0,1222217,8.51,12,8700,Monthly,24,2023-04-24,2023-05-24,2027-04-24,Active,Murabaha
+L00147,C0089,Murabaha Business Finance,Term Loan,2205000,,1942262,5.43,24,97200,Monthly,7,2026-07-07,2026-08-07,2028-07-07,Active,Murabaha
+L00148,C0090,Ijarah Home Finance,Term Loan,115000,,85613,4.27,180,900,Monthly,24,2021-12-24,2022-01-24,2036-12-24,Active,Ijarah
+L00149,C0090,Islamic Credit Card,Revolving,20000,20000.0,7962,27.91,12,500,Monthly,1,2021-08-01,2021-09-01,2027-08-01,Active,Ujrah
+L00150,C0091,Murabaha Business Finance,Term Loan,2310000,,302932,5.55,24,101900,Monthly,23,2025-01-23,2025-02-23,2027-01-23,Active,Murabaha
+L00151,C0091,Murabaha Business Finance,Term Loan,2188000,,331990,6.16,60,42500,Monthly,18,2022-06-18,2022-07-18,2027-06-18,Active,Murabaha
+L00152,C0092,Tawarruq Personal Finance,Term Loan,251000,,23642,6.87,48,6000,Monthly,17,2023-02-17,2023-03-17,2027-02-17,Active,Tawarruq
+L00153,C0093,Tawarruq Personal Finance,Term Loan,238000,,117621,5.89,36,7200,Monthly,10,2025-03-10,2025-04-10,2028-03-10,Active,Tawarruq
+L00154,C0093,Islamic Credit Card,Revolving,90000,90000.0,11403,27.76,12,600,Monthly,18,2021-12-18,2022-01-18,2026-12-18,Active,Ujrah
+L00155,C0094,Ijarah Home Finance,Term Loan,848000,,719489,4.35,180,6400,Monthly,19,2023-10-19,2023-11-19,2038-10-19,Active,Ijarah
+L00156,C0094,Tawarruq Personal Finance,Term Loan,86000,,7944,7.68,36,2700,Monthly,16,2024-01-16,2024-02-16,2027-01-16,Active,Tawarruq
+L00157,C0095,Murabaha Business Finance,Term Loan,178000,,38571,5.03,24,7800,Monthly,27,2025-03-27,2025-04-27,2027-03-27,Active,Murabaha
+L00158,C0096,Murabaha Auto Finance,Term Loan,251000,,9158,3.81,60,4600,Monthly,5,2021-12-05,2022-01-05,2026-12-05,Active,Murabaha
+L00159,C0097,Ijarah Home Finance,Term Loan,500000,,354955,4.27,180,3800,Monthly,28,2021-05-28,2021-06-28,2036-05-28,Active,Ijarah
+L00160,C0098,Murabaha Business Finance,Term Loan,5042000,,888258,7.89,60,102000,Monthly,1,2022-07-01,2022-08-01,2027-07-01,Active,Murabaha
+L00161,C0098,Murabaha Business Finance,Term Loan,2164000,,250087,6.65,60,42500,Monthly,6,2022-04-06,2022-05-06,2027-04-06,Active,Murabaha
+L00162,C0099,Tawarruq Personal Finance,Term Loan,246000,,66451,5.29,48,5700,Monthly,15,2023-10-15,2023-11-15,2027-10-15,Active,Tawarruq
+L00163,C0099,Ijarah Home Finance,Term Loan,388000,,315839,4.09,240,2400,Monthly,28,2021-08-28,2021-09-28,2041-08-28,Active,Ijarah
+L00164,C0100,Ijarah Home Finance,Term Loan,164000,,120744,5.02,180,1300,Monthly,8,2021-08-08,2021-09-08,2036-08-08,Active,Ijarah
+L00165,C0101,Tawarruq Personal Finance,Term Loan,83000,,12526,6.57,36,2500,Monthly,1,2024-03-01,2024-04-01,2027-03-01,Active,Tawarruq
+L00166,C0101,Islamic Credit Card,Revolving,40000,40000.0,11928,29.8,12,600,Monthly,17,2024-11-17,2024-12-17,2026-11-17,Active,Ujrah
+L00167,C0102,Murabaha Business Finance,Term Loan,1377000,,183345,7.34,24,61900,Monthly,3,2025-01-03,2025-02-03,2027-01-03,Active,Murabaha
+L00168,C0102,Murabaha Working Capital Line,Revolving,680000,680000.0,217594,6.97,12,1300,Monthly,10,2023-08-10,2023-09-10,2027-08-10,Active,Murabaha
+L00169,C0103,Murabaha Business Finance,Term Loan,615000,,269345,5.83,36,18700,Monthly,24,2025-01-24,2025-02-24,2028-01-24,Active,Murabaha
+L00170,C0103,Murabaha Working Capital Line,Revolving,350000,350000.0,318146,7.59,12,2000,Monthly,11,2024-06-11,2024-07-11,2027-06-11,Active,Murabaha
+L00171,C0103,Murabaha Working Capital Line,Revolving,170000,170000.0,130800,6.79,12,700,Monthly,19,2026-08-19,2026-09-19,2027-08-19,Active,Murabaha
+L00172,C0104,Ijarah Home Finance,Term Loan,1179000,,1042844,4.43,180,9000,Monthly,3,2024-06-03,2024-07-03,2039-06-03,Active,Ijarah
+L00173,C0104,Tawarruq Personal Finance,Term Loan,83000,,7421,7.82,24,3700,Monthly,9,2024-12-09,2025-01-09,2026-12-09,Active,Tawarruq
+L00174,C0105,Murabaha Business Finance,Term Loan,1352000,,236968,6.13,24,60000,Monthly,5,2025-02-05,2025-03-05,2027-02-05,Active,Murabaha
+L00175,C0105,Murabaha Business Finance,Term Loan,1242000,,264657,7.68,60,25000,Monthly,24,2022-09-24,2022-10-24,2027-09-24,Active,Murabaha
+L00176,C0106,Tawarruq Personal Finance,Term Loan,21000,,3685,6.29,24,900,Monthly,3,2025-02-03,2025-03-03,2027-02-03,Active,Tawarruq
+L00177,C0107,Tawarruq Personal Finance,Term Loan,244000,,100239,6.13,36,7400,Monthly,5,2024-12-05,2025-01-05,2027-12-05,Active,Tawarruq
+L00178,C0107,Islamic Credit Card,Revolving,110000,110000.0,26676,25.08,12,1300,Monthly,3,2023-03-03,2023-04-03,2027-03-03,Active,Ujrah
+L00179,C0108,Tawarruq Personal Finance,Term Loan,279000,,51315,6.07,48,6600,Monthly,19,2023-06-19,2023-07-19,2027-06-19,Active,Tawarruq
+L00180,C0109,Murabaha Business Finance,Term Loan,2626000,,572200,5.75,24,116100,Monthly,23,2025-03-23,2025-04-23,2027-03-23,Active,Murabaha
+L00181,C0109,Murabaha Business Finance,Term Loan,1072000,,95794,7.75,24,48400,Monthly,27,2024-12-27,2025-01-27,2026-12-27,Active,Murabaha
+L00182,C0110,Tawarruq Personal Finance,Term Loan,106000,,9460,7.61,24,4800,Monthly,13,2024-12-13,2025-01-13,2026-12-13,Active,Tawarruq
+L00183,C0110,Tawarruq Personal Finance,Term Loan,86000,,48803,5.23,48,2000,Monthly,7,2024-12-07,2025-01-07,2028-12-07,Active,Tawarruq
+L00184,C0110,Murabaha Auto Finance,Term Loan,67000,,19517,4.46,36,2000,Monthly,25,2024-08-25,2024-09-25,2027-08-25,Active,Murabaha
+L00185,C0111,Tawarruq Personal Finance,Term Loan,96000,,25824,6.67,36,2900,Monthly,28,2024-07-28,2024-08-28,2027-07-28,Active,Tawarruq
+L00186,C0112,Tawarruq Personal Finance,Term Loan,40000,,12873,7.19,48,1000,Monthly,26,2023-12-26,2024-01-26,2027-12-26,Active,Tawarruq
+L00187,C0112,Murabaha Auto Finance,Term Loan,21000,,3881,5.1,60,400,Monthly,15,2022-08-15,2022-09-15,2027-08-15,Active,Murabaha
+L00188,C0113,Ijarah Home Finance,Term Loan,518000,,487963,4.66,240,3300,Monthly,19,2024-12-19,2025-01-19,2044-12-19,Active,Ijarah
+L00189,C0113,Murabaha Auto Finance,Term Loan,75000,,48030,4.06,60,1400,Monthly,17,2024-11-17,2024-12-17,2029-11-17,Active,Murabaha
+L00190,C0114,Ijarah Home Finance,Term Loan,208000,,183232,4.66,300,1200,Monthly,22,2021-10-22,2021-11-22,2046-10-22,Active,Ijarah
+L00191,C0114,Islamic Credit Card,Revolving,20000,20000.0,7812,25.31,12,500,Monthly,6,2022-01-06,2022-02-06,2027-01-06,Active,Ujrah
+L00192,C0115,Murabaha Business Finance,Term Loan,3121000,,274808,6.09,24,138500,Monthly,2,2024-12-02,2025-01-02,2026-12-02,Active,Murabaha
+L00193,C0115,Murabaha Working Capital Line,Revolving,2790000,2790000.0,1300932,6.68,12,7200,Monthly,13,2023-05-13,2023-06-13,2027-05-13,Active,Murabaha
+L00194,C0116,Murabaha Business Finance,Term Loan,9586000,,2499784,6.0,60,185300,Monthly,13,2022-12-13,2023-01-13,2027-12-13,Active,Murabaha
+L00195,C0116,Murabaha Working Capital Line,Revolving,2560000,2560000.0,707720,6.33,12,3700,Monthly,2,2023-03-02,2023-04-02,2027-03-02,Active,Murabaha
+L00196,C0117,Murabaha Business Finance,Term Loan,1060000,,93367,6.13,24,47000,Monthly,4,2024-12-04,2025-01-04,2026-12-04,Active,Murabaha
+L00197,C0118,Murabaha Business Finance,Term Loan,3414000,,301788,6.53,24,152100,Monthly,10,2024-12-10,2025-01-10,2026-12-10,Active,Murabaha
+L00198,C0119,Murabaha Auto Finance,Term Loan,263000,,89973,4.65,60,4900,Monthly,26,2023-05-26,2023-06-26,2028-05-26,Active,Murabaha
+L00199,C0120,Tawarruq Personal Finance,Term Loan,180000,,37432,5.67,36,5400,Monthly,26,2024-05-26,2024-06-26,2027-05-26,Active,Tawarruq
+L00200,C0121,Ijarah Home Finance,Term Loan,1197000,,1094899,4.46,180,9100,Monthly,28,2025-01-28,2025-02-28,2040-01-28,Active,Ijarah
+L00201,C0121,Islamic Credit Card,Revolving,100000,100000.0,80479,25.12,12,4000,Monthly,27,2024-06-27,2024-07-27,2027-06-27,Active,Ujrah
+L00202,C0121,Tawarruq Personal Finance,Term Loan,151000,,145102,6.7,24,6700,Monthly,8,2026-09-08,2026-10-08,2028-09-08,Active,Tawarruq
+L00203,C0121,Ijarah Home Finance,Term Loan,954000,,951797,5.45,240,6500,Monthly,7,2026-09-07,2026-10-07,2046-09-07,Active,Ijarah
+L00204,C0122,Murabaha Business Finance,Term Loan,4271000,,935661,6.45,24,190200,Monthly,17,2025-03-17,2025-04-17,2027-03-17,Active,Murabaha
+L00205,C0122,Murabaha Working Capital Line,Revolving,1600000,1600000.0,1321881,6.07,12,6700,Monthly,14,2023-10-14,2023-11-14,2027-10-14,Active,Murabaha
+L00206,C0123,Murabaha Business Finance,Term Loan,2426000,,868756,7.37,36,75300,Monthly,25,2024-10-25,2024-11-25,2027-10-25,Active,Murabaha
+L00207,C0124,Tawarruq Personal Finance,Term Loan,126000,,8997,7.32,48,3000,Monthly,19,2023-01-19,2023-02-19,2027-01-19,Active,Tawarruq
+L00208,C0125,Tawarruq Personal Finance,Term Loan,104000,,95899,7.3,24,4700,Monthly,5,2026-08-05,2026-09-05,2028-08-05,Active,Tawarruq
+L00209,C0126,Murabaha Business Finance,Term Loan,10773000,,2667467,7.09,60,213800,Monthly,10,2022-11-10,2022-12-10,2027-11-10,Active,Murabaha
+L00210,C0126,Murabaha Working Capital Line,Revolving,2060000,2060000.0,840303,6.53,12,4600,Monthly,14,2022-12-14,2023-01-14,2026-12-14,Active,Murabaha
+L00211,C0127,Tawarruq Personal Finance,Term Loan,72000,,31814,5.17,48,1700,Monthly,19,2024-06-19,2024-07-19,2028-06-19,Active,Tawarruq
+L00212,C0127,Islamic Credit Card,Revolving,30000,30000.0,7302,28.22,12,500,Monthly,24,2023-05-24,2023-06-24,2027-05-24,Active,Ujrah
+L00213,C0128,Murabaha Business Finance,Term Loan,890000,,81918,7.4,36,27600,Monthly,14,2024-01-14,2024-02-14,2027-01-14,Active,Murabaha
+L00214,C0128,Murabaha Business Finance,Term Loan,593000,,56752,6.23,60,11500,Monthly,12,2022-03-12,2022-04-12,2027-03-12,Active,Murabaha
+L00215,C0129,Murabaha Auto Finance,Term Loan,295000,,123982,5.09,48,6800,Monthly,12,2024-05-12,2024-06-12,2028-05-12,Active,Murabaha
+L00216,C0130,Tawarruq Personal Finance,Term Loan,49000,,24897,5.81,48,1100,Monthly,22,2024-09-22,2024-10-22,2028-09-22,Active,Tawarruq
+L00217,C0131,Murabaha Business Finance,Term Loan,2101000,,275876,5.7,24,92800,Monthly,4,2025-01-04,2025-02-04,2027-01-04,Active,Murabaha
+L00218,C0131,Murabaha Business Finance,Term Loan,860000,,114643,7.48,24,38700,Monthly,10,2025-01-10,2025-02-10,2027-01-10,Active,Murabaha
+L00219,C0132,Tawarruq Personal Finance,Term Loan,252000,,29731,7.16,48,6100,Monthly,8,2023-03-08,2023-04-08,2027-03-08,Active,Tawarruq
+L00220,C0133,Ijarah Home Finance,Term Loan,458000,,383029,4.48,240,2900,Monthly,9,2022-01-09,2022-02-09,2042-01-09,Active,Ijarah
+L00221,C0133,Islamic Credit Card,Revolving,40000,40000.0,9973,26.19,12,500,Monthly,4,2021-12-04,2022-01-04,2026-12-04,Active,Ujrah
+L00222,C0134,Ijarah Home Finance,Term Loan,1181000,,1084987,4.19,240,7300,Monthly,11,2024-05-11,2024-06-11,2044-05-11,Active,Ijarah
+L00223,C0134,Ijarah Home Finance,Term Loan,558000,,495988,4.27,300,3000,Monthly,2,2022-04-02,2022-05-02,2047-04-02,Active,Ijarah
+L00224,C0135,Murabaha Business Finance,Term Loan,779000,,68121,5.32,24,34300,Monthly,4,2024-12-04,2025-01-04,2026-12-04,Active,Murabaha
+L00225,C0136,Murabaha Business Finance,Term Loan,650000,,84862,5.03,24,28500,Monthly,15,2025-01-15,2025-02-15,2027-01-15,Active,Murabaha
+L00226,C0136,Murabaha Working Capital Line,Revolving,240000,240000.0,114690,8.28,12,800,Monthly,16,2022-08-16,2022-09-16,2027-08-16,Active,Murabaha
+L00227,C0137,Ijarah Home Finance,Term Loan,1399000,,1313266,4.99,300,8200,Monthly,17,2023-12-17,2024-01-17,2048-12-17,Active,Ijarah
+L00228,C0138,Murabaha Auto Finance,Term Loan,93000,,36600,3.94,48,2100,Monthly,25,2024-04-25,2024-05-25,2028-04-25,Active,Murabaha
+L00229,C0139,Murabaha Business Finance,Term Loan,1982000,,174020,5.77,24,87600,Monthly,24,2024-12-24,2025-01-24,2026-12-24,Active,Murabaha
+L00230,C0139,Murabaha Working Capital Line,Revolving,670000,670000.0,587703,7.81,12,3800,Monthly,20,2023-04-20,2023-05-20,2027-04-20,Active,Murabaha
+L00231,C0139,Murabaha Business Finance,Term Loan,4104000,,3818486,7.64,60,82500,Monthly,10,2026-05-10,2026-06-10,2031-05-10,Active,Murabaha
+L00232,C0140,Murabaha Business Finance,Term Loan,1329000,,238051,5.88,36,40400,Monthly,17,2024-04-17,2024-05-17,2027-04-17,Active,Murabaha
+L00233,C0140,Murabaha Working Capital Line,Revolving,450000,450000.0,379781,6.12,12,1900,Monthly,12,2022-05-12,2022-06-12,2027-05-12,Active,Murabaha
+L00234,C0140,Murabaha Working Capital Line,Revolving,510000,510000.0,430513,8.47,12,3000,Monthly,7,2026-06-07,2026-07-07,2027-06-07,Active,Murabaha
+L00235,C0141,Ijarah Home Finance,Term Loan,321000,,277345,4.68,240,2100,Monthly,25,2022-09-25,2022-10-25,2042-09-25,Active,Ijarah
+L00236,C0141,Islamic Credit Card,Revolving,40000,40000.0,9869,29.89,12,500,Monthly,8,2023-02-08,2023-03-08,2027-02-08,Active,Ujrah
+L00237,C0142,Murabaha Business Finance,Term Loan,7353000,,4520845,5.24,60,139600,Monthly,21,2024-09-21,2024-10-21,2029-09-21,Active,Murabaha
+L00238,C0142,Murabaha Working Capital Line,Revolving,1350000,1350000.0,1200871,8.05,12,8100,Monthly,18,2024-09-18,2024-10-18,2027-09-18,Active,Murabaha
+L00239,C0142,Murabaha Working Capital Line,Revolving,630000,630000.0,546624,6.41,12,2900,Monthly,17,2026-06-17,2026-07-17,2027-06-17,Active,Murabaha
+L00240,C0143,Murabaha Business Finance,Term Loan,6267000,,3131036,7.34,36,194500,Monthly,12,2025-03-12,2025-04-12,2028-03-12,Active,Murabaha
+L00241,C0144,Murabaha Business Finance,Term Loan,1682000,,698483,7.37,36,52200,Monthly,11,2024-12-11,2025-01-11,2027-12-11,Active,Murabaha
+L00242,C0145,Murabaha Business Finance,Term Loan,5234000,,632909,6.48,36,160400,Monthly,24,2024-02-24,2024-03-24,2027-02-24,Active,Murabaha
+L00243,C0146,Murabaha Auto Finance,Term Loan,181000,,67446,3.95,60,3300,Monthly,28,2023-07-28,2023-08-28,2028-07-28,Active,Murabaha
+L00244,C0147,Murabaha Business Finance,Term Loan,10999000,,2040492,5.29,60,209000,Monthly,15,2022-08-15,2022-09-15,2027-08-15,Active,Murabaha
+L00245,C0147,Murabaha Working Capital Line,Revolving,2710000,2710000.0,1003354,6.3,12,5300,Monthly,21,2024-01-21,2024-02-21,2027-01-21,Active,Murabaha
+L00246,C0148,Tawarruq Personal Finance,Term Loan,74000,,39186,5.93,48,1700,Monthly,7,2024-10-07,2024-11-07,2028-10-07,Active,Tawarruq
+L00247,C0149,Ijarah Home Finance,Term Loan,1314000,,1021095,4.19,180,9800,Monthly,19,2022-07-19,2022-08-19,2037-07-19,Active,Ijarah
+L00248,C0150,Tawarruq Personal Finance,Term Loan,104000,,13785,6.81,24,4600,Monthly,22,2025-01-22,2025-02-22,2027-01-22,Active,Tawarruq
+L00249,C0151,Murabaha Auto Finance,Term Loan,384000,,187686,4.43,36,11400,Monthly,28,2025-03-28,2025-04-28,2028-03-28,Active,Murabaha
+L00250,C0151,Islamic Credit Card,Revolving,140000,140000.0,43442,25.56,12,2200,Monthly,12,2023-06-12,2023-07-12,2027-06-12,Active,Ujrah
+L00251,C0152,Murabaha Business Finance,Term Loan,2959000,,655461,7.9,24,133700,Monthly,2,2025-03-02,2025-04-02,2027-03-02,Active,Murabaha
+L00252,C0153,Murabaha Auto Finance,Term Loan,99000,,93319,4.5,48,2300,Monthly,22,2026-07-22,2026-08-22,2030-07-22,Active,Murabaha
+L00253,C0153,Ijarah Home Finance,Term Loan,115000,,113754,5.48,180,900,Monthly,3,2026-07-03,2026-08-03,2041-07-03,Active,Ijarah
+L00254,C0153,Islamic Credit Card,Revolving,30000,30000.0,8304,29.03,12,500,Monthly,14,2026-07-14,2026-08-14,2027-07-14,Active,Ujrah
+L00255,C0154,Murabaha Business Finance,Term Loan,3040000,,267485,6.01,24,134700,Monthly,14,2024-12-14,2025-01-14,2026-12-14,Active,Murabaha
+L00256,C0154,Murabaha Business Finance,Term Loan,2867000,,1830775,6.53,60,56100,Monthly,27,2024-10-27,2024-11-27,2029-10-27,Active,Murabaha
+L00257,C0155,Murabaha Auto Finance,Term Loan,344000,,44693,5.0,60,6500,Monthly,28,2022-05-28,2022-06-28,2027-05-28,Active,Murabaha
+L00258,C0155,Islamic Credit Card,Revolving,110000,110000.0,24957,25.17,12,1200,Monthly,25,2024-06-25,2024-07-25,2027-06-25,Active,Ujrah
+L00259,C0156,Tawarruq Personal Finance,Term Loan,194000,,25469,5.68,24,8600,Monthly,19,2025-01-19,2025-02-19,2027-01-19,Active,Tawarruq
+L00260,C0157,Murabaha Business Finance,Term Loan,2298000,,486836,7.37,60,45900,Monthly,14,2022-09-14,2022-10-14,2027-09-14,Active,Murabaha
+L00261,C0157,Murabaha Working Capital Line,Revolving,390000,390000.0,113361,6.26,12,600,Monthly,28,2024-12-28,2025-01-28,2026-12-28,Active,Murabaha
+L00262,C0158,Ijarah Home Finance,Term Loan,265000,,233937,4.22,180,2000,Monthly,21,2024-06-21,2024-07-21,2039-06-21,Active,Ijarah
+L00263,C0159,Murabaha Business Finance,Term Loan,10359000,,2859960,5.46,60,197700,Monthly,3,2023-01-03,2023-02-03,2028-01-03,Active,Murabaha
+L00264,C0160,Tawarruq Personal Finance,Term Loan,92000,,12226,7.12,24,4100,Monthly,24,2025-01-24,2025-02-24,2027-01-24,Active,Tawarruq
+L00265,C0160,Islamic Credit Card,Revolving,60000,60000.0,24067,27.89,12,1200,Monthly,26,2024-05-26,2024-06-26,2027-05-26,Active,Ujrah
+L00266,C0161,Murabaha Business Finance,Term Loan,935000,,83728,5.32,36,28200,Monthly,7,2024-01-07,2024-02-07,2027-01-07,Active,Murabaha
+L00267,C0161,Murabaha Working Capital Line,Revolving,340000,340000.0,117493,7.57,12,700,Monthly,2,2023-02-02,2023-03-02,2027-02-02,Active,Murabaha
+L00268,C0162,Tawarruq Personal Finance,Term Loan,245000,,54233,7.81,24,11100,Monthly,18,2025-03-18,2025-04-18,2027-03-18,Active,Tawarruq
+L00269,C0163,Murabaha Auto Finance,Term Loan,104000,,41076,4.24,48,2400,Monthly,10,2024-04-10,2024-05-10,2028-04-10,Active,Murabaha
+L00270,C0163,Islamic Credit Card,Revolving,30000,30000.0,25513,26.46,12,1300,Monthly,13,2023-07-13,2023-08-13,2027-07-13,Active,Ujrah
+L00271,C0163,Islamic Credit Card,Revolving,20000,20000.0,17886,25.23,12,900,Monthly,14,2026-07-14,2026-08-14,2027-07-14,Active,Ujrah
+L00272,C0163,Islamic Credit Card,Revolving,20000,20000.0,15309,24.35,12,800,Monthly,14,2026-07-14,2026-08-14,2027-07-14,Active,Ujrah
+L00273,C0164,Murabaha Business Finance,Term Loan,5071000,,677629,6.35,60,98900,Monthly,16,2022-05-16,2022-06-16,2027-05-16,Active,Murabaha
+L00274,C0164,Murabaha Working Capital Line,Revolving,620000,620000.0,237329,7.38,12,1500,Monthly,16,2023-06-16,2023-07-16,2027-06-16,Active,Murabaha
+L00275,C0165,Murabaha Auto Finance,Term Loan,110000,,16261,4.91,36,3300,Monthly,22,2024-03-22,2024-04-22,2027-03-22,Active,Murabaha
+L00276,C0166,Murabaha Business Finance,Term Loan,5617000,,2452422,5.46,36,169500,Monthly,13,2025-01-13,2025-02-13,2028-01-13,Active,Murabaha
+L00277,C0166,Murabaha Working Capital Line,Revolving,1570000,1570000.0,618472,7.62,12,3900,Monthly,20,2022-04-20,2022-05-20,2027-04-20,Active,Murabaha
+L00278,C0167,Tawarruq Personal Finance,Term Loan,119000,,20759,5.55,24,5300,Monthly,27,2025-02-27,2025-03-27,2027-02-27,Active,Tawarruq
+L00279,C0167,Islamic Credit Card,Revolving,70000,70000.0,8124,25.76,12,500,Monthly,17,2021-12-17,2022-01-17,2026-12-17,Active,Ujrah
+L00280,C0167,Islamic Credit Card,Revolving,110000,110000.0,34272,28.48,12,1700,Monthly,5,2022-08-05,2022-09-05,2027-08-05,Active,Ujrah
+L00281,C0168,Murabaha Business Finance,Term Loan,3053000,,641480,6.56,36,93700,Monthly,20,2024-05-20,2024-06-20,2027-05-20,Active,Murabaha
+L00282,C0168,Murabaha Working Capital Line,Revolving,920000,920000.0,408204,6.98,12,2400,Monthly,20,2024-07-20,2024-08-20,2027-07-20,Active,Murabaha
+L00283,C0169,Murabaha Auto Finance,Term Loan,39000,,9666,5.21,48,900,Monthly,11,2023-09-11,2023-10-11,2027-09-11,Active,Murabaha
+L00284,C0169,Islamic Credit Card,Revolving,10000,10000.0,4289,28.16,12,500,Monthly,10,2024-12-10,2025-01-10,2026-12-10,Active,Ujrah
+L00285,C0170,Ijarah Home Finance,Term Loan,734000,,657049,5.35,240,5000,Monthly,27,2023-05-27,2023-06-27,2043-05-27,Active,Ijarah
+L00286,C0171,Murabaha Business Finance,Term Loan,1315000,,276524,6.63,36,40400,Monthly,27,2024-05-27,2024-06-27,2027-05-27,Active,Murabaha
+L00287,C0171,Murabaha Working Capital Line,Revolving,700000,700000.0,662119,7.67,12,4200,Monthly,9,2023-06-09,2023-07-09,2027-06-09,Active,Murabaha
+L00288,C0171,Murabaha Working Capital Line,Revolving,450000,450000.0,355522,6.79,12,2000,Monthly,14,2026-06-14,2026-07-14,2027-06-14,Active,Murabaha
+L00289,C0172,Murabaha Auto Finance,Term Loan,62000,,61088,5.0,60,1200,Monthly,15,2026-09-15,2026-10-15,2031-09-15,Active,Murabaha
+L00290,C0173,Ijarah Home Finance,Term Loan,946000,,828457,4.65,240,6100,Monthly,19,2023-01-19,2023-02-19,2043-01-19,Active,Ijarah
+L00291,C0173,Tawarruq Personal Finance,Term Loan,81000,,24428,7.81,36,2500,Monthly,3,2024-08-03,2024-09-03,2027-08-03,Active,Tawarruq
+L00292,C0174,Murabaha Auto Finance,Term Loan,177000,,46738,3.71,48,4000,Monthly,14,2023-10-14,2023-11-14,2027-10-14,Active,Murabaha
+L00293,C0175,Murabaha Auto Finance,Term Loan,495000,,252733,4.37,60,9200,Monthly,23,2024-03-23,2024-04-23,2029-03-23,Active,Murabaha
+L00294,C0176,Tawarruq Personal Finance,Term Loan,348000,,168794,5.38,48,8100,Monthly,10,2024-08-10,2024-09-10,2028-08-10,Active,Tawarruq
+L00295,C0177,Ijarah Home Finance,Term Loan,551000,,459918,5.01,240,3600,Monthly,27,2021-10-27,2021-11-27,2041-10-27,Active,Ijarah
+L00296,C0178,Murabaha Business Finance,Term Loan,1981000,,176286,7.28,24,88900,Monthly,19,2024-12-19,2025-01-19,2026-12-19,Active,Murabaha
+L00297,C0179,Ijarah Home Finance,Term Loan,614000,,584843,5.06,300,3600,Monthly,4,2024-07-04,2024-08-04,2049-07-04,Active,Ijarah
+L00298,C0179,Islamic Credit Card,Revolving,50000,50000.0,19759,29.75,12,1000,Monthly,25,2024-08-25,2024-09-25,2027-08-25,Active,Ujrah
+L00299,C0180,Ijarah Home Finance,Term Loan,240000,,202983,4.25,240,1500,Monthly,20,2022-05-20,2022-06-20,2042-05-20,Active,Ijarah
+L00300,C0180,Islamic Credit Card,Revolving,20000,20000.0,17944,26.41,12,900,Monthly,12,2022-06-12,2022-07-12,2027-06-12,Active,Ujrah
+L00301,C0180,Murabaha Auto Finance,Term Loan,36000,,34395,4.75,60,700,Monthly,2,2026-07-02,2026-08-02,2031-07-02,Active,Murabaha
+L00302,C0181,Murabaha Business Finance,Term Loan,6312000,,1444735,7.01,60,125000,Monthly,6,2022-10-06,2022-11-06,2027-10-06,Active,Murabaha
+L00303,C0182,Murabaha Business Finance,Term Loan,1676000,,149515,7.56,24,75500,Monthly,14,2024-12-14,2025-01-14,2026-12-14,Active,Murabaha
+L00304,C0182,Murabaha Working Capital Line,Revolving,430000,430000.0,371535,7.27,12,2300,Monthly,12,2024-10-12,2024-11-12,2027-10-12,Active,Murabaha
+L00305,C0182,Murabaha Working Capital Line,Revolving,350000,350000.0,265475,8.63,12,1900,Monthly,5,2026-06-05,2026-07-05,2027-06-05,Active,Murabaha
+L00306,C0183,Ijarah Home Finance,Term Loan,472000,,419708,4.79,240,3100,Monthly,17,2023-05-17,2023-06-17,2043-05-17,Active,Ijarah
+L00307,C0184,Tawarruq Personal Finance,Term Loan,106000,,9270,5.33,24,4700,Monthly,12,2024-12-12,2025-01-12,2026-12-12,Active,Tawarruq
+L00308,C0185,Murabaha Business Finance,Term Loan,6155000,,1543622,7.8,60,124200,Monthly,11,2022-11-11,2022-12-11,2027-11-11,Active,Murabaha
+L00309,C0186,Murabaha Business Finance,Term Loan,8402000,,2329063,5.69,60,161200,Monthly,18,2023-01-18,2023-02-18,2028-01-18,Active,Murabaha
+L00310,C0187,Murabaha Business Finance,Term Loan,9744000,,5307399,7.19,60,193800,Monthly,25,2024-04-25,2024-05-25,2029-04-25,Active,Murabaha
+L00311,C0187,Murabaha Working Capital Line,Revolving,1540000,1540000.0,1297679,6.29,12,6800,Monthly,9,2023-07-09,2023-08-09,2027-07-09,Active,Murabaha
+L00312,C0187,Murabaha Working Capital Line,Revolving,1100000,1100000.0,945209,7.49,12,5900,Monthly,4,2026-06-04,2026-07-04,2027-06-04,Active,Murabaha
+L00313,C0188,Ijarah Home Finance,Term Loan,771000,,696727,5.08,240,5100,Monthly,1,2023-09-01,2023-10-01,2043-09-01,Active,Ijarah
+L00314,C0189,Murabaha Auto Finance,Term Loan,116000,,30232,3.75,36,3400,Monthly,11,2024-07-11,2024-08-11,2027-07-11,Active,Murabaha
+L00315,C0190,Murabaha Auto Finance,Term Loan,45000,,10512,3.93,60,800,Monthly,1,2022-11-01,2022-12-01,2027-11-01,Active,Murabaha
+L00316,C0190,Murabaha Auto Finance,Term Loan,15000,,9452,5.5,48,300,Monthly,11,2025-03-11,2025-04-11,2029-03-11,Active,Murabaha
+L00317,C0191,Murabaha Business Finance,Term Loan,5067000,,1119764,7.59,24,228200,Monthly,26,2025-03-26,2025-04-26,2027-03-26,Active,Murabaha
+L00318,C0192,Murabaha Business Finance,Term Loan,7446000,,1846346,7.17,60,148000,Monthly,27,2022-11-27,2022-12-27,2027-11-27,Active,Murabaha
+L00319,C0193,Murabaha Auto Finance,Term Loan,189000,,20799,4.35,60,3500,Monthly,7,2022-04-07,2022-05-07,2027-04-07,Active,Murabaha
+L00320,C0194,Tawarruq Personal Finance,Term Loan,177000,,67209,5.35,36,5300,Monthly,28,2024-11-28,2024-12-28,2027-11-28,Active,Tawarruq
+L00321,C0194,Ijarah Home Finance,Term Loan,384000,,364600,4.89,300,2200,Monthly,15,2024-06-15,2024-07-15,2049-06-15,Active,Ijarah
+L00322,C0195,Tawarruq Personal Finance,Term Loan,29000,,5127,7.21,24,1300,Monthly,22,2025-02-22,2025-03-22,2027-02-22,Active,Tawarruq
+L00323,C0195,Islamic Credit Card,Revolving,20000,20000.0,4442,24.04,12,500,Monthly,16,2024-02-16,2024-03-16,2027-02-16,Active,Ujrah
+L00324,C0196,Murabaha Business Finance,Term Loan,766000,,93006,6.8,36,23600,Monthly,15,2024-02-15,2024-03-15,2027-02-15,Active,Murabaha
+L00325,C0196,Murabaha Business Finance,Term Loan,516000,,123906,5.41,60,9800,Monthly,7,2022-11-07,2022-12-07,2027-11-07,Active,Murabaha
+L00326,C0197,Murabaha Business Finance,Term Loan,730000,,321152,6.37,36,22300,Monthly,20,2025-01-20,2025-02-20,2028-01-20,Active,Murabaha
+L00327,C0198,Murabaha Business Finance,Term Loan,944000,,85007,5.74,36,28600,Monthly,6,2024-01-06,2024-02-06,2027-01-06,Active,Murabaha
+L00328,C0199,Murabaha Business Finance,Term Loan,1250000,,722813,7.29,60,24900,Monthly,28,2024-06-28,2024-07-28,2029-06-28,Active,Murabaha
+L00329,C0199,Murabaha Business Finance,Term Loan,340000,,130052,6.15,36,10400,Monthly,24,2024-11-24,2024-12-24,2027-11-24,Active,Murabaha
+L00330,C0200,Tawarruq Personal Finance,Term Loan,117000,,67652,7.43,48,2800,Monthly,1,2024-12-01,2025-01-01,2028-12-01,Active,Tawarruq
+L00331,C0200,Ijarah Home Finance,Term Loan,154000,,109861,4.49,180,1200,Monthly,10,2021-05-10,2021-06-10,2036-05-10,Active,Ijarah
+L00332,C0201,Ijarah Home Finance,Term Loan,906000,,852638,4.05,240,5500,Monthly,21,2025-01-21,2025-02-21,2045-01-21,Active,Ijarah
+L00333,C0201,Ijarah Home Finance,Term Loan,340000,,284160,5.29,240,2300,Monthly,18,2021-09-18,2021-10-18,2041-09-18,Active,Ijarah
+L00334,C0201,Islamic Credit Card,Revolving,110000,110000.0,49454,27.56,12,2500,Monthly,27,2022-12-27,2023-01-27,2026-12-27,Active,Ujrah
+L00335,C0202,Murabaha Business Finance,Term Loan,841000,,148611,7.14,24,37700,Monthly,22,2025-02-22,2025-03-22,2027-02-22,Active,Murabaha
+L00336,C0203,Murabaha Auto Finance,Term Loan,461000,,141841,4.73,60,8600,Monthly,27,2023-03-27,2023-04-27,2028-03-27,Active,Murabaha
+L00337,C0204,Murabaha Business Finance,Term Loan,7661000,,5437813,7.99,60,155300,Monthly,20,2025-02-20,2025-03-20,2030-02-20,Active,Murabaha
+L00338,C0204,Murabaha Working Capital Line,Revolving,1240000,1240000.0,457743,7.65,12,2900,Monthly,22,2022-02-22,2022-03-22,2027-02-22,Active,Murabaha
+L00339,C0205,Murabaha Business Finance,Term Loan,5272000,,2041103,6.46,60,103100,Monthly,17,2023-07-17,2023-08-17,2028-07-17,Active,Murabaha
+L00340,C0205,Murabaha Working Capital Line,Revolving,1550000,1550000.0,1291689,8.2,12,8800,Monthly,18,2023-01-18,2023-02-18,2027-01-18,Active,Murabaha
+L00341,C0205,Murabaha Working Capital Line,Revolving,890000,890000.0,715958,6.15,12,3700,Monthly,7,2026-06-07,2026-07-07,2027-06-07,Active,Murabaha
+L00342,C0206,Tawarruq Personal Finance,Term Loan,119000,,25786,5.03,24,5200,Monthly,5,2025-03-05,2025-04-05,2027-03-05,Active,Tawarruq
+L00343,C0206,Islamic Credit Card,Revolving,110000,110000.0,41404,26.83,12,2100,Monthly,5,2024-08-05,2024-09-05,2027-08-05,Active,Ujrah
+L00344,C0207,Murabaha Business Finance,Term Loan,1328000,,235961,5.21,36,39900,Monthly,2,2024-04-02,2024-05-02,2027-04-02,Active,Murabaha
+L00345,C0208,Murabaha Business Finance,Term Loan,718000,,156884,6.11,24,31900,Monthly,28,2025-03-28,2025-04-28,2027-03-28,Active,Murabaha
+L00346,C0209,Murabaha Business Finance,Term Loan,3676000,,1088162,6.0,36,111800,Monthly,24,2024-08-24,2024-09-24,2027-08-24,Active,Murabaha
+L00347,C0210,Murabaha Business Finance,Term Loan,3940000,,860964,6.12,24,174800,Monthly,15,2025-03-15,2025-04-15,2027-03-15,Active,Murabaha
+L00348,C0211,Murabaha Business Finance,Term Loan,436000,,40036,7.22,36,13500,Monthly,27,2024-01-27,2024-02-27,2027-01-27,Active,Murabaha
+L00349,C0212,Tawarruq Personal Finance,Term Loan,162000,,35139,5.16,24,7100,Monthly,13,2025-03-13,2025-04-13,2027-03-13,Active,Tawarruq
+L00350,C0212,Islamic Credit Card,Revolving,90000,90000.0,32790,25.21,12,1600,Monthly,8,2024-12-08,2025-01-08,2026-12-08,Active,Ujrah
+L00351,C0213,Murabaha Business Finance,Term Loan,1485000,,328122,7.57,24,66900,Monthly,22,2025-03-22,2025-04-22,2027-03-22,Active,Murabaha
+L00352,C0213,Murabaha Business Finance,Term Loan,917000,,427495,5.87,36,27800,Monthly,7,2025-02-07,2025-03-07,2028-02-07,Active,Murabaha
+L00353,C0214,Murabaha Business Finance,Term Loan,858000,,51694,5.83,36,26000,Monthly,10,2023-12-10,2024-01-10,2026-12-10,Active,Murabaha
+L00354,C0214,Murabaha Working Capital Line,Revolving,550000,550000.0,196294,6.23,12,1000,Monthly,18,2023-09-18,2023-10-18,2027-09-18,Active,Murabaha
+L00355,C0215,Tawarruq Personal Finance,Term Loan,171000,,22876,7.9,24,7700,Monthly,6,2025-01-06,2025-02-06,2027-01-06,Active,Tawarruq
+L00356,C0215,Ijarah Home Finance,Term Loan,421000,,357672,4.46,180,3200,Monthly,22,2023-10-22,2023-11-22,2038-10-22,Active,Ijarah
+L00357,C0216,Ijarah Home Finance,Term Loan,108000,,92735,4.48,180,800,Monthly,13,2023-12-13,2024-01-13,2038-12-13,Active,Ijarah
+L00358,C0217,Murabaha Business Finance,Term Loan,3818000,,144527,5.4,60,72800,Monthly,27,2021-12-27,2022-01-27,2026-12-27,Active,Murabaha
+L00359,C0218,Ijarah Home Finance,Term Loan,537000,,511499,5.06,300,3200,Monthly,5,2024-07-05,2024-08-05,2049-07-05,Active,Ijarah
+L00360,C0218,Tawarruq Personal Finance,Term Loan,44000,,9086,5.07,36,1300,Monthly,27,2024-05-27,2024-06-27,2027-05-27,Active,Tawarruq
+L00361,C0219,Murabaha Business Finance,Term Loan,5227000,,3733881,5.86,60,100700,Monthly,14,2025-03-14,2025-04-14,2030-03-14,Active,Murabaha
+L00362,C0220,Murabaha Business Finance,Term Loan,624000,,136554,6.31,24,27700,Monthly,23,2025-03-23,2025-04-23,2027-03-23,Active,Murabaha
+L00363,C0221,Tawarruq Personal Finance,Term Loan,35000,,4645,6.97,24,1600,Monthly,17,2025-01-17,2025-02-17,2027-01-17,Active,Tawarruq
+L00364,C0222,Murabaha Auto Finance,Term Loan,62000,,4606,4.75,60,1200,Monthly,5,2022-02-05,2022-03-05,2027-02-05,Active,Murabaha
+L00365,C0223,Ijarah Home Finance,Term Loan,1449000,,1226146,4.73,240,9300,Monthly,4,2022-03-04,2022-04-04,2042-03-04,Active,Ijarah
+L00366,C0224,Tawarruq Personal Finance,Term Loan,127000,,48170,5.23,36,3800,Monthly,12,2024-11-12,2024-12-12,2027-11-12,Active,Tawarruq
+L00367,C0225,Murabaha Auto Finance,Term Loan,127000,,11537,4.8,48,2900,Monthly,11,2023-02-11,2023-03-11,2027-02-11,Active,Murabaha
+L00368,C0226,Murabaha Auto Finance,Term Loan,207000,,18460,5.01,36,6200,Monthly,5,2024-01-05,2024-02-05,2027-01-05,Active,Murabaha
+L00369,C0227,Tawarruq Personal Finance,Term Loan,184000,,39957,5.31,24,8100,Monthly,6,2025-03-06,2025-04-06,2027-03-06,Active,Tawarruq
+L00370,C0228,Murabaha Auto Finance,Term Loan,248000,,89768,5.1,60,4700,Monthly,8,2023-06-08,2023-07-08,2028-06-08,Active,Murabaha
+L00371,C0229,Murabaha Business Finance,Term Loan,4238000,,254644,5.63,36,128200,Monthly,17,2023-12-17,2024-01-17,2026-12-17,Active,Murabaha
+L00372,C0230,Ijarah Home Finance,Term Loan,494000,,425847,4.18,300,2700,Monthly,19,2021-05-19,2021-06-19,2046-05-19,Active,Ijarah
+L00373,C0231,Murabaha Business Finance,Term Loan,4986000,,1176148,5.21,36,149900,Monthly,15,2024-06-15,2024-07-15,2027-06-15,Active,Murabaha
+L00374,C0232,Murabaha Business Finance,Term Loan,5114000,,621961,6.93,36,157700,Monthly,26,2024-02-26,2024-03-26,2027-02-26,Active,Murabaha
+L00375,C0232,Murabaha Working Capital Line,Revolving,1150000,1150000.0,1058875,8.15,12,7200,Monthly,2,2022-02-02,2022-03-02,2027-02-02,Active,Murabaha
+L00376,C0232,Murabaha Working Capital Line,Revolving,580000,580000.0,455570,6.04,12,2300,Monthly,25,2026-06-25,2026-07-25,2027-06-25,Active,Murabaha
+L00377,C0233,Ijarah Home Finance,Term Loan,188000,,173397,5.31,300,1100,Monthly,17,2023-02-17,2023-03-17,2048-02-17,Active,Ijarah
+L00378,C0233,Tawarruq Personal Finance,Term Loan,15000,,1846,7.88,36,500,Monthly,19,2024-02-19,2024-03-19,2027-02-19,Active,Tawarruq
+L00379,C0233,Islamic Credit Card,Revolving,20000,20000.0,8396,27.58,12,500,Monthly,2,2023-12-02,2024-01-02,2026-12-02,Active,Ujrah
+L00380,C0234,Murabaha Business Finance,Term Loan,2510000,,1236163,5.43,36,75700,Monthly,15,2025-03-15,2025-04-15,2028-03-15,Active,Murabaha
+L00381,C0234,Murabaha Working Capital Line,Revolving,1110000,1110000.0,345618,7.95,12,2300,Monthly,26,2025-03-26,2025-04-26,2027-03-26,Active,Murabaha
+L00382,C0235,Tawarruq Personal Finance,Term Loan,116000,,15511,7.85,24,5200,Monthly,1,2025-01-01,2025-02-01,2027-01-01,Active,Tawarruq
+L00383,C0236,Murabaha Business Finance,Term Loan,1624000,,629143,7.55,36,50600,Monthly,16,2024-11-16,2024-12-16,2027-11-16,Active,Murabaha
+L00384,C0237,Murabaha Business Finance,Term Loan,2113000,,815034,7.07,36,65300,Monthly,8,2024-11-08,2024-12-08,2027-11-08,Active,Murabaha
+L00385,C0238,Tawarruq Personal Finance,Term Loan,56000,,51743,6.59,36,1700,Monthly,13,2026-07-13,2026-08-13,2029-07-13,Active,Tawarruq
+L00386,C0238,Tawarruq Personal Finance,Term Loan,24000,,22134,5.0,36,700,Monthly,20,2026-07-20,2026-08-20,2029-07-20,Active,Tawarruq
+L00387,C0238,Islamic Credit Card,Revolving,20000,20000.0,4562,29.25,12,500,Monthly,7,2026-07-07,2026-08-07,2027-07-07,Active,Ujrah
+L00388,C0239,Tawarruq Personal Finance,Term Loan,107000,,9575,7.91,24,4800,Monthly,14,2024-12-14,2025-01-14,2026-12-14,Active,Tawarruq
+L00389,C0239,Islamic Credit Card,Revolving,80000,80000.0,23867,24.49,12,1200,Monthly,6,2023-12-06,2024-01-06,2026-12-06,Active,Ujrah
+L00390,C0240,Tawarruq Personal Finance,Term Loan,67000,,10284,7.95,36,2100,Monthly,21,2024-03-21,2024-04-21,2027-03-21,Active,Tawarruq
+L00391,C0241,Ijarah Home Finance,Term Loan,868000,,748391,4.19,300,4700,Monthly,5,2021-05-05,2021-06-05,2046-05-05,Active,Ijarah
+L00392,C0242,Ijarah Home Finance,Term Loan,116000,,96427,4.57,240,700,Monthly,14,2021-11-14,2021-12-14,2041-11-14,Active,Ijarah
+L00393,C0243,Tawarruq Personal Finance,Term Loan,167000,,79052,7.81,36,5200,Monthly,7,2025-02-07,2025-03-07,2028-02-07,Active,Tawarruq
+L00394,C0244,Murabaha Business Finance,Term Loan,6877000,,1233888,6.02,36,209300,Monthly,14,2024-04-14,2024-05-14,2027-04-14,Active,Murabaha
+L00395,C0244,Murabaha Business Finance,Term Loan,1988000,,173348,5.0,24,87200,Monthly,19,2024-12-19,2025-01-19,2026-12-19,Active,Murabaha
+L00396,C0245,Ijarah Home Finance,Term Loan,473000,,352585,4.99,180,3700,Monthly,22,2021-10-22,2021-11-22,2036-10-22,Active,Ijarah
+L00397,C0246,Ijarah Home Finance,Term Loan,518000,,475942,5.12,180,4100,Monthly,4,2025-01-04,2025-02-04,2040-01-04,Active,Ijarah
+L00398,C0246,Islamic Credit Card,Revolving,70000,70000.0,12314,24.55,12,600,Monthly,5,2022-04-05,2022-05-05,2027-04-05,Active,Ujrah
+L00399,C0247,Tawarruq Personal Finance,Term Loan,116000,,63975,6.18,48,2700,Monthly,24,2024-11-24,2024-12-24,2028-11-24,Active,Tawarruq
+L00400,C0248,Murabaha Business Finance,Term Loan,2919000,,513154,6.5,24,130000,Monthly,4,2025-02-04,2025-03-04,2027-02-04,Active,Murabaha
+L00401,C0248,Murabaha Working Capital Line,Revolving,1620000,1620000.0,586319,6.03,12,2900,Monthly,24,2023-08-24,2023-09-24,2027-08-24,Active,Murabaha
+L00402,C0249,Murabaha Business Finance,Term Loan,1849000,,338108,7.61,36,57600,Monthly,23,2024-04-23,2024-05-23,2027-04-23,Active,Murabaha
+L00403,C0249,Murabaha Working Capital Line,Revolving,640000,640000.0,568100,8.69,12,4100,Monthly,14,2024-05-14,2024-06-14,2027-05-14,Active,Murabaha
+L00404,C0250,Murabaha Business Finance,Term Loan,3961000,,829478,6.27,36,121000,Monthly,22,2024-05-22,2024-06-22,2027-05-22,Active,Murabaha
+L00405,C0250,Murabaha Working Capital Line,Revolving,1730000,1730000.0,1632280,6.72,12,9100,Monthly,15,2021-05-15,2021-06-15,2027-05-15,Active,Murabaha
+L00406,C0250,Murabaha Business Finance,Term Loan,3918000,,3517029,6.08,36,119300,Monthly,14,2026-06-14,2026-07-14,2029-06-14,Active,Murabaha
+L00407,C0251,Murabaha Auto Finance,Term Loan,84000,,29108,3.94,36,2500,Monthly,15,2024-10-15,2024-11-15,2027-10-15,Active,Murabaha
+L00408,C0251,Islamic Credit Card,Revolving,40000,40000.0,33447,24.05,12,1700,Monthly,10,2021-11-10,2021-12-10,2026-11-10,Active,Ujrah
+L00409,C0251,Ijarah Home Finance,Term Loan,230000,,227331,4.65,180,1800,Monthly,24,2026-07-24,2026-08-24,2041-07-24,Active,Ijarah
+L00410,C0252,Ijarah Home Finance,Term Loan,413000,,334613,4.2,180,3100,Monthly,16,2023-02-16,2023-03-16,2038-02-16,Active,Ijarah
+L00411,C0252,Islamic Credit Card,Revolving,40000,40000.0,15035,27.74,12,800,Monthly,7,2022-01-07,2022-02-07,2027-01-07,Active,Ujrah
+L00412,C0252,Islamic Credit Card,Revolving,40000,40000.0,17649,26.79,12,900,Monthly,26,2023-12-26,2024-01-26,2026-12-26,Active,Ujrah
+L00413,C0253,Ijarah Home Finance,Term Loan,433000,,402780,4.56,240,2800,Monthly,25,2024-08-25,2024-09-25,2044-08-25,Active,Ijarah
+L00414,C0254,Tawarruq Personal Finance,Term Loan,269000,,88665,7.48,36,8400,Monthly,20,2024-09-20,2024-10-20,2027-09-20,Active,Tawarruq
+L00415,C0254,Islamic Credit Card,Revolving,100000,100000.0,27469,26.43,12,1400,Monthly,2,2023-08-02,2023-09-02,2027-08-02,Active,Ujrah
+L00416,C0255,Tawarruq Personal Finance,Term Loan,208000,,55270,5.53,36,6300,Monthly,1,2024-07-01,2024-08-01,2027-07-01,Active,Tawarruq
+L00417,C0256,Murabaha Business Finance,Term Loan,5071000,,3042176,5.47,60,96800,Monthly,20,2024-08-20,2024-09-20,2029-08-20,Active,Murabaha
+L00418,C0256,Murabaha Working Capital Line,Revolving,1730000,1730000.0,1466302,6.62,12,8100,Monthly,4,2025-01-04,2025-02-04,2027-01-04,Active,Murabaha
+L00419,C0256,Murabaha Business Finance,Term Loan,4502000,,4375093,6.76,60,88600,Monthly,5,2026-08-05,2026-09-05,2031-08-05,Active,Murabaha
+L00420,C0257,Murabaha Business Finance,Term Loan,5890000,,584144,7.9,60,119100,Monthly,13,2022-03-13,2022-04-13,2027-03-13,Active,Murabaha
+L00421,C0257,Murabaha Working Capital Line,Revolving,2610000,2610000.0,2353617,8.97,12,17600,Monthly,10,2024-07-10,2024-08-10,2027-07-10,Active,Murabaha
+L00422,C0257,Murabaha Business Finance,Term Loan,6625000,,6296603,7.91,36,207300,Monthly,1,2026-08-01,2026-09-01,2029-08-01,Active,Murabaha
+L00423,C0258,Ijarah Home Finance,Term Loan,539000,,431326,4.15,180,4000,Monthly,16,2022-12-16,2023-01-16,2037-12-16,Active,Ijarah
+L00424,C0258,Islamic Credit Card,Revolving,50000,50000.0,8923,24.2,12,500,Monthly,2,2024-03-02,2024-04-02,2027-03-02,Active,Ujrah
+L00425,C0259,Murabaha Auto Finance,Term Loan,109000,,47998,4.86,48,2500,Monthly,13,2024-06-13,2024-07-13,2028-06-13,Active,Murabaha
+L00426,C0260,Tawarruq Personal Finance,Term Loan,87000,,5365,7.55,36,2700,Monthly,11,2023-12-11,2024-01-11,2026-12-11,Active,Tawarruq
+L00427,C0261,Ijarah Home Finance,Term Loan,677000,,572486,4.24,240,4200,Monthly,3,2022-05-03,2022-06-03,2042-05-03,Active,Ijarah
+L00428,C0262,Murabaha Business Finance,Term Loan,5128000,,786870,7.92,36,160500,Monthly,19,2024-03-19,2024-04-19,2027-03-19,Active,Murabaha
+L00429,C0263,Murabaha Business Finance,Term Loan,3494000,,934873,6.17,36,106600,Monthly,19,2024-07-19,2024-08-19,2027-07-19,Active,Murabaha
+L00430,C0263,Murabaha Working Capital Line,Revolving,730000,730000.0,593395,6.61,12,3300,Monthly,8,2021-11-08,2021-12-08,2026-11-08,Active,Murabaha
+L00431,C0263,Murabaha Business Finance,Term Loan,2299000,,1849394,7.89,24,103900,Monthly,19,2026-05-19,2026-06-19,2028-05-19,Active,Murabaha
+L00432,C0264,Murabaha Business Finance,Term Loan,3305000,,582045,6.72,24,147600,Monthly,3,2025-02-03,2025-03-03,2027-02-03,Active,Murabaha
+L00433,C0265,Murabaha Business Finance,Term Loan,3616000,,2592765,6.38,60,70500,Monthly,26,2025-03-26,2025-04-26,2030-03-26,Active,Murabaha
+L00434,C0266,Tawarruq Personal Finance,Term Loan,181000,,33239,7.97,36,5700,Monthly,10,2024-04-10,2024-05-10,2027-04-10,Active,Tawarruq
+L00435,C0267,Murabaha Auto Finance,Term Loan,193000,,72328,3.93,36,5700,Monthly,27,2024-11-27,2024-12-27,2027-11-27,Active,Murabaha
+L00436,C0268,Murabaha Auto Finance,Term Loan,136000,,7936,3.51,36,4000,Monthly,22,2023-12-22,2024-01-22,2026-12-22,Active,Murabaha
+L00437,C0268,Ijarah Home Finance,Term Loan,291000,,278257,4.75,300,1700,Monthly,16,2024-10-16,2024-11-16,2049-10-16,Active,Ijarah
+L00438,C0268,Islamic Credit Card,Revolving,60000,60000.0,13145,25.07,12,700,Monthly,18,2021-12-18,2022-01-18,2026-12-18,Active,Ujrah
+L00439,C0269,Murabaha Auto Finance,Term Loan,323000,,37593,3.52,36,9500,Monthly,6,2024-02-06,2024-03-06,2027-02-06,Active,Murabaha
+L00440,C0269,Islamic Credit Card,Revolving,160000,160000.0,146390,28.52,12,7300,Monthly,7,2024-10-07,2024-11-07,2027-10-07,Active,Ujrah
+L00441,C0269,Murabaha Auto Finance,Term Loan,158000,,149769,4.5,36,4700,Monthly,25,2026-08-25,2026-09-25,2029-08-25,Active,Murabaha
+L00442,C0270,Murabaha Business Finance,Term Loan,1975000,,175612,7.19,24,88600,Monthly,14,2024-12-14,2025-01-14,2026-12-14,Active,Murabaha
+L00443,C0271,Murabaha Auto Finance,Term Loan,224000,,48067,3.59,60,4100,Monthly,21,2022-10-21,2022-11-21,2027-10-21,Active,Murabaha
+L00444,C0271,Islamic Credit Card,Revolving,60000,60000.0,9982,29.7,12,500,Monthly,28,2025-02-28,2025-03-28,2027-02-28,Active,Ujrah
+L00445,C0272,Tawarruq Personal Finance,Term Loan,36000,,17678,5.05,36,1100,Monthly,2,2025-03-02,2025-04-02,2028-03-02,Active,Tawarruq
+L00446,C0273,Murabaha Business Finance,Term Loan,2744000,,244943,7.63,24,123600,Monthly,28,2024-12-28,2025-01-28,2026-12-28,Active,Murabaha
+L00447,C0274,Tawarruq Personal Finance,Term Loan,11000,,1936,6.68,24,500,Monthly,21,2025-02-21,2025-03-21,2027-02-21,Active,Tawarruq
+L00448,C0274,Islamic Credit Card,Revolving,10000,10000.0,3875,26.39,12,500,Monthly,21,2022-05-21,2022-06-21,2027-05-21,Active,Ujrah
+L00449,C0275,Tawarruq Personal Finance,Term Loan,437000,,262351,7.78,48,10600,Monthly,14,2025-01-14,2025-02-14,2029-01-14,Active,Tawarruq
+L00450,C0276,Ijarah Home Finance,Term Loan,1105000,,1019404,4.36,180,8400,Monthly,9,2025-03-09,2025-04-09,2040-03-09,Active,Ijarah
+L00451,C0276,Islamic Credit Card,Revolving,110000,110000.0,35662,26.88,12,1800,Monthly,17,2023-12-17,2024-01-17,2026-12-17,Active,Ujrah
+L00452,C0276,Islamic Credit Card,Revolving,130000,130000.0,58187,27.74,12,2900,Monthly,23,2025-02-23,2025-03-23,2027-02-23,Active,Ujrah
+L00453,C0277,Tawarruq Personal Finance,Term Loan,127000,,28059,7.56,24,5700,Monthly,12,2025-03-12,2025-04-12,2027-03-12,Active,Tawarruq
+L00454,C0278,Ijarah Home Finance,Term Loan,1371000,,1366274,4.84,300,7900,Monthly,6,2026-08-06,2026-09-06,2051-08-06,Active,Ijarah
+L00455,C0278,Ijarah Home Finance,Term Loan,407000,,404026,5.31,180,3300,Monthly,7,2026-08-07,2026-09-07,2041-08-07,Active,Ijarah
+L00456,C0279,Tawarruq Personal Finance,Term Loan,217000,,26361,6.84,36,6700,Monthly,26,2024-02-26,2024-03-26,2027-02-26,Active,Tawarruq
+L00457,C0280,Murabaha Business Finance,Term Loan,649000,,142036,6.32,24,28900,Monthly,13,2025-03-13,2025-04-13,2027-03-13,Active,Murabaha
+L00458,C0280,Murabaha Working Capital Line,Revolving,340000,340000.0,142136,8.47,12,1000,Monthly,10,2022-08-10,2022-09-10,2027-08-10,Active,Murabaha
+L00459,C0281,Tawarruq Personal Finance,Term Loan,288000,,46812,6.53,48,6800,Monthly,5,2023-05-05,2023-06-05,2027-05-05,Active,Tawarruq
+L00460,C0281,Tawarruq Personal Finance,Term Loan,63000,,13928,7.65,24,2800,Monthly,25,2025-03-25,2025-04-25,2027-03-25,Active,Tawarruq
+L00461,C0281,Islamic Credit Card,Revolving,110000,110000.0,21514,25.56,12,1100,Monthly,11,2023-12-11,2024-01-11,2026-12-11,Active,Ujrah
+L00462,C0282,Murabaha Business Finance,Term Loan,1024000,,303908,6.25,36,31300,Monthly,20,2024-08-20,2024-09-20,2027-08-20,Active,Murabaha
+L00463,C0283,Ijarah Home Finance,Term Loan,133000,,120536,4.6,300,700,Monthly,28,2022-10-28,2022-11-28,2047-10-28,Active,Ijarah
+L00464,C0284,Tawarruq Personal Finance,Term Loan,327000,,38769,7.45,48,7900,Monthly,11,2023-03-11,2023-04-11,2027-03-11,Active,Tawarruq
+L00465,C0284,Tawarruq Personal Finance,Term Loan,73000,,9709,7.22,24,3300,Monthly,22,2025-01-22,2025-02-22,2027-01-22,Active,Tawarruq
+L00466,C0285,Tawarruq Personal Finance,Term Loan,177000,,63006,6.74,36,5400,Monthly,9,2024-10-09,2024-11-09,2027-10-09,Active,Tawarruq
+L00467,C0286,Ijarah Home Finance,Term Loan,305000,,270678,4.63,240,2000,Monthly,14,2023-05-14,2023-06-14,2043-05-14,Active,Ijarah
+L00468,C0287,Murabaha Business Finance,Term Loan,4572000,,2165257,7.87,36,143000,Monthly,4,2025-02-04,2025-03-04,2028-02-04,Active,Murabaha
+L00469,C0287,Murabaha Working Capital Line,Revolving,1950000,1950000.0,675230,7.12,12,4000,Monthly,20,2021-05-20,2021-06-20,2027-05-20,Active,Murabaha
+L00470,C0288,Ijarah Home Finance,Term Loan,169000,,150022,4.92,240,1100,Monthly,19,2023-04-19,2023-05-19,2043-04-19,Active,Ijarah
+L00471,C0288,Tawarruq Personal Finance,Term Loan,19000,,6484,6.62,48,500,Monthly,18,2024-01-18,2024-02-18,2028-01-18,Active,Tawarruq
+L00472,C0289,Ijarah Home Finance,Term Loan,1510000,,1413366,4.16,240,9300,Monthly,26,2024-11-26,2024-12-26,2044-11-26,Active,Ijarah
+L00473,C0290,Tawarruq Personal Finance,Term Loan,110000,,9930,5.93,36,3300,Monthly,11,2024-01-11,2024-02-11,2027-01-11,Active,Tawarruq
+L00474,C0291,Murabaha Business Finance,Term Loan,464000,,60584,5.04,24,20400,Monthly,7,2025-01-07,2025-02-07,2027-01-07,Active,Murabaha
+L00475,C0292,Murabaha Business Finance,Term Loan,1748000,,228899,5.38,24,77000,Monthly,7,2025-01-07,2025-02-07,2027-01-07,Active,Murabaha
+L00476,C0293,Tawarruq Personal Finance,Term Loan,178000,,58699,7.53,36,5500,Monthly,4,2024-09-04,2024-10-04,2027-09-04,Active,Tawarruq
+L00477,C0293,Islamic Credit Card,Revolving,130000,130000.0,32939,24.34,12,1600,Monthly,8,2021-11-08,2021-12-08,2026-11-08,Active,Ujrah
+L00478,C0293,Islamic Credit Card,Revolving,110000,110000.0,47180,29.2,12,2400,Monthly,27,2024-07-27,2024-08-27,2027-07-27,Active,Ujrah
+L00479,C0294,Murabaha Business Finance,Term Loan,2086000,,432594,5.43,36,62900,Monthly,28,2024-05-28,2024-06-28,2027-05-28,Active,Murabaha
+L00480,C0295,Murabaha Business Finance,Term Loan,1176000,,454310,7.24,36,36400,Monthly,7,2024-11-07,2024-12-07,2027-11-07,Active,Murabaha
+L00481,C0295,Murabaha Business Finance,Term Loan,504000,,247973,5.3,36,15200,Monthly,26,2025-03-26,2025-04-26,2028-03-26,Active,Murabaha
+L00482,C0296,Murabaha Business Finance,Term Loan,1199000,,410818,7.96,60,24300,Monthly,8,2023-04-08,2023-05-08,2028-04-08,Active,Murabaha
+L00483,C0297,Murabaha Business Finance,Term Loan,4774000,,1014814,7.57,36,148700,Monthly,23,2024-05-23,2024-06-23,2027-05-23,Active,Murabaha
+L00484,C0298,Tawarruq Personal Finance,Term Loan,111000,,24268,6.19,24,4900,Monthly,4,2025-03-04,2025-04-04,2027-03-04,Active,Tawarruq
+L00485,C0298,Tawarruq Personal Finance,Term Loan,66000,,25603,7.7,36,2100,Monthly,27,2024-11-27,2024-12-27,2027-11-27,Active,Tawarruq
+L00486,C0299,Murabaha Business Finance,Term Loan,3368000,,1268172,7.66,60,67700,Monthly,25,2023-06-25,2023-07-25,2028-06-25,Active,Murabaha
+L00487,C0299,Murabaha Working Capital Line,Revolving,1030000,1030000.0,293351,8.43,12,2100,Monthly,5,2022-08-05,2022-09-05,2027-08-05,Active,Murabaha
+L00488,C0300,Murabaha Auto Finance,Term Loan,160000,,42437,5.36,36,4800,Monthly,23,2024-07-23,2024-08-23,2027-07-23,Active,Murabaha
+L00489,C0300,Ijarah Home Finance,Term Loan,331000,,297664,5.38,300,2000,Monthly,17,2022-02-17,2022-03-17,2047-02-17,Active,Ijarah
+L00490,C0301,Murabaha Business Finance,Term Loan,1202000,,569567,7.94,36,37600,Monthly,7,2025-02-07,2025-03-07,2028-02-07,Active,Murabaha
+L00491,C0301,Murabaha Business Finance,Term Loan,516000,,61942,5.91,36,15700,Monthly,28,2024-02-28,2024-03-28,2027-02-28,Active,Murabaha
+L00492,C0302,Murabaha Business Finance,Term Loan,2052000,,1310223,6.52,60,40200,Monthly,4,2024-10-04,2024-11-04,2029-10-04,Active,Murabaha
+L00493,C0302,Murabaha Working Capital Line,Revolving,590000,590000.0,189628,6.25,12,1000,Monthly,28,2023-08-28,2023-09-28,2027-08-28,Active,Murabaha
+L00494,C0303,Murabaha Business Finance,Term Loan,3408000,,754576,7.84,24,153900,Monthly,18,2025-03-18,2025-04-18,2027-03-18,Active,Murabaha
+L00495,C0304,Murabaha Business Finance,Term Loan,1602000,,1144380,5.86,60,30900,Monthly,7,2025-03-07,2025-04-07,2030-03-07,Active,Murabaha
+L00496,C0304,Murabaha Business Finance,Term Loan,657000,,387741,6.56,60,12900,Monthly,11,2024-07-11,2024-08-11,2029-07-11,Active,Murabaha
+L00497,C0305,Murabaha Business Finance,Term Loan,2612000,,446505,6.36,60,50900,Monthly,19,2022-07-19,2022-08-19,2027-07-19,Active,Murabaha
+L00498,C0306,Tawarruq Personal Finance,Term Loan,36000,,16056,6.02,48,800,Monthly,22,2024-06-22,2024-07-22,2028-06-22,Active,Tawarruq
+L00499,C0307,Murabaha Business Finance,Term Loan,8807000,,679150,6.44,60,172100,Monthly,10,2022-02-10,2022-03-10,2027-02-10,Active,Murabaha
+L00500,C0307,Murabaha Business Finance,Term Loan,3747000,,1300946,5.57,60,71700,Monthly,24,2023-05-24,2023-06-24,2028-05-24,Active,Murabaha
+L00501,C0308,Murabaha Auto Finance,Term Loan,208000,,116656,3.88,48,4700,Monthly,20,2024-12-20,2025-01-20,2028-12-20,Active,Murabaha
+L00502,C0308,Tawarruq Personal Finance,Term Loan,64000,,29978,6.47,36,2000,Monthly,8,2025-02-08,2025-03-08,2028-02-08,Active,Tawarruq
+L00503,C0309,Ijarah Home Finance,Term Loan,220000,,209965,5.47,240,1500,Monthly,21,2025-03-21,2025-04-21,2045-03-21,Active,Ijarah
+L00504,C0309,Islamic Credit Card,Revolving,20000,20000.0,4233,26.02,12,500,Monthly,20,2023-10-20,2023-11-20,2027-10-20,Active,Ujrah
+L00505,C0310,Tawarruq Personal Finance,Term Loan,69000,,14969,5.18,24,3000,Monthly,15,2025-03-15,2025-04-15,2027-03-15,Active,Tawarruq
+L00506,C0311,Murabaha Business Finance,Term Loan,1596000,,121625,5.9,60,30800,Monthly,22,2022-02-22,2022-03-22,2027-02-22,Active,Murabaha
+L00507,C0311,Murabaha Working Capital Line,Revolving,350000,350000.0,129763,6.86,12,700,Monthly,16,2024-01-16,2024-02-16,2027-01-16,Active,Murabaha
+L00508,C0312,Murabaha Business Finance,Term Loan,9899000,,6741339,5.55,60,189300,Monthly,14,2025-01-14,2025-02-14,2030-01-14,Active,Murabaha
+L00509,C0312,Murabaha Working Capital Line,Revolving,2110000,2110000.0,574011,7.77,12,3700,Monthly,20,2021-12-20,2022-01-20,2026-12-20,Active,Murabaha
+L00510,C0313,Murabaha Auto Finance,Term Loan,215000,,19659,5.17,48,5000,Monthly,13,2023-02-13,2023-03-13,2027-02-13,Active,Murabaha
+L00511,C0314,Murabaha Auto Finance,Term Loan,226000,,114236,3.55,60,4100,Monthly,25,2024-03-25,2024-04-25,2029-03-25,Active,Murabaha
+L00512,C0315,Ijarah Home Finance,Term Loan,63000,,56082,4.6,180,500,Monthly,1,2024-07-01,2024-08-01,2039-07-01,Active,Ijarah
+L00513,C0316,Murabaha Business Finance,Term Loan,11043000,,5198424,6.08,60,213900,Monthly,10,2023-12-10,2024-01-10,2028-12-10,Active,Murabaha
+L00514,C0316,Murabaha Business Finance,Term Loan,2848000,,1269077,7.92,36,89100,Monthly,28,2025-01-28,2025-02-28,2028-01-28,Active,Murabaha
+L00515,C0317,Tawarruq Personal Finance,Term Loan,52000,,7754,5.61,36,1600,Monthly,15,2024-03-15,2024-04-15,2027-03-15,Active,Tawarruq
+L00516,C0318,Murabaha Business Finance,Term Loan,4426000,,2755021,6.53,60,86700,Monthly,16,2024-09-16,2024-10-16,2029-09-16,Active,Murabaha
+L00517,C0318,Murabaha Working Capital Line,Revolving,1540000,1540000.0,432431,8.96,12,3200,Monthly,24,2023-03-24,2023-04-24,2027-03-24,Active,Murabaha
+L00518,C0319,Murabaha Auto Finance,Term Loan,152000,,61948,5.22,36,4600,Monthly,2,2024-12-02,2025-01-02,2027-12-02,Active,Murabaha
+L00519,C0319,Islamic Credit Card,Revolving,60000,60000.0,9927,27.01,12,500,Monthly,4,2024-02-04,2024-03-04,2027-02-04,Active,Ujrah
+L00520,C0320,Murabaha Auto Finance,Term Loan,98000,,50182,4.61,60,1800,Monthly,25,2024-03-25,2024-04-25,2029-03-25,Active,Murabaha
+L00521,C0321,Murabaha Business Finance,Term Loan,2854000,,1380612,5.45,60,54400,Monthly,22,2024-01-22,2024-02-22,2029-01-22,Active,Murabaha
+L00522,C0322,Tawarruq Personal Finance,Term Loan,156000,,27542,7.03,24,7000,Monthly,8,2025-02-08,2025-03-08,2027-02-08,Active,Tawarruq
+L00523,C0323,Tawarruq Personal Finance,Term Loan,116000,,10200,5.94,24,5100,Monthly,8,2024-12-08,2025-01-08,2026-12-08,Active,Tawarruq
+L00524,C0323,Murabaha Auto Finance,Term Loan,95000,,31291,3.9,48,2100,Monthly,12,2024-01-12,2024-02-12,2028-01-12,Active,Murabaha
+L00525,C0323,Islamic Credit Card,Revolving,80000,80000.0,10723,24.36,12,500,Monthly,27,2023-06-27,2023-07-27,2027-06-27,Active,Ujrah
+L00526,C0324,Ijarah Home Finance,Term Loan,145000,,122128,4.89,240,900,Monthly,5,2022-01-05,2022-02-05,2042-01-05,Active,Ijarah
+L00527,C0325,Murabaha Business Finance,Term Loan,907000,,200607,7.7,24,40900,Monthly,21,2025-03-21,2025-04-21,2027-03-21,Active,Murabaha
+L00528,C0326,Tawarruq Personal Finance,Term Loan,184000,,32145,5.73,24,8100,Monthly,20,2025-02-20,2025-03-20,2027-02-20,Active,Tawarruq
+L00529,C0327,Ijarah Home Finance,Term Loan,615000,,521981,4.69,240,4000,Monthly,6,2022-04-06,2022-05-06,2042-04-06,Active,Ijarah
+L00530,C0327,Murabaha Auto Finance,Term Loan,87000,,54983,5.4,60,1700,Monthly,22,2024-10-22,2024-11-22,2029-10-22,Active,Murabaha
+L00531,C0328,Murabaha Business Finance,Term Loan,1109000,,428000,7.13,36,34300,Monthly,15,2024-11-15,2024-12-15,2027-11-15,Active,Murabaha
+L00532,C0328,Murabaha Working Capital Line,Revolving,410000,410000.0,351854,6.64,12,1900,Monthly,13,2021-05-13,2021-06-13,2027-05-13,Active,Murabaha
+L00533,C0328,Murabaha Working Capital Line,Revolving,400000,400000.0,345249,6.01,12,1700,Monthly,22,2026-05-22,2026-06-22,2027-05-22,Active,Murabaha
+L00534,C0329,Tawarruq Personal Finance,Term Loan,52000,,6900,6.95,24,2300,Monthly,12,2025-01-12,2025-02-12,2027-01-12,Active,Tawarruq
+L00535,C0329,Islamic Credit Card,Revolving,40000,40000.0,9280,27.22,12,500,Monthly,16,2022-05-16,2022-06-16,2027-05-16,Active,Ujrah
+L00536,C0330,Tawarruq Personal Finance,Term Loan,277000,,266992,7.28,48,6700,Monthly,22,2026-08-22,2026-09-22,2030-08-22,Active,Tawarruq
+L00537,C0331,Ijarah Home Finance,Term Loan,896000,,778965,4.64,300,5100,Monthly,12,2021-05-12,2021-06-12,2046-05-12,Active,Ijarah
+L00538,C0331,Tawarruq Personal Finance,Term Loan,48000,,4218,5.88,24,2100,Monthly,25,2024-12-25,2025-01-25,2026-12-25,Active,Tawarruq
+L00539,C0332,Murabaha Auto Finance,Term Loan,154000,,41221,3.72,60,2800,Monthly,6,2023-01-06,2023-02-06,2028-01-06,Active,Murabaha
+L00540,C0332,Ijarah Home Finance,Term Loan,156000,,137675,4.19,180,1200,Monthly,2,2024-06-02,2024-07-02,2039-06-02,Active,Ijarah
+L00541,C0333,Murabaha Business Finance,Term Loan,1059000,,233958,7.55,24,47700,Monthly,12,2025-03-12,2025-04-12,2027-03-12,Active,Murabaha
+L00542,C0333,Murabaha Working Capital Line,Revolving,230000,230000.0,74621,8.77,12,500,Monthly,8,2022-05-08,2022-06-08,2027-05-08,Active,Murabaha
+L00543,C0334,Ijarah Home Finance,Term Loan,319000,,291425,4.68,300,1800,Monthly,18,2023-01-18,2023-02-18,2048-01-18,Active,Ijarah
+L00544,C0335,Tawarruq Personal Finance,Term Loan,86000,,5224,6.43,36,2600,Monthly,25,2023-12-25,2024-01-25,2026-12-25,Active,Tawarruq
+L00545,C0335,Islamic Credit Card,Revolving,60000,60000.0,10653,24.62,12,500,Monthly,20,2021-12-20,2022-01-20,2026-12-20,Active,Ujrah
+L00546,C0336,Murabaha Business Finance,Term Loan,1644000,,494390,7.53,36,51200,Monthly,21,2024-08-21,2024-09-21,2027-08-21,Active,Murabaha
+L00547,C0336,Murabaha Business Finance,Term Loan,481000,,105051,6.05,24,21300,Monthly,9,2025-03-09,2025-04-09,2027-03-09,Active,Murabaha
+L00548,C0337,Murabaha Auto Finance,Term Loan,149000,,21676,4.11,60,2800,Monthly,15,2022-06-15,2022-07-15,2027-06-15,Active,Murabaha
+L00549,C0338,Tawarruq Personal Finance,Term Loan,105000,,6290,5.42,36,3200,Monthly,1,2023-12-01,2024-01-01,2026-12-01,Active,Tawarruq
+L00550,C0339,Murabaha Auto Finance,Term Loan,234000,,39162,5.3,60,4400,Monthly,22,2022-07-22,2022-08-22,2027-07-22,Active,Murabaha
+L00551,C0340,Murabaha Auto Finance,Term Loan,214000,,81213,5.29,36,6400,Monthly,19,2024-11-19,2024-12-19,2027-11-19,Active,Murabaha
+L00552,C0341,Ijarah Home Finance,Term Loan,925000,,865126,4.05,240,5600,Monthly,7,2024-11-07,2024-12-07,2044-11-07,Active,Ijarah
+L00553,C0341,Ijarah Home Finance,Term Loan,407000,,373506,4.87,300,2300,Monthly,4,2023-02-04,2023-03-04,2048-02-04,Active,Ijarah
+L00554,C0341,Islamic Credit Card,Revolving,80000,80000.0,15892,24.87,12,800,Monthly,21,2022-05-21,2022-06-21,2027-05-21,Active,Ujrah
+L00555,C0342,Tawarruq Personal Finance,Term Loan,190000,,65449,7.34,48,4600,Monthly,14,2024-01-14,2024-02-14,2028-01-14,Active,Tawarruq
+L00556,C0343,Murabaha Business Finance,Term Loan,2604000,,472049,6.88,36,80300,Monthly,2,2024-04-02,2024-05-02,2027-04-02,Active,Murabaha
+L00557,C0344,Murabaha Business Finance,Term Loan,238000,,20853,5.54,24,10500,Monthly,21,2024-12-21,2025-01-21,2026-12-21,Active,Murabaha
+L00558,C0345,Tawarruq Personal Finance,Term Loan,220000,,65718,6.88,36,6800,Monthly,16,2024-08-16,2024-09-16,2027-08-16,Active,Tawarruq
+L00559,C0346,Murabaha Business Finance,Term Loan,223000,,19832,7.21,24,10000,Monthly,12,2024-12-12,2025-01-12,2026-12-12,Active,Murabaha
+L00560,C0346,Murabaha Business Finance,Term Loan,92000,,16316,7.59,24,4100,Monthly,6,2025-02-06,2025-03-06,2027-02-06,Active,Murabaha
+L00561,C0347,Murabaha Business Finance,Term Loan,1576000,,695123,6.68,36,48400,Monthly,10,2025-01-10,2025-02-10,2028-01-10,Active,Murabaha
+L00562,C0347,Murabaha Working Capital Line,Revolving,560000,560000.0,176119,6.6,12,1000,Monthly,14,2021-12-14,2022-01-14,2026-12-14,Active,Murabaha
+L00563,C0348,Murabaha Business Finance,Term Loan,3284000,,197085,7.99,60,66600,Monthly,20,2022-01-20,2022-02-20,2027-01-20,Active,Murabaha
+L00564,C0349,Tawarruq Personal Finance,Term Loan,279000,,82520,5.92,36,8500,Monthly,9,2024-08-09,2024-09-09,2027-08-09,Active,Tawarruq
+L00565,C0350,Tawarruq Personal Finance,Term Loan,238000,,117940,6.25,36,7300,Monthly,3,2025-03-03,2025-04-03,2028-03-03,Active,Tawarruq
+L00566,C0351,Murabaha Business Finance,Term Loan,2919000,,1095442,7.44,60,58400,Monthly,18,2023-06-18,2023-07-18,2028-06-18,Active,Murabaha
+L00567,C0351,Murabaha Working Capital Line,Revolving,1600000,1600000.0,699000,6.71,12,3900,Monthly,15,2023-10-15,2023-11-15,2027-10-15,Active,Murabaha
+L00568,C0352,Murabaha Business Finance,Term Loan,5117000,,1659069,7.88,60,103500,Monthly,22,2023-03-22,2023-04-22,2028-03-22,Active,Murabaha
+L00569,C0353,Tawarruq Personal Finance,Term Loan,54000,,6592,7.23,36,1700,Monthly,14,2024-02-14,2024-03-14,2027-02-14,Active,Tawarruq
+L00570,C0354,Murabaha Auto Finance,Term Loan,160000,,37568,4.8,36,4800,Monthly,16,2024-06-16,2024-07-16,2027-06-16,Active,Murabaha
+L00571,C0355,Murabaha Auto Finance,Term Loan,558000,,296136,4.93,60,10500,Monthly,3,2024-04-03,2024-05-03,2029-04-03,Active,Murabaha
+L00572,C0355,Islamic Credit Card,Revolving,90000,90000.0,26258,24.71,12,1300,Monthly,5,2023-06-05,2023-07-05,2027-06-05,Active,Ujrah
+L00573,C0356,Ijarah Home Finance,Term Loan,648000,,592986,4.63,300,3600,Monthly,1,2023-02-01,2023-03-01,2048-02-01,Active,Ijarah
+L00574,C0356,Ijarah Home Finance,Term Loan,258000,,246260,5.08,300,1500,Monthly,18,2024-08-18,2024-09-18,2049-08-18,Active,Ijarah
+L00575,C0357,Ijarah Home Finance,Term Loan,1301000,,960416,5.47,180,10600,Monthly,13,2021-07-13,2021-08-13,2036-07-13,Active,Ijarah
+L00576,C0358,Murabaha Business Finance,Term Loan,1154000,,415595,7.97,36,36100,Monthly,11,2024-10-11,2024-11-11,2027-10-11,Active,Murabaha
+L00577,C0358,Murabaha Working Capital Line,Revolving,750000,750000.0,227079,6.58,12,1200,Monthly,5,2025-03-05,2025-04-05,2027-03-05,Active,Murabaha
+L00578,C0359,Tawarruq Personal Finance,Term Loan,12000,,1059,6.39,24,500,Monthly,9,2024-12-09,2025-01-09,2026-12-09,Active,Tawarruq
+L00579,C0360,Murabaha Business Finance,Term Loan,2640000,,908556,5.02,60,49800,Monthly,18,2023-05-18,2023-06-18,2028-05-18,Active,Murabaha
+L00580,C0360,Murabaha Working Capital Line,Revolving,370000,370000.0,320420,6.66,12,1800,Monthly,4,2025-03-04,2025-04-04,2027-03-04,Active,Murabaha
+L00581,C0360,Murabaha Working Capital Line,Revolving,310000,310000.0,260319,6.33,12,1400,Monthly,11,2026-07-11,2026-08-11,2027-07-11,Active,Murabaha
+L00582,C0360,Murabaha Business Finance,Term Loan,1154000,,1018827,7.35,24,51900,Monthly,15,2026-07-15,2026-08-15,2028-07-15,Active,Murabaha
+L00583,C0361,Murabaha Business Finance,Term Loan,820000,,142411,5.0,24,36000,Monthly,8,2025-02-08,2025-03-08,2027-02-08,Active,Murabaha
+L00584,C0361,Murabaha Business Finance,Term Loan,334000,,29690,7.16,24,15000,Monthly,21,2024-12-21,2025-01-21,2026-12-21,Active,Murabaha
+L00585,C0362,Murabaha Business Finance,Term Loan,3429000,,383557,5.11,60,64900,Monthly,6,2022-04-06,2022-05-06,2027-04-06,Active,Murabaha
+L00586,C0362,Murabaha Working Capital Line,Revolving,430000,430000.0,126953,7.09,12,800,Monthly,5,2021-12-05,2022-01-05,2026-12-05,Active,Murabaha
+L00587,C0363,Murabaha Business Finance,Term Loan,1303000,,78163,5.51,36,39400,Monthly,27,2023-12-27,2024-01-27,2026-12-27,Active,Murabaha
+L00588,C0363,Murabaha Working Capital Line,Revolving,370000,370000.0,314285,6.49,12,1700,Monthly,11,2022-06-11,2022-07-11,2027-06-11,Active,Murabaha
+L00589,C0363,Murabaha Business Finance,Term Loan,1146000,,1027895,5.57,36,34600,Monthly,27,2026-06-27,2026-07-27,2029-06-27,Active,Murabaha
+L00590,C0364,Murabaha Business Finance,Term Loan,4101000,,1324669,7.65,60,82500,Monthly,7,2023-03-07,2023-04-07,2028-03-07,Active,Murabaha
+L00591,C0364,Murabaha Business Finance,Term Loan,1751000,,1090758,6.61,60,34400,Monthly,1,2024-09-01,2024-10-01,2029-09-01,Active,Murabaha
+L00592,C0365,Murabaha Business Finance,Term Loan,701000,,121813,5.07,24,30800,Monthly,10,2025-02-10,2025-03-10,2027-02-10,Active,Murabaha
+L00593,C0365,Murabaha Business Finance,Term Loan,674000,,88286,5.39,60,12800,Monthly,3,2022-05-03,2022-06-03,2027-05-03,Active,Murabaha
+L00594,C0366,Murabaha Business Finance,Term Loan,4178000,,912340,6.03,24,185200,Monthly,22,2025-03-22,2025-04-22,2027-03-22,Active,Murabaha
+L00595,C0367,Murabaha Business Finance,Term Loan,616000,,81825,7.06,24,27600,Monthly,26,2025-01-26,2025-02-26,2027-01-26,Active,Murabaha
+L00596,C0368,Murabaha Auto Finance,Term Loan,309000,,117097,5.38,48,7200,Monthly,22,2024-03-22,2024-04-22,2028-03-22,Active,Murabaha
+L00597,C0369,Murabaha Business Finance,Term Loan,627000,,55914,7.52,24,28200,Monthly,25,2024-12-25,2025-01-25,2026-12-25,Active,Murabaha
+L00598,C0369,Murabaha Business Finance,Term Loan,392000,,80980,5.1,36,11800,Monthly,19,2024-05-19,2024-06-19,2027-05-19,Active,Murabaha
+L00599,C0370,Murabaha Business Finance,Term Loan,6097000,,2506513,6.21,36,186100,Monthly,28,2024-12-28,2025-01-28,2027-12-28,Active,Murabaha
+L00600,C0370,Murabaha Working Capital Line,Revolving,1620000,1620000.0,634611,7.09,12,3700,Monthly,8,2024-04-08,2024-05-08,2027-04-08,Active,Murabaha
+L00601,C0371,Murabaha Business Finance,Term Loan,4508000,,399844,6.91,24,201700,Monthly,17,2024-12-17,2025-01-17,2026-12-17,Active,Murabaha
+L00602,C0371,Murabaha Working Capital Line,Revolving,1700000,1700000.0,600896,8.87,12,4400,Monthly,22,2024-10-22,2024-11-22,2027-10-22,Active,Murabaha
+L00603,C0372,Murabaha Business Finance,Term Loan,4374000,,2835419,5.42,60,83400,Monthly,7,2024-11-07,2024-12-07,2029-11-07,Active,Murabaha
+L00604,C0372,Murabaha Working Capital Line,Revolving,960000,960000.0,391839,8.01,12,2600,Monthly,11,2023-10-11,2023-11-11,2027-10-11,Active,Murabaha
+L00605,C0373,Murabaha Auto Finance,Term Loan,123000,,11101,4.43,48,2800,Monthly,20,2023-02-20,2023-03-20,2027-02-20,Active,Murabaha
+L00606,C0373,Murabaha Auto Finance,Term Loan,50000,,24195,5.15,48,1200,Monthly,16,2024-08-16,2024-09-16,2028-08-16,Active,Murabaha
+L00607,C0374,Murabaha Auto Finance,Term Loan,314000,,14457,5.32,48,7300,Monthly,11,2022-12-11,2023-01-11,2026-12-11,Active,Murabaha
+L00608,C0375,Ijarah Home Finance,Term Loan,415000,,334758,4.29,180,3100,Monthly,11,2023-01-11,2023-02-11,2038-01-11,Active,Ijarah
+L00609,C0375,Islamic Credit Card,Revolving,50000,50000.0,15329,28.36,12,800,Monthly,5,2024-03-05,2024-04-05,2027-03-05,Active,Ujrah
+L00610,C0376,Tawarruq Personal Finance,Term Loan,133000,,24202,7.2,36,4100,Monthly,18,2024-04-18,2024-05-18,2027-04-18,Active,Tawarruq
+L00611,C0376,Ijarah Home Finance,Term Loan,256000,,224974,5.16,240,1700,Monthly,15,2022-12-15,2023-01-15,2042-12-15,Active,Ijarah
+L00612,C0376,Islamic Credit Card,Revolving,70000,70000.0,19917,28.46,12,1000,Monthly,4,2021-08-04,2021-09-04,2027-08-04,Active,Ujrah
+L00613,C0377,Murabaha Auto Finance,Term Loan,302000,,77446,5.07,60,5700,Monthly,8,2022-12-08,2023-01-08,2027-12-08,Active,Murabaha
+L00614,C0378,Murabaha Business Finance,Term Loan,2078000,,181993,5.49,24,91600,Monthly,12,2024-12-12,2025-01-12,2026-12-12,Active,Murabaha
+L00615,C0379,Murabaha Business Finance,Term Loan,1651000,,864569,6.48,60,32300,Monthly,15,2024-03-15,2024-04-15,2029-03-15,Active,Murabaha
+L00616,C0379,Murabaha Working Capital Line,Revolving,220000,220000.0,96279,7.51,12,600,Monthly,3,2024-07-03,2024-08-03,2027-07-03,Active,Murabaha
+L00617,C0380,Murabaha Auto Finance,Term Loan,21000,,5465,3.62,36,600,Monthly,1,2024-07-01,2024-08-01,2027-07-01,Active,Murabaha
+L00618,C0380,Tawarruq Personal Finance,Term Loan,11000,,2316,7.37,48,300,Monthly,17,2023-07-17,2023-08-17,2027-07-17,Active,Tawarruq
+L00619,C0381,Murabaha Auto Finance,Term Loan,23000,,2026,4.09,36,700,Monthly,16,2024-01-16,2024-02-16,2027-01-16,Active,Murabaha
+L00620,C0382,Murabaha Business Finance,Term Loan,718000,,259977,5.12,60,13600,Monthly,24,2023-06-24,2023-07-24,2028-06-24,Active,Murabaha
+L00621,C0382,Murabaha Working Capital Line,Revolving,100000,100000.0,81314,6.86,12,500,Monthly,16,2022-01-16,2022-02-16,2027-01-16,Active,Murabaha
+L00622,C0383,Murabaha Business Finance,Term Loan,3365000,,587550,5.66,24,148600,Monthly,11,2025-02-11,2025-03-11,2027-02-11,Active,Murabaha
+L00623,C0383,Murabaha Working Capital Line,Revolving,1770000,1770000.0,573603,6.34,12,3000,Monthly,4,2021-07-04,2021-08-04,2027-07-04,Active,Murabaha
+L00624,C0384,Ijarah Home Finance,Term Loan,880000,,830613,5.4,300,5400,Monthly,26,2024-01-26,2024-02-26,2049-01-26,Active,Ijarah
+L00625,C0385,Tawarruq Personal Finance,Term Loan,229000,,43028,7.43,48,5500,Monthly,5,2023-06-05,2023-07-05,2027-06-05,Active,Tawarruq
+L00626,C0386,Murabaha Business Finance,Term Loan,1580000,,520582,7.44,36,49100,Monthly,5,2024-09-05,2024-10-05,2027-09-05,Active,Murabaha
+L00627,C0386,Murabaha Working Capital Line,Revolving,820000,820000.0,367089,7.01,12,2100,Monthly,28,2021-09-28,2021-10-28,2027-09-28,Active,Murabaha
+L00628,C0387,Ijarah Home Finance,Term Loan,131000,,101337,5.31,180,1100,Monthly,12,2022-03-12,2022-04-12,2037-03-12,Active,Ijarah
+L00629,C0388,Murabaha Auto Finance,Term Loan,60000,,3520,3.9,36,1800,Monthly,16,2023-12-16,2024-01-16,2026-12-16,Active,Murabaha
+L00630,C0389,Tawarruq Personal Finance,Term Loan,55000,,5092,7.85,36,1700,Monthly,23,2024-01-23,2024-02-23,2027-01-23,Active,Tawarruq
+L00631,C0389,Tawarruq Personal Finance,Term Loan,30000,,15343,6.48,48,700,Monthly,20,2024-09-20,2024-10-20,2028-09-20,Active,Tawarruq
+L00632,C0390,Murabaha Business Finance,Term Loan,3278000,,203267,7.95,36,102600,Monthly,12,2023-12-12,2024-01-12,2026-12-12,Active,Murabaha
+L00633,C0391,Ijarah Home Finance,Term Loan,849000,,609792,4.8,180,6600,Monthly,25,2021-05-25,2021-06-25,2036-05-25,Active,Ijarah
+L00634,C0392,Murabaha Business Finance,Term Loan,3630000,,317520,5.35,24,159800,Monthly,5,2024-12-05,2025-01-05,2026-12-05,Active,Murabaha
+L00635,C0392,Murabaha Business Finance,Term Loan,1509000,,328479,5.62,24,66600,Monthly,19,2025-03-19,2025-04-19,2027-03-19,Active,Murabaha
+L00636,C0393,Tawarruq Personal Finance,Term Loan,223000,,133791,7.7,48,5400,Monthly,14,2025-01-14,2025-02-14,2029-01-14,Active,Tawarruq
+L00637,C0394,Ijarah Home Finance,Term Loan,147000,,132162,4.01,240,900,Monthly,27,2023-11-27,2023-12-27,2043-11-27,Active,Ijarah
+L00638,C0395,Murabaha Business Finance,Term Loan,6237000,,3945368,5.5,60,119100,Monthly,3,2024-10-03,2024-11-03,2029-10-03,Active,Murabaha
+L00639,C0396,Ijarah Home Finance,Term Loan,458000,,391353,4.19,240,2800,Monthly,19,2022-08-19,2022-09-19,2042-08-19,Active,Ijarah
+L00640,C0396,Tawarruq Personal Finance,Term Loan,51000,,23634,5.26,48,1200,Monthly,9,2024-07-09,2024-08-09,2028-07-09,Active,Tawarruq
+L00641,C0396,Islamic Credit Card,Revolving,30000,30000.0,7558,25.04,12,500,Monthly,25,2024-03-25,2024-04-25,2027-03-25,Active,Ujrah
+L00642,C0397,Murabaha Auto Finance,Term Loan,167000,,9276,4.53,60,3100,Monthly,26,2022-01-26,2022-02-26,2027-01-26,Active,Murabaha
+L00643,C0398,Murabaha Business Finance,Term Loan,3152000,,693645,7.04,24,141200,Monthly,3,2025-03-03,2025-04-03,2027-03-03,Active,Murabaha
+L00644,C0398,Murabaha Working Capital Line,Revolving,2070000,2070000.0,604254,8.66,12,4400,Monthly,3,2022-12-03,2023-01-03,2026-12-03,Active,Murabaha
+L00645,C0399,Ijarah Home Finance,Term Loan,198000,,190062,4.73,300,1100,Monthly,10,2024-12-10,2025-01-10,2049-12-10,Active,Ijarah
+L00646,C0399,Islamic Credit Card,Revolving,10000,10000.0,8306,25.19,12,500,Monthly,12,2025-03-12,2025-04-12,2027-03-12,Active,Ujrah
+L00647,C0399,Tawarruq Personal Finance,Term Loan,38000,,37294,5.78,48,900,Monthly,22,2026-09-22,2026-10-22,2030-09-22,Active,Tawarruq
+L00648,C0400,Murabaha Business Finance,Term Loan,9436000,,1073141,5.89,60,181900,Monthly,11,2022-04-11,2022-05-11,2027-04-11,Active,Murabaha
+L00649,C0400,Murabaha Business Finance,Term Loan,2450000,,1153589,7.13,36,75800,Monthly,1,2025-02-01,2025-03-01,2028-02-01,Active,Murabaha

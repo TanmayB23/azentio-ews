@@ -1,0 +1,401 @@
+customer_id,scenario,behaviour,customer_type,industry,region,expected_band,planted_facts
+C0001,S1_repeated_repayment_delays,repeated_delay,SME,IT Services,Muscat,High,"regular payer for 13 months, then delays growing over the last 5"
+C0002,S0_healthy,healthy,Individual,Education,Muscat,Low,no deterioration planted
+C0003,S8_cluster_delivery_riders_riyadh,declining_cashflow,Individual,Delivery & Ride-hailing,Riyadh,Medium to High (cluster of gig workers),platform incentive cuts in Riyadh; income fell 21% over the last 3 consecutive months
+C0004,S3_increasing_exposure,increasing_exposure,Individual,Healthcare,Sharjah,Medium to High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0005,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Sharjah,Low,no deterioration planted
+C0006,S0_healthy,healthy,SME,Oil & Gas Services,Dubai,Low,no deterioration planted
+C0007,S0_healthy,healthy,Individual,Construction,Muscat,Low,no deterioration planted
+C0008,S0_healthy,healthy,Individual,Construction,Sharjah,Low,no deterioration planted
+C0009,S5_early_delinquency_recovering,early_delinq_recovering,SME,IT Services,Dammam,Low-Medium to Medium,"delays 16/11/3 days after an income dip, then 3 months on time"
+C0010,S4_temporary_miss_no_evidence,temp_miss_no_evidence,Individual,Construction,Muscat,Low,"single late payment in 2026-05 (14d), reason=Customer-reported, no supporting document, evidence=False; clean before and after"
+C0011,S7_thin_history,thin_file,Individual,Healthcare,Muscat,Insufficient data (must NOT be High),onboarded 2 month(s) ago; transactions missing=False
+C0012,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Dubai,Low,no deterioration planted
+C0013,S8_cluster_delivery_riders_riyadh,declining_cashflow,Individual,Delivery & Ride-hailing,Riyadh,Medium to High (cluster of gig workers),platform incentive cuts in Riyadh; income fell 21% over the last 3 consecutive months
+C0014,S0_healthy,healthy,Individual,Healthcare,Dammam,Low,no deterioration planted
+C0015,S8_cluster_contractors_dubai,sme_stress,SME,Construction & Contracting,Dubai,Medium to High (cluster of SMEs),delayed payments on government projects; 1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 55% over the last 6 consecutive months; receivable days and tax filing delays rising
+C0016,S0_healthy,healthy,SME,IT Services,Riyadh,Low,no deterioration planted
+C0017,S7_transaction_gap,txn_gap,SME,Real Estate Services,Riyadh,Low (reduced confidence),transaction feed missing for 2025-12 and 2026-01
+C0018,S1_repeated_repayment_delays,repeated_delay,SME,Real Estate Services,Dammam,High,"regular payer for 13 months, then delays growing over the last 5"
+C0019,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Jeddah,Low,no deterioration planted
+C0020,S0_healthy,healthy,SME,Construction & Contracting,Sharjah,Low,no deterioration planted
+C0021,S0_healthy,healthy,Individual,Legal & Consulting,Muscat,Low,no deterioration planted
+C0022,S0_healthy,healthy,Individual,Banking & Finance,Riyadh,Low,no deterioration planted
+C0023,S0_healthy,healthy,Individual,Public Sector,Abu Dhabi,Low,no deterioration planted
+C0024,S0_healthy,healthy,Individual,Construction,Doha,Low,no deterioration planted
+C0025,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Sharjah,Low,no deterioration planted
+C0026,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Education,Muscat,Low-Medium to Medium,"delays 16/9/5 days after an income dip, then 3 months on time"
+C0027,S0_healthy,healthy,Individual,Retail,Sharjah,Low,no deterioration planted
+C0028,S5_early_delinquency_recovering,early_delinq_recovering,SME,Real Estate Services,Riyadh,Low-Medium to Medium,"delays 18/9/5 days after an income dip, then 3 months on time"
+C0029,S0_healthy,healthy,Individual,Public Sector,Doha,Low,no deterioration planted
+C0030,S0_healthy,healthy,Individual,Hospitality,Muscat,Low,no deterioration planted
+C0031,S0_healthy,healthy,Individual,Banking & Finance,Abu Dhabi,Low,no deterioration planted
+C0032,S0_healthy,healthy,Individual,Retail,Manama,Low,no deterioration planted
+C0033,S3_increasing_exposure,increasing_exposure,Individual,Hospitality,Muscat,Medium to High,2 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0034,S0_healthy,healthy,SME,Oil & Gas Services,Riyadh,Low,no deterioration planted
+C0035,S0_healthy,healthy,SME,Hospitality,Dammam,Low,no deterioration planted
+C0036,S0_healthy,healthy,SME,IT Services,Muscat,Low,no deterioration planted
+C0037,S5_early_delinquency_recovering,early_delinq_recovering,SME,IT Services,Sharjah,Low-Medium to Medium,"delays 18/10/4 days after an income dip, then 3 months on time"
+C0038,S0_healthy,healthy,Individual,Public Sector,Dammam,Low,no deterioration planted
+C0039,S0_healthy,healthy,Individual,Healthcare,Dammam,Low,no deterioration planted
+C0040,S0_healthy,healthy,SME,Logistics & Transport,Riyadh,Low,no deterioration planted
+C0041,S0_healthy,healthy,SME,Oil & Gas Services,Riyadh,Low,no deterioration planted
+C0042,S8_cluster_contractors_dubai,sme_stress,SME,Construction & Contracting,Dubai,Medium to High (cluster of SMEs),delayed payments on government projects; 1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 49% over the last 6 consecutive months; receivable days and tax filing delays rising
+C0043,S7_thin_history,thin_file,Individual,Delivery & Ride-hailing,Manama,Insufficient data (must NOT be High),onboarded 3 month(s) ago; transactions missing=True
+C0044,S2_declining_income_cashflow,declining_cashflow,Individual,Public Sector,Doha,Medium to High,income fell 34% over the last 6 consecutive months
+C0045,S2_declining_income_cashflow,declining_cashflow,Individual,Banking & Finance,Dammam,Medium to High,income fell 20% over the last 3 consecutive months
+C0046,S3_increasing_exposure,increasing_exposure,SME,Construction & Contracting,Doha,Medium to High,2 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0047,S0_healthy,healthy,SME,Real Estate Services,Muscat,Low,no deterioration planted
+C0048,S0_healthy,healthy,Individual,Healthcare,Riyadh,Low,no deterioration planted
+C0049,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Healthcare,Dammam,Low-Medium to Medium,"delays 17/9/4 days after an income dip, then 3 months on time"
+C0050,S0_healthy,healthy,Individual,Construction,Jeddah,Low,no deterioration planted
+C0051,S0_healthy,healthy,SME,Real Estate Services,Dammam,Low,no deterioration planted
+C0052,S0_healthy,healthy,Individual,Education,Jeddah,Low,no deterioration planted
+C0053,S0_healthy,healthy,Individual,Education,Doha,Low,no deterioration planted
+C0054,S8_cluster_contractors_dubai,sme_stress,SME,Construction & Contracting,Dubai,Medium to High (cluster of SMEs),delayed payments on government projects; 1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 45% over the last 5 consecutive months; receivable days and tax filing delays rising
+C0055,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Jeddah,Low,no deterioration planted
+C0056,S0_healthy,healthy,Individual,Construction,Sharjah,Low,no deterioration planted
+C0057,S0_seasonal_sme,seasonal,SME,Hospitality,Manama,Low (seasonal dip matches last year),strong seasonal receipts; the recent dip matches the same months last year
+C0058,S0_healthy,healthy,SME,IT Services,Sharjah,Low,no deterioration planted
+C0059,S0_healthy,healthy,Individual,Retail,Riyadh,Low,no deterioration planted
+C0060,S0_healthy,healthy,Individual,Construction,Muscat,Low,no deterioration planted
+C0061,S0_healthy,healthy,SME,Real Estate Services,Manama,Low,no deterioration planted
+C0062,S5_early_delinquency_worsening,early_delinq_worsening,SME,Real Estate Services,Jeddah,High to Critical,delays rising then the last 3 instalment(s) unpaid (61-90 DPD bucket)
+C0063,S2_declining_income_cashflow,declining_cashflow,SME,Retail & Trading,Abu Dhabi,Medium to High,income fell 46% over the last 6 consecutive months
+C0064,S0_healthy,healthy,Individual,Construction,Riyadh,Low,no deterioration planted
+C0065,S0_healthy,healthy,Individual,Healthcare,Sharjah,Low,no deterioration planted
+C0066,S0_healthy,healthy,Individual,Banking & Finance,Doha,Low,no deterioration planted
+C0067,S0_healthy,healthy,Individual,Healthcare,Abu Dhabi,Low,no deterioration planted
+C0068,S0_volatile_but_stable,volatile,Individual,Delivery & Ride-hailing,Muscat,Low (volatility alone is not deterioration),no deterioration planted
+C0069,S0_healthy,healthy,Individual,Education,Doha,Low,no deterioration planted
+C0070,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Construction,Abu Dhabi,High to Critical,delays rising then the last 1 instalment(s) unpaid (1-30 DPD bucket)
+C0071,S0_healthy,healthy,SME,Food & Beverage,Dubai,Low,no deterioration planted
+C0072,S0_healthy,healthy,Individual,Education,Riyadh,Low,no deterioration planted
+C0073,S0_healthy,healthy,SME,Real Estate Services,Abu Dhabi,Low,no deterioration planted
+C0074,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Manama,Low,no deterioration planted
+C0075,S8_cluster_contractors_dubai,sme_stress,SME,Construction & Contracting,Dubai,Medium to High (cluster of SMEs),delayed payments on government projects; 1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 45% over the last 5 consecutive months; receivable days and tax filing delays rising
+C0076,S7_thin_history,thin_file,SME,Logistics & Transport,Dammam,Insufficient data (must NOT be High),onboarded 2 month(s) ago; transactions missing=False
+C0077,S0_healthy,healthy,SME,Logistics & Transport,Muscat,Low,no deterioration planted
+C0078,S0_healthy,healthy,SME,Real Estate Services,Muscat,Low,no deterioration planted
+C0079,S0_healthy,healthy,Individual,Retail,Jeddah,Low,no deterioration planted
+C0080,S7_thin_history,thin_file,Individual,Education,Doha,Insufficient data (must NOT be High),onboarded 1 month(s) ago; transactions missing=False
+C0081,S0_healthy,healthy,SME,Logistics & Transport,Sharjah,Low,no deterioration planted
+C0082,S0_healthy,healthy,SME,Oil & Gas Services,Muscat,Low,no deterioration planted
+C0083,S0_healthy,healthy,SME,Hospitality,Doha,Low,no deterioration planted
+C0084,S0_healthy,healthy,Individual,Construction,Riyadh,Low,no deterioration planted
+C0085,S0_healthy,healthy,SME,Retail & Trading,Sharjah,Low,no deterioration planted
+C0086,S0_healthy,healthy,SME,Oil & Gas Services,Jeddah,Low,no deterioration planted
+C0087,S3_increasing_exposure,increasing_exposure,SME,IT Services,Doha,Medium to High,2 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0088,S0_healthy,healthy,SME,Food & Beverage,Jeddah,Low,no deterioration planted
+C0089,S8_cluster_contractors_dubai,sme_stress,SME,Construction & Contracting,Dubai,Medium to High (cluster of SMEs),delayed payments on government projects; 1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 40% over the last 5 consecutive months; receivable days and tax filing delays rising
+C0090,S8_cluster_delivery_riders_riyadh,declining_cashflow,Individual,Delivery & Ride-hailing,Riyadh,Medium to High (cluster of gig workers),platform incentive cuts in Riyadh; income fell 24% over the last 3 consecutive months
+C0091,S0_healthy,healthy,SME,Real Estate Services,Dammam,Low,no deterioration planted
+C0092,S0_healthy,healthy,Individual,Healthcare,Doha,Low,no deterioration planted
+C0093,S0_healthy,healthy,Individual,Construction,Abu Dhabi,Low,no deterioration planted
+C0094,S0_healthy,healthy,Individual,Hospitality,Abu Dhabi,Low,no deterioration planted
+C0095,S0_healthy,healthy,SME,Real Estate Services,Dubai,Low,no deterioration planted
+C0096,S1_repeated_repayment_delays,repeated_delay,Individual,Education,Riyadh,High,"regular payer for 14 months, then delays growing over the last 4"
+C0097,S0_healthy,healthy,Individual,Healthcare,Muscat,Low,no deterioration planted
+C0098,S0_healthy,healthy,SME,Real Estate Services,Doha,Low,no deterioration planted
+C0099,S0_healthy,healthy,Individual,Construction,Doha,Low,no deterioration planted
+C0100,S0_healthy,healthy,Individual,Education,Muscat,Low,no deterioration planted
+C0101,S2_declining_income_cashflow,declining_cashflow,Individual,Education,Jeddah,Medium to High,income fell 33% over the last 6 consecutive months
+C0102,S0_volatile_but_stable,volatile,SME,Oil & Gas Services,Dubai,Low (volatility alone is not deterioration),no deterioration planted
+C0103,S6_sme_financial_stress,sme_stress,SME,Oil & Gas Services,Sharjah,High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 45% over the last 5 consecutive months; receivable days and tax filing delays rising
+C0104,S0_healthy,healthy,Individual,Public Sector,Sharjah,Low,no deterioration planted
+C0105,S0_healthy,healthy,SME,Hospitality,Doha,Low,no deterioration planted
+C0106,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Manama,Low,no deterioration planted
+C0107,S0_healthy,healthy,Individual,Healthcare,Muscat,Low,no deterioration planted
+C0108,S0_healthy,healthy,Individual,Construction,Muscat,Low,no deterioration planted
+C0109,S0_healthy,healthy,SME,Construction & Contracting,Dubai,Low,no deterioration planted
+C0110,S0_healthy,healthy,Individual,Retail,Riyadh,Low,no deterioration planted
+C0111,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Retail,Dammam,High to Critical,delays rising then the last 1 instalment(s) unpaid (1-30 DPD bucket)
+C0112,S8_cluster_delivery_riders_riyadh,declining_cashflow,Individual,Delivery & Ride-hailing,Riyadh,Medium to High (cluster of gig workers),platform incentive cuts in Riyadh; income fell 27% over the last 4 consecutive months
+C0113,S4_temporary_miss_with_evidence,temp_miss_evidence,Individual,Education,Dubai,Low,"single late payment in 2026-07 (9d), reason=Salary credit delayed by employer, evidence=True; clean before and after"
+C0114,S0_healthy,healthy,Individual,Banking & Finance,Riyadh,Low,no deterioration planted
+C0115,S0_healthy,healthy,SME,Real Estate Services,Doha,Low,no deterioration planted
+C0116,S4_temporary_miss_with_evidence,temp_miss_evidence,SME,Real Estate Services,Manama,Low,"single late payment in 2026-04 (2d), reason=NACH/UPI processing delay, evidence=True; clean before and after"
+C0117,S0_healthy,healthy,SME,IT Services,Dubai,Low,no deterioration planted
+C0118,S0_healthy,healthy,SME,Food & Beverage,Muscat,Low,no deterioration planted
+C0119,S0_healthy,healthy,Individual,Education,Dubai,Low,no deterioration planted
+C0120,S0_healthy,healthy,Individual,Construction,Manama,Low,no deterioration planted
+C0121,S3_increasing_exposure,increasing_exposure,Individual,Hospitality,Muscat,Medium to High,2 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0122,S6_sme_financial_stress,sme_stress,SME,Real Estate Services,Sharjah,High,revolving utilisation ramping up; income fell 54% over the last 6 consecutive months; receivable days and tax filing delays rising
+C0123,S0_healthy,healthy,SME,Logistics & Transport,Muscat,Low,no deterioration planted
+C0124,S0_healthy,healthy,Individual,Public Sector,Jeddah,Low,no deterioration planted
+C0125,S7_thin_history,thin_file,Individual,Healthcare,Jeddah,Insufficient data (must NOT be High),onboarded 2 month(s) ago; transactions missing=False
+C0126,S1_repeated_repayment_delays,repeated_delay,SME,Construction & Contracting,Sharjah,High,"regular payer for 14 months, then delays growing over the last 4"
+C0127,S0_healthy,healthy,Individual,Legal & Consulting,Jeddah,Low,no deterioration planted
+C0128,S0_healthy,healthy,SME,Logistics & Transport,Dammam,Low,no deterioration planted
+C0129,S7_transaction_gap,txn_gap,Individual,Construction,Abu Dhabi,Low (reduced confidence),transaction feed missing for 2025-10 and 2025-11
+C0130,S0_healthy,healthy,Individual,Public Sector,Sharjah,Low,no deterioration planted
+C0131,S2_declining_income_cashflow,declining_cashflow,SME,Food & Beverage,Doha,Medium to High,income fell 26% over the last 3 consecutive months
+C0132,S0_healthy,healthy,Individual,Healthcare,Dammam,Low,no deterioration planted
+C0133,S0_healthy,healthy,Individual,Retail,Riyadh,Low,no deterioration planted
+C0134,S4_temporary_miss_no_evidence,temp_miss_no_evidence,Individual,Healthcare,Abu Dhabi,Low,"single late payment in 2026-05 (13d), reason=None, evidence=False; clean before and after"
+C0135,S0_healthy,healthy,SME,Real Estate Services,Sharjah,Low,no deterioration planted
+C0136,S0_healthy,healthy,SME,Food & Beverage,Dubai,Low,no deterioration planted
+C0137,S0_healthy,healthy,Individual,Construction,Muscat,Low,no deterioration planted
+C0138,S0_healthy,healthy,Individual,Healthcare,Riyadh,Low,no deterioration planted
+C0139,S6_sme_financial_stress,sme_stress,SME,Logistics & Transport,Abu Dhabi,High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 52% over the last 6 consecutive months; receivable days and tax filing delays rising
+C0140,S3_increasing_exposure,increasing_exposure,SME,Retail & Trading,Doha,Medium to High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0141,S7_transaction_gap,txn_gap,Individual,Construction,Dammam,Low (reduced confidence),transaction feed missing for 2026-08 and 2026-09
+C0142,S8_cluster_contractors_dubai,sme_stress,SME,Construction & Contracting,Dubai,Medium to High (cluster of SMEs),delayed payments on government projects; 1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 45% over the last 5 consecutive months; receivable days and tax filing delays rising
+C0143,S0_healthy,healthy,SME,Real Estate Services,Dubai,Low,no deterioration planted
+C0144,S0_healthy,healthy,SME,Oil & Gas Services,Riyadh,Low,no deterioration planted
+C0145,S0_healthy,healthy,SME,Retail & Trading,Dammam,Low,no deterioration planted
+C0146,S1_repeated_repayment_delays,repeated_delay,Individual,Healthcare,Doha,High,"regular payer for 14 months, then delays growing over the last 4"
+C0147,S2_declining_income_cashflow,declining_cashflow,SME,Real Estate Services,Abu Dhabi,Medium to High,income fell 28% over the last 4 consecutive months
+C0148,S0_healthy,healthy,Individual,Education,Sharjah,Low,no deterioration planted
+C0149,S2_declining_income_cashflow,declining_cashflow,Individual,Hospitality,Abu Dhabi,Medium to High,income fell 20% over the last 3 consecutive months
+C0150,S0_healthy,healthy,Individual,Healthcare,Manama,Low,no deterioration planted
+C0151,S0_healthy,healthy,Individual,Construction,Jeddah,Low,no deterioration planted
+C0152,S0_healthy,healthy,SME,Real Estate Services,Manama,Low,no deterioration planted
+C0153,S7_thin_history,thin_file,Individual,Healthcare,Sharjah,Insufficient data (must NOT be High),onboarded 3 month(s) ago; transactions missing=False
+C0154,S0_healthy,healthy,SME,IT Services,Riyadh,Low,no deterioration planted
+C0155,S0_healthy,healthy,Individual,Healthcare,Doha,Low,no deterioration planted
+C0156,S2_declining_income_cashflow,declining_cashflow,Individual,Construction,Riyadh,Medium to High,income fell 22% over the last 3 consecutive months
+C0157,S4_temporary_miss_no_evidence,temp_miss_no_evidence,SME,Hospitality,Dubai,Low,"single late payment in 2026-05 (15d), reason=None, evidence=False; clean before and after"
+C0158,S0_healthy,healthy,Individual,Education,Muscat,Low,no deterioration planted
+C0159,S0_healthy,healthy,SME,Construction & Contracting,Abu Dhabi,Low,no deterioration planted
+C0160,S0_healthy,healthy,Individual,Public Sector,Manama,Low,no deterioration planted
+C0161,S0_healthy,healthy,SME,Food & Beverage,Dammam,Low,no deterioration planted
+C0162,S0_healthy,healthy,Individual,Construction,Abu Dhabi,Low,no deterioration planted
+C0163,S3_increasing_exposure,increasing_exposure,Individual,Healthcare,Manama,Medium to High,2 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0164,S0_healthy,healthy,SME,Hospitality,Doha,Low,no deterioration planted
+C0165,S0_healthy,healthy,Individual,Legal & Consulting,Jeddah,Low,no deterioration planted
+C0166,S7_transaction_gap,txn_gap,SME,Construction & Contracting,Abu Dhabi,Low (reduced confidence),transaction feed missing for 2025-09 and 2025-10
+C0167,S0_healthy,healthy,Individual,Retail,Muscat,Low,no deterioration planted
+C0168,S0_healthy,healthy,SME,Food & Beverage,Abu Dhabi,Low,no deterioration planted
+C0169,S7_no_transaction_data,no_transactions,Individual,Delivery & Ride-hailing,Manama,Low (reduced confidence),established repayment history but no transaction feed
+C0170,S0_healthy,healthy,Individual,Legal & Consulting,Dammam,Low,no deterioration planted
+C0171,S8_cluster_contractors_dubai,sme_stress,SME,Construction & Contracting,Dubai,Medium to High (cluster of SMEs),delayed payments on government projects; 1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 49% over the last 6 consecutive months; receivable days and tax filing delays rising
+C0172,S7_thin_history,thin_file,Individual,Healthcare,Riyadh,Insufficient data (must NOT be High),onboarded 1 month(s) ago; transactions missing=True
+C0173,S0_healthy,healthy,Individual,Hospitality,Jeddah,Low,no deterioration planted
+C0174,S0_healthy,healthy,Individual,Education,Riyadh,Low,no deterioration planted
+C0175,S0_healthy,healthy,Individual,Construction,Muscat,Low,no deterioration planted
+C0176,S0_healthy,healthy,Individual,Education,Dubai,Low,no deterioration planted
+C0177,S0_healthy,healthy,Individual,Banking & Finance,Riyadh,Low,no deterioration planted
+C0178,S0_seasonal_sme,seasonal,SME,Construction & Contracting,Abu Dhabi,Low (seasonal dip matches last year),strong seasonal receipts; the recent dip matches the same months last year
+C0179,S0_volatile_but_stable,volatile,Individual,Hospitality,Manama,Low (volatility alone is not deterioration),no deterioration planted
+C0180,S3_increasing_exposure,increasing_exposure,Individual,Delivery & Ride-hailing,Sharjah,Medium to High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0181,S0_healthy,healthy,SME,Retail & Trading,Sharjah,Low,no deterioration planted
+C0182,S6_sme_financial_stress,sme_stress,SME,Oil & Gas Services,Dubai,High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 46% over the last 5 consecutive months; receivable days and tax filing delays rising
+C0183,S0_healthy,healthy,Individual,Healthcare,Manama,Low,no deterioration planted
+C0184,S0_healthy,healthy,Individual,Healthcare,Abu Dhabi,Low,no deterioration planted
+C0185,S0_healthy,healthy,SME,Hospitality,Muscat,Low,no deterioration planted
+C0186,S0_healthy,healthy,SME,Food & Beverage,Jeddah,Low,no deterioration planted
+C0187,S6_sme_financial_stress,sme_stress,SME,Logistics & Transport,Riyadh,High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 38% over the last 4 consecutive months; receivable days and tax filing delays rising
+C0188,S0_healthy,healthy,Individual,Public Sector,Dammam,Low,no deterioration planted
+C0189,S0_healthy,healthy,Individual,Education,Sharjah,Low,no deterioration planted
+C0190,S4_temporary_miss_with_evidence,temp_miss_evidence,Individual,Delivery & Ride-hailing,Abu Dhabi,Low,"single late payment in 2026-04 (17d), reason=Medical emergency (hospital bills provided), evidence=True; clean before and after"
+C0191,S2_declining_income_cashflow,declining_cashflow,SME,Oil & Gas Services,Dammam,Medium to High,income fell 44% over the last 5 consecutive months
+C0192,S0_healthy,healthy,SME,Real Estate Services,Sharjah,Low,no deterioration planted
+C0193,S0_healthy,healthy,Individual,Banking & Finance,Riyadh,Low,no deterioration planted
+C0194,S0_healthy,healthy,Individual,Education,Dubai,Low,no deterioration planted
+C0195,S0_healthy,healthy,Individual,Public Sector,Muscat,Low,no deterioration planted
+C0196,S0_healthy,healthy,SME,Hospitality,Jeddah,Low,no deterioration planted
+C0197,S0_volatile_but_stable,volatile,SME,Construction & Contracting,Doha,Low (volatility alone is not deterioration),no deterioration planted
+C0198,S0_healthy,healthy,SME,Logistics & Transport,Dubai,Low,no deterioration planted
+C0199,S0_healthy,healthy,SME,Oil & Gas Services,Muscat,Low,no deterioration planted
+C0200,S4_temporary_miss_no_evidence,temp_miss_no_evidence,Individual,Healthcare,Doha,Low,"single late payment in 2026-08 (8d), reason=Customer-reported, no supporting document, evidence=False; clean before and after"
+C0201,S0_healthy,healthy,Individual,Public Sector,Doha,Low,no deterioration planted
+C0202,S7_no_transaction_data,no_transactions,SME,Food & Beverage,Riyadh,Low (reduced confidence),established repayment history but no transaction feed
+C0203,S1_repeated_repayment_delays,repeated_delay,Individual,Banking & Finance,Dammam,High,"regular payer for 11 months, then delays growing over the last 7"
+C0204,S0_healthy,healthy,SME,Logistics & Transport,Dubai,Low,no deterioration planted
+C0205,S8_cluster_contractors_dubai,sme_stress,SME,Construction & Contracting,Dubai,Medium to High (cluster of SMEs),delayed payments on government projects; 1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 45% over the last 5 consecutive months; receivable days and tax filing delays rising
+C0206,S0_healthy,healthy,Individual,Healthcare,Muscat,Low,no deterioration planted
+C0207,S0_healthy,healthy,SME,Oil & Gas Services,Jeddah,Low,no deterioration planted
+C0208,S0_healthy,healthy,SME,Hospitality,Manama,Low,no deterioration planted
+C0209,S4_temporary_miss_with_evidence,temp_miss_evidence,SME,Construction & Contracting,Abu Dhabi,Low,"single late payment in 2026-05 (1d), reason=Bank holiday on due date, evidence=True; clean before and after"
+C0210,S0_volatile_but_stable,volatile,SME,Logistics & Transport,Doha,Low (volatility alone is not deterioration),no deterioration planted
+C0211,S0_healthy,healthy,SME,IT Services,Abu Dhabi,Low,no deterioration planted
+C0212,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Banking & Finance,Dammam,High to Critical,delays rising then the last 2 instalment(s) unpaid (31-60 DPD bucket)
+C0213,S2_declining_income_cashflow,declining_cashflow,SME,Hospitality,Abu Dhabi,Medium to High,income fell 36% over the last 4 consecutive months
+C0214,S0_volatile_but_stable,volatile,SME,Real Estate Services,Dammam,Low (volatility alone is not deterioration),no deterioration planted
+C0215,S0_healthy,healthy,Individual,Legal & Consulting,Muscat,Low,no deterioration planted
+C0216,S8_cluster_delivery_riders_riyadh,declining_cashflow,Individual,Delivery & Ride-hailing,Riyadh,Medium to High (cluster of gig workers),platform incentive cuts in Riyadh; income fell 21% over the last 3 consecutive months
+C0217,S0_healthy,healthy,SME,Retail & Trading,Doha,Low,no deterioration planted
+C0218,S0_healthy,healthy,Individual,Banking & Finance,Abu Dhabi,Low,no deterioration planted
+C0219,S0_healthy,healthy,SME,Construction & Contracting,Manama,Low,no deterioration planted
+C0220,S0_volatile_but_stable,volatile,SME,Construction & Contracting,Manama,Low (volatility alone is not deterioration),no deterioration planted
+C0221,S0_healthy,healthy,Individual,Public Sector,Dubai,Low,no deterioration planted
+C0222,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Delivery & Ride-hailing,Sharjah,Low-Medium to Medium,"delays 17/9/3 days after an income dip, then 3 months on time"
+C0223,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Hospitality,Muscat,Low-Medium to Medium,"delays 15/9/3 days after an income dip, then 3 months on time"
+C0224,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Retail,Doha,Low-Medium to Medium,"delays 14/11/4 days after an income dip, then 3 months on time"
+C0225,S7_transaction_gap,txn_gap,Individual,Education,Manama,Low (reduced confidence),transaction feed missing for 2026-04 and 2026-05
+C0226,S0_healthy,healthy,Individual,Hospitality,Muscat,Low,no deterioration planted
+C0227,S0_healthy,healthy,Individual,Construction,Abu Dhabi,Low,no deterioration planted
+C0228,S0_healthy,healthy,Individual,Education,Sharjah,Low,no deterioration planted
+C0229,S0_healthy,healthy,SME,Logistics & Transport,Doha,Low,no deterioration planted
+C0230,S0_healthy,healthy,Individual,Hospitality,Dammam,Low,no deterioration planted
+C0231,S0_healthy,healthy,SME,Retail & Trading,Jeddah,Low,no deterioration planted
+C0232,S6_sme_financial_stress,sme_stress,SME,Food & Beverage,Jeddah,High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 54% over the last 6 consecutive months; receivable days and tax filing delays rising
+C0233,S8_cluster_delivery_riders_riyadh,declining_cashflow,Individual,Delivery & Ride-hailing,Riyadh,Medium to High (cluster of gig workers),platform incentive cuts in Riyadh; income fell 28% over the last 4 consecutive months
+C0234,S0_healthy,healthy,SME,Food & Beverage,Sharjah,Low,no deterioration planted
+C0235,S0_healthy,healthy,Individual,Public Sector,Dammam,Low,no deterioration planted
+C0236,S0_healthy,healthy,SME,Food & Beverage,Abu Dhabi,Low,no deterioration planted
+C0237,S0_healthy,healthy,SME,IT Services,Dubai,Low,no deterioration planted
+C0238,S7_thin_history,thin_file,Individual,Legal & Consulting,Riyadh,Insufficient data (must NOT be High),onboarded 3 month(s) ago; transactions missing=False
+C0239,S0_healthy,healthy,Individual,Healthcare,Doha,Low,no deterioration planted
+C0240,S0_healthy,healthy,Individual,Construction,Doha,Low,no deterioration planted
+C0241,S0_healthy,healthy,Individual,Hospitality,Dubai,Low,no deterioration planted
+C0242,S4_temporary_miss_with_evidence,temp_miss_evidence,Individual,Delivery & Ride-hailing,Dubai,Low,"single late payment in 2026-08 (18d), reason=Salary credit delayed by employer, evidence=True; clean before and after"
+C0243,S7_transaction_gap,txn_gap,Individual,Legal & Consulting,Manama,Low (reduced confidence),transaction feed missing for 2026-03 and 2026-04
+C0244,S0_healthy,healthy,SME,Oil & Gas Services,Dubai,Low,no deterioration planted
+C0245,S4_temporary_miss_no_evidence,temp_miss_no_evidence,Individual,Retail,Riyadh,Low,"single late payment in 2026-06 (11d), reason=Customer-reported, no supporting document, evidence=False; clean before and after"
+C0246,S7_no_transaction_data,no_transactions,Individual,Education,Sharjah,Low (reduced confidence),established repayment history but no transaction feed
+C0247,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Banking & Finance,Riyadh,High to Critical,delays rising then the last 1 instalment(s) unpaid (1-30 DPD bucket)
+C0248,S0_healthy,healthy,SME,Oil & Gas Services,Sharjah,Low,no deterioration planted
+C0249,S8_cluster_contractors_dubai,sme_stress,SME,Construction & Contracting,Dubai,Medium to High (cluster of SMEs),delayed payments on government projects; revolving utilisation ramping up; income fell 51% over the last 6 consecutive months; receivable days and tax filing delays rising
+C0250,S3_increasing_exposure,increasing_exposure,SME,Retail & Trading,Abu Dhabi,Medium to High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0251,S3_increasing_exposure,increasing_exposure,Individual,Banking & Finance,Jeddah,Medium to High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0252,S0_healthy,healthy,Individual,Hospitality,Dubai,Low,no deterioration planted
+C0253,S0_healthy,healthy,Individual,Public Sector,Dubai,Low,no deterioration planted
+C0254,S0_healthy,healthy,Individual,Healthcare,Muscat,Low,no deterioration planted
+C0255,S0_healthy,healthy,Individual,Construction,Abu Dhabi,Low,no deterioration planted
+C0256,S8_cluster_contractors_dubai,sme_stress,SME,Construction & Contracting,Dubai,Medium to High (cluster of SMEs),delayed payments on government projects; 1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 39% over the last 4 consecutive months; receivable days and tax filing delays rising
+C0257,S6_sme_financial_stress,sme_stress,SME,Retail & Trading,Sharjah,High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 43% over the last 5 consecutive months; receivable days and tax filing delays rising
+C0258,S0_healthy,healthy,Individual,Retail,Sharjah,Low,no deterioration planted
+C0259,S0_healthy,healthy,Individual,Healthcare,Dubai,Low,no deterioration planted
+C0260,S4_temporary_miss_no_evidence,temp_miss_no_evidence,Individual,Healthcare,Sharjah,Low,"single late payment in 2026-08 (7d), reason=Customer-reported, no supporting document, evidence=False; clean before and after"
+C0261,S1_repeated_repayment_delays,repeated_delay,Individual,Retail,Manama,High,"regular payer for 13 months, then delays growing over the last 5"
+C0262,S0_healthy,healthy,SME,Construction & Contracting,Manama,Low,no deterioration planted
+C0263,S6_sme_financial_stress,sme_stress,SME,Oil & Gas Services,Abu Dhabi,High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 45% over the last 5 consecutive months; receivable days and tax filing delays rising
+C0264,S0_healthy,healthy,SME,Logistics & Transport,Dubai,Low,no deterioration planted
+C0265,S0_healthy,healthy,SME,IT Services,Dubai,Low,no deterioration planted
+C0266,S0_healthy,healthy,Individual,Healthcare,Abu Dhabi,Low,no deterioration planted
+C0267,S0_healthy,healthy,Individual,Hospitality,Dammam,Low,no deterioration planted
+C0268,S0_healthy,healthy,Individual,Retail,Manama,Low,no deterioration planted
+C0269,S3_increasing_exposure,increasing_exposure,Individual,Construction,Sharjah,Medium to High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0270,S7_transaction_gap,txn_gap,SME,IT Services,Manama,Low (reduced confidence),transaction feed missing for 2026-05 and 2026-06
+C0271,S0_healthy,healthy,Individual,Healthcare,Manama,Low,no deterioration planted
+C0272,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Sharjah,Low,no deterioration planted
+C0273,S4_temporary_miss_with_evidence,temp_miss_evidence,SME,Hospitality,Abu Dhabi,Low,"single late payment in 2026-08 (18d), reason=Large receivable delayed by buyer, evidence=True; clean before and after"
+C0274,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Riyadh,Low,no deterioration planted
+C0275,S0_healthy,healthy,Individual,Banking & Finance,Manama,Low,no deterioration planted
+C0276,S0_healthy,healthy,Individual,Public Sector,Dubai,Low,no deterioration planted
+C0277,S0_healthy,healthy,Individual,Construction,Jeddah,Low,no deterioration planted
+C0278,S7_thin_history,thin_file,Individual,Retail,Riyadh,Insufficient data (must NOT be High),onboarded 2 month(s) ago; transactions missing=False
+C0279,S2_declining_income_cashflow,declining_cashflow,Individual,Construction,Jeddah,Medium to High,income fell 21% over the last 3 consecutive months
+C0280,S0_healthy,healthy,SME,Hospitality,Jeddah,Low,no deterioration planted
+C0281,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Healthcare,Abu Dhabi,High to Critical,delays rising then the last 3 instalment(s) unpaid (61-90 DPD bucket)
+C0282,S0_healthy,healthy,SME,Hospitality,Dammam,Low,no deterioration planted
+C0283,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Muscat,Low,no deterioration planted
+C0284,S2_declining_income_cashflow,declining_cashflow,Individual,Construction,Sharjah,Medium to High,income fell 19% over the last 3 consecutive months
+C0285,S4_temporary_miss_with_evidence,temp_miss_evidence,Individual,Banking & Finance,Doha,Low,"single late payment in 2026-05 (3d), reason=Bank holiday on due date, evidence=True; clean before and after"
+C0286,S0_healthy,healthy,Individual,Legal & Consulting,Dammam,Low,no deterioration planted
+C0287,S0_healthy,healthy,SME,Construction & Contracting,Abu Dhabi,Low,no deterioration planted
+C0288,S8_cluster_delivery_riders_riyadh,declining_cashflow,Individual,Delivery & Ride-hailing,Riyadh,Medium to High (cluster of gig workers),platform incentive cuts in Riyadh; income fell 30% over the last 4 consecutive months
+C0289,S0_healthy,healthy,Individual,Education,Muscat,Low,no deterioration planted
+C0290,S0_healthy,healthy,Individual,Hospitality,Doha,Low,no deterioration planted
+C0291,S7_transaction_gap,txn_gap,SME,Real Estate Services,Dammam,Low (reduced confidence),transaction feed missing for 2026-01 and 2026-02
+C0292,S0_healthy,healthy,SME,Food & Beverage,Doha,Low,no deterioration planted
+C0293,S0_healthy,healthy,Individual,Banking & Finance,Riyadh,Low,no deterioration planted
+C0294,S0_healthy,healthy,SME,Real Estate Services,Muscat,Low,no deterioration planted
+C0295,S0_seasonal_sme,seasonal,SME,Food & Beverage,Riyadh,Low (seasonal dip matches last year),strong seasonal receipts; the recent dip matches the same months last year
+C0296,S0_healthy,healthy,SME,Hospitality,Dammam,Low,no deterioration planted
+C0297,S7_no_transaction_data,no_transactions,SME,Construction & Contracting,Manama,Low (reduced confidence),established repayment history but no transaction feed
+C0298,S1_repeated_repayment_delays,repeated_delay,Individual,Hospitality,Jeddah,High,"regular payer for 11 months, then delays growing over the last 7"
+C0299,S0_healthy,healthy,SME,Logistics & Transport,Riyadh,Low,no deterioration planted
+C0300,S0_healthy,healthy,Individual,Legal & Consulting,Abu Dhabi,Low,no deterioration planted
+C0301,S0_healthy,healthy,SME,Logistics & Transport,Jeddah,Low,no deterioration planted
+C0302,S0_healthy,healthy,SME,Real Estate Services,Jeddah,Low,no deterioration planted
+C0303,S0_healthy,healthy,SME,IT Services,Manama,Low,no deterioration planted
+C0304,S0_healthy,healthy,SME,IT Services,Dubai,Low,no deterioration planted
+C0305,S0_healthy,healthy,SME,Oil & Gas Services,Dubai,Low,no deterioration planted
+C0306,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Riyadh,Low,no deterioration planted
+C0307,S0_healthy,healthy,SME,Real Estate Services,Jeddah,Low,no deterioration planted
+C0308,S1_repeated_repayment_delays,repeated_delay,Individual,Retail,Dammam,High,"regular payer for 13 months, then delays growing over the last 5"
+C0309,S0_volatile_but_stable,volatile,Individual,Delivery & Ride-hailing,Doha,Low (volatility alone is not deterioration),no deterioration planted
+C0310,S0_healthy,healthy,Individual,Retail,Dammam,Low,no deterioration planted
+C0311,S0_healthy,healthy,SME,Construction & Contracting,Manama,Low,no deterioration planted
+C0312,S0_healthy,healthy,SME,Construction & Contracting,Doha,Low,no deterioration planted
+C0313,S0_healthy,healthy,Individual,Banking & Finance,Abu Dhabi,Low,no deterioration planted
+C0314,S4_temporary_miss_with_evidence,temp_miss_evidence,Individual,Education,Doha,Low,"single late payment in 2026-07 (1d), reason=Bank holiday on due date, evidence=True; clean before and after"
+C0315,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Dammam,Low,no deterioration planted
+C0316,S0_healthy,healthy,SME,Retail & Trading,Dubai,Low,no deterioration planted
+C0317,S0_healthy,healthy,Individual,Construction,Muscat,Low,no deterioration planted
+C0318,S0_healthy,healthy,SME,Real Estate Services,Sharjah,Low,no deterioration planted
+C0319,S0_healthy,healthy,Individual,Banking & Finance,Sharjah,Low,no deterioration planted
+C0320,S0_healthy,healthy,Individual,Banking & Finance,Riyadh,Low,no deterioration planted
+C0321,S0_healthy,healthy,SME,Oil & Gas Services,Dammam,Low,no deterioration planted
+C0322,S0_healthy,healthy,Individual,Hospitality,Manama,Low,no deterioration planted
+C0323,S0_healthy,healthy,Individual,Construction,Dammam,Low,no deterioration planted
+C0324,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Abu Dhabi,Low,no deterioration planted
+C0325,S0_healthy,healthy,SME,Retail & Trading,Jeddah,Low,no deterioration planted
+C0326,S0_healthy,healthy,Individual,Hospitality,Abu Dhabi,Low,no deterioration planted
+C0327,S1_repeated_repayment_delays,repeated_delay,Individual,Retail,Abu Dhabi,High,"regular payer for 13 months, then delays growing over the last 5"
+C0328,S6_sme_financial_stress,sme_stress,SME,Logistics & Transport,Abu Dhabi,High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up; income fell 45% over the last 5 consecutive months; receivable days and tax filing delays rising
+C0329,S0_healthy,healthy,Individual,Construction,Jeddah,Low,no deterioration planted
+C0330,S7_thin_history,thin_file,Individual,Public Sector,Dammam,Insufficient data (must NOT be High),onboarded 2 month(s) ago; transactions missing=True
+C0331,S0_healthy,healthy,Individual,Construction,Abu Dhabi,Low,no deterioration planted
+C0332,S0_healthy,healthy,Individual,Retail,Muscat,Low,no deterioration planted
+C0333,S0_healthy,healthy,SME,Food & Beverage,Manama,Low,no deterioration planted
+C0334,S0_healthy,healthy,Individual,Hospitality,Muscat,Low,no deterioration planted
+C0335,S0_healthy,healthy,Individual,Healthcare,Sharjah,Low,no deterioration planted
+C0336,S0_healthy,healthy,SME,IT Services,Jeddah,Low,no deterioration planted
+C0337,S0_healthy,healthy,Individual,Construction,Doha,Low,no deterioration planted
+C0338,S0_healthy,healthy,Individual,Legal & Consulting,Riyadh,Low,no deterioration planted
+C0339,S0_healthy,healthy,Individual,Education,Doha,Low,no deterioration planted
+C0340,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Education,Muscat,High to Critical,delays rising then the last 1 instalment(s) unpaid (1-30 DPD bucket)
+C0341,S0_healthy,healthy,Individual,Legal & Consulting,Dubai,Low,no deterioration planted
+C0342,S0_healthy,healthy,Individual,Hospitality,Riyadh,Low,no deterioration planted
+C0343,S0_healthy,healthy,SME,Oil & Gas Services,Abu Dhabi,Low,no deterioration planted
+C0344,S0_seasonal_sme,seasonal,SME,Real Estate Services,Jeddah,Low (seasonal dip matches last year),strong seasonal receipts; the recent dip matches the same months last year
+C0345,S0_healthy,healthy,Individual,Education,Dammam,Low,no deterioration planted
+C0346,S1_repeated_repayment_delays,repeated_delay,SME,Oil & Gas Services,Dammam,High,"regular payer for 14 months, then delays growing over the last 4"
+C0347,S0_healthy,healthy,SME,Logistics & Transport,Abu Dhabi,Low,no deterioration planted
+C0348,S4_temporary_miss_no_evidence,temp_miss_no_evidence,SME,Hospitality,Dubai,Low,"single late payment in 2026-06 (8d), reason=None, evidence=False; clean before and after"
+C0349,S0_healthy,healthy,Individual,Hospitality,Jeddah,Low,no deterioration planted
+C0350,S0_healthy,healthy,Individual,Hospitality,Sharjah,Low,no deterioration planted
+C0351,S0_healthy,healthy,SME,Logistics & Transport,Abu Dhabi,Low,no deterioration planted
+C0352,S1_repeated_repayment_delays,repeated_delay,SME,Construction & Contracting,Jeddah,High,"regular payer for 14 months, then delays growing over the last 4"
+C0353,S4_temporary_miss_no_evidence,temp_miss_no_evidence,Individual,Delivery & Ride-hailing,Jeddah,Low,"single late payment in 2026-04 (11d), reason=None, evidence=False; clean before and after"
+C0354,S0_healthy,healthy,Individual,Healthcare,Sharjah,Low,no deterioration planted
+C0355,S0_healthy,healthy,Individual,Healthcare,Muscat,Low,no deterioration planted
+C0356,S0_healthy,healthy,Individual,Construction,Doha,Low,no deterioration planted
+C0357,S0_healthy,healthy,Individual,Public Sector,Manama,Low,no deterioration planted
+C0358,S2_declining_income_cashflow,declining_cashflow,SME,Construction & Contracting,Muscat,Medium to High,income fell 36% over the last 5 consecutive months
+C0359,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Muscat,Low,no deterioration planted
+C0360,S3_increasing_exposure,increasing_exposure,SME,IT Services,Sharjah,Medium to High,2 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0361,S0_healthy,healthy,SME,Hospitality,Dammam,Low,no deterioration planted
+C0362,S0_healthy,healthy,SME,Construction & Contracting,Dubai,Low,no deterioration planted
+C0363,S3_increasing_exposure,increasing_exposure,SME,Logistics & Transport,Doha,Medium to High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0364,S0_healthy,healthy,SME,Retail & Trading,Doha,Low,no deterioration planted
+C0365,S0_volatile_but_stable,volatile,SME,Food & Beverage,Abu Dhabi,Low (volatility alone is not deterioration),no deterioration planted
+C0366,S5_early_delinquency_worsening,early_delinq_worsening,SME,Construction & Contracting,Dubai,High to Critical,delays rising then the last 1 instalment(s) unpaid (1-30 DPD bucket)
+C0367,S0_volatile_but_stable,volatile,SME,Hospitality,Riyadh,Low (volatility alone is not deterioration),no deterioration planted
+C0368,S0_healthy,healthy,Individual,Healthcare,Doha,Low,no deterioration planted
+C0369,S0_healthy,healthy,SME,Oil & Gas Services,Jeddah,Low,no deterioration planted
+C0370,S0_healthy,healthy,SME,Real Estate Services,Dammam,Low,no deterioration planted
+C0371,S0_seasonal_sme,seasonal,SME,IT Services,Sharjah,Low (seasonal dip matches last year),strong seasonal receipts; the recent dip matches the same months last year
+C0372,S0_healthy,healthy,SME,Food & Beverage,Sharjah,Low,no deterioration planted
+C0373,S0_healthy,healthy,Individual,Retail,Dubai,Low,no deterioration planted
+C0374,S0_healthy,healthy,Individual,Healthcare,Sharjah,Low,no deterioration planted
+C0375,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Banking & Finance,Manama,High to Critical,delays rising then the last 2 instalment(s) unpaid (31-60 DPD bucket)
+C0376,S2_declining_income_cashflow,declining_cashflow,Individual,Retail,Jeddah,Medium to High,income fell 34% over the last 6 consecutive months
+C0377,S0_healthy,healthy,Individual,Education,Riyadh,Low,no deterioration planted
+C0378,S0_seasonal_sme,seasonal,SME,Retail & Trading,Riyadh,Low (seasonal dip matches last year),strong seasonal receipts; the recent dip matches the same months last year
+C0379,S0_healthy,healthy,SME,Construction & Contracting,Dammam,Low,no deterioration planted
+C0380,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Dubai,Low,no deterioration planted
+C0381,S1_repeated_repayment_delays,repeated_delay,Individual,Delivery & Ride-hailing,Sharjah,High,"regular payer for 12 months, then delays growing over the last 6"
+C0382,S6_sme_financial_stress,sme_stress,SME,Real Estate Services,Dubai,High,revolving utilisation ramping up; income fell 53% over the last 6 consecutive months; receivable days and tax filing delays rising
+C0383,S0_seasonal_sme,seasonal,SME,Logistics & Transport,Manama,Low (seasonal dip matches last year),strong seasonal receipts; the recent dip matches the same months last year
+C0384,S0_healthy,healthy,Individual,Public Sector,Riyadh,Low,no deterioration planted
+C0385,S0_healthy,healthy,Individual,Retail,Muscat,Low,no deterioration planted
+C0386,S1_repeated_repayment_delays,repeated_delay,SME,Logistics & Transport,Dammam,High,"regular payer for 14 months, then delays growing over the last 4"
+C0387,S0_volatile_but_stable,volatile,Individual,Delivery & Ride-hailing,Doha,Low (volatility alone is not deterioration),no deterioration planted
+C0388,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Education,Abu Dhabi,High to Critical,delays rising then the last 3 instalment(s) unpaid (61-90 DPD bucket)
+C0389,S0_healthy,healthy,Individual,Banking & Finance,Dammam,Low,no deterioration planted
+C0390,S0_seasonal_sme,seasonal,SME,Food & Beverage,Doha,Low (seasonal dip matches last year),strong seasonal receipts; the recent dip matches the same months last year
+C0391,S0_healthy,healthy,Individual,Hospitality,Abu Dhabi,Low,no deterioration planted
+C0392,S0_healthy,healthy,SME,Construction & Contracting,Riyadh,Low,no deterioration planted
+C0393,S1_repeated_repayment_delays,repeated_delay,Individual,Retail,Manama,High,"regular payer for 11 months, then delays growing over the last 7"
+C0394,S0_healthy,healthy,Individual,Delivery & Ride-hailing,Abu Dhabi,Low,no deterioration planted
+C0395,S1_repeated_repayment_delays,repeated_delay,SME,Food & Beverage,Jeddah,High,"regular payer for 11 months, then delays growing over the last 7"
+C0396,S0_volatile_but_stable,volatile,Individual,Public Sector,Sharjah,Low (volatility alone is not deterioration),no deterioration planted
+C0397,S0_healthy,healthy,Individual,Education,Muscat,Low,no deterioration planted
+C0398,S0_healthy,healthy,SME,IT Services,Abu Dhabi,Low,no deterioration planted
+C0399,S3_increasing_exposure,increasing_exposure,Individual,Delivery & Ride-hailing,Abu Dhabi,Medium to High,1 new facility(ies) in the last 6 months; revolving utilisation ramping up
+C0400,S0_healthy,healthy,SME,Construction & Contracting,Dammam,Low,no deterioration planted

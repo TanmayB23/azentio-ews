@@ -4,3 +4,5 @@ __pycache__/
 *.sqlite3
 *.sqlite3-wal
 *.sqlite3-shm
+*.pyc
+*.db
