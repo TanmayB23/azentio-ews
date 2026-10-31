@@ -40,7 +40,8 @@ def apply_styles():
     [data-testid="stMetric"] {background: white; padding: 1.15rem 1.3rem;
         border: 1px solid #e2e8f2; border-radius: 12px; box-shadow: 0 3px 12px #142b4c04;}
     [data-testid="stMetricLabel"] p {color: #61718a; font-size: .82rem; font-weight: 600;}
-    [data-testid="stMetricValue"] {font-size: 1.65rem; font-weight: 700; color: #172b4d;}
+    [data-testid="stMetricValue"] {font-size: 1.65rem; font-weight: 700; color: #172b4d; white-space: normal; overflow-wrap: anywhere;}
+    [data-testid="stMetricValue"] > div {white-space: normal; overflow: visible; text-overflow: clip;}
     [data-testid="stVerticalBlockBorderWrapper"] > div {border-color: #e2e8f2 !important; border-radius: 12px;}
     [data-testid="stDataFrame"] {border: 1px solid #e2e8f2; border-radius: 10px; overflow: hidden;}
     .stButton > button, .stDownloadButton > button {border-radius: 8px; font-weight: 600;}

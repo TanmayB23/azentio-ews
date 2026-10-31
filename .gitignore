@@ -6,3 +6,4 @@ __pycache__/
 *.sqlite3-shm
 *.pyc
 *.db
+artifacts/ui-check/

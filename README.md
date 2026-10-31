@@ -25,7 +25,7 @@ Open http://localhost:8501. On **Data**, choose the **India** or **Gulf-Islamic*
 
 ## Analyst screens
 
-- **Watchlist:** risk-first ordering with insufficient data grouped last; search by name/ID; filters for any held product, segment, band, current delinquency bucket, and portfolio. Main product is the individual facility with the largest outstanding balance; total outstanding uses the latest exposure observation, falling back to facility balances. Select a row to open customer detail.
+- **Watchlist:** risk-first ordering with insufficient data grouped last; search by name/ID; filters for any held product, segment, band, current delinquency bucket, and portfolio. Main product is the individual facility with the largest outstanding balance; total outstanding uses the latest exposure observation, falling back to facility balances. Tick the checkbox at the left of a row to open customer detail.
 - **Customer detail:** summary, confidence, named pillar scores, signal contributions and evidence, applicability/data-coverage states, and special rules. The signal contribution total is displayed separately from the final score so minimum-score rules can be traced. Thin history displays no score or band and the engine's explanation.
 - **Account activity:** repayments, worst monthly DPD, inflows/outflows and utilisation. Missing months remain gaps. Gulf-specific facilities require no conventional interest-rate column.
 - **SME indicators:** SMEs have an additional tab with monthly tax filing status, reported turnover, receivable days, and payable days. The tab explains when optional indicators are absent.
@@ -42,6 +42,17 @@ The database defaults to `data/ews.sqlite3` (ignored by Git); override with `$en
 ```
 
 The combined suite includes Person A's unchanged engine tests, fake-engine compatibility checks, storage immutability/rollback tests, upload/config/cache checks, and Streamlit flows using real India and Gulf results. No engine or contract changes are required for the integration.
+
+## Browser audit
+
+With Google Chrome installed, run a headless browser audit against a temporary database:
+
+```powershell
+./.venv/Scripts/python -m pip install playwright
+./.venv/Scripts/python tests/browser_check.py
+```
+
+The audit checks real desktop and mobile interactions, row-checkbox navigation, filters, charts, review validation/history, both regional portfolios, scrolling and sidebar reopening. Screenshots and its JSON report are written to `artifacts/ui-check/` (ignored by Git). The analyst database is not touched. Watchlist presentation rows are cached per saved assessment so filter and navigation reruns stay responsive.
 
 ## Interface
 

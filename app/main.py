@@ -37,6 +37,7 @@ def show_customers(frame, key):
     if frame.empty:
         empty_state("No matching customers", "Try removing a filter or changing your search.")
         return
+    st.caption("Tick the checkbox at the left of a row to open that customer's detail screen.")
     display = frame.drop(columns=["_products"], errors="ignore")
     event = st.dataframe(display.style.map(band_style, subset=["band"]), hide_index=True,
         width="stretch", on_select="rerun", selection_mode="single-row",
@@ -157,11 +158,21 @@ def require_scores():
     return True
 
 
+def portfolio_frame():
+    """Reuse the presentation table while filters/navigation rerun the script."""
+    run_id = st.session_state.run_id
+    cached = st.session_state.get("watchlist_cache")
+    if cached is None or cached[0] != run_id:
+        cached = (run_id, watchlist(st.session_state.dataset, st.session_state.results))
+        st.session_state.watchlist_cache = cached
+    return cached[1]
+
+
 def watchlist_page():
     page_header("Risk watchlist", "Prioritise customers who need attention, then open their evidence with one click.", "02 / Monitor")
     if not require_scores():
         return
-    frame = watchlist(st.session_state.dataset, st.session_state.results)
+    frame = portfolio_frame()
     total, elevated, insufficient, outstanding = st.columns(4)
     total.metric("Customers", f"{len(frame):,}")
     elevated.metric("High & critical", int(frame.band.isin(["High", "Critical"]).sum()))
@@ -179,7 +190,7 @@ def watchlist_page():
         choices = box.multiselect(title, options, key=f"filter_{field}")
         if choices:
             frame = frame.loc[frame._products.map(lambda items: bool(set(items) & set(choices)))] if field == "_products" else frame.loc[frame[field].isin(choices)]
-    st.caption(f"{len(frame)} customers | Highest risk first | Select a row to open customer detail")
+    st.caption(f"{len(frame)} {'customer' if len(frame) == 1 else 'customers'} | Highest risk first")
     st.download_button("Export filtered watchlist", frame.drop(columns="_products").to_csv(index=False), "watchlist.csv", "text/csv")
     show_customers(frame, f"watchlist_{st.session_state.run_id}")
 
@@ -341,7 +352,7 @@ def portfolio_page():
             "basis": st.column_config.TextColumn("Basis", width="large"),
             "lift": st.column_config.NumberColumn("Lift", format="%.2f")})
     selected = st.selectbox("Drill into cluster", range(len(clusters)), format_func=lambda i: f"{clusters[i].dimension}: {clusters[i].value}")
-    frame = watchlist(st.session_state.dataset, results)
+    frame = portfolio_frame()
     show_customers(frame.loc[frame.customer_id.isin(clusters[selected].customer_ids)], f"cluster_{st.session_state.run_id}_{selected}")
 
 
