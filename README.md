@@ -44,6 +44,8 @@ Every alert gets **recommended actions** from a rules playbook ([config/interven
 
 On a customer page, **Draft case note** produces a short note: summary, cited findings, ranked next steps, questions for the customer, data gaps, and a suggested decision. **Use in review** copies it into the review form. The analyst still decides, and the review records which note was used.
 
+Put these settings in a `.env` file in the project root: copy [.env.example](.env.example) to `.env` and fill in your key. Git ignores `.env`. It's read by `python -m api`, and variables already set in the environment take priority.
+
 | Setting | Default | Purpose |
 |---|---|---|
 | `OPENAI_API_KEY` | not set | Enables AI drafting with OpenAI. Without it, notes are drafted from rules |

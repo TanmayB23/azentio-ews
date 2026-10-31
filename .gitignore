@@ -14,3 +14,6 @@ web/node_modules/
 web/dist/
 .playwright-mcp/
 web/*.tsbuildinfo
+
+# local secrets
+.env
