@@ -1,0 +1,404 @@
+customer_id,customer_name,customer_type,employment_or_business_category,industry,region,portfolio_classification,segment,origination_rating,declared_monthly_income,relationship_manager,onboarding_date,resident_type
+C0001,Al Shamsi IT Services LLC,SME,Private Limited,IT Services,Muscat,SME Banking,SME Core,B,891000,Bilal Qureshi,2024-05-09,Expatriate
+C0002,Priya Al Shamsi,Individual,Salaried - Government,Education,Muscat,Retail Banking,Near Prime,A,55000,Fatima Al Zaabi,2022-04-07,National
+C0003,Yousef Khan,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Riyadh,Retail Banking,Prime,B,9000,Anil Menon,2023-10-31,Expatriate
+C0004,Mariam Al Shamsi,Individual,Self-employed Professional,Healthcare,Sharjah,Retail Banking,Prime,B,30000,Anil Menon,2019-03-08,National
+C0005,Mohammed Santos,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Sharjah,Retail Banking,Prime,B,7000,Bilal Qureshi,2024-04-13,Expatriate
+C0006,Saleh Oil Trading LLC,SME,Partnership,Oil & Gas Services,Dubai,SME Banking,SME Emerging,B,778000,Omar Haddad,2019-08-30,Expatriate
+C0007,Ahmed Al Qahtani,Individual,Salaried - Private,Construction,Muscat,Retail Banking,Near Prime,C,57000,Bilal Qureshi,2023-05-01,National
+C0008,Sana Rahman,Individual,Salaried - Private,Construction,Sharjah,Retail Banking,Prime,A,43000,Fatima Al Zaabi,2019-10-08,Expatriate
+C0009,Al Hashimi IT Group,SME,Private Limited,IT Services,Dammam,SME Banking,SME Emerging,C,642000,Anil Menon,2022-07-15,Expatriate
+C0010,Mohammed Santos,Individual,Salaried - Private,Construction,Muscat,Retail Banking,Prime,B,60000,Sara Al Harthy,2020-10-01,National
+C0011,Mariam Khan,Individul,Salaried - Private,Healthcare,Muscat,Retail Banking,Prime,B,53000,Sara Al Harthy,2026-08-13,Expatriate
+C0012,Huda Saleh,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Dubai,Retail Banking,Prime,B,8000,Grace Thomas,2024-11-16,Expatriate
+C0013,Hassan Khan,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Riyadh,Retail Banking,Near Prime,B,5000,Anil Menon,2018-10-12,Expatriate
+C0014,Huda Fernandes,Individual,Self-employed Professional,Healthcare,Dammam,Retail Banking,Near Prime,A,43000,Omar Haddad,2024-03-13,National
+C0015,Santos Construction Contracting LLC,SME,Private Limited,Construction & Contracting,Dubai,SME Banking,SME Core,A,1322000,Sara Al Harthy,2021-07-24,Expatriate
+C0016,Saleh IT Group,SME,Partnership,IT Services,Riyadh,SME Banking,SME Core,B,1712000,Bilal Qureshi,2020-11-11,Expatriate
+C0017,Fernandes Real Services LLC,SME,Proprietorship,Real Estate Services,Riyadh,SME Banking,SME Core,B,1200000,Anil Menon,2022-02-16,National
+C0018,Al Mansoori Real Trading LLC,SME,Partnership,Real Estate Services,Dammam,SME Banking,SME Core,A,1962000,Grace Thomas,2020-01-20,Expatriate
+C0019,Khalid Haddad,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Jeddah,Retail Banking,Prime,A,7000,Bilal Qureshi,2019-06-23,Expatriate
+C0020,Rahman Construction Contracting LLC,SME,Private Limited,Construction & Contracting,Sharjah,SME Banking,SME Emerging,B,1495000,Fatima Al Zaabi,2021-09-12,National
+C0021,Noura Al Otaibi,Individual,Self-employed Professional,Legal & Consulting,Muscat,Retail Banking,Prime,C,48000,Bilal Qureshi,2022-03-17,National
+C0022,Ahmed Saleh,Individual,Salaried - Private,Banking & Finance,Riyadh,Retail Banking,Near Prime,C,57000,Omar Haddad,2019-11-20,Expatriate
+C0023,Jose Al Hashimi,Individual,Salaried - Government,Public Sector,Abu Dhabi,Retail Banking,Near Prime,B,13000,Sara Al Harthy,2023-01-26,National
+C0024,Reem Al Qahtani,Individual,Salaried - Private,Construction,Doha,Retail Banking,Near Prime,A,59000,Bilal Qureshi,2020-11-14,National
+C0025,Omar Al Qahtani,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Sharjah,Retail Banking,Prime,B,5000,Bilal Qureshi,2019-05-22,National
+C0026,Fatima Al Mazrouei,Individual,Salaried - Government,Education,Muscat,Retail Banking,Near Prime,B,29000,Anil Menon,2021-06-05,National
+C0027,Priya Rahman,Individual,Salaried - Private,Retail,Sharjah,Retail Banking,Near Prime,B,48000,Omar Haddad,2019-07-17,Expatriate
+C0028,Nair Real Contracting LLC,SME,Private Limited,Real Estate Services,Riyadh,SME Banking,SME Emerging,B,1208000,Omar Haddad,2019-04-06,Expatriate
+C0029,Layla Siddiqui,Individual,Salaried - Government,Public Sector,Doha,Retail Banking,Near Prime,B,30000,Fatima Al Zaabi,2019-09-12,Expatriate
+C0030,Maria Al Otaibi,Individual,Salaried - Private,Hospitality,Muscat,Retail Banking,Prime,A,42000,Fatima Al Zaabi,2025-02-11,National
+C0031,Maria Rahman,Individual,Salaried - Private,Banking & Finance,Abu Dhabi,Retail Banking,Near Prime,B,55000,Sara Al Harthy,2023-09-08,Expatriate
+C0032,Layla Al Shamsi,Individual,Salaried - Private,Retail,Manama,Retail Banking,Prime,B,40000,Anil Menon,2021-05-26,National
+C0033,Layla Al Farsi,Individual,Salaried - Private,Hospitality,Muscat,Retail Banking,Prime,A,19000,Grace Thomas,2022-11-14,National
+C0034,Al Hashimi Oil Services LLC,SME,Proprietorship,Oil & Gas Services,Riyadh,SME Banking,SME Core,B,549000,Fatima Al Zaabi,2022-10-02,Expatriate
+C0035,Al Shamsi Hospitality Contracting LLC,SME,Proprietorship,Hospitality,Dammam,SME Banking,SME Core,B,1186000,Anil Menon,2019-04-25,Expatriate
+C0036,Al Otaibi IT Trading LLC,SME,Proprietorship,IT Services,Muscat,SME Banking,SME Core,B,1753000,Grace Thomas,2020-04-15,Expatriate
+C0037,Al Farsi IT Trading LLC,SME,Partnership,IT Services,Sharjah,SME Banking,SME Emerging,C,165000,Fatima Al Zaabi,2019-12-14,Expatriate
+C0038,Sana Al Shamsi,Individual,Salaried - Government,Public Sector,Dammam,Retail Banking,Near Prime,A,26000,Fatima Al Zaabi,2021-03-06,National
+C0039,Fatima Khan,Individual,Salaried - Private,Healthcare,Dammam,Retail Banking,Prime,A,47000,Bilal Qureshi,2021-07-16,Expatriate
+C0040,Fernandes Logistics Trading LLC,SME,Proprietorship,Logistics & Transport,Riyadh,SME Banking,SME Core,A,877000,Bilal Qureshi,2021-02-17,Expatriate
+C0041,Siddiqui Oil Services LLC,SME,Private Limited,Oil & Gas Services,Riyadh,SME Banking,SME Core,A,1695000,Anil Menon,2021-01-18,Expatriate
+C0042,Santos Construction Contracting LLC,SME,Partnership,Construction & Contracting,Dubai,SME Banking,SME Emerging,A,468000,Grace Thomas,2023-11-15,Expatriate
+C0043,Mohammed Al Hashimi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Manama,Retail Banking,Near Prime,A,8000,Grace Thomas,2026-07-10,National
+C0044,Omar Nair,Individual,Salaried - Government,Public Sector,Doha,Retail Banking,Near Prime,B,33000,Grace Thomas,2020-05-24,National
+C0045,Maria Siddiqui,Individual,Salaried - Private,Banking & Finance,Dammam,Retail Banking,Near Prime,A,28000,Fatima Al Zaabi,2024-02-01,Expatriate
+C0046,Santos Construction Services LLC,SME,Private Limited,Construction & Contracting,Doha,SME Banking,SME Emerging,C,1918000,Grace Thomas,2021-04-11,National
+C0047,Nair Real Services LLC,SME,Private Limited,Real Estate Services,Muscat,SME Banking,SME Emerging,A,990000,Grace Thomas,2020-12-15,Expatriate
+C0048,Fatima Haddad,Individual,Salaried - Private,Healthcare,Riyadh,Retail Banking,Near Prime,C,14000,Sara Al Harthy,2020-11-05,Expatriate
+C0049,Yousef Al Farsi,Individual,Salaried - Private,Healthcare,Dammam,Retail Banking,Near Prime,A,25000,Anil Menon,2020-06-13,National
+C0050,Aisha Al Shamsi,Individual,Salaried - Private,Construction,Jeddah,Retail Banking,Near Prime,B,48000,Anil Menon,2021-11-30,National
+C0051,Siddiqui Real Contracting LLC,SME,Partnership,Real Estate Services,Dammam,SME Banking,SME Emerging,B,776000,Grace Thomas,2021-08-10,Expatriate
+C0052,Priya Al Qahtani,Individual,Salaried - Government,Education,Jeddah,Retail Banking,Near Prime,A,20000,Grace Thomas,2019-02-05,National
+C0053,Aisha Al Mansoori,Individual,Salaried - Government,Education,Doha,Retail Banking,Near Prime,C,34000,Omar Haddad,2025-02-20,National
+C0054,Saleh Construction Trading LLC,SME,Partnership,Construction & Contracting,Dubai,SME Banking,SME Core,A,268000,Fatima Al Zaabi,2023-02-13,Expatriate
+C0055,Yousef Al Qahtani,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Jeddah,Retail Banking,Near Prime,B,7000,Bilal Qureshi,2025-03-09,National
+C0056,Mariam Santos,Individual,Salaried - Private,Construction,Sharjah,Retail Banking,Prime,A,46000,Omar Haddad,2022-11-26,Expatriate
+C0057,Al Qahtani Hospitality Contracting LLC,SME,Proprietorship,Hospitality,Manama,SME Banking,SME Core,B,1895000,Omar Haddad,2021-10-24,National
+C0058,Al Farsi IT Contracting LLC,SME,Proprietorship,IT Services,Sharjah,SME Banking,SME Emerging,B,411000,Sara Al Harthy,2024-06-27,Expatriate
+C0059,Jose Nair,Individual,Salaried - Private,Retail,Riyadh,Retail Banking,Near Prime,B,15000,Sara Al Harthy,2022-09-07,Expatriate
+C0060,Maria Saleh,Individual,Salaried - Private,Construction,Muscat,Retail Banking,Prime,C,52000,Grace Thomas,2020-06-20,Expatriate
+C0061,Al Shamsi Real Group,SME,Partnership,Real Estate Services,Manama,SME Banking,SME Core,A,672000,Grace Thomas,2024-03-17,National
+C0062,Siddiqui Real Trading LLC,,Private Limited,Real Estate Services,Jeddah,SME Banking,SME Core,A,1089000,Omar Haddad,2023-06-05,Expatriate
+C0063,Fernandes Retail Contracting LLC,SME,Proprietorship,Retail & Trading,Abu Dhabi,SME Banking,SME Core,B,1060000,Anil Menon,2022-11-13,Expatriate
+C0064,Ahmed Al Hashimi,Individual,Salaried - Private,Construction,Riyadh,Retail Banking,Prime,A,24000,Bilal Qureshi,2022-09-29,National
+C0065,Ahmed Al Mazrouei,Individual,Self-employed Professional,Healthcare,Sharjah,Retail Banking,Near Prime,A,39000,Omar Haddad,2023-05-03,National
+C0066,Huda Al Shamsi,Individual,Salaried - Private,Banking & Finance,Doha,Retail Banking,Near Prime,B,36000,Omar Haddad,2023-06-21,National
+C0067,Noura Al Farsi,Individual,Self-employed Professional,Healthcare,Abu Dhabi,Retail Banking,Near Prime,B,58000,Fatima Al Zaabi,2021-02-18,National
+C0068,Khalid Al Hashimi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Muscat,Retail Banking,Near Prime,A,6000,Bilal Qureshi,2021-02-12,National
+C0069,Reem Al Farsi,Individual,Salaried - Government,Education,Doha,Retail Banking,Near Prime,A,35000,Sara Al Harthy,2024-07-31,National
+C0070,Sana Rahman,Individual,Salaried - Private,Construction,Abu Dhabi,Retail Banking,Prime,B,15000,Grace Thomas,2021-09-06,Expatriate
+C0071,Haddad Food Group,SME,Private Limited,Food & Beverage,Dubai,SME Banking,SME Core,B,182000,Anil Menon,2022-10-12,Expatriate
+C0072,Imran Fernandes,Individual,Salaried - Government,Education,Riyadh,Retail Banking,Near Prime,A,50000,Anil Menon,2024-11-05,Expatriate
+C0073,Haddad Real Contracting LLC,SME,Proprietorship,Real Estate Services,Abu Dhabi,SME Banking,SME Core,A,643000,Fatima Al Zaabi,2020-07-17,Expatriate
+C0074,Mohammed Al Shamsi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Manama,Retail Banking,Near Prime,B,6000,Fatima Al Zaabi,2021-05-05,National
+C0075,Khan Construction Services LLC,SME,Partnership,Construction & Contracting,Dubai,SME Banking,SME Core,A,1610000,Omar Haddad,2022-09-02,Expatriate
+C0076,Siddiqui Logistics Group,SME,Private Limited,Logistics & Transport,Dammam,SME Banking,SME Core,A,423000,Bilal Qureshi,2026-08-08,Expatriate
+C0077,Siddiqui Logistics Trading LLC,SME,Private Limited,Logistics & Transport,Muscat,SME Banking,SME Emerging,B,1833000,Fatima Al Zaabi,2021-05-07,Expatriate
+C0078,Saleh Real Trading LLC,SME,Partnership,Real Estate Services,Muscat,SME Banking,SME Core,B,2081000,Grace Thomas,2019-10-14,Expatriate
+C0079,Aisha Haddad,Individual,Salaried - Private,Retail,Jeddah,Retail Banking,Prime,A,13000,Sara Al Harthy,2022-10-04,National
+C0080,Layla Fernandes,Individual,Salaried - Government,Education,Doha,Retail Banking,Prime,B,34000,Fatima Al Zaabi,2026-09-07,Expatriate
+C0081,Santos Logistics Services LLC,SME,Proprietorship,Logistics & Transport,Sharjah,SME Banking,SME Emerging,C,1047000,Omar Haddad,2020-07-11,Expatriate
+C0082,Santos Oil Services LLC,SME,Proprietorship,Oil & Gas Services,Muscat,SME Banking,SME Core,A,468000,Anil Menon,2020-09-18,Expatriate
+C0083,Fernandes Hospitality Trading LLC,SME,Partnership,Hospitality,Doha,SME Banking,SME Emerging,B,363000,Sara Al Harthy,2022-07-07,Expatriate
+C0084,Mohammed Haddad,Individual,Salaried - Private,Construction,Riyadh,Retail Banking,Prime,B,34000,Sara Al Harthy,2019-01-30,National
+C0085,Saleh Retail Trading LLC,SME,Partnership,Retail & Trading,Sharjah,SME Banking,SME Emerging,B,1654000,Sara Al Harthy,2020-06-01,Expatriate
+C0086,Fernandes Oil Trading LLC,SME,Proprietorship,Oil & Gas Services,Jeddah,SME Banking,SME Emerging,A,811000,Anil Menon,2019-06-03,Expatriate
+C0087,Haddad IT Group,SME,Private Limited,IT Services,Doha,SME Banking,SME Emerging,A,179000,Bilal Qureshi,2021-11-06,National
+C0088,Santos Food Services LLC,SME,Partnership,Food & Beverage,Jeddah,SME Banking,SME Core,B,1866000,Grace Thomas,2023-02-10,National
+C0089,Khan Construction Services LLC,SME,Private Limited,Construction & Contracting,Dubai,SME Banking,SME Core,C,1049000,Omar Haddad,2025-03-04,Expatriate
+C0090,Sana Al Mansoori,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Riyadh,Retail Banking,Prime,B,7000,Anil Menon,2023-08-05,National
+C0091,Al Otaibi Real Group,SME,Proprietorship,Real Estate Services,Dammam,SME Banking,SME Emerging,B,1748000,Bilal Qureshi,2022-11-18,Expatriate
+C0092,Priya Rahman,Individual,Salaried - Private,Healthcare,Doha,Retail Banking,Prime,A,43000,Sara Al Harthy,2020-04-18,Expatriate
+C0093,Ahmed Santos,Individual,Salaried - Private,Construction,Abu Dhabi,Retail Banking,Near Prime,B,37000,Bilal Qureshi,2024-11-19,National
+C0094,Hassan Fernandes,Individual,Salaried - Private,Hospitality,Abu Dhabi,Retail Banking,Near Prime,C,53000,Fatima Al Zaabi,2021-05-26,Expatriate
+C0095,Khan Real Trading LLC,SME,Partnership,Real Estate Services,Dubai,SME Banking,SME Core,B,137000,Sara Al Harthy,2024-03-23,National
+C0096,Hassan Al Mansoori,Individual,Salaried - Government,Education,Riyadh,Retail Banking,Near Prime,B,24000,Fatima Al Zaabi,2023-04-21,National
+C0097,Ali Siddiqui,Individual,Salaried - Private,Healthcare,Muscat,Retail Banking,Prime,B,21000,Sara Al Harthy,2021-04-30,Expatriate
+C0098,Al Mansoori Real Group,SME,Proprietorship,Real Estate Services,Doha,SME Banking,SME Core,A,2077000,Sara Al Harthy,2018-10-30,Expatriate
+C0099,Yousef Al Mazrouei,Individual,Salaried - Private,Construction,Doha,Retail Banking,Near Prime,B,63000,Grace Thomas,2019-08-19,National
+C0100,Aisha Rahman,Individual,Salaried - Government,Education,Muscat,Retail Banking,Prime,C,10000,Anil Menon,2019-09-11,National
+C0101,Khalid Nair,Individual,Salaried - Government,Education,Jeddah,Retail Banking,Near Prime,B,18000,Fatima Al Zaabi,2020-05-06,Expatriate
+C0102,Al Shamsi Oil Contracting LLC,SME,Proprietorship,Oil & Gas Services,Dubai,SME Banking,SME Core,A,704000,Bilal Qureshi,2023-10-13,Expatriate
+C0103,Al Farsi Oil Services LLC,SME,Private Limited,Oil & Gas Services,Sharjah,SME Banking,SME Emerging,B,280000,Fatima Al Zaabi,2020-12-29,Expatriate
+C0104,Yousef Saleh,Individual,Salaried - Government,Public Sector,Sharjah,Retail Banking,Near Prime,B,58000,Omar Haddad,2025-01-12,Expatriate
+C0105,Fernandes Hospitality Trading LLC,SME,Private Limited,Hospitality,Doha,SME Banking,SME Emerging,A,506000,Fatima Al Zaabi,2020-10-22,Expatriate
+C0106,Omar Al Otaibi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Manama,Retail Banking,Prime,B,6000,Anil Menon,2023-01-27,National
+C0107,Rajesh Siddiqui,Individual,Salaried - Private,Healthcare,Muscat,Retail Banking,Prime,A,61000,Fatima Al Zaabi,2023-05-03,Expatriate
+C0108,Omar Siddiqui,Individual,Salaried - Private,Construction,Muscat,Retail Banking,Prime,B,40000,Anil Menon,2022-11-27,Expatriate
+C0109,Nair Construction Group,SME,Proprietorship,Construction & Contracting,Dubai,SME Banking,SME Core,B,1100000,Fatima Al Zaabi,2025-02-25,Expatriate
+C0110,Ali Nair,Individual,Salaried - Private,Retail,Riyadh,Retail Banking,Near Prime,B,31000,Anil Menon,2018-12-21,National
+C0111,Hassan Rahman,Individual,Salaried - Private,Retail,Dammam,Retail Banking,Prime,B,21000,Grace Thomas,2019-11-24,Expatriate
+C0112,Priya Al Mansoori,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Riyadh,Retail Banking,Prime,A,8000,Anil Menon,2022-04-04,National
+C0113,Priya Fernandes,Individual,Salaried - Government,Education,Dubai,Retail Banking,Prime,B,21000,Anil Menon,2019-01-10,Expatriate
+C0114,Maria Saleh,Individual,Salaried - Private,Banking & Finance,Riyadh,Retail Banking,Prime,C,14000,Anil Menon,2020-06-20,Expatriate
+C0115,Fernandes Real Group,SME,Proprietorship,Real Estate Services,Doha,SME Banking,SME Emerging,B,1761000,Grace Thomas,2024-12-13,Expatriate
+C0116,Al Mansoori Real Contracting LLC,SME,Partnership,Real Estate Services,Manama,SME Banking,SME Core,A,1888000,Fatima Al Zaabi,2019-12-24,Expatriate
+C0117,Al Hashimi IT Services LLC,SME,Private Limited,IT Services,Dubai,SME Banking,SME Emerging,B,407000,Fatima Al Zaabi,2024-06-06,Expatriate
+C0118,Saleh Food Trading LLC,SME,Partnership,Food & Beverage,Muscat,SME Banking,SME Emerging,A,1211000,Anil Menon,2019-10-09,Expatriate
+C0119,Sana Haddad,Individual,Salaried - Government,Education,Dubai,Retail Banking,Prime,B,29000,Sara Al Harthy,2021-12-28,Expatriate
+C0120,Hassan Al Hashimi,Individual,Salaried - Private,Construction,Manama,Retail Banking,Near Prime,B,40000,Grace Thomas,2025-02-26,National
+C0121,Sana Al Hashimi,Individual,Salaried - Private,Hospitality,Muscat,Retail Banking,Near Prime,B,59000,Omar Haddad,2024-08-25,National
+C0122,Santos Real Group,SME,Proprietorship,Real Estate Services,Sharjah,SME Banking,SME Core,A,1757000,Omar Haddad,2020-11-23,Expatriate
+C0123,Siddiqui Logistics Contracting LLC,SME,Partnership,Logistics & Transport,Muscat,SME Banking,SME Core,B,1322000,Grace Thomas,2024-11-08,Expatriate
+C0124,Layla Khan,Individual,Salaried - Government,Public Sector,Jeddah,Retail Banking,Prime,B,15000,Fatima Al Zaabi,2023-01-19,Expatriate
+C0125,Reem Al Mansoori,Individual,Self-employed Professional,Healthcare,Jeddah,Retail Banking,Prime,A,44000,Grace Thomas,2026-08-17,National
+C0126,Al Qahtani Construction Trading LLC,SME,Partnership,Construction & Contracting,Sharjah,SME Banking,SME Core,A,2003000,Fatima Al Zaabi,2019-05-14,Expatriate
+C0127,Fatima Saleh,Individual,Self-employed Professional,Legal & Consulting,Jeddah,Retail Banking,Near Prime,B,15000,Fatima Al Zaabi,2022-09-28,Expatriate
+C0128,Al Qahtani Logistics Trading LLC,SME,Partnership,Logistics & Transport,Dammam,SME Banking,SME Core,B,419000,Grace Thomas,2023-06-03,Expatriate
+C0129,Fatima Al Otaibi,Individual,Salaried - Private,Construction,Abu Dhabi,Retail Banking,Prime,B,37000,Fatima Al Zaabi,2022-05-16,National
+C0130,Ali Al Hashimi,Individual,Salaried - Government,Public Sector,Sharjah,Retail Banking,Near Prime,A,9000,Anil Menon,2024-08-17,National
+C0131,Al Shamsi Food Trading LLC,SME,Private Limited,Food & Beverage,Doha,SME Banking,SME Core,A,1661000,Bilal Qureshi,2020-12-14,Expatriate
+C0132,Imran Haddad,Individual,Salaried - Private,Healthcare,Dammam,Retail Banking,Prime,B,30000,Sara Al Harthy,2018-11-30,National
+C0133,Imran Al Hashimi,Individual,Salaried - Private,Retail,Riyadh,Retail Banking,Near Prime,B,21000,Anil Menon,2023-06-19,National
+C0134,Hassan Nair,Individual,Salaried - Private,Healthcare,Abu Dhabi,Retail Banking,Prime,B,38000,Fatima Al Zaabi,2023-08-28,Expatriate
+C0135,Haddad Real Contracting LLC,SME,Partnership,Real Estate Services,Sharjah,SME Banking,SME Core,A,318000,Fatima Al Zaabi,2020-01-23,National
+C0136,Siddiqui Food Services LLC,SME,Private Limited,Food & Beverage,Dubai,SME Banking,SME Emerging,B,241000,Bilal Qureshi,2024-11-23,Expatriate
+C0137,Khalid Al Mazrouei,Individual,Salaried - Private,Construction,Muscat,Retail Banking,Near Prime,A,42000,Fatima Al Zaabi,2023-10-06,National
+C0138,Reem Siddiqui,Individual,Salaried - Private,Healthcare,Riyadh,Retail Banking,Prime,A,17000,Grace Thomas,2019-01-30,National
+C0139,Haddad Logistics Trading LLC,SME,Proprietorship,Logistics & Transport,Abu Dhabi,SME Banking,SME Core,A,1138000,Bilal Qureshi,2023-12-06,Expatriate
+C0140,Al Qahtani Retail Group,SME,Partnership,Retail & Trading,Doha,SME Banking,SME Emerging,B,654000,Sara Al Harthy,2021-08-28,Expatriate
+C0141,Layla Siddiqui,Individual,Salaried - Private,Construction,Dammam,Retail Banking,Near Prime,C,15000,Grace Thomas,2024-05-01,Expatriate
+C0142,Siddiqui Construction Group,SME,Proprietorship,Construction & Contracting,Dubai,SME Banking,SME Emerging,B,1378000,Sara Al Harthy,2019-01-30,Expatriate
+C0143,Al Hashimi Real Trading LLC,SME,Partnership,Real Estate Services,Dubai,SME Banking,SME Core,C,1898000,Omar Haddad,2019-05-05,Expatriate
+C0144,Al Qahtani Oil Contracting LLC,SME,Private Limited,Oil & Gas Services,Riyadh,SME Banking,SME Emerging,A,456000,Fatima Al Zaabi,2018-10-17,Expatriate
+C0145,Al Hashimi Retail Trading LLC,SME,Proprietorship,Retail & Trading,Dammam,SME Banking,SME Core,C,1416000,Anil Menon,2023-12-31,Expatriate
+C0146,Layla Khan,Individual,Self-employed Professional,Healthcare,Doha,Retail Banking,Prime,A,34000,Grace Thomas,2020-12-21,Expatriate
+C0147,Al Mazrouei Real Trading LLC,SME,Proprietorship,Real Estate Services,Abu Dhabi,SME Banking,SME Core,B,1950000,Sara Al Harthy,2020-09-05,Expatriate
+C0148,Jose Al Otaibi,Individual,Salaried - Government,Education,Sharjah,Retail Banking,Prime,B,10000,Anil Menon,2021-11-22,National
+C0149,Hassan Santos,Individual,Salaried - Private,Hospitality,Abu Dhabi,Retail Banking,Near Prime,B,61000,Sara Al Harthy,2022-11-27,National
+C0150,Aisha Al Shamsi,Individual,Salaried - Private,Healthcare,Manama,Retail Banking,Near Prime,A,37000,Grace Thomas,2024-04-27,National
+C0151,Imran Khan,Individual,Salaried - Private,Construction,Jeddah,Retail Banking,Prime,B,51000,Grace Thomas,2023-03-07,Expatriate
+C0152,Al Mazrouei Real Trading LLC,SME,Proprietorship,Real Estate Services,Manama,SME Banking,SME Core,B,1565000,Bilal Qureshi,2023-06-08,National
+C0153,Fatima Al Shamsi,Individual,Salaried - Private,Healthcare,Sharjah,Retail Banking,Near Prime,B,10000,Grace Thomas,2026-06-24,National
+C0154,Haddad IT Trading LLC,SME,Private Limited,IT Services,Riyadh,SME Banking,SME Emerging,A,1037000,Bilal Qureshi,2022-06-12,National
+C0155,Noura Nair,Individual,Self-employed Professional,Healthcare,Doha,Retail Banking,Prime,A,49000,Fatima Al Zaabi,2020-06-30,Expatriate
+C0156,Rajesh Al Shamsi,Individual,Salaried - Private,Construction,Riyadh,Retail Banking,Near Prime,C,50000,Sara Al Harthy,2021-07-27,National
+C0157,Al Otaibi Hospitality Trading LLC,SME,Proprietorship,Hospitality,Dubai,SME Banking,SME Emerging,A,577000,Sara Al Harthy,2020-07-26,Expatriate
+C0158,Priya Rahman,Individual,Salaried - Government,Education,Muscat,Retail Banking,Near Prime,A,10000,Anil Menon,2024-02-24,Expatriate
+C0159,Al Qahtani Construction Trading LLC,SME,Proprietorship,Construction & Contracting,Abu Dhabi,SME Banking,SME Core,A,1724000,Grace Thomas,2024-10-11,National
+C0160,Imran Fernandes,Individual,Salaried - Government,Public Sector,Manama,Retail Banking,Near Prime,A,19000,Bilal Qureshi,2018-09-04,Expatriate
+C0161,Khan Food Services LLC,SME,Proprietorship,Food & Beverage,Dammam,SME Banking,SME Core,C,371000,Omar Haddad,2020-04-17,Expatriate
+C0162,Jose Rahman,Individual,Salaried - Private,Construction,Abu Dhabi,Retail Banking,Near Prime,B,56000,Anil Menon,2023-08-12,National
+C0163,Maria Al Shamsi,Individual,Self-employed Professional,Healthcare,Manama,Retail Banking,Near Prime,A,13000,Sara Al Harthy,2021-08-31,National
+C0164,Santos Hospitality Contracting LLC,SME,Partnership,Hospitality,Doha,SME Banking,SME Emerging,A,1039000,Sara Al Harthy,2020-01-12,Expatriate
+C0165,Layla Siddiqui,Individual,Self-employed Professional,Legal & Consulting,Jeddah,Retail Banking,Near Prime,B,31000,Fatima Al Zaabi,2022-08-18,Expatriate
+C0166,Al Qahtani Construction Trading LLC,SME,Proprietorship,Construction & Contracting,Abu Dhabi,SME Banking,SME Emerging,B,1711000,Fatima Al Zaabi,2022-04-27,National
+C0167,Imran Khan,Individual,Salaried - Private,Retail,Muscat,Retail Banking,Prime,A,39000,Omar Haddad,2018-12-14,Expatriate
+C0168,Nair Food Group,SME,Partnership,Food & Beverage,Abu Dhabi,SME Banking,SME Emerging,A,1009000,Fatima Al Zaabi,2024-01-12,Expatriate
+C0169,Jose Al Mazrouei,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Manama,Retail Banking,Prime,A,6000,Bilal Qureshi,2021-12-27,National
+C0170,Maria Rahman,Individual,Self-employed Professional,Legal & Consulting,Dammam,Retail Banking,Prime,B,28000,Grace Thomas,2021-05-30,Expatriate
+C0171,Khan Construction Trading LLC,SME,Partnership,Construction & Contracting,Dubai,SME Banking,SME Emerging,A,584000,Bilal Qureshi,2022-03-03,National
+C0172,Omar Santos,Individual,,Healthcare,Riyadh,Retail Banking,Prime,A,12000,Fatima Al Zaabi,2026-09-03,Expatriate
+C0173,Rajesh Al Hashimi,Individual,Salaried - Private,Hospitality,Jeddah,Retail Banking,Near Prime,B,43000,Grace Thomas,2020-01-02,National
+C0174,Priya Saleh,Individual,Salaried - Government,Education,Riyadh,Retail Banking,Prime,A,39000,Fatima Al Zaabi,2020-06-19,Expatriate
+C0175,Mohammed Fernandes,Individual,Salaried - Private,Construction,Muscat,Retail Banking,Near Prime,B,64000,Omar Haddad,2020-12-25,Expatriate
+C0176,Layla Saleh,Individual,Salaried - Government,Education,Dubai,Retail Banking,Prime,A,45000,Bilal Qureshi,2022-04-04,National
+C0177,Aisha Siddiqui,Individual,Salaried - Private,Banking & Finance,Riyadh,Retail Banking,Prime,A,22000,Anil Menon,2020-09-22,Expatriate
+C0178,Al Qahtani Construction Contracting LLC,SME,Proprietorship,Construction & Contracting,Abu Dhabi,SME Banking,SME Core,C,660000,Fatima Al Zaabi,2020-10-12,Expatriate
+C0179,Noura Al Mansoori,Individual,Salaried - Private,Hospitality,Manama,Retail Banking,Near Prime,A,34000,Bilal Qureshi,2019-11-09,National
+C0180,Mariam Rahman,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Sharjah,Retail Banking,Prime,B,8000,Fatima Al Zaabi,2025-01-21,Expatriate
+C0181,Al Mazrouei Retail Trading LLC,SME,Proprietorship,Retail & Trading,Sharjah,SME Banking,SME Core,A,1203000,Bilal Qureshi,2022-12-30,Expatriate
+C0182,Al Mansoori Oil Group,SME,Proprietorship,Oil & Gas Services,Dubai,SME Banking,SME Emerging,C,561000,Fatima Al Zaabi,2021-06-28,Expatriate
+C0183,Priya Al Hashimi,Individual,Salaried - Private,Healthcare,Manama,Retail Banking,Near Prime,A,22000,Omar Haddad,2024-11-28,National
+C0184,Omar Al Mazrouei,Individual,Salaried - Private,Healthcare,Abu Dhabi,Retail Banking,Near Prime,B,40000,Grace Thomas,2025-01-25,National
+C0185,Al Otaibi Hospitality Contracting LLC,SME,Partnership,Hospitality,Muscat,SME Banking,SME Emerging,A,1229000,Anil Menon,2023-01-11,Expatriate
+C0186,Al Shamsi Food Services LLC,SME,Partnership,Food & Beverage,Jeddah,SME Banking,SME Emerging,C,1480000,Anil Menon,2022-09-27,Expatriate
+C0187,Al Otaibi Logistics Services LLC,SME,Proprietorship,Logistics & Transport,Riyadh,SME Banking,SME Emerging,A,1890000,Fatima Al Zaabi,2024-01-20,Expatriate
+C0188,Mohammed Santos,Individual,Salaried - Government,Public Sector,Dammam,Retail Banking,Near Prime,B,50000,Sara Al Harthy,2021-12-07,National
+C0189,Ali Fernandes,Individual,Salaried - Government,Education,Sharjah,Retail Banking,Near Prime,A,33000,Grace Thomas,2024-10-17,Expatriate
+C0190,Aisha Khan,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Abu Dhabi,Retail Banking,Prime,B,5000,Sara Al Harthy,2021-07-27,Expatriate
+C0191,Saleh Oil Group,SME,Partnership,Oil & Gas Services,Dammam,SME Banking,SME Core,A,1855000,Omar Haddad,2024-12-11,Expatriate
+C0192,Al Farsi Real Contracting LLC,SME,Partnership,Real Estate Services,Sharjah,SME Banking,SME Emerging,B,1255000,Bilal Qureshi,2020-05-19,Expatriate
+C0193,Sana Al Farsi,Individual,Salaried - Private,Banking & Finance,Riyadh,Retail Banking,Near Prime,A,35000,Omar Haddad,2018-09-15,National
+C0194,Reem Al Hashimi,Individual,Salaried - Government,Education,Dubai,Retail Banking,Near Prime,B,31000,Anil Menon,2022-05-30,National
+C0195,Omar Al Farsi,Individual,Salaried - Government,Public Sector,Muscat,Retail Banking,Near Prime,B,9000,Sara Al Harthy,2024-08-12,National
+C0196,Haddad Hospitality Trading LLC,SME,Private Limited,Hospitality,Jeddah,SME Banking,SME Emerging,B,236000,Sara Al Harthy,2023-06-05,Expatriate
+C0197,Al Qahtani Construction Services LLC,SME,Partnership,Construction & Contracting,Doha,SME Banking,SME Core,C,359000,Omar Haddad,2020-06-21,Expatriate
+C0198,Haddad Logistics Contracting LLC,SME,Private Limited,Logistics & Transport,Dubai,SME Banking,SME Core,B,498000,Omar Haddad,2019-11-12,Expatriate
+C0199,Siddiqui Oil Group,SME,Proprietorship,Oil & Gas Services,Muscat,SME Banking,SME Core,C,338000,Bilal Qureshi,2024-08-25,Expatriate
+C0200,Noura Siddiqui,Individual,Self-employed Professional,Healthcare,Doha,Retail Banking,Near Prime,A,28000,Anil Menon,2020-07-18,National
+C0201,Ahmed Haddad,Individual,Salaried - Government,Public Sector,Doha,Retail Banking,Near Prime,A,41000,Grace Thomas,2023-08-17,National
+C0202,Al Hashimi Food Trading LLC,SME,Private Limited,Food & Beverage,Riyadh,SME Banking,SME Core,B,516000,Omar Haddad,2021-01-04,Expatriate
+C0203,Mariam Al Mazrouei,Individual,Salaried - Private,Banking & Finance,Dammam,Retail Banking,Near Prime,B,53000,Fatima Al Zaabi,2021-11-09,National
+C0204,Santos Logistics Trading LLC,SME,Proprietorship,Logistics & Transport,Dubai,SME Banking,SME Emerging,C,1973000,Sara Al Harthy,2022-09-17,Expatriate
+C0205,Al Farsi Construction Contracting LLC,SME,Proprietorship,Construction & Contracting,Dubai,SME Banking,SME Core,A,1295000,Bilal Qureshi,2022-06-08,Expatriate
+C0206,Imran Al Shamsi,Individual,Self-employed Professional,Healthcare,Muscat,Retail Banking,Near Prime,A,34000,Grace Thomas,2021-06-17,National
+C0207,Fernandes Oil Group,SME,Proprietorship,Oil & Gas Services,Jeddah,SME Banking,SME Core,A,761000,Grace Thomas,2020-09-24,Expatriate
+C0208,Siddiqui Hospitality Group,SME,Partnership,Hospitality,Manama,SME Banking,SME Core,A,375000,Sara Al Harthy,2024-03-20,Expatriate
+C0209,Khan Construction Contracting LLC,SME,Private Limited,Construction & Contracting,Abu Dhabi,SME Banking,SME Emerging,A,1571000,Omar Haddad,2019-12-01,Expatriate
+C0210,Al Shamsi Logistics Services LLC,SME,Partnership,Logistics & Transport,Doha,SME Banking,SME Emerging,A,1734000,Bilal Qureshi,2023-08-24,Expatriate
+C0211,Al Shamsi IT Contracting LLC,SME,Private Limited,IT Services,Abu Dhabi,SME Banking,SME Emerging,B,219000,Omar Haddad,2024-01-03,Expatriate
+C0212,Mohammed Nair,Individual,Salaried - Private,Banking & Finance,Dammam,Retail Banking,Near Prime,B,47000,Sara Al Harthy,2021-01-08,National
+C0213,Nair Hospitality Contracting LLC,SME,Partnership,Hospitality,Abu Dhabi,SME Banking,SME Emerging,C,1039000,Bilal Qureshi,2022-06-02,Expatriate
+C0214,Fernandes Real Group,SME,Proprietorship,Real Estate Services,Dammam,SME Banking,SME Core,B,581000,Sara Al Harthy,2019-01-08,Expatriate
+C0215,Fatima Santos,Individual,Self-employed Professional,Legal & Consulting,Muscat,Retail Banking,Prime,B,43000,Grace Thomas,2022-03-04,National
+C0216,Yousef Al Hashimi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Riyadh,Retail Banking,Prime,A,8000,Anil Menon,2021-08-18,National
+C0217,Khan Retail Services LLC,SME,Partnership,Retail & Trading,Doha,SME Banking,SME Core,C,749000,Grace Thomas,2022-04-10,Expatriate
+C0218,Sana Khan,Individual,Salaried - Private,Banking & Finance,Abu Dhabi,Retail Banking,Prime,B,16000,Fatima Al Zaabi,2022-12-16,Expatriate
+C0219,Al Mansoori Construction Trading LLC,SME,Private Limited,Construction & Contracting,Manama,SME Banking,SME Core,B,1772000,Grace Thomas,2023-09-23,National
+C0220,Al Shamsi Construction Trading LLC,SME,Private Limited,Construction & Contracting,Manama,SME Banking,SME Core,A,576000,Sara Al Harthy,2020-02-27,Expatriate
+C0221,Rajesh Al Hashimi,Individual,Salaried - Government,Public Sector,Dubai,Retail Banking,Near Prime,B,14000,Grace Thomas,2021-07-07,National
+C0222,Reem Al Hashimi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Sharjah,Retail Banking,Near Prime,C,6000,Anil Menon,2023-04-04,National
+C0223,Ali Haddad,Individual,Salaried - Private,Hospitality,Muscat,Retail Banking,Prime,B,53000,Grace Thomas,2022-09-12,Expatriate
+C0224,Omar Rahman,Individual,Salaried - Private,Retail,Doha,Retail Banking,Near Prime,C,23000,Sara Al Harthy,2023-11-29,National
+C0225,Layla Fernandes,Individual,Salaried - Government,Education,Manama,Retail Banking,Near Prime,C,19000,Bilal Qureshi,2022-03-03,National
+C0226,Noura Al Qahtani,Individual,Salaried - Private,Hospitality,Muscat,Retail Banking,Prime,A,43000,Sara Al Harthy,2021-07-25,National
+C0227,Priya Al Mazrouei,Individual,Salaried - Private,Construction,Abu Dhabi,Retail Banking,Prime,C,49000,Grace Thomas,2019-10-22,National
+C0228,Sana Fernandes,Individual,Salaried - Government,Education,Sharjah,Retail Banking,Near Prime,A,46000,Bilal Qureshi,2019-02-02,Expatriate
+C0229,Al Mazrouei Logistics Group,SME,Partnership,Logistics & Transport,Doha,SME Banking,SME Emerging,B,1765000,Anil Menon,2024-08-31,Expatriate
+C0230,Mohammed Fernandes,Individual,Salaried - Private,Hospitality,Dammam,Retail Banking,Prime,B,14000,Omar Haddad,2022-04-30,Expatriate
+C0231,Saleh Retail Trading LLC,SME,Proprietorship,Retail & Trading,Jeddah,SME Banking,SME Emerging,B,1222000,Fatima Al Zaabi,2025-02-13,Expatriate
+C0232,Rahman Food Contracting LLC,SME,Partnership,Food & Beverage,Jeddah,SME Banking,SME Core,B,1382000,Anil Menon,2023-08-14,National
+C0233,Mariam Al Shamsi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Riyadh,Retail Banking,Prime,A,7000,Fatima Al Zaabi,2023-01-17,National
+C0234,Al Mazrouei Food Contracting LLC,SME,Private Limited,Food & Beverage,Sharjah,SME Banking,SME Emerging,A,940000,Fatima Al Zaabi,2023-03-15,Expatriate
+C0235,Priya Siddiqui,Individual,Salaried - Government,Public Sector,Dammam,Retail Banking,Near Prime,A,29000,Sara Al Harthy,2019-02-17,Expatriate
+C0236,Fernandes Food Contracting LLC,SME,Partnership,Food & Beverage,Abu Dhabi,SME Banking,SME Emerging,A,572000,Anil Menon,2021-06-19,Expatriate
+C0237,Khan IT Contracting LLC,SME,Partnership,IT Services,Dubai,SME Banking,SME Emerging,C,504000,Fatima Al Zaabi,2020-08-20,Expatriate
+C0238,Reem Santos,Individual,Self-employed Professional,Legal & Consulting,Riyadh,Retail Banking,Prime,B,14000,Sara Al Harthy,2026-07-14,Expatriate
+C0239,Aisha Khan,Individual,Salaried - Private,Healthcare,Doha,Retail Banking,Near Prime,B,28000,Fatima Al Zaabi,2023-05-26,Expatriate
+C0240,Reem Al Qahtani,Individual,Salaried - Private,Construction,Doha,Retail Banking,Near Prime,A,12000,Sara Al Harthy,2024-01-23,National
+C0241,Mohammed Al Otaibi,Individual,Salaried - Private,Hospitality,Dubai,Retail Banking,Prime,A,25000,Anil Menon,2023-12-23,National
+C0242,Yousef Al Qahtani,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Dubai,Retail Banking,Prime,B,9000,Omar Haddad,2019-06-09,National
+C0243,Aisha Haddad,Individual,Self-employed Professional,Legal & Consulting,Manama,Retail Banking,Near Prime,C,35000,Omar Haddad,2024-01-01,Expatriate
+C0244,Siddiqui Oil Services LLC,SME,Partnership,Oil & Gas Services,Dubai,SME Banking,SME Core,A,1841000,Anil Menon,2018-11-04,Expatriate
+C0245,Aisha Siddiqui,Individual,Salaried - Private,Retail,Riyadh,Retail Banking,Prime,A,31000,Fatima Al Zaabi,2021-07-20,Expatriate
+C0246,Khalid Santos,Individual,Salaried - Government,Education,Sharjah,Retail Banking,Near Prime,B,28000,Fatima Al Zaabi,2021-03-27,National
+C0247,Ali Haddad,Individual,Salaried - Private,Banking & Finance,Riyadh,Retail Banking,Prime,A,17000,Fatima Al Zaabi,2019-03-13,Expatriate
+C0248,Santos Oil Group,SME,Proprietorship,Oil & Gas Services,Sharjah,SME Banking,SME Emerging,B,1435000,Grace Thomas,2024-12-13,National
+C0249,Rahman Construction Trading LLC,SME,Partnership,Construction & Contracting,Dubai,SME Banking,SME Core,C,870000,Grace Thomas,2019-01-12,Expatriate
+C0250,Nair Retail Group,SME,Proprietorship,Retail & Trading,Abu Dhabi,SME Banking,SME Emerging,A,1494000,Omar Haddad,2022-04-17,National
+C0251,Mariam Al Hashimi,Individual,Salaried - Private,Banking & Finance,Jeddah,Retail Banking,Near Prime,C,24000,Omar Haddad,2020-06-02,National
+C0252,Mariam Al Farsi,Individual,Salaried - Private,Hospitality,Dubai,Retail Banking,Near Prime,C,19000,Bilal Qureshi,2019-01-26,National
+C0253,Khalid Fernandes,Individual,Salaried - Government,Public Sector,Dubai,Retail Banking,Prime,A,17000,Bilal Qureshi,2022-04-10,Expatriate
+C0254,Mariam Nair,Individual,Salaried - Private,Healthcare,Muscat,Retail Banking,Prime,B,50000,Omar Haddad,2024-06-12,Expatriate
+C0255,Hassan Al Farsi,Individual,Salaried - Private,Construction,Abu Dhabi,Retail Banking,Near Prime,B,30000,Sara Al Harthy,2022-01-03,National
+C0256,Siddiqui Construction Trading LLC,SME,Partnership,Construction & Contracting,Dubai,SME Banking,SME Emerging,B,1432000,Fatima Al Zaabi,2021-11-14,Expatriate
+C0257,Al Qahtani Retail Services LLC,SME,Private Limited,Retail & Trading,Sharjah,SME Banking,SME Emerging,B,2059000,Bilal Qureshi,2023-09-14,Expatriate
+C0258,Omar Al Qahtani,Individual,Salaried - Private,Retail,Sharjah,Retail Banking,Prime,A,24000,Omar Haddad,2021-02-15,National
+C0259,Ali Al Shamsi,Individual,Self-employed Professional,Healthcare,Dubai,Retail Banking,Near Prime,B,21000,Fatima Al Zaabi,2019-04-28,National
+C0260,Hassan Al Mansoori,Individual,Salaried - Private,Healthcare,Sharjah,Retail Banking,Prime,B,16000,Sara Al Harthy,2023-09-03,National
+C0261,Reem Al Farsi,Individual,Salaried - Private,Retail,Manama,Retail Banking,Near Prime,C,28000,Sara Al Harthy,2020-11-10,National
+C0262,Al Shamsi Construction Group,SME,Private Limited,Construction & Contracting,Manama,SME Banking,SME Emerging,B,1760000,Anil Menon,2019-04-02,Expatriate
+C0263,Haddad Oil Services LLC,SME,Partnership,Oil & Gas Services,Abu Dhabi,SME Banking,SME Core,A,892000,Sara Al Harthy,2023-08-27,Expatriate
+C0264,Fernandes Logistics Trading LLC,SME,Partnership,Logistics & Transport,Dubai,SME Banking,SME Emerging,A,1331000,Fatima Al Zaabi,2019-10-29,Expatriate
+C0265,Al Hashimi IT Trading LLC,SME,Private Limited,IT Services,Dubai,SME Banking,SME Core,C,614000,Anil Menon,2023-07-24,National
+C0266,Aisha Rahman,Individual,Self-employed Professional,Healthcare,Abu Dhabi,Retail Banking,Near Prime,A,45000,Sara Al Harthy,2022-11-28,Expatriate
+C0267,Layla Nair,Individual,Salaried - Private,Hospitality,Dammam,Retail Banking,Prime,B,37000,Omar Haddad,2022-02-21,Expatriate
+C0268,Layla Al Otaibi,Individual,Salaried - Private,Retail,Manama,Retail Banking,Prime,A,33000,Sara Al Harthy,2018-11-06,National
+C0269,Omar Nair,Individual,Salaried - Private,Construction,Sharjah,Retail Banking,Prime,C,62000,Bilal Qureshi,2022-05-25,Expatriate
+C0270,Nair IT Trading LLC,SME,Private Limited,IT Services,Manama,SME Banking,SME Emerging,B,1538000,Anil Menon,2022-02-16,Expatriate
+C0271,Yousef Al Mansoori,Individual,Salaried - Private,Healthcare,Manama,Retail Banking,Prime,A,38000,Omar Haddad,2023-08-23,National
+C0272,Imran Haddad,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Sharjah,Retail Banking,Prime,C,7000,Sara Al Harthy,2020-05-10,Expatriate
+C0273,Khan Hospitality Group,SME,Proprietorship,Hospitality,Abu Dhabi,SME Banking,SME Core,B,923000,Anil Menon,2021-11-25,Expatriate
+C0274,Huda Al Hashimi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Riyadh,Retail Banking,Near Prime,B,4000,Fatima Al Zaabi,2019-09-28,National
+C0275,Maria Santos,Individual,Salaried - Private,Banking & Finance,Manama,Retail Banking,Prime,A,61000,Grace Thomas,2021-02-21,Expatriate
+C0276,Ahmed Santos,Individual,Salaried - Government,Public Sector,Dubai,Retail Banking,Near Prime,A,46000,Bilal Qureshi,2024-07-17,Expatriate
+C0277,Imran Al Otaibi,Individual,Salaried - Private,Construction,Jeddah,Retail Banking,Prime,A,60000,Omar Haddad,2019-02-27,National
+C0278,Rajesh Nair,Individual,Salaried - Private,Retail,Riyadh,Retail Banking,Near Prime,A,56000,Sara Al Harthy,2026-08-26,Expatriate
+C0279,Mariam Khan,Individual,Salaried - Private,Construction,Jeddah,Retail Banking,Prime,A,45000,Omar Haddad,2023-02-22,Expatriate
+C0280,Saleh Hospitality Services LLC,SME,Private Limited,Hospitality,Jeddah,SME Banking,SME Core,B,393000,Bilal Qureshi,2021-01-21,National
+C0281,Noura Al Mansoori,Individual,Salaried - Private,Healthcare,Abu Dhabi,Retail Banking,Near Prime,C,49000,Bilal Qureshi,2021-11-20,National
+C0282,Al Mansoori Hospitality Services LLC,SME,Proprietorship,Hospitality,Dammam,SME Banking,SME Emerging,B,393000,Anil Menon,2019-10-02,National
+C0283,Hassan Saleh,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Muscat,Retail Banking,Near Prime,B,"9,000",Grace Thomas,2020-09-26,Expatriate
+C0284,Maria Al Mansoori,Individual,Salaried - Private,Construction,Sharjah,Retail Banking,Near Prime,B,40000,Bilal Qureshi,2021-11-08,National
+C0285,Aisha Al Qahtani,Individual,Salaried - Private,Banking & Finance,Doha,Retail Banking,Near Prime,C,28000,Sara Al Harthy,2020-01-21,National
+C0286,Noura Al Shamsi,Individual,Self-employed Professional,Legal & Consulting,Dammam,Retail Banking,Prime,A,20000,Sara Al Harthy,2020-10-01,National
+C0287,Rahman Construction Contracting LLC,SME,Partnership,Construction & Contracting,Abu Dhabi,SME Banking,SME Core,A,1775000,Bilal Qureshi,2020-12-02,National
+C0288,Priya Al Shamsi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Riyadh,Retail Banking,Near Prime,B,8000,Bilal Qureshi,2019-07-27,National
+C0289,Mohammed Khan,Individual,Salaried - Government,Education,Muscat,Retail Banking,Prime,B,45000,Sara Al Harthy,2023-11-03,Expatriate
+C0290,Fatima Al Otaibi,Individual,Salaried - Private,Hospitality,Doha,Retail Banking,Prime,A,23000,Fatima Al Zaabi,2023-12-14,National
+C0291,Al Shamsi Real Group,SME,Proprietorship,Real Estate Services,Dammam,SME Banking,SME Core,A,201000,Omar Haddad,2023-07-05,National
+C0292,Saleh Food Contracting LLC,SME,Partnership,Food & Beverage,Doha,SME Banking,SME Emerging,A,1123000,Omar Haddad,2019-12-12,Expatriate
+C0293,Mariam Saleh,Individual,Salaried - Private,Banking & Finance,Riyadh,Retail Banking,Near Prime,C,50000,Grace Thomas,2021-09-28,Expatriate
+C0294,Rahman Real Trading LLC,SME,Proprietorship,Real Estate Services,Muscat,SME Banking,SME Core,B,1056000,Omar Haddad,2024-12-11,Expatriate
+C0295,Al Mansoori Food Trading LLC,SME,Private Limited,Food & Beverage,Riyadh,SME Banking,SME Core,A,349000,Anil Menon,2021-09-07,Expatriate
+C0296,Al Otaibi Hospitality Group,SME,Private Limited,Hospitality,Dammam,SME Banking,SME Emerging,A,315000,Sara Al Harthy,2019-03-15,Expatriate
+C0297,Fernandes Construction Contracting LLC,SME,Partnership,Construction & Contracting,Manama,SME Banking,SME Core,C,1593000,Omar Haddad,2022-08-31,Expatriate
+C0298,Mariam Saleh,Individual,Salaried - Private,Hospitality,Jeddah,Retail Banking,Prime,A,50000,Grace Thomas,2025-02-28,Expatriate
+C0299,Al Shamsi Logistics Group,SME,Proprietorship,Logistics & Transport,Riyadh,SME Banking,SME Core,B,1224000,Grace Thomas,2023-01-31,Expatriate
+C0300,Imran Al Mazrouei,Individual,Self-employed Professional,Legal & Consulting,Abu Dhabi,Retail Banking,Near Prime,B,24000,Bilal Qureshi,2020-03-09,National
+C0301,Al Qahtani Logistics Services LLC,SME,Proprietorship,Logistics & Transport,Jeddah,SME Banking,SME Emerging,B,307000,Fatima Al Zaabi,2021-10-29,National
+C0302,Al Mazrouei Real Trading LLC,SME,Partnership,Real Estate Services,Jeddah,SME Banking,SME Emerging,A,474000,Bilal Qureshi,2024-07-22,Expatriate
+C0303,Nair IT Group,SME,Proprietorship,IT Services,Manama,SME Banking,SME Emerging,C,1187000,Omar Haddad,2023-04-01,Expatriate
+C0304,Rahman IT Group,SME,Proprietorship,IT Services,Dubai,SME Banking,SME Emerging,C,460000,Sara Al Harthy,2019-06-22,Expatriate
+C0305,Santos Oil Trading LLC,sme,Private Limited,Oil & Gas Services,Dubai,SME Banking,SME Emerging,B,940000,Omar Haddad,2022-01-18,Expatriate
+C0306,Maria Siddiqui,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Riyadh,Retail Banking,Prime,A,6000,Omar Haddad,2020-06-14,Expatriate
+C0307,Saleh Real Trading LLC,SME,Private Limited,Real Estate Services,Jeddah,SME Banking,SME Core,B,1898000,Omar Haddad,2024-07-14,National
+C0308,Layla Siddiqui,Individual,Salaried - Private,Retail,Dammam,Retail Banking,Prime,B,45000,Sara Al Harthy,2023-06-30,Expatriate
+C0309,Maria Al Farsi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Doha,Retail Banking,Near Prime,A,9000,Anil Menon,2024-11-07,National
+C0310,Fatima Al Qahtani,Individual,Salaried - Private,Retail,Dammam,Retail Banking,Near Prime,B,16000,Omar Haddad,2019-04-24,National
+C0311,Saleh Construction Contracting LLC,SME,Partnership,Construction & Contracting,Manama,SME Banking,SME Core,C,357000,Fatima Al Zaabi,2020-09-22,Expatriate
+C0312,Fernandes Construction Group,SME,Partnership,Construction & Contracting,Doha,SME Banking,SME Core,B,2020000,Omar Haddad,2023-06-01,Expatriate
+C0313,Reem Al Mazrouei,Individual,Salaried - Private,Banking & Finance,Abu Dhabi,Retail Banking,Prime,B,29000,Anil Menon,2024-04-26,National
+C0314,Rajesh Al Farsi,Individual,Salaried - Government,Education,Doha,Retail Banking,Near Prime,A,31000,Sara Al Harthy,2024-05-13,National
+C0315,Khalid Nair,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Dammam,Retail Banking,Prime,C,5000,Anil Menon,2024-07-09,Expatriate
+C0316,Al Qahtani Retail Contracting LLC,SME,Proprietorship,Retail & Trading,Dubai,SME Banking,SME Core,B,1725000,Sara Al Harthy,2020-06-25,Expatriate
+C0317,Imran Haddad,Individual,Salaried - Private,Construction,Muscat,Retail Banking,Near Prime,C,10000,Sara Al Harthy,2023-09-17,Expatriate
+C0318,Saleh Real Services LLC,SME,Partnership,Real Estate Services,Sharjah,SME Banking,SME Core,A,1575000,Anil Menon,2020-08-08,Expatriate
+C0319,Hassan Al Farsi,Individual,Salaried - Private,Banking & Finance,Sharjah,Retail Banking,Prime,A,28000,Anil Menon,2019-02-03,National
+C0320,Jose Fernandes,Individual,Salaried - Private,Banking & Finance,Riyadh,Retail Banking,Prime,B,10000,Bilal Qureshi,2019-05-06,Expatriate
+C0321,Al Farsi Oil Services LLC,SME,Proprietorship,Oil & Gas Services,Dammam,SME Banking,SME Emerging,B,796000,Omar Haddad,2021-03-21,National
+C0322,Huda Santos,,Salaried - Private,Hospitality,Manama,Retail Banking,Prime,B,52000,Bilal Qureshi,2024-11-09,Expatriate
+C0323,Jose Siddiqui,Individual,Salaried - Private,Construction,Dammam,Retail Banking,Near Prime,A,47000,Bilal Qureshi,2020-09-05,Expatriate
+C0324,Noura Nair,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Abu Dhabi,Retail Banking,Prime,A,7000,Fatima Al Zaabi,2022-07-26,Expatriate
+C0325,Haddad Retail Services LLC,SME,Private Limited,Retail & Trading,Jeddah,SME Banking,SME Emerging,B,424000,Grace Thomas,2019-06-12,Expatriate
+C0326,Mohammed Rahman,Individual,Salaried - Private,Hospitality,Abu Dhabi,Retail Banking,Prime,A,43000,Omar Haddad,2024-03-22,Expatriate
+C0327,Mohammed Al Otaibi,Individual,Salaried - Private,Retail,Abu Dhabi,Retail Banking,Prime,A,37000,Grace Thomas,2020-12-13,National
+C0328,Haddad Logistics Contracting LLC,SME,Private Limited,Logistics & Transport,Abu Dhabi,SME Banking,SME Emerging,C,694000,Fatima Al Zaabi,2020-10-12,National
+C0329,Rajesh Nair,Individual,Salaried - Private,Construction,Jeddah,Retail Banking,Prime,B,21000,Sara Al Harthy,2024-11-15,Expatriate
+C0330,Maria Al Hashimi,Individual,,Public Sector,Dammam,Retail Banking,Near Prime,B,55000,Bilal Qureshi,2026-08-05,National
+C0331,Mariam Al Qahtani,Individual,Salaried - Private,Construction,Abu Dhabi,Retail Banking,Prime,B,26000,Anil Menon,2023-09-08,National
+C0332,Mohammed Fernandes,Individual,Salaried - Private,Retail,Muscat,Retail Banking,Prime,A,21000,Sara Al Harthy,2021-02-25,National
+C0333,Siddiqui Food Contracting LLC,SME,Proprietorship,Food & Beverage,Manama,SME Banking,SME Emerging,B,380000,Omar Haddad,2021-04-15,Expatriate
+C0334,Priya Haddad,Individual,Salaried - Private,Hospitality,Muscat,Retail Banking,Prime,A,17000,Sara Al Harthy,2024-02-11,National
+C0335,Rajesh Nair,Individual,Salaried - Private,Healthcare,Sharjah,Retail Banking,Near Prime,B,24000,Grace Thomas,2022-07-04,Expatriate
+C0336,Fernandes IT Contracting LLC,SME,Proprietorship,IT Services,Jeddah,SME Banking,SME Emerging,B,525000,Bilal Qureshi,2023-08-05,Expatriate
+C0337,Ahmed Al Otaibi,Individual,Salaried - Private,Construction,Doha,Retail Banking,Near Prime,B,22000,Fatima Al Zaabi,2018-11-14,National
+C0338,Layla Al Hashimi,Individual,Self-employed Professional,Legal & Consulting,Riyadh,Retail Banking,Near Prime,B,19000,Fatima Al Zaabi,2022-12-15,National
+C0339,Khalid Al Mazrouei,Individual,Salaried - Government,Education,Doha,Retail Banking,Prime,A,40000,Bilal Qureshi,2023-03-04,National
+C0340,Ahmed Al Mansoori,Individual,Salaried - Government,Education,Muscat,Retail Banking,Near Prime,B,38000,Anil Menon,2023-11-23,National
+C0341,Huda Al Mansoori,Individual,Self-employed Professional,Legal & Consulting,Dubai,Retail Banking,Prime,B,40000,Omar Haddad,2025-03-01,National
+C0342,Sana Khan,Individual,Salaried - Private,Hospitality,Riyadh,Retail Banking,Prime,B,28000,Fatima Al Zaabi,2019-01-07,Expatriate
+C0343,Haddad Oil Trading LLC,SME,Partnership,Oil & Gas Services,Abu Dhabi,SME Banking,SME Emerging,A,780000,Anil Menon,2018-10-13,National
+C0344,Al Qahtani Real Services LLC,SME,Proprietorship,Real Estate Services,Jeddah,SME Banking,SME Emerging,A,124000,Anil Menon,2024-04-23,Expatriate
+C0345,Reem Al Mazrouei,Individual,Salaried - Government,Education,Dammam,Retail Banking,Prime,A,45000,Fatima Al Zaabi,2023-03-29,National
+C0346,Al Shamsi Oil Group,SME,Proprietorship,Oil & Gas Services,Dammam,SME Banking,SME Emerging,A,154000,Anil Menon,2023-03-19,Expatriate
+C0347,Nair Logistics Services LLC,SME,Partnership,Logistics & Transport,Abu Dhabi,SME Banking,SME Emerging,B,666000,Anil Menon,2020-07-22,Expatriate
+C0348,Rahman Hospitality Contracting LLC,SME,Partnership,Hospitality,Dubai,SME Banking,SME Emerging,B,1010000,Anil Menon,2019-05-17,Expatriate
+C0349,Jose Al Mansoori,Individual,Salaried - Private,Hospitality,Jeddah,Retail Banking,Near Prime,A,42000,Omar Haddad,2019-01-04,National
+C0350,Fatima Saleh,Individual,Salaried - Private,Hospitality,Sharjah,Retail Banking,Prime,A,57000,Omar Haddad,2022-08-29,Expatriate
+C0351,Al Hashimi Logistics Group,SME,Partnership,Logistics & Transport,Abu Dhabi,SME Banking,SME Core,C,1103000,Bilal Qureshi,2019-04-07,National
+C0352,Al Hashimi Construction Contracting LLC,SME,Private Limited,Construction & Contracting,Jeddah,SME Banking,SME Emerging,C,1094000,Grace Thomas,2019-09-01,National
+C0353,Maria Nair,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Jeddah,Retail Banking,Prime,A,7000,Sara Al Harthy,2020-11-15,National
+C0354,Khalid Al Mazrouei,Individual,Self-employed Professional,Healthcare,Sharjah,Retail Banking,Prime,A,24000,Anil Menon,2024-03-30,National
+C0355,Ali Al Mazrouei,Individual,Self-employed Professional,Healthcare,Muscat,Retail Banking,Prime,B,54000,Grace Thomas,2024-03-05,National
+C0356,Huda Al Mazrouei,Individual,Salaried - Private,Construction,Doha,Retail Banking,Prime,B,18000,Grace Thomas,2024-05-02,National
+C0357,Aisha Siddiqui,Individual,Salaried - Government,Public Sector,Manama,Retail Banking,Near Prime,A,52000,Grace Thomas,2018-12-16,Expatriate
+C0358,Al Otaibi Construction Group,SME,Partnership,Construction & Contracting,Muscat,SME Banking,SME Emerging,B,503000,Bilal Qureshi,2020-05-21,Expatriate
+C0359,Fatima Al Farsi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Muscat,Retail Banking,Near Prime,B,5000,Sara Al Harthy,2019-08-28,National
+C0360,Al Otaibi IT Services LLC,SME,Private Limited,IT Services,Sharjah,SME Banking,SME Emerging,A,734000,Bilal Qureshi,2022-07-26,National
+C0361,Rahman Hospitality Group,SME,Proprietorship,Hospitality,Dammam,SME Banking,SME Emerging,B,481000,Sara Al Harthy,2023-03-29,Expatriate
+C0362,Al Hashimi Construction Group,SME,Private Limited,Construction & Contracting,Dubai,SME Banking,SME Core,C,718000,Anil Menon,2021-08-14,Expatriate
+C0363,Saleh Logistics Contracting LLC,SME,Proprietorship,Logistics & Transport,Doha,SME Banking,SME Emerging,B,415000,Anil Menon,2024-03-25,Expatriate
+C0364,Fernandes Retail Contracting LLC,SME,Proprietorship,Retail & Trading,Doha,SME Banking,SME Core,A,885000,Sara Al Harthy,2024-02-03,Expatriate
+C0365,Rahman Food Group,SME,Private Limited,Food & Beverage,Abu Dhabi,SME Banking,SME Core,B,363000,Anil Menon,2022-12-13,Expatriate
+C0366,Fernandes Construction Services LLC,SME,Partnership,Construction & Contracting,Dubai,SME Banking,SME Core,B,1878000,Sara Al Harthy,2021-08-18,National
+C0367,Al Mansoori Hospitality Trading LLC,SME,Proprietorship,Hospitality,Riyadh,SME Banking,SME Emerging,A,258000,Sara Al Harthy,2020-04-15,Expatriate
+C0368,Rajesh Al Farsi,Individual,Salaried - Private,Healthcare,Doha,Retail Banking,Near Prime,A,35000,Bilal Qureshi,2021-01-22,National
+C0369,Siddiqui Oil Services LLC,SME,Proprietorship,Oil & Gas Services,Jeddah,SME Banking,SME Core,B,547000,Sara Al Harthy,2023-05-15,Expatriate
+C0370,Al Farsi Real Group,SME,Partnership,Real Estate Services,Dammam,SME Banking,SME Core,B,1512000,Anil Menon,2020-06-14,National
+C0371,Nair IT Contracting LLC,SME,Private Limited,IT Services,Sharjah,SME Banking,SME Core,C,1999000,Fatima Al Zaabi,2022-05-21,Expatriate
+C0372,Fernandes Food Contracting LLC,SME,Private Limited,Food & Beverage,Sharjah,SME Banking,SME Core,B,840000,Bilal Qureshi,2023-09-28,Expatriate
+C0373,Ali Al Mansoori,Individual,Salaried - Private,Retail,Dubai,Retail Banking,Prime,B,16000,Bilal Qureshi,2022-08-12,National
+C0374,Priya Rahman,Individual,Salaried - Private,Healthcare,Sharjah,Retail Banking,Prime,B,41000,Anil Menon,2021-06-24,National
+C0375,Noura Al Mazrouei,Individual,Salaried - Private,Banking & Finance,Manama,Retail Banking,Near Prime,A,19000,Anil Menon,2024-03-03,National
+C0376,Hassan Siddiqui,Individual,Salaried - Private,Retail,Jeddah,Retail Banking,Prime,B,40000,Sara Al Harthy,2020-12-06,Expatriate
+C0377,Priya Al Mazrouei,Individual,Salaried - Government,Education,Riyadh,Retail Banking,Prime,C,58000,Grace Thomas,2020-11-06,National
+C0378,Al Shamsi Retail Contracting LLC,SME,Partnership,Retail & Trading,Riyadh,SME Banking,SME Core,A,1619000,Bilal Qureshi,2020-02-22,Expatriate
+C0379,Haddad Construction Services LLC,SME,Private Limited,Construction & Contracting,Dammam,SME Banking,SME Core,B,292000,Fatima Al Zaabi,2024-05-22,Expatriate
+C0380,Maria Rahman,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Dubai,Retail Banking,Near Prime,B,6000,Omar Haddad,2021-12-01,Expatriate
+C0381,Priya Al Shamsi,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Sharjah,Retail Banking,Near Prime,B,7000,Sara Al Harthy,2021-09-13,National
+C0382,Santos Real Services LLC,SME,Partnership,Real Estate Services,Dubai,SME Banking,SME Core,C,107000,Omar Haddad,2021-03-08,Expatriate
+C0383,Al Qahtani Logistics Contracting LLC,SME,Partnership,Logistics & Transport,Manama,SME Banking,SME Emerging,B,1363000,Anil Menon,2019-10-13,Expatriate
+C0384,Sana Khan,Individual,Salaried - Government,Public Sector,Riyadh,Retail Banking,Near Prime,B,44000,Fatima Al Zaabi,2023-09-12,Expatriate
+C0385,Huda Fernandes,Individual,Salaried - Private,Retail,Muscat,Retail Banking,Prime,C,32000,Grace Thomas,2024-10-04,National
+C0386,Haddad Logistics Services LLC,SME,Proprietorship,Logistics & Transport,Dammam,SME Banking,SME Emerging,B,642000,Bilal Qureshi,2020-09-09,Expatriate
+C0387,Ahmed Nair,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Doha,Retail Banking,Near Prime,A,7000,Fatima Al Zaabi,2021-03-11,National
+C0388,Omar Fernandes,Individual,Salaried - Government,Education,Abu Dhabi,Retail Banking,Near Prime,A,19000,Fatima Al Zaabi,2023-08-19,Expatriate
+C0389,Aisha Santos,Individual,Salaried - Private,Banking & Finance,Dammam,Retail Banking,Prime,A,18000,Omar Haddad,2019-09-21,Expatriate
+C0390,Al Shamsi Food Trading LLC,SME,Partnership,Food & Beverage,Doha,SME Banking,SME Emerging,A,1601000,Grace Thomas,2026-13-45,Expatriate
+C0391,Priya Fernandes,Individual,Salaried - Private,Hospitality,Abu Dhabi,Retail Banking,Prime,B,57000,Omar Haddad,2020-03-02,Expatriate
+C0392,Saleh Construction Contracting LLC,SME,Partnership,Construction & Contracting,Riyadh,SME Banking,SME Emerging,A,1513000,Anil Menon,2024-01-13,Expatriate
+C0393,Sana Santos,Individual,Salaried - Private,Retail,Manama,Retail Banking,Near Prime,A,50000,Omar Haddad,2020-12-06,Expatriate
+C0394,Mariam Al Mansoori,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Abu Dhabi,Retail Banking,Prime,B,7000,Anil Menon,2020-11-09,National
+C0395,Santos Food Contracting LLC,SME,Partnership,Food & Beverage,Jeddah,SME Banking,SME Emerging,B,1048000,Fatima Al Zaabi,2021-10-01,Expatriate
+C0396,Yousef Khan,Individual,Salaried - Government,Public Sector,Sharjah,Retail Banking,Prime,A,"16,000",Bilal Qureshi,2020-08-29,Expatriate
+C0397,Omar Al Mansoori,Individual,Salaried - Government,Education,Muscat,Retail Banking,Prime,A,31000,Omar Haddad,2019-11-11,National
+C0398,Al Farsi IT Services LLC,SME,Private Limited,IT Services,Abu Dhabi,SME Banking,SME Emerging,A,1913000,Bilal Qureshi,2019-07-03,Expatriate
+C0399,Aisha Rahman,Individual,Gig / Platform Worker,Delivery & Ride-hailing,Abu Dhabi,Retail Banking,Near Prime,C,8000,Omar Haddad,2021-10-07,Expatriate
+C0400,Al Qahtani Construction Trading LLC,SME,Private Limited,Construction & Contracting,Dammam,SME Banking,SME Core,A,1568000,Anil Menon,2019-05-06,Expatriate
+C0351,Al Hashimi Logistics Group,SME,Partnership,Logistics & Transport,Abu Dhabi,SME Banking,SME Core,C,1103000,Bilal Qureshi,2019-04-07,National
+C0295,Al Mansoori Food Trading LLC,SME,Private Limited,Food & Beverage,Riyadh,SME Banking,SME Core,A,349000,Anil Menon,2021-09-07,Expatriate
+C0037,Al Farsi IT Trading LLC,SME,Partnership,IT Services,Sharjah,SME Banking,SME Emerging,C,165000,Fatima Al Zaabi,2019-12-14,Expatriate

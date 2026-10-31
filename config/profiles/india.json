@@ -1,0 +1,31 @@
+{
+  "profile": "india",
+  "version": "1.0",
+  "description": "Conventional retail and SME lending, India. Default profile.",
+  "as_of": "2026-10-31",
+  "currency": "INR",
+  "calendar": {
+    "weekend": ["Sun"],
+    "holidays": ["2025-11-05", "2025-12-25", "2026-01-26", "2026-03-04", "2026-08-15", "2026-10-02", "2026-10-20"],
+    "holiday_grace_days": 3,
+    "holidays_note": "Illustrative dates; replace with the official bank-holiday calendar before production use."
+  },
+  "delinquency_buckets": [
+    {"label": "Current", "max_dpd": 0},
+    {"label": "1-30", "max_dpd": 30},
+    {"label": "31-60", "max_dpd": 60},
+    {"label": "61-90", "max_dpd": 90},
+    {"label": "90+", "max_dpd": 100000}
+  ],
+  "scoring": {
+    "pillar_combination": [1.0, 0.35, 0.15, 0.1],
+    "min_pillar_coverage": 0.5,
+    "min_confidence": 0.5,
+    "min_repayment_months": 4,
+    "minor_delay_days": 3,
+    "roll_forward": {"min_score": 75, "lookback_instalments": 3, "min_late": 2},
+    "recent_episode": {"min_score": 25, "min_dpd": 10, "min_late": 3},
+    "seasonality": {"min_history_months": 15, "max_yoy_decline_pct": 5, "multiplier": 0.3},
+    "elevated_score": 25
+  }
+}
