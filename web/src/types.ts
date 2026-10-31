@@ -31,6 +31,7 @@ export interface WatchRow {
   monitoring_status: string; confidence: number; signals_active: number; top_factors: Factor[]; summary: string;
   review_decision: string | null; reviewed_at: string | null;
   next_action: string | null; next_action_owner: string | null; next_action_due: string | null; action_count: number;
+  active_signals: string[];
 }
 export interface Facets { [key: string]: string[] }
 export interface WatchlistPage { total: number; page: number; page_size: number; rows: WatchRow[]; facets: Facets }
@@ -85,4 +86,38 @@ export interface CustomerDetail {
   facilities: Row[]; delinquency: Row[]; repayments: Row[]; transactions: Row[]; exposure: Row[]; sme: Row[];
   recommended_actions: RecommendedAction[];
   repayment_months: { month: string; worst_dpd: number | null; instalments: number; late: number; partial: number; unpaid: number; amount_due: number | null; amount_paid: number | null }[];
+}
+
+export interface AIRecord<T> {
+  output_id: number; kind: string; run_id: string; subject: string; created_at: string; source: string;
+  model: string | null; requested_by: string; output: T; verification: Record<string, unknown> & { status: string };
+  error: string | null; cached?: boolean;
+}
+export interface AskResult {
+  filters: Record<string, string | string[] | number | null>; explanation: string; unsupported: string[]; dropped: string[];
+  source: string; model: string | null; error: string | null; total: number; rows: WatchRow[];
+}
+export interface ClusterBriefing {
+  headline: string; pattern: string; shared_drivers: { text: string; cites: string[] }[]; segment_wide: boolean;
+  segment_wide_reason: string; segment_actions: string[]; customers_to_prioritise: string[]; caveats: string[];
+}
+export interface RiskMemo {
+  title: string; headline: string; key_points: { text: string }[]; changes_since_last: string[]; clusters: string[];
+  actions_due: string[]; data_quality: string; recommendations: string[];
+}
+export interface EvidenceCheck {
+  document_type: string; issuer: string; document_date: string;
+  verdict: "supports" | "partially supports" | "does not support" | "unreadable" | "not assessed";
+  repayment_ids: string[]; matched_details: string[]; concerns: string[]; summary: string;
+  file_name: string; file_sha: string; media_type: string; requested_repayment_id: string | null; claim: string;
+}
+export interface EvidenceDecision {
+  decision_id: number; alert_id: number; repayment_id: string; output_id: number | null; accepted: number;
+  note: string; analyst: string; created_at: string;
+}
+export interface ColumnMap { source: string; target: string }
+export interface FileMap { file: string; table: string; columns: ColumnMap[] }
+export interface MappingProposal {
+  files: FileMap[]; notes: string[]; dropped: string[]; missing_required: Record<string, string[]>;
+  tables_not_supplied: string[]; targets: Record<string, string[]>; source: string; model: string | null; error: string | null;
 }
