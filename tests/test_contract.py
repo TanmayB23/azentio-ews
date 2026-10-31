@@ -1,5 +1,4 @@
-"""The engine's output matches ews/contracts.py. Person B adds the same checks
-for ews/fake_engine.py so both implementations stay interchangeable."""
+"""The engine's output matches ews/contracts.py, which the API and web app rely on."""
 from ews.contracts import Cluster, CustomerResult, Dataset, SignalResult, ValidationIssue
 from ews.engine import detect_clusters
 
