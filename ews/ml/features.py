@@ -25,7 +25,9 @@ def horizon_end(origin):
 def feature_signature(ds, profile):
     keys = ("signal_id", "metric", "window_months", "min_observations", "series", "min_total_decline_pct")
     definitions = _definitions(ds.signal_config)
-    signals = sorted([{k: s.get(k) for k in keys} for s in definitions["signals"]], key=lambda s: s["signal_id"])
+    # only the signals the model uses: adding an unrelated signal (e.g. UB01) must not invalidate the model
+    signals = sorted([{k: s.get(k) for k in keys} for s in definitions["signals"] if s["signal_id"] in FEATURE_IDS],
+                     key=lambda s: s["signal_id"])
     return sha256(json.dumps({"version": FEATURE_VERSION, "signals": signals,
         "calendar": load_profile(profile).get("calendar", {})}, sort_keys=True).encode()).hexdigest()
 
