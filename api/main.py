@@ -16,6 +16,7 @@ from api.registry import Registry, frame_records
 from ews import engine
 from ews.engine.config import load_profile
 from ews.store.db import DECISIONS, Store
+from ews.ml.service import PredictionService
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -36,12 +37,14 @@ class ReviewRequest(BaseModel):
     analyst: str = Field(min_length=1, max_length=120)
 
 
-def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_dist: Path | None = None) -> FastAPI:
+def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_dist: Path | None = None,
+               ml_model_dir: Path | None = None) -> FastAPI:
     var_dir = Path(var_dir or os.environ.get("EWS_VAR_DIR", ROOT / "var"))
     data_root = Path(data_root or os.environ.get("EWS_DATA_ROOT", ROOT / "data"))
     web_dist = Path(web_dist or ROOT / "web" / "dist")
     store = Store(os.environ.get("EWS_DB_PATH", var_dir / "ews.sqlite3"))
     registry = Registry(var_dir, data_root, store)
+    ml = PredictionService(ml_model_dir or os.environ.get("EWS_ML_MODEL_DIR", ROOT / "models/delinquency_3m"), store)
 
     app = FastAPI(title="EWS API", version="1.0.0",
                   description="Early Warning System: data ingestion, risk scoring, watchlist and analyst review.")
@@ -74,6 +77,24 @@ def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_d
                              "as_of": p.get("as_of")})
         return {"profiles": profiles, "decisions": list(DECISIONS), "bands": presenters.BANDS,
                 "samples": registry.samples()}
+
+    @app.get("/api/ml/model")
+    def ml_model():
+        return ml.info()
+
+    @app.get("/api/runs/{run_id}/customers/{customer_id}/ml")
+    def ml_prediction(run_id: str, customer_id: str):
+        run = run_or_404(run_id)
+        if customer_id not in run.results:
+            raise HTTPException(404, "Customer not found in this assessment")
+        return ml.predict(run, customer_id, store.alert(run_id, customer_id))
+
+    @app.get("/api/runs/{run_id}/customers/{customer_id}/ml/history")
+    def ml_history(run_id: str, customer_id: str):
+        run = run_or_404(run_id)
+        if customer_id not in run.results:
+            raise HTTPException(404, "Customer not found in this assessment")
+        return ml.history(store.alert(run_id, customer_id)["alert_id"])
 
     # ------------------------------------------------------------------ datasets
     @app.get("/api/datasets")

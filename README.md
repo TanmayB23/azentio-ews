@@ -73,3 +73,11 @@ scripts/        synthetic data generator
 ```
 
 Not included yet: authentication. Analysts enter their name in Settings and it is recorded on each decision. In production, put the app behind SSO and take the analyst identity from the session.
+
+## Three-month delinquency forecast (ML)
+
+Customer detail now pairs the rule score with a separate gradient-boosting estimate of reaching **30+ DPD within the next three months**, including local TreeSHAP factors. A trained synthetic demonstration artifact is included; retraining is offline with `python -m ews.ml.train`. Install the updated requirements before starting the API.
+
+**Synthetic-data prototype: the method is ready for real data, not evidence of predictive accuracy.** The generated history has very few serious outcomes; held-out diagnostics, counts and limitations are shown in model details. Current 30+ DPD and insufficient-history cases receive an explicit status instead of an invented incident probability. Saved ML forecasts are versioned separately from immutable rule evidence.
+
+See [ML_MODEL.md](ML_MODEL.md) for target construction, point-in-time features, censoring, splits, calibration, reproducibility, API endpoints and validation limitations.

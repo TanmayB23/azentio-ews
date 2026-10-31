@@ -11,6 +11,7 @@ import { date, initials, money, monthLabel, num, pct, profileCurrency } from "..
 import { useWorkspace } from "../state";
 import type { CustomerDetail, Row, Signal } from "../types";
 import { NoAssessment } from "./Overview";
+import { MLPredictionCard } from "../components/MLPrediction";
 
 const PILLAR_HELP: Record<string, string> = {
   Repayment: "Late, partial and missed instalments; current days past due",
@@ -320,6 +321,12 @@ export function CustomerPage() {
               origination rating {String(c.origination_rating ?? "—")}
             </p>
           </div>
+
+        </div>
+      </Card>
+
+      <div className="grid cols-2">
+        <Card title="Rule-based assessment" sub="0-100 monitoring score; higher means greater risk">
           <div className="row" style={{ gap: 18 }}>
             <ScoreRing score={r.score} band={r.band} />
             <div className="stack" style={{ gap: 8 }}>
@@ -328,8 +335,10 @@ export function CustomerPage() {
               <div><div className="stat-label">Data confidence</div><div className="strong">{pct(r.confidence)}</div></div>
             </div>
           </div>
-        </div>
-      </Card>
+          <p className="muted tiny" style={{ marginTop: 14 }}>Deterministic signals and policy modifiers. The ML forecast is a separate estimate and does not change this score.</p>
+        </Card>
+        <MLPredictionCard key={`${run.run_id}:${r.customer_id}`} runId={run.run_id} customerId={r.customer_id} />
+      </div>
 
       <div className={`callout ${insufficient ? "warn" : r.band === "Critical" || r.band === "High" ? "error" : "info"}`}>
         {insufficient ? <Info size={18} /> : <AlertTriangle size={18} />}

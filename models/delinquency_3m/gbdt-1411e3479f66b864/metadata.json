@@ -1,0 +1,110 @@
+{
+  "format_version": 1,
+  "feature_version": "point-in-time-signals-v1",
+  "feature_ids": [
+    "RB01",
+    "RB02",
+    "RB03",
+    "RB04",
+    "CF01",
+    "CF02",
+    "CF03",
+    "CF04",
+    "CF05",
+    "EX01",
+    "EX02",
+    "EX03",
+    "EX04",
+    "SM01",
+    "SM02"
+  ],
+  "feature_signatures": {
+    "india": "19fdceac8533d8563f5c35c2f8e00342b764f4a114a05cb50e838f8497677319",
+    "gcc_islamic": "09d76fb4006c463f7c4de5f80f43b855c5456cd513c67064576cedc6e6e09265"
+  },
+  "source_hashes": {
+    "india": "881fb4419e37339fed64543346c77787cf0e64ded32fa34f3e3f52fe98196c80",
+    "gcc_islamic": "bf116a6d6ea30a2e238f5ad320b96a7bf08bfe74152ad32f8a4e36729c06ce9d"
+  },
+  "training_data_kind": "synthetic",
+  "algorithm": "XGBoost gradient-boosted decision trees",
+  "xgboost_version": "3.4.1",
+  "horizon_months": 3,
+  "threshold_dpd": 30,
+  "seed": 42,
+  "rounds": 100,
+  "calibration": {
+    "method": "held-out bounded sigmoid",
+    "slope": 1.7587395650832847,
+    "intercept": 3.3535314962932334
+  },
+  "feature_names": {
+    "RB01": "Late payment frequency",
+    "RB02": "DPD trend rising",
+    "RB03": "Partial payment frequency",
+    "RB04": "Current delinquency",
+    "CF01": "Consecutive inflow decline",
+    "CF02": "Inflow level change",
+    "CF03": "Balance erosion",
+    "CF04": "Outflow exceeds inflow",
+    "CF05": "Bounced / returned transactions",
+    "EX01": "Utilisation rise",
+    "EX02": "New facilities",
+    "EX03": "Obligation-to-inflow ratio trend",
+    "EX04": "Credit inquiries",
+    "SM01": "Tax filing irregularity",
+    "SM02": "Receivable days rising"
+  },
+  "split": "customer-demo",
+  "splits": {
+    "train": {
+      "rows": 3309,
+      "customers": 560,
+      "positive_rows": 12,
+      "origin_start": "2026-02-28",
+      "origin_end": "2026-07-31",
+      "last_label_date": "2026-10-31"
+    },
+    "calibration": {
+      "rows": 817,
+      "customers": 140,
+      "positive_rows": 2,
+      "origin_start": "2026-02-28",
+      "origin_end": "2026-07-31",
+      "last_label_date": "2026-10-31"
+    },
+    "test": {
+      "rows": 1046,
+      "customers": 176,
+      "positive_rows": 2,
+      "origin_start": "2026-02-28",
+      "origin_end": "2026-07-31",
+      "last_label_date": "2026-10-31"
+    }
+  },
+  "evaluation": {
+    "roc_auc": 0.8405172413793104,
+    "average_precision": 0.00966183574879227,
+    "brier_score": 0.0019154146170066277,
+    "log_loss": 0.012926985833275803,
+    "event_rate": 0.0019120458891013384,
+    "constant_baseline_brier": 0.0019113292308114282,
+    "calibration_bins": [
+      {
+        "count": 1046,
+        "mean_prediction": 0.0019671242306225586,
+        "observed_rate": 0.0019120458891013384
+      }
+    ]
+  },
+  "limitations": [
+    "Synthetic-data method demonstration, not evidence of real-world predictive accuracy.",
+    "Few positive outcomes; overlapping customer-month labels are correlated.",
+    "Customer-disjoint holdout uses the same calendar period; it is not an out-of-time backtest.",
+    "Monthly inputs are assumed available at month-end; real data needs reliable availability timestamps.",
+    "Ambiguous partial-payment label windows and incomplete future follow-up are censored."
+  ],
+  "model_sha256": "43409c42d890c8a86f5caa07ba25f7c0769452030a50528928c4c460c300edab",
+  "model_id": "gbdt-1411e3479f66b864",
+  "trained_at": "2026-10-31T11:56:58.118521+00:00"
+}
