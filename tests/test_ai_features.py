@@ -173,3 +173,68 @@ def test_mapping_cleaning_rejects_invalid_targets():
     targets = [c.target for c in cleaned.files[0].columns]
     assert targets == ["customer_id", ""] and checks["dropped"] == ["x.csv: b -> customer_id"]
     assert "customer_type" in checks["missing_required"]["customers"]
+
+
+# ----------------------------------------------------------------- evidence checker
+PNG = bytes.fromhex("89504e470d0a1a0a0000000d4948445200000001000000010806000000"
+                    "1f15c4890000000d49444154789c6360000002000154a24f5d0000000049454e44ae426082")
+
+
+class FakeEvidenceAI:
+    name, model = "fake", "fake-vision"
+
+    def __init__(self):
+        self.content = None
+
+    def parse(self, system, content, schema, max_tokens=4000):
+        from api.evidence import EvidenceAssessment
+        self.content = content
+        ids = [r["repayment_id"] for r in json.loads(content[0]["text"])["late_instalments"]]
+        return EvidenceAssessment(document_type="salary delay letter", issuer="Employer Ltd", document_date="2026-05-02",
+                                  verdict="supports", repayment_ids=ids[:1] + ["R999999"], matched_details=["May 2026"],
+                                  concerns=[], summary="Letter confirms salary was paid late in May.")
+
+
+def _late_customer(client, run):
+    rows = client.get(f"/api/runs/{run}/watchlist", params={"band": "Critical", "page_size": 5}).json()["rows"]
+    for r in rows:
+        reps = client.get(f"/api/runs/{run}/customers/{r['customer_id']}").json()["repayments"]
+        late = [x for x in reps if (x["dpd"] or 0) > 0]
+        if late:
+            return r["customer_id"], late[0]["repayment_id"]
+    raise AssertionError("no late payment found")
+
+
+def test_evidence_without_ai_is_stored_and_decided_by_the_analyst(apps):
+    client, run = apps["rules"]
+    cid, rid = _late_customer(client, run)
+    url = f"/api/runs/{run}/customers/{cid}"
+    bad = client.post(f"{url}/evidence-checks", files={"file": ("note.txt", b"x", "text/plain")})
+    assert bad.status_code == 422
+    check = client.post(f"{url}/evidence-checks", files={"file": ("letter.png", PNG, "image/png")},
+                        data={"repayment_id": rid, "claim": "Salary paid late"}).json()
+    assert check["output"]["verdict"] == "not assessed" and check["output"]["file_name"] == "letter.png"
+    decision = client.post(f"{url}/evidence-decisions", json={"repayment_id": rid, "accepted": True,
+                                                              "note": "Letter checked by hand", "analyst": "T",
+                                                              "output_id": check["output_id"]})
+    assert decision.status_code == 201 and decision.json()["accepted"] == 1
+    assert client.get(f"{url}/evidence-decisions").json()[0]["repayment_id"] == rid
+    foreign = client.post(f"{url}/evidence-decisions", json={"repayment_id": "R-not-theirs", "accepted": True,
+                                                             "note": "x", "analyst": "T"})
+    assert foreign.status_code == 422
+
+
+def test_ai_evidence_reads_the_document_and_unknown_instalments_are_dropped(tmp_path):
+    ai = FakeEvidenceAI()
+    client = TestClient(create_app(var_dir=tmp_path, data_root=DATA_ROOT, web_dist=tmp_path / "none", ai_provider=ai))
+    ds = client.post("/api/datasets/sample", json={"profile": "india", "variant": "clean"}).json()
+    run = client.post("/api/runs", json={"dataset_id": ds["dataset_id"], "profile": "india"}).json()["run_id"]
+    cid, _ = _late_customer(client, run)
+    check = client.post(f"/api/runs/{run}/customers/{cid}/evidence-checks",
+                        files={"file": ("letter.png", PNG, "image/png")}).json()
+    assert check["source"] == "fake" and check["output"]["verdict"] == "supports"
+    assert check["verification"]["unknown_repayments"] == ["R999999"]
+    assert "R999999" not in check["output"]["repayment_ids"]
+    assert ai.content[1]["type"] == "image_url" and ai.content[1]["image_url"]["url"].startswith("data:image/png;base64,")
+    assert "customer_name" not in ai.content[0]["text"]
+    assert any((tmp_path / "evidence").iterdir())

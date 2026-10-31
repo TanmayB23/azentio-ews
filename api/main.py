@@ -11,7 +11,7 @@ from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from api import ask, briefings, case_notes, mapping, presenters
+from api import ask, briefings, case_notes, evidence, mapping, presenters
 from api.registry import Registry, frame_records
 from ews import engine
 from ews.engine.config import load_profile
@@ -52,6 +52,14 @@ class BriefingRequest(BaseModel):
 class MemoRequest(BaseModel):
     analyst: str = Field(default="", max_length=120)
     regenerate: bool = False
+
+
+class EvidenceDecisionRequest(BaseModel):
+    repayment_id: str
+    accepted: bool
+    note: str = Field(min_length=1, max_length=2000)
+    analyst: str = Field(min_length=1, max_length=120)
+    output_id: int | None = None
 
 
 class CaseNoteRequest(BaseModel):
@@ -326,6 +334,59 @@ def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_d
         row = presenters.watchlist_rows(df[df["customer_id"] == customer_id])
         return case_notes.build_payload(run.results[customer_id], run.actions.get(customer_id, []), run.profile,
                                         row[0] if row else None, run.facts[customer_id].clusters)
+
+    def customer_repayments(run, customer_id: str):
+        rep = run.dataset.tables["repayments"]
+        return rep[rep["customer_id"] == customer_id]
+
+    @app.post("/api/runs/{run_id}/customers/{customer_id}/evidence-checks", status_code=201)
+    async def check_evidence(run_id: str, customer_id: str, file: UploadFile = File(...),
+                             repayment_id: str = Form(""), claim: str = Form(""), analyst: str = Form("")):
+        run, df = watchlist(run_id)
+        if customer_id not in run.results:
+            raise HTTPException(404, "Customer not found in this assessment")
+        reps = customer_repayments(run, customer_id)
+        if repayment_id and repayment_id not in set(reps["repayment_id"]):
+            raise HTTPException(422, "That instalment does not belong to this customer")
+        data = await file.read()
+        digest, media = evidence.save_file(var_dir, file.filename or "document", data)
+        row = presenters.watchlist_rows(df[df["customer_id"] == customer_id])[0]
+        context = {"customer": {k: row.get(k) for k in ("customer_type", "segment", "industry", "region")},
+                   "claim": claim.strip(), "late_instalments": evidence.late_instalments(reps, repayment_id or None)}
+        assessment, checks, source, model, error = evidence.assess(ai_provider, context, file.filename or "document",
+                                                                  media, data)
+        output = {**assessment.model_dump(), "file_name": file.filename, "file_sha": digest, "media_type": media,
+                  "requested_repayment_id": repayment_id or None, "claim": claim.strip()}
+        return store.add_output("evidence", run_id, customer_id, source, model, digest, analyst, output, checks, error)
+
+    @app.get("/api/runs/{run_id}/customers/{customer_id}/evidence-checks")
+    def evidence_checks(run_id: str, customer_id: str):
+        run_or_404(run_id)
+        return store.outputs("evidence", run_id, customer_id)
+
+    @app.post("/api/runs/{run_id}/customers/{customer_id}/evidence-decisions", status_code=201)
+    def decide_evidence(run_id: str, customer_id: str, req: EvidenceDecisionRequest):
+        run = run_or_404(run_id)
+        if req.repayment_id not in set(customer_repayments(run, customer_id)["repayment_id"]):
+            raise HTTPException(422, "That instalment does not belong to this customer")
+        if req.output_id is not None:
+            try:
+                check = store.output(req.output_id)
+            except KeyError:
+                raise HTTPException(404, "Evidence check not found")
+            if check["kind"] != "evidence" or check["run_id"] != run_id or check["subject"] != customer_id:
+                raise HTTPException(422, "That evidence check belongs to another customer")
+        alert = store.alert(run_id, customer_id)
+        return store.add_evidence_decision(alert["alert_id"], req.repayment_id, req.accepted, req.note, req.analyst,
+                                           req.output_id)
+
+    @app.get("/api/runs/{run_id}/customers/{customer_id}/evidence-decisions")
+    def evidence_decisions(run_id: str, customer_id: str):
+        try:
+            alert = store.alert(run_id, customer_id)
+        except KeyError:
+            raise HTTPException(404, "Alert not found")
+        return store.evidence_decisions(alert["alert_id"])
 
     @app.get("/api/runs/{run_id}/customers/{customer_id}/case-notes")
     def list_case_notes(run_id: str, customer_id: str):
