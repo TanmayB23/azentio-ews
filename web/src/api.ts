@@ -1,4 +1,4 @@
-import type { Cluster, Config, CustomerDetail, DatasetMeta, MLPrediction, Review, RunMeta, Summary, WatchlistPage } from "./types";
+import type { CaseNoteRecord, Cluster, Config, CustomerDetail, DatasetMeta, MLPrediction, Review, RunMeta, Summary, WatchlistPage } from "./types";
 
 export class ApiError extends Error {
   constructor(public status: number, message: string) { super(message); }
@@ -56,7 +56,10 @@ export const api = {
   mlPrediction: (run: string, cid: string) => request<MLPrediction>(`/api/runs/${run}/customers/${encodeURIComponent(cid)}/ml`),
   customer: (run: string, cid: string) => request<CustomerDetail>(`/api/runs/${run}/customers/${encodeURIComponent(cid)}`),
   alertUrl: (run: string, cid: string) => `/api/runs/${run}/customers/${encodeURIComponent(cid)}/alert.json`,
-  addReview: (run: string, cid: string, body: { decision: string; reason: string; analyst: string }) =>
+  addReview: (run: string, cid: string, body: { decision: string; reason: string; analyst: string; ai_note_id?: number | null }) =>
     request<Review>(`/api/runs/${run}/customers/${encodeURIComponent(cid)}/reviews`, json(body)),
   reviewLog: (run: string) => request<Review[]>(`/api/runs/${run}/reviews`),
+  caseNotes: (run: string, cid: string) => request<CaseNoteRecord[]>(`/api/runs/${run}/customers/${encodeURIComponent(cid)}/case-notes`),
+  draftCaseNote: (run: string, cid: string, body: { analyst: string; regenerate: boolean }) =>
+    request<CaseNoteRecord>(`/api/runs/${run}/customers/${encodeURIComponent(cid)}/case-notes`, json(body)),
 };

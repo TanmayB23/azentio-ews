@@ -39,13 +39,22 @@ class Store:
                     reason TEXT NOT NULL CHECK(length(trim(reason)) > 0),
                     analyst TEXT NOT NULL CHECK(length(trim(analyst)) > 0), created_at TEXT NOT NULL);
                 CREATE INDEX IF NOT EXISTS review_alert ON reviews(alert_id, review_id);
+                CREATE TABLE IF NOT EXISTS ai_notes (
+                    note_id INTEGER PRIMARY KEY, alert_id INTEGER NOT NULL REFERENCES alerts(alert_id),
+                    created_at TEXT NOT NULL, source TEXT NOT NULL, model TEXT, prompt_version TEXT NOT NULL,
+                    input_hash TEXT NOT NULL, requested_by TEXT NOT NULL, note_json TEXT NOT NULL,
+                    verification_json TEXT NOT NULL, error TEXT);
+                CREATE INDEX IF NOT EXISTS note_alert ON ai_notes(alert_id, note_id);
+                CREATE TABLE IF NOT EXISTS review_ai_notes (
+                    review_id INTEGER PRIMARY KEY REFERENCES reviews(review_id),
+                    note_id INTEGER NOT NULL REFERENCES ai_notes(note_id));
             """)
             version = db.execute("SELECT value FROM meta WHERE key = 'schema_version'").fetchone()
             if version is None:
                 db.execute("INSERT INTO meta VALUES ('schema_version', ?)", (str(SCHEMA_VERSION),))
             elif int(version["value"]) != SCHEMA_VERSION:
                 raise RuntimeError(f"{self.path} uses evidence schema v{version['value']}; expected v{SCHEMA_VERSION}")
-            for table in ("runs", "alerts", "reviews"):
+            for table in ("runs", "alerts", "reviews", "ai_notes", "review_ai_notes"):
                 for action in ("UPDATE", "DELETE"):
                     db.execute(f"CREATE TRIGGER IF NOT EXISTS {table}_no_{action.lower()} BEFORE {action} ON {table} "
                                "BEGIN SELECT RAISE(ABORT, 'Evidence is append-only'); END")
@@ -97,20 +106,42 @@ class Store:
             raise KeyError(customer_id)
         return dict(row)
 
-    def add_review(self, alert_id: int, decision: str, reason: str, analyst: str) -> dict:
+    def add_review(self, alert_id: int, decision: str, reason: str, analyst: str,
+                   ai_note_id: int | None = None) -> dict:
         if decision not in DECISIONS:
             raise ValueError(f"Decision must be one of: {', '.join(DECISIONS)}")
         if not reason.strip() or not analyst.strip():
             raise ValueError("A reason and an analyst name are required")
         with self.connect() as db:
+            if ai_note_id is not None:
+                note = db.execute("SELECT alert_id FROM ai_notes WHERE note_id = ?", (ai_note_id,)).fetchone()
+                if note is None or note["alert_id"] != alert_id:
+                    raise ValueError("The AI note does not belong to this alert")
             cur = db.execute("INSERT INTO reviews(alert_id, decision, reason, analyst, created_at) VALUES (?, ?, ?, ?, ?)",
                              (alert_id, decision, reason.strip(), analyst.strip(), self.now()))
-            return dict(db.execute("SELECT * FROM reviews WHERE review_id = ?", (cur.lastrowid,)).fetchone())
+            if ai_note_id is not None:
+                db.execute("INSERT INTO review_ai_notes VALUES (?, ?)", (cur.lastrowid, ai_note_id))
+            return dict(db.execute(f"{_REVIEW_SELECT} WHERE r.review_id = ?", (cur.lastrowid,)).fetchone())
 
     def reviews(self, alert_id: int) -> list[dict]:
         with self.connect() as db:
             return [dict(row) for row in db.execute(
-                "SELECT * FROM reviews WHERE alert_id = ? ORDER BY review_id DESC", (alert_id,))]
+                f"{_REVIEW_SELECT} WHERE r.alert_id = ? ORDER BY r.review_id DESC", (alert_id,))]
+
+    def add_note(self, alert_id: int, source: str, model: str | None, prompt_version: str, input_hash: str,
+                 requested_by: str, note: dict, verification: dict, error: str | None = None) -> dict:
+        with self.connect() as db:
+            cur = db.execute(
+                "INSERT INTO ai_notes(alert_id, created_at, source, model, prompt_version, input_hash, requested_by, "
+                "note_json, verification_json, error) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                (alert_id, self.now(), source, model, prompt_version, input_hash, requested_by.strip() or "unknown",
+                 json.dumps(note, allow_nan=False), json.dumps(verification, allow_nan=False), error))
+            return _note(db.execute("SELECT * FROM ai_notes WHERE note_id = ?", (cur.lastrowid,)).fetchone())
+
+    def notes(self, alert_id: int) -> list[dict]:
+        with self.connect() as db:
+            return [_note(row) for row in db.execute(
+                "SELECT * FROM ai_notes WHERE alert_id = ? ORDER BY note_id DESC", (alert_id,))]
 
     def latest_reviews(self, run_id: str) -> dict[str, dict]:
         """Latest review per customer in a run (current analyst classification)."""
@@ -126,3 +157,14 @@ class Store:
             return [dict(row) for row in db.execute("""
                 SELECT a.customer_id, r.* FROM reviews r JOIN alerts a ON a.alert_id = r.alert_id
                 WHERE a.run_id = ? ORDER BY r.review_id DESC""", (run_id,))]
+
+
+_REVIEW_SELECT = ("SELECT r.*, l.note_id AS ai_note_id FROM reviews r "
+                  "LEFT JOIN review_ai_notes l ON l.review_id = r.review_id")
+
+
+def _note(row) -> dict:
+    d = dict(row)
+    d["note"] = json.loads(d.pop("note_json"))
+    d["verification"] = json.loads(d.pop("verification_json"))
+    return d

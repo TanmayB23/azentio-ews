@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
@@ -12,6 +12,7 @@ import { useWorkspace } from "../state";
 import type { CustomerDetail, Row, Signal } from "../types";
 import { NoAssessment } from "./Overview";
 import { MLPredictionCard } from "../components/MLPrediction";
+import { CaseNoteCard, RecommendedActions, type ReviewPrefill } from "../components/CaseNote";
 
 const PILLAR_HELP: Record<string, string> = {
   Repayment: "Late, partial and missed instalments; current days past due",
@@ -148,13 +149,19 @@ function EvidenceCharts({ d, currency }: { d: CustomerDetail; currency: string }
   );
 }
 
-function ReviewPanel({ d, runId }: { d: CustomerDetail; runId: string }) {
+function ReviewPanel({ d, runId, prefill }: { d: CustomerDetail; runId: string; prefill: ReviewPrefill | null }) {
   const { config, analyst, setAnalyst } = useWorkspace();
   const client = useQueryClient();
   const [decision, setDecision] = useState("");
   const [reason, setReason] = useState("");
   const [name, setName] = useState(analyst);
+  const [noteId, setNoteId] = useState<number | null>(null);
   const [toast, setToast] = useState<string | null>(null);
+  useEffect(() => {
+    if (!prefill) return;
+    setDecision(prefill.decision); setReason(prefill.reason); setNoteId(prefill.noteId);
+    document.getElementById("review")?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [prefill]);
   const decisions = config?.decisions ?? [];
   const help: Record<string, string> = {
     "Continue Monitoring": "Risk understood; keep on routine watch",
@@ -163,10 +170,10 @@ function ReviewPanel({ d, runId }: { d: CustomerDetail; runId: string }) {
     "Escalate for Review": "Refer to credit committee or collections",
   };
   const save = useMutation({
-    mutationFn: () => api.addReview(runId, d.result.customer_id, { decision, reason, analyst: name }),
+    mutationFn: () => api.addReview(runId, d.result.customer_id, { decision, reason, analyst: name, ai_note_id: noteId }),
     onSuccess: () => {
       setAnalyst(name.trim());
-      setReason(""); setDecision("");
+      setReason(""); setDecision(""); setNoteId(null);
       setToast("Decision recorded. Original score and evidence unchanged.");
       client.invalidateQueries({ queryKey: ["customer", runId, d.result.customer_id] });
       client.invalidateQueries({ queryKey: ["summary", runId] });
@@ -189,6 +196,10 @@ function ReviewPanel({ d, runId }: { d: CustomerDetail; runId: string }) {
             </label>
           ))}
         </fieldset>
+        {noteId !== null && (
+          <p className="tiny row" style={{ gap: 6 }}><span className="pill lime">From case note #{noteId}</span>
+            <button type="button" className="btn ghost sm" onClick={() => setNoteId(null)}>Unlink</button></p>
+        )}
         <div className="field">
           <label htmlFor="reason">Reason <span className="faint">(required)</span></label>
           <textarea id="reason" className="input" value={reason} onChange={(e) => setReason(e.target.value)} maxLength={2000}
@@ -212,7 +223,8 @@ function ReviewPanel({ d, runId }: { d: CustomerDetail; runId: string }) {
               <div key={r.review_id} className="timeline-item">
                 <span className="tl-dot" />
                 <div>
-                  <div className="row wrap" style={{ gap: 6 }}><ReviewPill decision={r.decision} /><span className="muted tiny">{date(r.created_at, true)} · {r.analyst}</span></div>
+                  <div className="row wrap" style={{ gap: 6 }}><ReviewPill decision={r.decision} /><span className="muted tiny">{date(r.created_at, true)} · {r.analyst}</span>
+                    {r.ai_note_id ? <span className="tag" style={{ fontSize: 11 }}>used case note #{r.ai_note_id}</span> : null}</div>
                   <p className="small" style={{ marginTop: 4 }}>{r.reason}</p>
                 </div>
               </div>
@@ -286,6 +298,7 @@ export function CustomerPage() {
   const q = useQuery({
     queryKey: ["customer", run?.run_id, customerId], queryFn: () => api.customer(run!.run_id, customerId), enabled: !!run,
   });
+  const [prefill, setPrefill] = useState<ReviewPrefill | null>(null);
   if (!run) return <NoAssessment />;
   if (q.error) return <><Link to="/watchlist" className="btn sm" style={{ alignSelf: "flex-start" }}><ArrowLeft size={14} />Watchlist</Link><ErrorNote error={q.error} /></>;
   if (!q.data) return <div className="stack"><Skeleton height={150} /><Skeleton height={300} /></div>;
@@ -352,6 +365,7 @@ export function CustomerPage() {
 
       <div className="grid cols-main">
         <div className="stack">
+          <CaseNoteCard runId={run.run_id} customerId={r.customer_id} actions={d.recommended_actions} signals={r.signals} onUse={setPrefill} />
           <Card title="Score breakdown" sub="Higher score = higher risk. Highest area counts in full, the next three add 35%, 15% and 10%.">
             <div className="grid cols-2" style={{ gap: 12 }}>
               {pillars.map((p) => {
@@ -374,7 +388,8 @@ export function CustomerPage() {
           <RepaymentTable rows={d.repayments} currency={cur} />
         </div>
         <div className="stack">
-          <ReviewPanel d={d} runId={run.run_id} />
+          <RecommendedActions actions={d.recommended_actions} />
+          <ReviewPanel d={d} runId={run.run_id} prefill={prefill} />
           <Facilities rows={d.facilities} currency={cur} />
           <Card title="Assessment record" sub="Preserved exactly as scored">
             <div className="stack small" style={{ gap: 6 }}>

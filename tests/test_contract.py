@@ -43,3 +43,15 @@ def test_clusters_shape(clean_ds, clean_results):
     for c in detect_clusters(clean_ds, list(clean_results.values())):
         assert isinstance(c, Cluster)
         assert c.n_elevated <= c.n_customers == len(c.customer_ids)
+
+
+def test_cluster_lift_is_explained_by_its_own_figures(clean_ds, clean_results):
+    """The multiplier shown must follow from the hits and rates reported with it."""
+    scored = [r for r in clean_results.values() if r.status == "Scored"]
+    elevated_rate = sum(r.score >= 25 for r in scored) / len(scored)
+    for c in detect_clusters(clean_ds, list(clean_results.values())):
+        assert c.group_rate == round(c.basis_hits / c.n_customers, 4)
+        assert abs(c.lift - c.group_rate / c.portfolio_rate) < 0.02
+        assert abs(c.elevated_lift - (c.n_elevated / c.n_customers) / elevated_rate) < 0.02
+        if c.basis == "elevated risk":
+            assert c.basis_hits == c.n_elevated and abs(c.lift - c.elevated_lift) < 0.02

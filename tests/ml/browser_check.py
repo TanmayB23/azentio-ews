@@ -20,7 +20,7 @@ def main():
     with tempfile.TemporaryDirectory(prefix="ews-ml-browser-") as folder:
         with socket.socket() as sock:
             sock.bind(("127.0.0.1",0));port=sock.getsockname()[1]
-        env={**os.environ,"EWS_VAR_DIR":folder,"EWS_DB_PATH":str(Path(folder)/"evidence.sqlite3")}
+        env={**os.environ,"EWS_VAR_DIR":folder,"EWS_AI_ENABLED":"0","EWS_DB_PATH":str(Path(folder)/"evidence.sqlite3")}
         server=subprocess.Popen([sys.executable,"-m","api","--port",str(port)],cwd=ROOT,env=env,
             stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,creationflags=subprocess.CREATE_NO_WINDOW if os.name=="nt" else 0)
         base=f"http://127.0.0.1:{port}"

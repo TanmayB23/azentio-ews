@@ -57,6 +57,28 @@ The Vite server proxies `/api` requests to the Python API, so both processes mus
 | `EWS_DB_PATH` | `var/ews.sqlite3` | Evidence database file |
 | `EWS_DATA_ROOT` | `data/` | Sample portfolios |
 
+## Recommended actions and AI case notes
+
+Every alert gets **recommended actions** from a rules playbook ([config/interventions.json](config/interventions.json)): who acts (collections, RM, credit, operations), by when, and the reasons and signals that triggered it. The watchlist shows each customer's next action; the Overview counts open actions by owner.
+
+On a customer page, **Draft case note** produces a short note: summary, cited findings, ranked next steps, questions for the customer, data gaps, and a suggested decision. **Use in review** copies it into the review form. The analyst still decides, and the review records which note was used.
+
+Put these settings in a `.env` file in the project root: copy [.env.example](.env.example) to `.env` and fill in your key. Git ignores `.env`. It's read by `python -m api`, and variables already set in the environment take priority.
+
+| Setting | Default | Purpose |
+|---|---|---|
+| `OPENAI_API_KEY` | not set | Enables AI drafting with OpenAI. Without it, notes are drafted from rules |
+| `EWS_AI_MODEL` | `gpt-4.1-mini` | OpenAI model used for notes. Set this to a model your key can use |
+| `EWS_AI_ENABLED` | `1` | Set to `0` to turn AI drafting off |
+| `EWS_AI_SEND_NAMES` | not set | Set to `1` to include customer names in what is sent to OpenAI (off by default) |
+
+Safeguards:
+- **Limited input:** the model sees only the saved alert, the actions that already fired, and segment, product and region facts.
+- **Fixed output:** the output schema is fixed.
+- **Checked after drafting:** actions not in the playbook are removed, and citations or numbers not found in the alert are flagged as "Check before use".
+- **Saved and reused:** notes are add-only and reused when the input hasn't changed.
+- **Fallback:** if the call fails, a rules-based note is shown with the reason.
+
 ## What the app covers
 
 | Screen | Purpose |

@@ -4,7 +4,7 @@ import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recha
 import { Network } from "lucide-react";
 import { api } from "../api";
 import { BandPill, Card, Empty, ErrorNote, ReviewPill, Skeleton } from "../components/ui";
-import { initials, money, num, profileCurrency } from "../format";
+import { clusterBasis, initials, money, num, pct, profileCurrency } from "../format";
 import { useWorkspace } from "../state";
 import { NoAssessment } from "./Overview";
 
@@ -33,7 +33,7 @@ export function Portfolio() {
       </div>
 
       <div className="grid cols-main">
-        <Card title="Detected clusters" sub="Ranked by statistical strength; lift = how many times the portfolio rate">
+        <Card title="Detected clusters" sub="Ranked by statistical strength. ×N = how many times more common the named pattern is here than across the book">
           {!clusters.data ? <Skeleton height={240} /> : list.length === 0 ? (
             <Empty icon={<Network size={22} />} title="No significant clusters">Risk is not concentrated in any segment beyond what chance explains.</Empty>
           ) : (
@@ -44,11 +44,11 @@ export function Portfolio() {
                   <span className="radio" />
                   <span style={{ flex: 1, minWidth: 0 }}>
                     <strong style={{ display: "block", fontWeight: 500 }}>{c.value.replace("|", " · ")}</strong>
-                    <small className="muted">{c.dimension} · {c.basis} · {c.top_signal_names.slice(0, 2).join(", ")}</small>
+                    <small className="muted" style={{ display: "block" }}>{clusterBasis(c)}</small>
+                    <small className="faint">{c.dimension} · {c.n_elevated} of {c.n_customers} Medium or above (×{num(c.elevated_lift, 1)})</small>
                   </span>
                   <span style={{ textAlign: "right" }}>
-                    <span className="pill lime mono">×{num(c.lift, 1)}</span>
-                    <small className="muted" style={{ display: "block", marginTop: 4 }}>{c.n_elevated}/{c.n_customers} elevated</small>
+                    <span className="pill lime mono" title={`${clusterBasis(c)}: ${num(c.lift, 1)} times the portfolio rate`}>×{num(c.lift, 1)}</span>
                   </span>
                 </button>
               ))}
@@ -73,14 +73,18 @@ export function Portfolio() {
           {selected && (
             <Card className="dark">
               <p className="muted small">Selected cluster</p>
-              <h3 style={{ fontSize: 20, margin: "4px 0 12px", color: "#fff" }}>{selected.value.replace("|", " · ")}</h3>
+              <h3 style={{ fontSize: 20, margin: "4px 0 4px", color: "#fff" }}>{selected.value.replace("|", " · ")}</h3>
+              <p className="small" style={{ color: "var(--lime)", marginBottom: 12 }}>
+                Flagged because: {clusterBasis(selected)} (×{num(selected.lift, 1)})
+              </p>
               <div className="grid cols-2" style={{ gap: 12 }}>
                 <div><div className="muted small">Exposure</div><div className="stat-value mono">{money(selected.exposure, cur)}</div></div>
                 <div><div className="muted small">Elevated exposure</div><div className="stat-value mono" style={{ color: "var(--lime)" }}>{money(selected.elevated_exposure, cur)}</div></div>
-                <div><div className="muted small">Customers elevated</div><div className="stat-value mono">{selected.n_elevated} / {selected.n_customers}</div></div>
+                <div><div className="muted small">Medium or above</div><div className="stat-value mono">{selected.n_elevated} / {selected.n_customers}</div>
+                  <div className="muted tiny">{pct(selected.n_elevated / selected.n_customers)} vs {pct(selected.n_elevated / selected.n_customers / (selected.elevated_lift || 1))} of the book (×{num(selected.elevated_lift, 1)})</div></div>
                 <div><div className="muted small">Significance</div><div className="stat-value mono">p {selected.p_value < 0.0001 ? "< 0.0001" : num(selected.p_value, 4)}</div></div>
               </div>
-              <p className="small" style={{ marginTop: 12, color: "#cfe3d8" }}>Shared signals: {selected.top_signal_names.join(", ")}</p>
+              <p className="small" style={{ marginTop: 12, color: "#cfe3d8" }}>Most common signals in this group: {selected.top_signal_names.join(", ")}</p>
             </Card>
           )}
         </div>
