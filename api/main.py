@@ -16,6 +16,7 @@ from api.registry import Registry, frame_records
 from ews import engine
 from ews.engine.config import load_profile
 from ews.store.db import DECISIONS, Store
+from ews.ml.service import PredictionService
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -46,12 +47,13 @@ _FROM_ENV = object()
 
 
 def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_dist: Path | None = None,
-               ai_provider=_FROM_ENV) -> FastAPI:
+               ai_provider=_FROM_ENV, ml_model_dir: Path | None = None) -> FastAPI:
     var_dir = Path(var_dir or os.environ.get("EWS_VAR_DIR", ROOT / "var"))
     data_root = Path(data_root or os.environ.get("EWS_DATA_ROOT", ROOT / "data"))
     web_dist = Path(web_dist or ROOT / "web" / "dist")
     store = Store(os.environ.get("EWS_DB_PATH", var_dir / "ews.sqlite3"))
     registry = Registry(var_dir, data_root, store)
+    ml = PredictionService(ml_model_dir or os.environ.get("EWS_ML_MODEL_DIR", ROOT / "models/delinquency_3m"), store)
     if ai_provider is _FROM_ENV:
         ai_provider, ai_disabled_reason = case_notes.provider_from_env()
     else:
@@ -91,6 +93,24 @@ def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_d
                 "ai": {"enabled": ai_provider is not None,
                        "provider": getattr(ai_provider, "name", None), "model": getattr(ai_provider, "model", None),
                        "disabled_reason": ai_disabled_reason, "prompt_version": case_notes.PROMPT_VERSION}}
+
+    @app.get("/api/ml/model")
+    def ml_model():
+        return ml.info()
+
+    @app.get("/api/runs/{run_id}/customers/{customer_id}/ml")
+    def ml_prediction(run_id: str, customer_id: str):
+        run = run_or_404(run_id)
+        if customer_id not in run.results:
+            raise HTTPException(404, "Customer not found in this assessment")
+        return ml.predict(run, customer_id, store.alert(run_id, customer_id))
+
+    @app.get("/api/runs/{run_id}/customers/{customer_id}/ml/history")
+    def ml_history(run_id: str, customer_id: str):
+        run = run_or_404(run_id)
+        if customer_id not in run.results:
+            raise HTTPException(404, "Customer not found in this assessment")
+        return ml.history(store.alert(run_id, customer_id)["alert_id"])
 
     # ------------------------------------------------------------------ datasets
     @app.get("/api/datasets")

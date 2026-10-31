@@ -1,0 +1,14 @@
+{
+  "name": "ews-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "postinstall": "npm --prefix web ci",
+    "dev": "npm --prefix web run dev --",
+    "build": "npm --prefix web run build --",
+    "typecheck": "npm --prefix web run typecheck --"
+  }
+}
