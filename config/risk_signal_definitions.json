@@ -1,11 +1,11 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "score_scale": {
     "min": 0,
     "max": 100,
     "higher_score_means": "higher credit risk"
   },
-  "scoring_method": "score = sum(weight_i * strength_i); strength_i linearly interpolated 0..1 between trigger and saturation; weights sum to 100",
+  "scoring_method": "Each signal's strength is interpolated 0..1 between trigger and saturation. Each pillar (RB repayment, CF cash flow, EX exposure, SM business) scores 0-100 as the weighted strength of its evaluated signals. Score = highest pillar + 0.35 x second + 0.15 x third + 0.10 x fourth, capped at 100, then modifiers.",
   "classification": [
     {
       "category": "Low",
@@ -61,7 +61,8 @@
       "saturation": 5,
       "weight": 15,
       "requires": "repayments",
-      "min_observations": 3
+      "min_observations": 3,
+      "condition": "2+ months in the last 6 with any instalment paid late (worst DPD across loans > 0)"
     },
     {
       "signal_id": "RB02",
@@ -74,7 +75,8 @@
       "saturation": 6.0,
       "weight": 12,
       "requires": "repayments",
-      "min_observations": 4
+      "min_observations": 4,
+      "condition": "Days past due trending upwards by 1+ day per month over the last 6 instalment months"
     },
     {
       "signal_id": "RB03",
@@ -87,7 +89,8 @@
       "saturation": 3,
       "weight": 6,
       "requires": "repayments",
-      "min_observations": 3
+      "min_observations": 3,
+      "condition": "1+ partially paid instalments in the last 6 months"
     },
     {
       "signal_id": "RB04",
@@ -100,7 +103,8 @@
       "saturation": 60,
       "weight": 14,
       "requires": "delinquency",
-      "min_observations": 1
+      "min_observations": 1,
+      "condition": "Any instalment currently past due"
     },
     {
       "signal_id": "CF01",
@@ -109,13 +113,14 @@
       "metric": "consecutive_months_total_inflows_declining",
       "window_months": 6,
       "direction": "higher_is_worse",
-      "trigger": 2,
-      "saturation": 5,
+      "trigger": 1,
+      "saturation": 4,
       "weight": 14,
       "requires": "transactions",
       "min_observations": 4,
       "series": "income_receipts",
-      "min_total_decline_pct": 10
+      "min_total_decline_pct": 10,
+      "condition": "Income receipts fell month on month for 2+ consecutive months, totalling at least 10% (3 months gives two-thirds strength)"
     },
     {
       "signal_id": "CF02",
@@ -128,7 +133,8 @@
       "saturation": -35,
       "weight": 6,
       "requires": "transactions",
-      "min_observations": 6
+      "min_observations": 6,
+      "condition": "Average inflows of the last 3 months 10%+ below the prior 3 months"
     },
     {
       "signal_id": "CF03",
@@ -141,7 +147,8 @@
       "saturation": -50,
       "weight": 5,
       "requires": "transactions",
-      "min_observations": 6
+      "min_observations": 6,
+      "condition": "Average balance of the last 3 months 15%+ below the prior 3 months"
     },
     {
       "signal_id": "CF04",
@@ -154,7 +161,8 @@
       "saturation": 5,
       "weight": 3,
       "requires": "transactions",
-      "min_observations": 4
+      "min_observations": 4,
+      "condition": "Outflows exceeded inflows in 2+ of the last 6 months"
     },
     {
       "signal_id": "CF05",
@@ -167,7 +175,8 @@
       "saturation": 4,
       "weight": 4,
       "requires": "transactions",
-      "min_observations": 3
+      "min_observations": 3,
+      "condition": "1+ bounced or returned transactions in the last 6 months"
     },
     {
       "signal_id": "EX01",
@@ -180,7 +189,8 @@
       "saturation": 40,
       "weight": 8,
       "requires": "exposure",
-      "min_observations": 4
+      "min_observations": 4,
+      "condition": "Revolving utilisation up 15+ percentage points over the last 6 months"
     },
     {
       "signal_id": "EX02",
@@ -193,7 +203,8 @@
       "saturation": 3,
       "weight": 4,
       "requires": "facilities",
-      "min_observations": 1
+      "min_observations": 1,
+      "condition": "1+ new facilities opened in the last 6 months (excluding the first facility of a new customer)"
     },
     {
       "signal_id": "EX03",
@@ -206,7 +217,8 @@
       "saturation": 20,
       "weight": 7,
       "requires": "exposure+transactions",
-      "min_observations": 4
+      "min_observations": 4,
+      "condition": "Obligations as a share of inflows up 5+ percentage points over the last 6 months"
     },
     {
       "signal_id": "EX04",
@@ -219,7 +231,38 @@
       "saturation": 6,
       "weight": 2,
       "requires": "exposure",
-      "min_observations": 1
+      "min_observations": 1,
+      "condition": "2+ new credit inquiries in the last 90 days"
+    },
+    {
+      "signal_id": "SM01",
+      "signal_name": "Tax filing irregularity",
+      "scenario": "SME and Business Financial Stress",
+      "metric": "tax_filings_late_or_missed_in_window",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 1,
+      "saturation": 4,
+      "weight": 6,
+      "requires": "sme_indicators",
+      "min_observations": 3,
+      "pillar": "SM",
+      "condition": "1+ GST/VAT returns filed late or not filed in the last 6 months (SMEs only)"
+    },
+    {
+      "signal_id": "SM02",
+      "signal_name": "Receivable days rising",
+      "scenario": "SME and Business Financial Stress",
+      "metric": "receivable_days_change_in_window",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 10,
+      "saturation": 35,
+      "weight": 6,
+      "requires": "sme_indicators",
+      "min_observations": 4,
+      "pillar": "SM",
+      "condition": "Days to collect from customers up 10+ days over the last 6 months (SMEs only)"
     }
   ]
 }

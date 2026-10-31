@@ -24,6 +24,7 @@ class CustomerViews:
     delinquency: pd.DataFrame
     exposure: pd.DataFrame         # one row per month, sorted
     transactions: pd.DataFrame     # one row per month, sorted
+    sme: pd.DataFrame              # SME indicators, one row per month (empty for individuals)
 
 
 def month_labels(as_of: pd.Timestamp, n: int) -> list[str]:
@@ -46,7 +47,7 @@ def build_views(ds: Dataset, as_of: pd.Timestamp, profile: dict) -> dict[str, Cu
 
     by = lambda df: dict(tuple(df.groupby("customer_id"))) if len(df) else {}
     rep_g, fac_g, del_g = by(rep), by(t["facilities"]), by(t["delinquency"])
-    exp_g, txn_g = by(t["exposure"]), by(t["transactions"])
+    exp_g, txn_g, sme_g = by(t["exposure"]), by(t["transactions"]), by(t["sme_indicators"])
     empty = lambda name: t[name].iloc[0:0]
     rep_empty = rep.iloc[0:0]
 
@@ -62,6 +63,7 @@ def build_views(ds: Dataset, as_of: pd.Timestamp, profile: dict) -> dict[str, Cu
             delinquency=del_g.get(cid, empty("delinquency")),
             exposure=exp_g.get(cid, empty("exposure")).sort_values("month"),
             transactions=txn_g.get(cid, empty("transactions")).sort_values("month"),
+            sme=sme_g.get(cid, empty("sme_indicators")).sort_values("month"),
         )
     return views
 

@@ -172,12 +172,40 @@ def new_credit_inquiries_90d_latest(v: CustomerViews, as_of, w, s=None) -> Measu
     return Measure(float(ex["new_credit_inquiries_90d"].iloc[-1]), len(ex), [ex["month"].iloc[-1]])
 
 
+# ----------------------------- business (SME) ------------------------------ #
+def _sme_window(v: CustomerViews, as_of, w):
+    if v.customer.get("customer_type") != "SME":
+        return None
+    return _window(v.sme, as_of, w)
+
+
+def tax_filings_late_or_missed_in_window(v: CustomerViews, as_of, w, s=None) -> Measure:
+    sm = _sme_window(v, as_of, w)
+    if sm is None:
+        return Measure(None, 0, applicable=False, note="individual customer")
+    sm = sm.dropna(subset=["tax_filing_status"])
+    hit = sm[sm["tax_filing_status"] != "Filed On Time"]
+    return Measure(float(len(hit)), len(sm), list(hit["month"]))
+
+
+def receivable_days_change_in_window(v: CustomerViews, as_of, w, s=None) -> Measure:
+    sm = _sme_window(v, as_of, w)
+    if sm is None:
+        return Measure(None, 0, applicable=False, note="individual customer")
+    sm = sm.dropna(subset=["receivable_days"])
+    if len(sm) < 2:
+        return Measure(None, len(sm))
+    half = max(1, len(sm) // 3)
+    change = sm["receivable_days"].iloc[-half:].mean() - sm["receivable_days"].iloc[:half].mean()
+    return Measure(float(change), len(sm), list(sm["month"]))
+
+
 METRICS = {fn.__name__: fn for fn in (
     late_instalments_in_window, slope_of_dpd_per_month, partially_paid_instalments_in_window, current_dpd,
     consecutive_months_total_inflows_declining, pct_change_avg_inflow_last3m_vs_prior3m,
     pct_change_avg_balance_last3m_vs_prior3m, months_outflow_gt_inflow, bounced_txns_in_window,
     utilisation_pct_change_in_points, new_facilities_in_window, change_in_obligation_to_inflow_pct_points,
-    new_credit_inquiries_90d_latest,
+    new_credit_inquiries_90d_latest, tax_filings_late_or_missed_in_window, receivable_days_change_in_window,
 )}
 
 
