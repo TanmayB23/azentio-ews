@@ -131,12 +131,14 @@ Use the top search bar for each customer ID.
 
 **Do:** open **Portfolio & clusters**, then **Textiles · Tamil Nadu**.
 
-> "Here the risk is shared, not individual. 13 of the 15 textile SMEs in Tamil Nadu are elevated, **11.8 times** the portfolio rate, and they share the same signals: falling inflows and slower customer payments. That points to a sector problem, not 13 separate ones."
+> "Here the risk is shared, not individual. 13 of the 15 textile SMEs in Tamil Nadu score Medium or above, **3.5 times** the portfolio rate. What really stands out is the shared pattern: **12 of the 15 are taking longer to collect from their customers**, against 6.8% of the rest of the book. That's **11.8 times** more common, the ×11.8 on the card. That points to a sector problem, not 13 separate ones."
+
+The card shows both figures: the ×11.8 sits next to "Receivable days rising: 12 of 15 vs 6.8% of the book", and the line below shows "13 of 15 Medium or above (×3.5)". Don't attach ×11.8 to the "13 of 15" figure.
 
 Also mention:
 
-- **Gig Economy · Karnataka:** gig workers in one state seeing their income drop together.
-- **Logistics & Transport:** caught early because these firms share the same warning signs, before their scores are high.
+- **Gig Economy · Karnataka (×3.8):** gig workers in one state whose income is dropping together. Inflows fell in 9 of 11, against 21% of the book.
+- **Logistics & Transport (×5.6):** caught by a shared warning sign. 12 of 32 firms are collecting payments more slowly, against 6.8% of the book, even though only 17 of 32 score Medium or above.
 
 #### 10. Audit trail and region switch (45 s)
 
@@ -146,7 +148,7 @@ Also mention:
 
 **Do:** use the sidebar switcher to choose the **GCC Islamic** assessment.
 
-> "The same engine runs a Gulf Islamic-finance portfolio. Amounts are in dirhams, and contract types such as Murabaha, Ijarah and Tawarruq appear on the data. The holiday calendar, scoring settings and minimum-score thresholds come from a region profile. It flags construction contractors in Dubai at 15 times the portfolio rate."
+> "The same engine runs a Gulf Islamic-finance portfolio. Amounts are in dirhams, and contract types such as Murabaha, Ijarah and Tawarruq appear on the data. The holiday calendar, scoring settings and minimum-score thresholds come from a region profile. It flags construction contractors in Dubai: 10 of 13 are collecting payments more slowly, against 5.1% of the book, which is 15 times more common. And 11 of the 13 score Medium or above."
 
 #### 11. Close (20 s)
 
@@ -249,6 +251,8 @@ Each signal also has a **minimum amount of data** (for example, CF02 needs all 6
 | Shared-signal cluster | Same signal active at least 2.5× the portfolio rate, p ≤ 0.0001 |
 | Minimum group | 5 customers, at least 4 hits |
 | Groupings | Industry × region, industry, region, segment, portfolio, main product |
+
+The ×N shown on a cluster is the lift from whichever test flagged it: the share of customers with the named pattern in the group, divided by its share across the book. The card names the pattern and shows both shares, and the elevated-risk lift is shown separately.
 
 ### 2.7 Region profile settings
 
