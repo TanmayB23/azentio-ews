@@ -15,7 +15,7 @@ from hashlib import sha256
 import json
 import os
 import re
-from typing import Literal, Protocol
+from typing import Literal
 
 from pydantic import BaseModel
 
@@ -24,7 +24,6 @@ from ews.interventions import Recommendation
 from ews.store.db import DECISIONS
 
 PROMPT_VERSION = "case-note-2026-10-31.2"
-DEFAULT_MODEL = "gpt-4.1-mini"
 Decision = Literal["Continue Monitoring", "Requires Investigation", "False Positive", "Escalate for Review"]
 assert set(Decision.__args__) == set(DECISIONS)
 
@@ -191,67 +190,8 @@ def template_note(payload: dict) -> CaseNote:
 
 
 # --------------------------------------------------------------------------- providers
-class AIUnavailable(Exception):
-    """The provider could not produce a note (configuration, network, refusal or bad output)."""
-
-
-class Provider(Protocol):
-    name: str
-    model: str
-
-    def draft(self, system: str, payload: dict) -> CaseNote: ...
-
-
-class OpenAIProvider:
-    name = "openai"
-
-    def __init__(self, model: str | None = None, api_key: str | None = None):
-        import openai  # imported lazily so the app runs without the package when AI is off
-        self._openai = openai
-        self.model = model or os.environ.get("EWS_AI_MODEL", DEFAULT_MODEL)
-        self.client = openai.OpenAI(api_key=api_key, timeout=60.0, max_retries=2)
-
-    def draft(self, system: str, payload: dict) -> CaseNote:
-        o = self._openai
-        try:
-            completion = self.client.chat.completions.parse(
-                model=self.model,
-                messages=[{"role": "system", "content": system},
-                          {"role": "user", "content": json.dumps(payload, default=str)}],
-                response_format=CaseNote,
-                max_completion_tokens=4000,
-                prompt_cache_key="ews-case-note",
-            )
-        except (o.LengthFinishReasonError, o.ContentFilterFinishReasonError) as e:
-            raise AIUnavailable(f"The model stopped early ({type(e).__name__}).") from e
-        except o.AuthenticationError as e:
-            raise AIUnavailable("OpenAI rejected the API key (OPENAI_API_KEY).") from e
-        except o.NotFoundError as e:
-            raise AIUnavailable(f"Model '{self.model}' is not available to this key; set EWS_AI_MODEL.") from e
-        except o.RateLimitError as e:
-            raise AIUnavailable("OpenAI rate limit or quota reached; try again shortly.") from e
-        except o.APIConnectionError as e:
-            raise AIUnavailable("Could not reach OpenAI.") from e
-        except o.APIStatusError as e:
-            raise AIUnavailable(f"OpenAI returned an error ({e.status_code}).") from e
-        message = completion.choices[0].message
-        if message.refusal:
-            raise AIUnavailable(f"The model declined: {message.refusal}")
-        if message.parsed is None:
-            raise AIUnavailable("The model returned no usable note.")
-        return message.parsed
-
-
-def provider_from_env() -> tuple[Provider | None, str | None]:
-    """Returns (provider, reason it is disabled)."""
-    if os.environ.get("EWS_AI_ENABLED", "1") == "0":
-        return None, "AI drafting is turned off (EWS_AI_ENABLED=0)."
-    if not os.environ.get("OPENAI_API_KEY"):
-        return None, "No OPENAI_API_KEY is set; notes are drafted from rules."
-    try:
-        return OpenAIProvider(), None
-    except ImportError:
-        return None, "The openai package is not installed."
+# shared with the other AI features (api/ai.py); re-exported for existing imports
+from api.ai import AIUnavailable, OpenAIProvider, Provider, provider_from_env  # noqa: E402,F401
 
 
 def draft(provider: Provider | None, payload: dict) -> tuple[CaseNote, dict, str, str | None, str | None]:
