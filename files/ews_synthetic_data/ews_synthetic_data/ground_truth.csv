@@ -1,0 +1,301 @@
+customer_id,scenario,behaviour,customer_type,industry,region,expected_risk_band_indicative,planted_facts
+C0001,S3_increasing_exposure,increasing_exposure,SME,Agri-processing,Karnataka,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0002,S0_healthy,healthy,Individual,Retail,Kerala,Low,no deterioration planted
+C0003,S1_repeated_repayment_delays,repeated_delay,Individual,Gig Economy,Gujarat,High,payment deterioration began 5 months ago; delays growing
+C0004,S2_declining_income_cashflow,declining_cashflow,Individual,Healthcare,Delhi NCR,Medium to High,inflows fell 26% over the last 4 consecutive months
+C0005,S0_volatile_but_stable,volatile_stable,SME,Construction,Kerala,Low (volatility alone is not deterioration),no deterioration planted
+C0006,S0_healthy,healthy,SME,Logistics & Transport,Uttar Pradesh,Low,no deterioration planted
+C0007,S0_healthy,healthy,Individual,Manufacturing,Tamil Nadu,Low,no deterioration planted
+C0008,S5_early_delinquency_worsening,early_delinq_worsening,SME,Retail & Trading,West Bengal,High to Critical,delays 5/11/17 days then latest instalment unpaid; inflows fell 28% over the last 4 consecutive months
+C0009,S8_cluster_gig_workers_karnataka,declining_cashflow,Individual,Gig Economy,Karnataka,Medium to High (cluster of gig workers),inflows fell 26% over the last 4 consecutive months
+C0010,S0_healthy,healthy,Individual,Gig Economy,Gujarat,Low,no deterioration planted
+C0011,S0_volatile_but_stable,volatile_stable,Individual,Gig Economy,Maharashtra,Low (volatility alone is not deterioration),no deterioration planted
+C0012,S0_healthy,healthy,SME,Food & Beverage,Uttar Pradesh,Low,no deterioration planted
+C0013,S3_increasing_exposure,increasing_exposure,SME,Construction,Tamil Nadu,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0014,S0_healthy,healthy,Individual,Gig Economy,Tamil Nadu,Low,no deterioration planted
+C0015,S0_healthy,healthy,Individual,Healthcare,West Bengal,Low,no deterioration planted
+C0016,S7_transaction_gap_otherwise_healthy,healthy,Individual,Manufacturing,Uttar Pradesh,Low (reduced confidence),transaction data missing for months 7-8
+C0017,S0_healthy,healthy,Individual,Healthcare,West Bengal,Low,no deterioration planted
+C0018,S1_repeated_repayment_delays,repeated_delay,SME,Agri-processing,Kerala,High,payment deterioration began 6 months ago; delays growing
+C0019,S7_thin_or_missing_history,thin_file,Individual,Retail,Karnataka,Insufficient data (must NOT be High),only 1 month(s) of history; transactions missing=False
+C0020,S0_healthy,healthy,Individual,Gig Economy,Uttar Pradesh,Low,no deterioration planted
+C0021,S0_healthy,healthy,SME,Textiles,Kerala,Low,no deterioration planted
+C0022,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 37% over the last 4 consecutive months
+C0023,S0_healthy,healthy,SME,Manufacturing,Uttar Pradesh,Low,no deterioration planted
+C0024,S0_healthy,healthy,SME,Retail & Trading,Telangana,Low,no deterioration planted
+C0025,S6_sme_financial_stress,sme_stress,SME,Textiles,Maharashtra,High,1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 47% over the last 5 consecutive months
+C0026,S6_sme_financial_stress,sme_stress,SME,Food & Beverage,Karnataka,High,0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 54% over the last 6 consecutive months
+C0027,S0_healthy,healthy,Individual,Banking & Finance,Uttar Pradesh,Low,no deterioration planted
+C0028,S0_healthy,healthy,SME,Food & Beverage,Uttar Pradesh,Low,no deterioration planted
+C0029,S2_declining_income_cashflow,declining_cashflow,Individual,Public Sector,West Bengal,Medium to High,inflows fell 33% over the last 6 consecutive months
+C0030,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 47% over the last 5 consecutive months
+C0031,S0_healthy,healthy,Individual,Gig Economy,Tamil Nadu,Low,no deterioration planted
+C0032,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Education,West Bengal,High to Critical,delays 4/9/17 days then latest instalment unpaid; inflows fell 27% over the last 4 consecutive months
+C0033,S0_healthy,healthy,SME,Retail & Trading,Delhi NCR,Low,no deterioration planted
+C0034,S1_repeated_repayment_delays,repeated_delay,Individual,Healthcare,Karnataka,High,payment deterioration began 6 months ago; delays growing
+C0035,S0_healthy,healthy,SME,Food & Beverage,Delhi NCR,Low,no deterioration planted
+C0036,S0_healthy,healthy,Individual,Banking & Finance,Kerala,Low,no deterioration planted
+C0037,S0_healthy,healthy,SME,Construction,Telangana,Low,no deterioration planted
+C0038,S3_increasing_exposure,increasing_exposure,SME,Logistics & Transport,Kerala,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0039,S5_early_delinquency_worsening,early_delinq_worsening,SME,Agri-processing,Kerala,High to Critical,delays 4/13/22 days then latest instalment unpaid; inflows fell 24% over the last 4 consecutive months
+C0040,S1_repeated_repayment_delays,repeated_delay,Individual,IT / Software,Telangana,High,payment deterioration began 7 months ago; delays growing
+C0041,S0_healthy,healthy,Individual,Banking & Finance,West Bengal,Low,no deterioration planted
+C0042,S0_healthy,healthy,Individual,Banking & Finance,Delhi NCR,Low,no deterioration planted
+C0043,S0_healthy,healthy,Individual,Public Sector,Karnataka,Low,no deterioration planted
+C0044,S4_temporary_missed_payment,temporary_miss,Individual,Healthcare,Gujarat,Low,"single late payment in 2026-02 (3d), reason=Bank holiday on due date, evidence=True; clean before/after"
+C0045,S0_healthy,healthy,Individual,Gig Economy,Telangana,Low,no deterioration planted
+C0046,S3_increasing_exposure,increasing_exposure,SME,Food & Beverage,Karnataka,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0047,S0_healthy,healthy,SME,Retail & Trading,Kerala,Low,no deterioration planted
+C0048,S7_thin_or_missing_history,thin_file,SME,Retail & Trading,Kerala,Insufficient data (must NOT be High),only 1 month(s) of history; transactions missing=False
+C0049,S0_healthy,healthy,Individual,Public Sector,West Bengal,Low,no deterioration planted
+C0050,S4_temporary_missed_payment,temporary_miss,Individual,Healthcare,Delhi NCR,Low to Low-Medium,"single late payment in 2026-07 (10d), reason=None, evidence=False; clean before/after"
+C0051,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 35% over the last 4 consecutive months
+C0052,S0_healthy,healthy,Individual,Education,Karnataka,Low,no deterioration planted
+C0053,S0_volatile_but_stable,volatile_stable,Individual,Banking & Finance,Tamil Nadu,Low (volatility alone is not deterioration),no deterioration planted
+C0054,S0_healthy,healthy,SME,Logistics & Transport,Gujarat,Low,no deterioration planted
+C0055,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Gig Economy,Telangana,High to Critical,delays 5/13/19 days then latest instalment unpaid; inflows fell 26% over the last 4 consecutive months
+C0056,S6_sme_financial_stress,sme_stress,SME,Agri-processing,West Bengal,High,0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 48% over the last 6 consecutive months
+C0057,S7_thin_or_missing_history,thin_file,Individual,Public Sector,Tamil Nadu,Insufficient data (must NOT be High),only 1 month(s) of history; transactions missing=False
+C0058,S3_increasing_exposure,increasing_exposure,SME,Manufacturing,Tamil Nadu,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0059,S0_healthy,healthy,Individual,Healthcare,Maharashtra,Low,no deterioration planted
+C0060,S0_healthy,healthy,Individual,IT / Software,Gujarat,Low,no deterioration planted
+C0061,S7_transaction_gap_otherwise_healthy,healthy,SME,Retail & Trading,Telangana,Low (reduced confidence),transaction data missing for months 2-3
+C0062,S0_healthy,healthy,Individual,Legal & Consulting,Delhi NCR,Low,no deterioration planted
+C0063,S1_repeated_repayment_delays,repeated_delay,SME,Logistics & Transport,West Bengal,High,payment deterioration began 7 months ago; delays growing
+C0064,S0_healthy,healthy,Individual,Education,West Bengal,Low,no deterioration planted
+C0065,S0_healthy,healthy,SME,Retail & Trading,Karnataka,Low,no deterioration planted
+C0066,S7_transaction_gap_otherwise_healthy,healthy,Individual,Retail,Gujarat,Low (reduced confidence),transaction data missing for months 3-4
+C0067,S0_healthy,healthy,Individual,Gig Economy,Kerala,Low,no deterioration planted
+C0068,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Healthcare,Telangana,Low-Medium to Medium,delays 14/11/4 days then back on time
+C0069,S4_temporary_missed_payment,temporary_miss,Individual,Education,Gujarat,Low,"single late payment in 2026-02 (1d), reason=Bank holiday on due date, evidence=True; clean before/after"
+C0070,S0_healthy,healthy,SME,Retail & Trading,Telangana,Low,no deterioration planted
+C0071,S1_repeated_repayment_delays,repeated_delay,Individual,Education,Tamil Nadu,High,payment deterioration began 6 months ago; delays growing
+C0072,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Retail,Delhi NCR,Low-Medium to Medium,delays 16/10/4 days then back on time
+C0073,S0_healthy,healthy,Individual,Public Sector,Gujarat,Low,no deterioration planted
+C0074,S0_healthy,healthy,Individual,Education,Tamil Nadu,Low,no deterioration planted
+C0075,S0_healthy,healthy,Individual,Education,Karnataka,Low,no deterioration planted
+C0076,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 48% over the last 6 consecutive months
+C0077,S6_sme_financial_stress,sme_stress,SME,Manufacturing,Telangana,High,1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 41% over the last 4 consecutive months
+C0078,S3_increasing_exposure,increasing_exposure,SME,Food & Beverage,Uttar Pradesh,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0079,S0_healthy,healthy,Individual,Healthcare,Kerala,Low,no deterioration planted
+C0080,S7_thin_or_missing_history,thin_file,Individual,Healthcare,Uttar Pradesh,Insufficient data (must NOT be High),only 3 month(s) of history; transactions missing=False
+C0081,S0_healthy,healthy,Individual,Gig Economy,Maharashtra,Low,no deterioration planted
+C0082,S7_thin_or_missing_history,thin_file,SME,Logistics & Transport,Tamil Nadu,Insufficient data (must NOT be High),only 1 month(s) of history; transactions missing=False
+C0083,S7_thin_or_missing_history,thin_file,SME,Construction,Karnataka,Insufficient data (must NOT be High),only 1 month(s) of history; transactions missing=True
+C0084,S0_healthy,healthy,Individual,Gig Economy,Gujarat,Low,no deterioration planted
+C0085,S7_thin_or_missing_history,thin_file,SME,Food & Beverage,Maharashtra,Insufficient data (must NOT be High),only 3 month(s) of history; transactions missing=False
+C0086,S0_healthy,healthy,Individual,Banking & Finance,Delhi NCR,Low,no deterioration planted
+C0087,S0_volatile_but_stable,volatile_stable,Individual,Public Sector,Delhi NCR,Low (volatility alone is not deterioration),no deterioration planted
+C0088,S0_healthy,healthy,SME,Textiles,Uttar Pradesh,Low,no deterioration planted
+C0089,S0_healthy,healthy,Individual,Manufacturing,Delhi NCR,Low,no deterioration planted
+C0090,S4_temporary_missed_payment,temporary_miss,SME,Manufacturing,Tamil Nadu,Low to Low-Medium,"single late payment in 2026-08 (18d), reason=None, evidence=False; clean before/after"
+C0091,S0_healthy,healthy,Individual,Healthcare,West Bengal,Low,no deterioration planted
+C0092,S0_healthy,healthy,Individual,Retail,Telangana,Low,no deterioration planted
+C0093,S0_healthy,healthy,SME,Textiles,Tamil Nadu,Low,no deterioration planted
+C0094,S2_declining_income_cashflow,declining_cashflow,SME,Logistics & Transport,Kerala,Medium to High,inflows fell 36% over the last 5 consecutive months
+C0095,S1_repeated_repayment_delays,repeated_delay,Individual,Education,Uttar Pradesh,High,payment deterioration began 6 months ago; delays growing
+C0096,S6_sme_financial_stress,sme_stress,SME,Logistics & Transport,Karnataka,High,1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 45% over the last 5 consecutive months
+C0097,S2_declining_income_cashflow,declining_cashflow,Individual,Public Sector,Kerala,Medium to High,inflows fell 29% over the last 5 consecutive months
+C0098,S0_healthy,healthy,Individual,Legal & Consulting,Kerala,Low,no deterioration planted
+C0099,S2_declining_income_cashflow,declining_cashflow,SME,Construction,West Bengal,Medium to High,inflows fell 30% over the last 3 consecutive months
+C0100,S7_thin_or_missing_history,thin_file,SME,Construction,Telangana,Insufficient data (must NOT be High),only 2 month(s) of history; transactions missing=False
+C0101,S3_increasing_exposure,increasing_exposure,SME,Construction,Karnataka,Medium to High,1 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0102,S0_healthy,healthy,Individual,Gig Economy,Kerala,Low,no deterioration planted
+C0103,S0_healthy,healthy,Individual,IT / Software,West Bengal,Low,no deterioration planted
+C0104,S0_healthy,healthy,Individual,IT / Software,Uttar Pradesh,Low,no deterioration planted
+C0105,S2_declining_income_cashflow,declining_cashflow,SME,Textiles,West Bengal,Medium to High,inflows fell 37% over the last 4 consecutive months
+C0106,S6_sme_financial_stress,sme_stress,SME,Logistics & Transport,Karnataka,High,1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 34% over the last 4 consecutive months
+C0107,S0_volatile_but_stable,volatile_stable,Individual,Education,Kerala,Low (volatility alone is not deterioration),no deterioration planted
+C0108,S8_cluster_gig_workers_karnataka,declining_cashflow,Individual,Gig Economy,Karnataka,Medium to High (cluster of gig workers),inflows fell 31% over the last 5 consecutive months
+C0109,S4_temporary_missed_payment,temporary_miss,Individual,Gig Economy,Telangana,Low,"single late payment in 2026-05 (1d), reason=Bank holiday on due date, evidence=True; clean before/after"
+C0110,S4_temporary_missed_payment,temporary_miss,Individual,Gig Economy,Uttar Pradesh,Low,"single late payment in 2026-07 (5d), reason=NACH/UPI processing delay, evidence=True; clean before/after"
+C0111,S2_declining_income_cashflow,declining_cashflow,SME,Textiles,West Bengal,Medium to High,inflows fell 26% over the last 3 consecutive months
+C0112,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Gig Economy,Telangana,Low-Medium to Medium,delays 14/10/5 days then back on time
+C0113,S0_healthy,healthy,SME,Textiles,West Bengal,Low,no deterioration planted
+C0114,S0_healthy,healthy,SME,Retail & Trading,West Bengal,Low,no deterioration planted
+C0115,S7_thin_or_missing_history,thin_file,Individual,Manufacturing,Maharashtra,Insufficient data (must NOT be High),only 2 month(s) of history; transactions missing=True
+C0116,S0_healthy,healthy,SME,Agri-processing,Tamil Nadu,Low,no deterioration planted
+C0117,S0_healthy,healthy,Individual,Retail,West Bengal,Low,no deterioration planted
+C0118,S3_increasing_exposure,increasing_exposure,Individual,Healthcare,Maharashtra,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0119,S0_healthy,healthy,SME,Logistics & Transport,Tamil Nadu,Low,no deterioration planted
+C0120,S0_healthy,healthy,SME,Agri-processing,Delhi NCR,Low,no deterioration planted
+C0121,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Education,Delhi NCR,High to Critical,delays 5/9/17 days then latest instalment unpaid; inflows fell 25% over the last 4 consecutive months
+C0122,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 55% over the last 6 consecutive months
+C0123,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Banking & Finance,West Bengal,High to Critical,delays 5/13/20 days then latest instalment unpaid; inflows fell 28% over the last 4 consecutive months
+C0124,S4_temporary_missed_payment,temporary_miss,Individual,IT / Software,Gujarat,Low to Low-Medium,"single late payment in 2026-04 (9d), reason=Customer-reported, no supporting document, evidence=False; clean before/after"
+C0125,S0_healthy,healthy,Individual,Healthcare,Delhi NCR,Low,no deterioration planted
+C0126,S0_volatile_but_stable,volatile_stable,SME,Food & Beverage,Maharashtra,Low (volatility alone is not deterioration),no deterioration planted
+C0127,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 49% over the last 6 consecutive months
+C0128,S4_temporary_missed_payment,temporary_miss,SME,IT Services,Maharashtra,Low to Low-Medium,"single late payment in 2026-06 (22d), reason=None, evidence=False; clean before/after"
+C0129,S2_declining_income_cashflow,declining_cashflow,Individual,Public Sector,West Bengal,Medium to High,inflows fell 26% over the last 5 consecutive months
+C0130,S0_healthy,healthy,Individual,Education,Maharashtra,Low,no deterioration planted
+C0131,S0_healthy,healthy,SME,Retail & Trading,Maharashtra,Low,no deterioration planted
+C0132,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 43% over the last 4 consecutive months
+C0133,S0_healthy,healthy,Individual,Healthcare,Tamil Nadu,Low,no deterioration planted
+C0134,S2_declining_income_cashflow,declining_cashflow,Individual,Gig Economy,Uttar Pradesh,Medium to High,inflows fell 31% over the last 5 consecutive months
+C0135,S7_transaction_gap_otherwise_healthy,healthy,SME,Retail & Trading,Gujarat,Low (reduced confidence),transaction data missing for months 6-7
+C0136,S0_healthy,healthy,Individual,Public Sector,Delhi NCR,Low,no deterioration planted
+C0137,S0_healthy,healthy,Individual,Legal & Consulting,Telangana,Low,no deterioration planted
+C0138,S3_increasing_exposure,increasing_exposure,Individual,Banking & Finance,Delhi NCR,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0139,S7_transaction_gap_otherwise_healthy,healthy,Individual,Manufacturing,Karnataka,Low (reduced confidence),transaction data missing for months 3-4
+C0140,S1_repeated_repayment_delays,repeated_delay,SME,Textiles,Kerala,High,payment deterioration began 6 months ago; delays growing
+C0141,S0_healthy,healthy,SME,IT Services,Delhi NCR,Low,no deterioration planted
+C0142,S2_declining_income_cashflow,declining_cashflow,Individual,Gig Economy,Gujarat,Medium to High,inflows fell 17% over the last 3 consecutive months
+C0143,S0_volatile_but_stable,volatile_stable,Individual,Healthcare,Tamil Nadu,Low (volatility alone is not deterioration),no deterioration planted
+C0144,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Education,Maharashtra,Low-Medium to Medium,delays 16/10/3 days then back on time
+C0145,S1_repeated_repayment_delays,repeated_delay,SME,IT Services,Gujarat,High,payment deterioration began 7 months ago; delays growing
+C0146,S5_early_delinquency_recovering,early_delinq_recovering,Individual,IT / Software,West Bengal,Low-Medium to Medium,delays 14/11/3 days then back on time
+C0147,S0_healthy,healthy,Individual,Retail,West Bengal,Low,no deterioration planted
+C0148,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 51% over the last 6 consecutive months
+C0149,S0_healthy,healthy,Individual,Retail,West Bengal,Low,no deterioration planted
+C0150,S7_transaction_gap_otherwise_healthy,healthy,Individual,Education,Kerala,Low (reduced confidence),transaction data missing for months 8-9
+C0151,S7_transaction_gap_otherwise_healthy,healthy,SME,Logistics & Transport,Maharashtra,Low (reduced confidence),transaction data missing for months 2-3
+C0152,S4_temporary_missed_payment,temporary_miss,Individual,Healthcare,Maharashtra,Low to Low-Medium,"single late payment in 2026-03 (12d), reason=Customer-reported, no supporting document, evidence=False; clean before/after"
+C0153,S0_healthy,healthy,Individual,Retail,Delhi NCR,Low,no deterioration planted
+C0154,S2_declining_income_cashflow,declining_cashflow,SME,Retail & Trading,Telangana,Medium to High,inflows fell 33% over the last 4 consecutive months
+C0155,S0_healthy,healthy,SME,Textiles,Delhi NCR,Low,no deterioration planted
+C0156,S0_healthy,healthy,Individual,Healthcare,Delhi NCR,Low,no deterioration planted
+C0157,S0_volatile_but_stable,volatile_stable,Individual,Education,West Bengal,Low (volatility alone is not deterioration),no deterioration planted
+C0158,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 42% over the last 5 consecutive months
+C0159,S6_sme_financial_stress,sme_stress,SME,Construction,Karnataka,High,0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 43% over the last 5 consecutive months
+C0160,S4_temporary_missed_payment,temporary_miss,Individual,Healthcare,Gujarat,Low to Low-Medium,"single late payment in 2026-05 (14d), reason=None, evidence=False; clean before/after"
+C0161,S0_healthy,healthy,Individual,Gig Economy,Gujarat,Low,no deterioration planted
+C0162,S0_healthy,healthy,Individual,Legal & Consulting,Delhi NCR,Low,no deterioration planted
+C0163,S0_healthy,healthy,Individual,Gig Economy,West Bengal,Low,no deterioration planted
+C0164,S0_healthy,healthy,Individual,Public Sector,Karnataka,Low,no deterioration planted
+C0165,S3_increasing_exposure,increasing_exposure,Individual,Gig Economy,Kerala,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0166,S0_healthy,healthy,SME,Manufacturing,Uttar Pradesh,Low,no deterioration planted
+C0167,S7_thin_or_missing_history,thin_file,Individual,Manufacturing,Karnataka,Insufficient data (must NOT be High),only 2 month(s) of history; transactions missing=False
+C0168,S3_increasing_exposure,increasing_exposure,Individual,Retail,Kerala,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0169,S0_healthy,healthy,SME,Construction,Gujarat,Low,no deterioration planted
+C0170,S7_thin_or_missing_history,thin_file,Individual,Retail,West Bengal,Insufficient data (must NOT be High),only 1 month(s) of history; transactions missing=False
+C0171,S1_repeated_repayment_delays,repeated_delay,Individual,Manufacturing,Tamil Nadu,High,payment deterioration began 6 months ago; delays growing
+C0172,S0_volatile_but_stable,volatile_stable,Individual,Healthcare,West Bengal,Low (volatility alone is not deterioration),no deterioration planted
+C0173,S0_healthy,healthy,Individual,Education,Delhi NCR,Low,no deterioration planted
+C0174,S0_volatile_but_stable,volatile_stable,Individual,Education,Telangana,Low (volatility alone is not deterioration),no deterioration planted
+C0175,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Manufacturing,Delhi NCR,Low-Medium to Medium,delays 18/8/3 days then back on time
+C0176,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Gig Economy,Tamil Nadu,Low-Medium to Medium,delays 18/8/3 days then back on time
+C0177,S0_healthy,healthy,Individual,Public Sector,Delhi NCR,Low,no deterioration planted
+C0178,S0_healthy,healthy,Individual,Retail,Maharashtra,Low,no deterioration planted
+C0179,S2_declining_income_cashflow,declining_cashflow,Individual,Healthcare,Maharashtra,Medium to High,inflows fell 33% over the last 6 consecutive months
+C0180,S0_healthy,healthy,Individual,Healthcare,West Bengal,Low,no deterioration planted
+C0181,S0_healthy,healthy,Individual,Education,Uttar Pradesh,Low,no deterioration planted
+C0182,S3_increasing_exposure,increasing_exposure,SME,Agri-processing,West Bengal,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0183,S7_thin_or_missing_history,thin_file,Individual,Public Sector,Maharashtra,Insufficient data (must NOT be High),only 2 month(s) of history; transactions missing=False
+C0184,S0_healthy,healthy,Individual,Healthcare,Telangana,Low,no deterioration planted
+C0185,S6_sme_financial_stress,sme_stress,SME,Food & Beverage,Maharashtra,High,1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 46% over the last 6 consecutive months
+C0186,S6_sme_financial_stress,sme_stress,SME,Logistics & Transport,Karnataka,High,0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 49% over the last 6 consecutive months
+C0187,S0_healthy,healthy,Individual,Education,Tamil Nadu,Low,no deterioration planted
+C0188,S1_repeated_repayment_delays,repeated_delay,SME,Manufacturing,Gujarat,High,payment deterioration began 6 months ago; delays growing
+C0189,S4_temporary_missed_payment,temporary_miss,Individual,Education,Delhi NCR,Low to Low-Medium,"single late payment in 2026-08 (6d), reason=Customer-reported, no supporting document, evidence=False; clean before/after"
+C0190,S1_repeated_repayment_delays,repeated_delay,Individual,Gig Economy,West Bengal,High,payment deterioration began 6 months ago; delays growing
+C0191,S5_early_delinquency_worsening,early_delinq_worsening,SME,Construction,Telangana,High to Critical,delays 6/10/21 days then latest instalment unpaid; inflows fell 23% over the last 4 consecutive months
+C0192,S7_thin_or_missing_history,thin_file,Individual,Gig Economy,Uttar Pradesh,Insufficient data (must NOT be High),only 1 month(s) of history; transactions missing=False
+C0193,S7_transaction_gap_otherwise_healthy,healthy,SME,Textiles,Tamil Nadu,Low (reduced confidence),transaction data missing for months 8-9
+C0194,S5_early_delinquency_recovering,early_delinq_recovering,SME,Food & Beverage,Kerala,Low-Medium to Medium,delays 18/10/5 days then back on time
+C0195,S0_healthy,healthy,Individual,IT / Software,West Bengal,Low,no deterioration planted
+C0196,S0_healthy,healthy,SME,Food & Beverage,Kerala,Low,no deterioration planted
+C0197,S0_healthy,healthy,Individual,Manufacturing,Telangana,Low,no deterioration planted
+C0198,S0_healthy,healthy,SME,Retail & Trading,Telangana,Low,no deterioration planted
+C0199,S6_sme_financial_stress,sme_stress,SME,Agri-processing,Tamil Nadu,High,1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 44% over the last 5 consecutive months
+C0200,S1_repeated_repayment_delays,repeated_delay,Individual,Manufacturing,West Bengal,High,payment deterioration began 4 months ago; delays growing
+C0201,S0_healthy,healthy,SME,Agri-processing,Uttar Pradesh,Low,no deterioration planted
+C0202,S0_healthy,healthy,SME,Logistics & Transport,Gujarat,Low,no deterioration planted
+C0203,S3_increasing_exposure,increasing_exposure,Individual,Education,Kerala,Medium to High,1 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0204,S2_declining_income_cashflow,declining_cashflow,SME,Retail & Trading,Gujarat,Medium to High,inflows fell 44% over the last 5 consecutive months
+C0205,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 42% over the last 5 consecutive months
+C0206,S0_healthy,healthy,Individual,IT / Software,West Bengal,Low,no deterioration planted
+C0207,S8_cluster_gig_workers_karnataka,declining_cashflow,Individual,Gig Economy,Karnataka,Medium to High (cluster of gig workers),inflows fell 20% over the last 3 consecutive months
+C0208,S0_healthy,healthy,Individual,IT / Software,Kerala,Low,no deterioration planted
+C0209,S7_transaction_gap_otherwise_healthy,healthy,Individual,IT / Software,Maharashtra,Low (reduced confidence),transaction data missing for months 3-4
+C0210,S2_declining_income_cashflow,declining_cashflow,SME,Agri-processing,Telangana,Medium to High,inflows fell 41% over the last 5 consecutive months
+C0211,S0_healthy,healthy,Individual,Banking & Finance,Telangana,Low,no deterioration planted
+C0212,S4_temporary_missed_payment,temporary_miss,Individual,Education,Kerala,Low,"single late payment in 2026-07 (2d), reason=Bank holiday on due date, evidence=True; clean before/after"
+C0213,S0_healthy,healthy,Individual,Retail,Tamil Nadu,Low,no deterioration planted
+C0214,S0_healthy,healthy,Individual,Retail,Kerala,Low,no deterioration planted
+C0215,S7_thin_or_missing_history,thin_file,Individual,Gig Economy,Delhi NCR,Insufficient data (must NOT be High),only 1 month(s) of history; transactions missing=True
+C0216,S4_temporary_missed_payment,temporary_miss,SME,Food & Beverage,Delhi NCR,Low,"single late payment in 2026-08 (20d), reason=Large receivable delayed by buyer, evidence=True; clean before/after"
+C0217,S0_healthy,healthy,Individual,Manufacturing,Telangana,Low,no deterioration planted
+C0218,S5_early_delinquency_worsening,early_delinq_worsening,SME,Textiles,Delhi NCR,High to Critical,delays 5/13/22 days then latest instalment unpaid; inflows fell 26% over the last 4 consecutive months
+C0219,S0_healthy,healthy,SME,Construction,Gujarat,Low,no deterioration planted
+C0220,S4_temporary_missed_payment,temporary_miss,Individual,Retail,Gujarat,Low,"single late payment in 2026-07 (2d), reason=NACH/UPI processing delay, evidence=True; clean before/after"
+C0221,S0_healthy,healthy,Individual,Healthcare,Tamil Nadu,Low,no deterioration planted
+C0222,S6_sme_financial_stress,sme_stress,SME,Textiles,Delhi NCR,High,1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 33% over the last 4 consecutive months
+C0223,S1_repeated_repayment_delays,repeated_delay,Individual,Manufacturing,Delhi NCR,High,payment deterioration began 6 months ago; delays growing
+C0224,S0_healthy,healthy,SME,Textiles,West Bengal,Low,no deterioration planted
+C0225,S7_thin_or_missing_history,thin_file,SME,Agri-processing,Gujarat,Insufficient data (must NOT be High),only 1 month(s) of history; transactions missing=False
+C0226,S8_cluster_gig_workers_karnataka,declining_cashflow,Individual,Gig Economy,Karnataka,Medium to High (cluster of gig workers),inflows fell 30% over the last 5 consecutive months
+C0227,S7_thin_or_missing_history,thin_file,SME,Food & Beverage,Maharashtra,Insufficient data (must NOT be High),only 1 month(s) of history; transactions missing=False
+C0228,S7_transaction_gap_otherwise_healthy,healthy,Individual,Public Sector,West Bengal,Low (reduced confidence),transaction data missing for months 8-9
+C0229,S0_healthy,healthy,Individual,IT / Software,Karnataka,Low,no deterioration planted
+C0230,S4_temporary_missed_payment,temporary_miss,SME,IT Services,Telangana,Low,"single late payment in 2026-02 (2d), reason=NACH/UPI processing delay, evidence=True; clean before/after"
+C0231,S0_healthy,healthy,Individual,Retail,Delhi NCR,Low,no deterioration planted
+C0232,S1_repeated_repayment_delays,repeated_delay,Individual,Legal & Consulting,Delhi NCR,High,payment deterioration began 5 months ago; delays growing
+C0233,S2_declining_income_cashflow,declining_cashflow,Individual,Retail,Uttar Pradesh,Medium to High,inflows fell 19% over the last 3 consecutive months
+C0234,S3_increasing_exposure,increasing_exposure,Individual,Education,Maharashtra,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0235,S1_repeated_repayment_delays,repeated_delay,Individual,Gig Economy,Gujarat,High,payment deterioration began 5 months ago; delays growing
+C0236,S2_declining_income_cashflow,declining_cashflow,Individual,IT / Software,Uttar Pradesh,Medium to High,inflows fell 31% over the last 5 consecutive months
+C0237,S0_healthy,healthy,SME,Retail & Trading,Kerala,Low,no deterioration planted
+C0238,S7_thin_or_missing_history,thin_file,Individual,Banking & Finance,Gujarat,Insufficient data (must NOT be High),only 3 month(s) of history; transactions missing=False
+C0239,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Gig Economy,Tamil Nadu,High to Critical,delays 5/12/18 days then latest instalment unpaid; inflows fell 24% over the last 4 consecutive months
+C0240,S0_healthy,healthy,Individual,IT / Software,West Bengal,Low,no deterioration planted
+C0241,S3_increasing_exposure,increasing_exposure,Individual,Legal & Consulting,Tamil Nadu,Medium to High,1 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0242,S0_volatile_but_stable,volatile_stable,Individual,IT / Software,Kerala,Low (volatility alone is not deterioration),no deterioration planted
+C0243,S0_healthy,healthy,Individual,Public Sector,Telangana,Low,no deterioration planted
+C0244,S4_temporary_missed_payment,temporary_miss,SME,Logistics & Transport,West Bengal,Low,"single late payment in 2026-08 (1d), reason=Bank holiday on due date, evidence=True; clean before/after"
+C0245,S0_healthy,healthy,Individual,Gig Economy,Gujarat,Low,no deterioration planted
+C0246,S8_cluster_gig_workers_karnataka,declining_cashflow,Individual,Gig Economy,Karnataka,Medium to High (cluster of gig workers),inflows fell 20% over the last 3 consecutive months
+C0247,S4_temporary_missed_payment,temporary_miss,SME,Construction,Karnataka,Low,"single late payment in 2026-08 (2d), reason=NACH/UPI processing delay, evidence=True; clean before/after"
+C0248,S0_healthy,healthy,Individual,IT / Software,Telangana,Low,no deterioration planted
+C0249,S4_temporary_missed_payment,temporary_miss,Individual,Education,Tamil Nadu,Low to Low-Medium,"single late payment in 2026-03 (9d), reason=None, evidence=False; clean before/after"
+C0250,S0_healthy,healthy,Individual,Education,Uttar Pradesh,Low,no deterioration planted
+C0251,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 36% over the last 5 consecutive months
+C0252,S8_cluster_gig_workers_karnataka,declining_cashflow,Individual,Gig Economy,Karnataka,Medium to High (cluster of gig workers),inflows fell 31% over the last 5 consecutive months
+C0253,S0_healthy,healthy,Individual,Gig Economy,Delhi NCR,Low,no deterioration planted
+C0254,S0_healthy,healthy,Individual,Legal & Consulting,Telangana,Low,no deterioration planted
+C0255,S6_sme_financial_stress,sme_stress,SME,Textiles,Gujarat,High,0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 49% over the last 6 consecutive months
+C0256,S0_healthy,healthy,Individual,Education,Telangana,Low,no deterioration planted
+C0257,S7_thin_or_missing_history,thin_file,SME,Textiles,West Bengal,Insufficient data (must NOT be High),only 3 month(s) of history; transactions missing=False
+C0258,S1_repeated_repayment_delays,repeated_delay,SME,Food & Beverage,Maharashtra,High,payment deterioration began 5 months ago; delays growing
+C0259,S0_healthy,healthy,Individual,Banking & Finance,Maharashtra,Low,no deterioration planted
+C0260,S4_temporary_missed_payment,temporary_miss,Individual,Healthcare,Kerala,Low to Low-Medium,"single late payment in 2026-02 (11d), reason=None, evidence=False; clean before/after"
+C0261,S0_healthy,healthy,Individual,Healthcare,Karnataka,Low,no deterioration planted
+C0262,S0_volatile_but_stable,volatile_stable,SME,Manufacturing,Delhi NCR,Low (volatility alone is not deterioration),no deterioration planted
+C0263,S6_sme_financial_stress,sme_stress,SME,Food & Beverage,Delhi NCR,High,0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 39% over the last 4 consecutive months
+C0264,S0_healthy,healthy,Individual,Healthcare,Kerala,Low,no deterioration planted
+C0265,S0_healthy,healthy,Individual,Education,Gujarat,Low,no deterioration planted
+C0266,S1_repeated_repayment_delays,repeated_delay,Individual,Education,West Bengal,High,payment deterioration began 7 months ago; delays growing
+C0267,S7_transaction_gap_otherwise_healthy,healthy,Individual,Gig Economy,West Bengal,Low (reduced confidence),transaction data missing for months 8-9
+C0268,S0_healthy,healthy,SME,Logistics & Transport,Karnataka,Low,no deterioration planted
+C0269,S0_healthy,healthy,SME,Textiles,Delhi NCR,Low,no deterioration planted
+C0270,S0_healthy,healthy,Individual,IT / Software,Kerala,Low,no deterioration planted
+C0271,S3_increasing_exposure,increasing_exposure,Individual,IT / Software,Karnataka,Medium to High,1 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0272,S2_declining_income_cashflow,declining_cashflow,SME,Food & Beverage,Karnataka,Medium to High,inflows fell 29% over the last 3 consecutive months
+C0273,S0_healthy,healthy,SME,Manufacturing,Tamil Nadu,Low,no deterioration planted
+C0274,S0_healthy,healthy,SME,IT Services,Telangana,Low,no deterioration planted
+C0275,S0_healthy,healthy,SME,Agri-processing,Telangana,Low,no deterioration planted
+C0276,S2_declining_income_cashflow,declining_cashflow,Individual,Healthcare,Kerala,Medium to High,inflows fell 17% over the last 3 consecutive months
+C0277,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 38% over the last 4 consecutive months
+C0278,S6_sme_financial_stress,sme_stress,SME,Textiles,Tamil Nadu,High,0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 41% over the last 4 consecutive months
+C0279,S0_healthy,healthy,SME,Agri-processing,Tamil Nadu,Low,no deterioration planted
+C0280,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Healthcare,Tamil Nadu,High to Critical,delays 6/13/18 days then latest instalment unpaid; inflows fell 27% over the last 4 consecutive months
+C0281,S0_healthy,healthy,Individual,Banking & Finance,Karnataka,Low,no deterioration planted
+C0282,S0_healthy,healthy,SME,Food & Beverage,Kerala,Low,no deterioration planted
+C0283,S3_increasing_exposure,increasing_exposure,Individual,Banking & Finance,Gujarat,Medium to High,2 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0284,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 41% over the last 5 consecutive months
+C0285,S0_healthy,healthy,Individual,Education,Gujarat,Low,no deterioration planted
+C0286,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Retail,Uttar Pradesh,High to Critical,delays 4/11/16 days then latest instalment unpaid; inflows fell 25% over the last 4 consecutive months
+C0287,S3_increasing_exposure,increasing_exposure,Individual,Retail,Tamil Nadu,Medium to High,1 new facility(ies) in last 6 months; revolving utilisation ramping up
+C0288,S1_repeated_repayment_delays,repeated_delay,Individual,Healthcare,Karnataka,High,payment deterioration began 6 months ago; delays growing
+C0289,S8_cluster_gig_workers_karnataka,declining_cashflow,Individual,Gig Economy,Karnataka,Medium to High (cluster of gig workers),inflows fell 28% over the last 5 consecutive months
+C0290,S8_cluster_gig_workers_karnataka,declining_cashflow,Individual,Gig Economy,Karnataka,Medium to High (cluster of gig workers),inflows fell 27% over the last 4 consecutive months
+C0291,S0_healthy,healthy,Individual,Banking & Finance,Delhi NCR,Low,no deterioration planted
+C0292,S1_repeated_repayment_delays,repeated_delay,SME,Manufacturing,West Bengal,High,payment deterioration began 5 months ago; delays growing
+C0293,S0_healthy,healthy,Individual,Retail,Kerala,Low,no deterioration planted
+C0294,S1_repeated_repayment_delays,repeated_delay,SME,IT Services,Kerala,High,payment deterioration began 4 months ago; delays growing
+C0295,S4_temporary_missed_payment,temporary_miss,Individual,Education,Maharashtra,Low to Low-Medium,"single late payment in 2026-02 (20d), reason=None, evidence=False; clean before/after"
+C0296,S5_early_delinquency_worsening,early_delinq_worsening,Individual,Retail,Telangana,High to Critical,delays 4/13/16 days then latest instalment unpaid; inflows fell 24% over the last 4 consecutive months
+C0297,S5_early_delinquency_recovering,early_delinq_recovering,Individual,Public Sector,Maharashtra,Low-Medium to Medium,delays 17/11/3 days then back on time
+C0298,S6_sme_financial_stress,sme_stress,SME,Textiles,West Bengal,High,1 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 46% over the last 6 consecutive months
+C0299,S8_cluster_textiles_tamil_nadu,sme_stress,SME,Textiles,Tamil Nadu,Medium to High (cluster of SMEs),0 new facility(ies) in last 6 months; revolving utilisation ramping up; inflows fell 41% over the last 4 consecutive months
+C0300,S4_temporary_missed_payment,temporary_miss,Individual,Gig Economy,Maharashtra,Low to Low-Medium,"single late payment in 2026-02 (13d), reason=None, evidence=False; clean before/after"

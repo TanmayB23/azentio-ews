@@ -1,0 +1,223 @@
+{
+  "version": "1.0",
+  "score_scale": {
+    "min": 0,
+    "max": 100,
+    "higher_score_means": "higher credit risk"
+  },
+  "scoring_method": "score = sum(weight_i * strength_i); strength_i linearly interpolated 0..1 between trigger and saturation; weights sum to 100",
+  "classification": [
+    {
+      "category": "Low",
+      "min": 0,
+      "max": 24,
+      "monitoring_status": "Routine"
+    },
+    {
+      "category": "Medium",
+      "min": 25,
+      "max": 49,
+      "monitoring_status": "Watch"
+    },
+    {
+      "category": "High",
+      "min": 50,
+      "max": 74,
+      "monitoring_status": "Investigate"
+    },
+    {
+      "category": "Critical",
+      "min": 75,
+      "max": 100,
+      "monitoring_status": "Escalate"
+    }
+  ],
+  "modifiers": {
+    "temporary_missed_payment_dampener": {
+      "applies_when": {
+        "late_instalments_in_window_max": 1,
+        "clean_instalments_before_min": 3,
+        "recovered_within_instalments": 2
+      },
+      "multiplier_on_repayment_signals_with_evidence": 0.25,
+      "multiplier_on_repayment_signals_without_evidence": 0.6
+    },
+    "missing_data_policy": {
+      "min_repayment_months": 4,
+      "min_transaction_months": 3,
+      "behaviour": "skip signals whose data requirement is unmet and renormalise weights; never add points for missing data; if too little data remains, report status 'Insufficient data' instead of a risk category"
+    },
+    "confidence": "share of total signal weight that could be evaluated with sufficient data (0-1)"
+  },
+  "signals": [
+    {
+      "signal_id": "RB01",
+      "signal_name": "Late payment frequency",
+      "scenario": "Repayment Behaviour Deterioration",
+      "metric": "late_instalments_in_window (dpd>0)",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 2,
+      "saturation": 5,
+      "weight": 15,
+      "requires": "repayments",
+      "min_observations": 3
+    },
+    {
+      "signal_id": "RB02",
+      "signal_name": "DPD trend rising",
+      "scenario": "Repayment Behaviour Deterioration",
+      "metric": "slope_of_dpd_per_month (days/month)",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 1.0,
+      "saturation": 6.0,
+      "weight": 12,
+      "requires": "repayments",
+      "min_observations": 4
+    },
+    {
+      "signal_id": "RB03",
+      "signal_name": "Partial payment frequency",
+      "scenario": "Repayment Behaviour Deterioration",
+      "metric": "partially_paid_instalments_in_window",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 1,
+      "saturation": 3,
+      "weight": 6,
+      "requires": "repayments",
+      "min_observations": 3
+    },
+    {
+      "signal_id": "RB04",
+      "signal_name": "Current delinquency",
+      "scenario": "Early Delinquency and Roll-Forward Risk",
+      "metric": "current_dpd",
+      "window_months": 0,
+      "direction": "higher_is_worse",
+      "trigger": 1,
+      "saturation": 60,
+      "weight": 14,
+      "requires": "delinquency",
+      "min_observations": 1
+    },
+    {
+      "signal_id": "CF01",
+      "signal_name": "Consecutive inflow decline",
+      "scenario": "Declining Income and Cash Flow",
+      "metric": "consecutive_months_total_inflows_declining",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 2,
+      "saturation": 5,
+      "weight": 14,
+      "requires": "transactions",
+      "min_observations": 4
+    },
+    {
+      "signal_id": "CF02",
+      "signal_name": "Inflow level change",
+      "scenario": "Declining Income and Cash Flow",
+      "metric": "pct_change_avg_inflow_last3m_vs_prior3m",
+      "window_months": 6,
+      "direction": "lower_is_worse",
+      "trigger": -10,
+      "saturation": -35,
+      "weight": 6,
+      "requires": "transactions",
+      "min_observations": 6
+    },
+    {
+      "signal_id": "CF03",
+      "signal_name": "Balance erosion",
+      "scenario": "SME and Business Financial Stress",
+      "metric": "pct_change_avg_balance_last3m_vs_prior3m",
+      "window_months": 6,
+      "direction": "lower_is_worse",
+      "trigger": -15,
+      "saturation": -50,
+      "weight": 5,
+      "requires": "transactions",
+      "min_observations": 6
+    },
+    {
+      "signal_id": "CF04",
+      "signal_name": "Outflow exceeds inflow",
+      "scenario": "SME and Business Financial Stress",
+      "metric": "months_outflow_gt_inflow",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 2,
+      "saturation": 5,
+      "weight": 3,
+      "requires": "transactions",
+      "min_observations": 4
+    },
+    {
+      "signal_id": "CF05",
+      "signal_name": "Bounced / returned transactions",
+      "scenario": "SME and Business Financial Stress",
+      "metric": "bounced_txns_in_window",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 1,
+      "saturation": 4,
+      "weight": 4,
+      "requires": "transactions",
+      "min_observations": 3
+    },
+    {
+      "signal_id": "EX01",
+      "signal_name": "Utilisation rise",
+      "scenario": "Increasing Financial Obligations and Exposure",
+      "metric": "utilisation_pct_change_in_points",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 15,
+      "saturation": 40,
+      "weight": 8,
+      "requires": "exposure",
+      "min_observations": 4
+    },
+    {
+      "signal_id": "EX02",
+      "signal_name": "New facilities",
+      "scenario": "Increasing Financial Obligations and Exposure",
+      "metric": "new_facilities_in_window",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 1,
+      "saturation": 3,
+      "weight": 4,
+      "requires": "facilities",
+      "min_observations": 1
+    },
+    {
+      "signal_id": "EX03",
+      "signal_name": "Obligation-to-inflow ratio trend",
+      "scenario": "Increasing Financial Obligations and Exposure",
+      "metric": "change_in_obligation_to_inflow_pct_points",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 5,
+      "saturation": 20,
+      "weight": 7,
+      "requires": "exposure+transactions",
+      "min_observations": 4
+    },
+    {
+      "signal_id": "EX04",
+      "signal_name": "Credit inquiries",
+      "scenario": "Increasing Financial Obligations and Exposure",
+      "metric": "new_credit_inquiries_90d_latest",
+      "window_months": 3,
+      "direction": "higher_is_worse",
+      "trigger": 2,
+      "saturation": 6,
+      "weight": 2,
+      "requires": "exposure",
+      "min_observations": 1
+    }
+  ]
+}
