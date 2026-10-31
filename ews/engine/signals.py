@@ -160,9 +160,11 @@ def change_in_obligation_to_inflow_pct_points(v: CustomerViews, as_of, w, s=None
     j = j[j["total_inflows"] > 0]
     if len(j) < 2:
         return Measure(None, len(j))
-    ratio = 100 * (j["monthly_obligations"] + j["external_bureau_obligations"].fillna(0)) / j["total_inflows"]
+    # ratio of totals per half, so a late salary (dip then catch-up) cancels out
+    oblig = j["monthly_obligations"] + j["external_bureau_obligations"].fillna(0)
     half = len(j) // 2
-    return Measure(float(ratio.iloc[-half:].mean() - ratio.iloc[:half].mean()), len(j), list(j["month"]))
+    ratio = lambda rows: 100 * oblig.iloc[rows].sum() / j["total_inflows"].iloc[rows].sum()
+    return Measure(float(ratio(slice(-half, None)) - ratio(slice(None, half))), len(j), list(j["month"]))
 
 
 def new_credit_inquiries_90d_latest(v: CustomerViews, as_of, w, s=None) -> Measure:

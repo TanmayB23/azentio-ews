@@ -20,12 +20,14 @@
   "late_charge_treatment": "charity_no_compounding",
   "dbr_cap_pct": 50,
   "scoring": {
-    "pillar_combination": [1.0, 0.35, 0.15],
+    "pillar_combination": [1.0, 0.35, 0.15, 0.1],
     "min_pillar_coverage": 0.5,
     "min_confidence": 0.5,
     "min_repayment_months": 4,
+    "minor_delay_days": 3,
     "roll_forward": {"min_score": 75, "lookback_instalments": 3, "min_late": 2},
     "recent_episode": {"min_score": 25, "min_dpd": 10, "min_late": 3},
+    "seasonality": {"min_history_months": 15, "max_yoy_decline_pct": 5, "multiplier": 0.3},
     "elevated_score": 25
   }
 }
