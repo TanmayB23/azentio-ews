@@ -1,0 +1,1 @@
+"""Early warning system application."""
