@@ -4,7 +4,7 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { ArrowDown, ArrowUp, ChevronLeft, ChevronRight, Download, Search, X } from "lucide-react";
 import { api } from "../api";
 import { BandPill, Card, Empty, ErrorNote, MultiFilter, ReviewPill, ScoreBar, Skeleton, Spinner } from "../components/ui";
-import { initials, money, num, pct, profileCurrency } from "../format";
+import { date, initials, money, num, pct, profileCurrency } from "../format";
 import { useWorkspace } from "../state";
 import { NoAssessment } from "./Overview";
 
@@ -115,6 +115,7 @@ export function Watchlist() {
                   <th>Contributing indicators</th>
                   <SortHead k="current_dpd" label="DPD" numeric />
                   <SortHead k="confidence" label="Confidence" numeric />
+                  <th>Next action</th>
                   <th>Monitoring status</th>
                 </tr>
               </thead>
@@ -139,6 +140,10 @@ export function Watchlist() {
                     </td>
                     <td className="num">{r.current_dpd ? <span className="strong">{num(r.current_dpd)}</span> : <span className="faint">0</span>}</td>
                     <td className="num">{pct(r.confidence)}</td>
+                    <td style={{ minWidth: 180 }}>{r.next_action ? <>
+                      <span className="small" style={{ display: "block" }}>{r.next_action}</span>
+                      <span className="muted tiny">{r.next_action_owner} · by {date(r.next_action_due)}{r.action_count > 1 ? ` · +${r.action_count - 1} more` : ""}</span>
+                    </> : <span className="faint small">None</span>}</td>
                     <td><div className="stack" style={{ gap: 4 }}><span className="small">{r.monitoring_status}</span><ReviewPill decision={r.review_decision} /></div></td>
                   </tr>
                 ))}

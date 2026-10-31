@@ -11,7 +11,7 @@ from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from api import presenters
+from api import case_notes, presenters
 from api.registry import Registry, frame_records
 from ews import engine
 from ews.engine.config import load_profile
@@ -34,14 +34,28 @@ class ReviewRequest(BaseModel):
     decision: str
     reason: str = Field(min_length=1, max_length=2000)
     analyst: str = Field(min_length=1, max_length=120)
+    ai_note_id: int | None = None
 
 
-def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_dist: Path | None = None) -> FastAPI:
+class CaseNoteRequest(BaseModel):
+    analyst: str = Field(default="", max_length=120)
+    regenerate: bool = False
+
+
+_FROM_ENV = object()
+
+
+def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_dist: Path | None = None,
+               ai_provider=_FROM_ENV) -> FastAPI:
     var_dir = Path(var_dir or os.environ.get("EWS_VAR_DIR", ROOT / "var"))
     data_root = Path(data_root or os.environ.get("EWS_DATA_ROOT", ROOT / "data"))
     web_dist = Path(web_dist or ROOT / "web" / "dist")
     store = Store(os.environ.get("EWS_DB_PATH", var_dir / "ews.sqlite3"))
     registry = Registry(var_dir, data_root, store)
+    if ai_provider is _FROM_ENV:
+        ai_provider, ai_disabled_reason = case_notes.provider_from_env()
+    else:
+        ai_disabled_reason = None if ai_provider else "AI drafting is not configured."
 
     app = FastAPI(title="EWS API", version="1.0.0",
                   description="Early Warning System: data ingestion, risk scoring, watchlist and analyst review.")
@@ -73,7 +87,10 @@ def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_d
             profiles.append({"id": name, "description": p.get("description", ""), "currency": p.get("currency", ""),
                              "as_of": p.get("as_of")})
         return {"profiles": profiles, "decisions": list(DECISIONS), "bands": presenters.BANDS,
-                "samples": registry.samples()}
+                "samples": registry.samples(),
+                "ai": {"enabled": ai_provider is not None,
+                       "provider": getattr(ai_provider, "name", None), "model": getattr(ai_provider, "model", None),
+                       "disabled_reason": ai_disabled_reason, "prompt_version": case_notes.PROMPT_VERSION}}
 
     # ------------------------------------------------------------------ datasets
     @app.get("/api/datasets")
@@ -189,7 +206,38 @@ def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_d
             alert = store.alert(run_id, customer_id)
         except KeyError:
             raise HTTPException(404, "Alert not found")
-        return store.add_review(alert["alert_id"], req.decision, req.reason, req.analyst)
+        return store.add_review(alert["alert_id"], req.decision, req.reason, req.analyst, req.ai_note_id)
+
+    def note_payload(run, customer_id: str, df):
+        row = presenters.watchlist_rows(df[df["customer_id"] == customer_id])
+        return case_notes.build_payload(run.results[customer_id], run.actions.get(customer_id, []), run.profile,
+                                        row[0] if row else None, run.facts[customer_id].clusters)
+
+    @app.get("/api/runs/{run_id}/customers/{customer_id}/case-notes")
+    def list_case_notes(run_id: str, customer_id: str):
+        try:
+            alert = store.alert(run_id, customer_id)
+        except KeyError:
+            raise HTTPException(404, "Alert not found")
+        return store.notes(alert["alert_id"])
+
+    @app.post("/api/runs/{run_id}/customers/{customer_id}/case-notes", status_code=201)
+    def create_case_note(run_id: str, customer_id: str, req: CaseNoteRequest):
+        run, df = watchlist(run_id)
+        if customer_id not in run.results:
+            raise HTTPException(404, "Customer not found in this assessment")
+        alert = store.alert(run_id, customer_id)
+        payload = note_payload(run, customer_id, df)
+        source = ai_provider.name if ai_provider else "template"
+        digest = case_notes.input_hash(payload, f"{source}:{getattr(ai_provider, 'model', '')}")
+        if not req.regenerate:
+            for saved in store.notes(alert["alert_id"]):
+                if saved["input_hash"] == digest and not saved["error"]:
+                    return {**saved, "cached": True}
+        note, checks, used, model, error = case_notes.draft(ai_provider, payload)
+        saved = store.add_note(alert["alert_id"], used, model, case_notes.PROMPT_VERSION, digest,
+                               req.analyst, note.model_dump(), checks, error)
+        return {**saved, "cached": False}
 
     @app.get("/api/runs/{run_id}/reviews")
     def review_log(run_id: str):

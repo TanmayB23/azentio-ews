@@ -8,7 +8,7 @@ in-memory LRU cache.
 from __future__ import annotations
 
 from collections import OrderedDict
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from hashlib import sha256
 import json
@@ -19,6 +19,8 @@ import pandas as pd
 
 from ews import engine
 from ews.contracts import Cluster, CustomerResult, Dataset, SignalResult
+from ews.engine.config import load_profile
+from ews.interventions import Facts, Recommendation, customer_facts, load_playbook, recommend
 from ews.store.db import Store
 
 ALLOWED_SUFFIXES = {".csv", ".xlsx", ".xls", ".json"}
@@ -66,6 +68,15 @@ class Run:
     dataset: Dataset
     results: dict[str, CustomerResult]
     clusters: list[Cluster]
+    profile: dict = field(default_factory=dict)
+    facts: dict[str, Facts] = field(default_factory=dict)
+    actions: dict[str, list[Recommendation]] = field(default_factory=dict)
+
+    def __post_init__(self):
+        self.profile = load_profile(self.meta["profile"])
+        self.facts = customer_facts(self.dataset, self.clusters, self.meta["profile"])
+        book = load_playbook()
+        self.actions = {cid: recommend(r, self.facts[cid], book) for cid, r in self.results.items()}
 
 
 class Registry:

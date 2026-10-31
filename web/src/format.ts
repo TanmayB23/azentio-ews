@@ -33,5 +33,13 @@ export function monthLabel(month: string): string {
 export const initials = (name: string) =>
   name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]?.toUpperCase()).join("");
 
+/** What a cluster's multiplier measures, in words: "Receivable days rising: 12 of 15 vs 7% of the book". */
+export function clusterBasis(c: { basis: string; basis_hits: number; n_customers: number; portfolio_rate: number }): string {
+  const signal = c.basis.match(/\((.+)\)/)?.[1];
+  const what = signal ?? "Medium or above";
+  const rate = c.portfolio_rate * 100;
+  return `${what}: ${c.basis_hits} of ${c.n_customers} vs ${rate < 10 ? rate.toFixed(1) : Math.round(rate)}% of the book`;
+}
+
 export const profileName = (id: string) => (id === "gcc_islamic" ? "GCC · Islamic" : id === "india" ? "India" : id);
 export const profileCurrency = (id: string) => (id === "gcc_islamic" ? "AED" : "INR");

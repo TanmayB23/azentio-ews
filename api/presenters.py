@@ -93,6 +93,10 @@ def watchlist_frame(run: Run, latest_reviews: dict[str, dict]) -> pd.DataFrame:
             "signals_active": len(active),
             "top_factors": [{"signal_id": s.signal_id, "name": s.name, "points": round(s.points, 1)} for s in active[:3]],
             "summary": r.summary,
+            "next_action": run.actions[cid][0].title if run.actions.get(cid) else None,
+            "next_action_owner": run.actions[cid][0].owner if run.actions.get(cid) else None,
+            "next_action_due": run.actions[cid][0].due_date if run.actions.get(cid) else None,
+            "action_count": len(run.actions.get(cid, [])),
             "review_decision": review["decision"] if review else None,
             "reviewed_at": review["created_at"] if review else None,
         })
@@ -193,6 +197,7 @@ def summary(run: Run, df: pd.DataFrame, latest_reviews: dict, quality: dict) -> 
         "top_signals": sorted(signal_counts.values(), key=lambda e: e["customers"], reverse=True)[:6],
         "pillar_prevalence": pillar_counts,
         "reviews": {"elevated": int(len(elevated)), "reviewed": reviewed_elevated, "decisions": decisions},
+        "actions": _action_counts(run),
         "priority": watchlist_rows(top),
         "clusters": [cluster_dict(c, run, df) for c in run.clusters[:4]],
         "quality": quality,
@@ -280,6 +285,7 @@ def customer_detail(run: Run, cid: str, row: dict | None) -> dict:
         "facilities": frame_records(_for(ds, "facilities", cid)),
         "delinquency": frame_records(_for(ds, "delinquency", cid)),
         "repayment_months": repayment_months,
+        "recommended_actions": [asdict(a) for a in run.actions.get(cid, [])],
         "repayments": recent_repayments,
         "transactions": monthly("transactions", ["income_receipts", "other_inflows", "total_inflows",
                                                  "total_outflows", "avg_balance", "closing_balance", "bounced_txns"]),
@@ -289,3 +295,17 @@ def customer_detail(run: Run, cid: str, row: dict | None) -> dict:
         "sme": monthly("sme_indicators", ["tax_reported_turnover", "tax_filing_status", "receivable_days",
                                           "payable_days"]),
     }
+
+
+def _action_counts(run: Run) -> dict:
+    by_owner: dict[str, int] = {}
+    by_action: dict[str, dict] = {}
+    for recs in run.actions.values():
+        for a in recs:
+            by_owner[a.owner] = by_owner.get(a.owner, 0) + 1
+            entry = by_action.setdefault(a.action_id, {"action_id": a.action_id, "title": a.title,
+                                                      "owner": a.owner, "customers": 0})
+            entry["customers"] += 1
+    return {"customers_with_actions": sum(1 for r in run.actions.values() if r),
+            "by_owner": dict(sorted(by_owner.items(), key=lambda kv: -kv[1])),
+            "by_action": sorted(by_action.values(), key=lambda e: -e["customers"])}

@@ -1,0 +1,98 @@
+{
+  "version": "1.0",
+  "description": "Recommended interventions. Each rule's conditions are read from the saved alert; when they hold, its action is recommended with the reasons that matched. Lower priority number = more urgent.",
+  "actions": {
+    "COLLECTIONS_CONTACT": {
+      "title": "Collections contact and repayment plan",
+      "owner": "Collections",
+      "due_days": 3,
+      "priority": 1,
+      "detail": "Contact the customer, confirm the cause of the arrears and agree a dated repayment plan before the next instalment."
+    },
+    "ISLAMIC_RESCHEDULE": {
+      "title": "Reschedule without additional profit",
+      "owner": "Credit",
+      "due_days": 7,
+      "priority": 2,
+      "detail": "If a restructure is needed, reschedule the Murabaha/Ijarah instalments without increasing the amount owed; late-payment charges go to charity, not income."
+    },
+    "RM_REPAYMENT_CALL": {
+      "title": "RM call on repayment pattern",
+      "owner": "Relationship manager",
+      "due_days": 7,
+      "priority": 2,
+      "detail": "Call the customer about repeated late or partial payments; check for salary or receivable delays and update the account notes."
+    },
+    "FREEZE_LIMITS": {
+      "title": "Freeze limit increases and review debt burden",
+      "owner": "Credit",
+      "due_days": 7,
+      "priority": 3,
+      "detail": "Hold any further limit increases or new facilities; recalculate total obligations against current inflows."
+    },
+    "RM_CASHFLOW_REVIEW": {
+      "title": "RM cash-flow review before a payment is missed",
+      "owner": "Relationship manager",
+      "due_days": 14,
+      "priority": 3,
+      "detail": "Review recent bank statements with the customer and discuss working-capital support or restructuring options while repayments are still current."
+    },
+    "SME_DOCUMENTS": {
+      "title": "Request tax returns and debtor list",
+      "owner": "Relationship manager",
+      "due_days": 14,
+      "priority": 4,
+      "detail": "Request the latest GST/VAT returns and an aged debtor list to confirm turnover and how quickly the business is being paid."
+    },
+    "REQUEST_EVIDENCE": {
+      "title": "Ask for evidence of the missed payment's cause",
+      "owner": "Relationship manager",
+      "due_days": 14,
+      "priority": 5,
+      "detail": "The isolated late payment has no supporting document on file; request one so the exception can be confirmed."
+    },
+    "SECTOR_REVIEW": {
+      "title": "Flag for sector review",
+      "owner": "Credit committee",
+      "due_days": 30,
+      "priority": 5,
+      "detail": "This customer is part of a detected risk cluster; review the segment as a whole at the next credit committee."
+    },
+    "COLLECT_DATA": {
+      "title": "Collect missing data",
+      "owner": "Operations",
+      "due_days": 30,
+      "priority": 6,
+      "detail": "Obtain the missing repayment, transaction or exposure history so the customer can be scored."
+    },
+    "NEXT_CYCLE_CHECK": {
+      "title": "Re-check at next monitoring cycle",
+      "owner": "Relationship manager",
+      "due_days": 30,
+      "priority": 7,
+      "detail": "No immediate action; confirm the trend at the next monthly review."
+    }
+  },
+  "rules": [
+    {"action": "COLLECTIONS_CONTACT", "match": "any",
+     "when": {"modifier_starts": ["Roll-forward"], "current_dpd_gt": 30}},
+    {"action": "RM_REPAYMENT_CALL", "match": "all",
+     "when": {"pillar_min": {"Repayment": 30}, "actions_not_fired": ["COLLECTIONS_CONTACT"]}},
+    {"action": "ISLAMIC_RESCHEDULE", "match": "all",
+     "when": {"profiles": ["gcc_islamic"], "actions_fired": ["COLLECTIONS_CONTACT", "RM_REPAYMENT_CALL"]}},
+    {"action": "FREEZE_LIMITS", "match": "all",
+     "when": {"pillar_min": {"Exposure": 50}}},
+    {"action": "RM_CASHFLOW_REVIEW", "match": "all",
+     "when": {"pillar_min": {"Cash flow": 50}}},
+    {"action": "SME_DOCUMENTS", "match": "any",
+     "when": {"signals_active": ["SM01", "SM02"]}},
+    {"action": "REQUEST_EVIDENCE", "match": "all",
+     "when": {"modifier_contains": ["evidence not provided"], "dampened_delay_min_days": 7}},
+    {"action": "SECTOR_REVIEW", "match": "all",
+     "when": {"in_cluster": true, "bands": ["Medium", "High", "Critical"]}},
+    {"action": "COLLECT_DATA", "match": "all",
+     "when": {"status": "Insufficient data"}},
+    {"action": "NEXT_CYCLE_CHECK", "match": "all",
+     "when": {"bands": ["Medium"], "no_other_actions": true}}
+  ]
+}
