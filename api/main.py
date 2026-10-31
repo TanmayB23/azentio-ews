@@ -6,12 +6,12 @@ import json
 import os
 from pathlib import Path
 
-from fastapi import FastAPI, File, Form, HTTPException, Query, UploadFile
+from fastapi import Depends, FastAPI, File, Form, HTTPException, Query, UploadFile
 from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from api import case_notes, presenters
+from api import ask, briefings, case_notes, mapping, presenters
 from api.registry import Registry, frame_records
 from ews import engine
 from ews.engine.config import load_profile
@@ -37,12 +37,41 @@ class ReviewRequest(BaseModel):
     ai_note_id: int | None = None
 
 
+class AskRequest(BaseModel):
+    question: str = Field(min_length=3, max_length=500)
+    analyst: str = Field(default="", max_length=120)
+
+
+class BriefingRequest(BaseModel):
+    dimension: str
+    value: str
+    analyst: str = Field(default="", max_length=120)
+    regenerate: bool = False
+
+
+class MemoRequest(BaseModel):
+    analyst: str = Field(default="", max_length=120)
+    regenerate: bool = False
+
+
 class CaseNoteRequest(BaseModel):
     analyst: str = Field(default="", max_length=120)
     regenerate: bool = False
 
 
 _FROM_ENV = object()
+
+
+def watch_params(q: str = "", band: list[str] = Query(None), main_product: list[str] = Query(None),
+                 segment: list[str] = Query(None), portfolio: list[str] = Query(None),
+                 delinquency_bucket: list[str] = Query(None), customer_type: list[str] = Query(None),
+                 region: list[str] = Query(None), industry: list[str] = Query(None), signals: list[str] = Query(None),
+                 score_min: float | None = None, score_max: float | None = None, review: str = "",
+                 sort: str = "score", order: str = "desc") -> dict:
+    """Watchlist filters shared by the table, the CSV export and Ask EWS."""
+    return dict(q=q, band=band, main_product=main_product, segment=segment, portfolio=portfolio,
+                delinquency_bucket=delinquency_bucket, customer_type=customer_type, region=region, industry=industry,
+                signals=signals, score_min=score_min, score_max=score_max, review=review, sort=sort, order=order)
 
 
 def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_dist: Path | None = None,
@@ -102,9 +131,24 @@ def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_d
         meta = registry.register_sample(req.profile, req.variant)
         return {**meta, "quality": presenters.quality_report(registry.dataset(meta["dataset_id"]))}
 
-    @app.post("/api/datasets/upload")
-    async def upload(files: list[UploadFile] = File(...), label: str = Form("Uploaded portfolio")):
+    @app.post("/api/datasets/propose-mapping")
+    async def propose_mapping(files: list[UploadFile] = File(...)):
         sources = {f.filename or "upload": await f.read() for f in files}
+        proposal, checks, source, model, error = mapping.propose(ai_provider, sources)
+        return {**proposal.model_dump(), **checks, "targets": mapping.TARGETS, "source": source, "model": model,
+                "error": error}
+
+    @app.post("/api/datasets/upload")
+    async def upload(files: list[UploadFile] = File(...), label: str = Form("Uploaded portfolio"),
+                     column_mapping: str = Form("")):
+        sources = {f.filename or "upload": await f.read() for f in files}
+        if column_mapping:
+            try:
+                proposal = mapping.MappingProposal.model_validate_json(column_mapping)
+            except ValueError as e:
+                raise HTTPException(422, f"Invalid column mapping: {e}")
+            proposal, _ = mapping.clean(proposal, mapping.describe(mapping.read_tables(sources)))
+            sources = mapping.apply(sources, proposal)
         meta = registry.register(sources, label.strip() or "Uploaded portfolio")
         return {**meta, "quality": presenters.quality_report(registry.dataset(meta["dataset_id"]))}
 
@@ -146,30 +190,100 @@ def create_app(var_dir: Path | None = None, data_root: Path | None = None, web_d
         return presenters.summary(run, df, store.latest_reviews(run_id), presenters.quality_report(run.dataset))
 
     @app.get("/api/runs/{run_id}/watchlist")
-    def get_watchlist(run_id: str, q: str = "", band: list[str] = Query(None), main_product: list[str] = Query(None),
-                      segment: list[str] = Query(None), portfolio: list[str] = Query(None),
-                      delinquency_bucket: list[str] = Query(None), customer_type: list[str] = Query(None),
-                      region: list[str] = Query(None), review: str = "", sort: str = "score", order: str = "desc",
+    def get_watchlist(run_id: str, params: dict = Depends(watch_params),
                       page: int = Query(1, ge=1), page_size: int = Query(25, ge=1, le=500)):
         _, df = watchlist(run_id)
-        params = dict(q=q, band=band, main_product=main_product, segment=segment, portfolio=portfolio,
-                      delinquency_bucket=delinquency_bucket, customer_type=customer_type, region=region,
-                      review=review, sort=sort, order=order)
         filtered = presenters.filter_watchlist(df, params)
         start = (page - 1) * page_size
         return {"total": int(len(filtered)), "page": page, "page_size": page_size,
                 "rows": presenters.watchlist_rows(filtered.iloc[start:start + page_size]),
                 "facets": presenters.facets(df)}
 
+    @app.post("/api/runs/{run_id}/ask")
+    def ask_watchlist(run_id: str, req: AskRequest):
+        run, df = watchlist(run_id)
+        names = {s.signal_id: s.name for r in run.results.values() for s in r.signals}
+        options = ask.build_options(presenters.facets(df), names)
+        filters, meta, source, model, error = ask.interpret(ai_provider, req.question, options)
+        filtered = presenters.filter_watchlist(df, filters)
+        store.add_output("ask", run_id, req.question.strip(), source, model,
+                         case_notes.input_hash({"q": req.question, "options": options}, source),
+                         req.analyst, {"filters": filters, **meta}, {"dropped": meta["dropped"]}, error)
+        return {"filters": filters, **meta, "source": source, "model": model, "error": error,
+                "total": int(len(filtered)), "rows": presenters.watchlist_rows(filtered.head(10))}
+
+    def saved_or_new(kind: str, run_id: str, subject: str, payload: dict, generate, analyst: str, regenerate: bool):
+        """Reuse a saved AI output for identical input; otherwise generate and save a new version."""
+        source = ai_provider.name if ai_provider else "template"
+        digest = case_notes.input_hash(payload, f"{kind}:{source}:{getattr(ai_provider, 'model', '')}")
+        if not regenerate:
+            for saved in store.outputs(kind, run_id, subject):
+                if saved["input_hash"] == digest and not saved["error"]:
+                    return {**saved, "cached": True}
+        result, checks, used, model, error = generate(ai_provider, payload)
+        saved = store.add_output(kind, run_id, subject, used, model, digest, analyst, result.model_dump(), checks, error)
+        return {**saved, "cached": False}
+
+    def currency(run) -> str:
+        return run.profile.get("currency", "INR")
+
+    @app.post("/api/runs/{run_id}/clusters/briefing", status_code=201)
+    def cluster_briefing(run_id: str, req: BriefingRequest):
+        run, df = watchlist(run_id)
+        cluster = next((c for c in run.clusters if c.dimension == req.dimension and c.value == req.value), None)
+        if cluster is None:
+            raise HTTPException(404, "Cluster not found in this assessment")
+        names = {s.signal_id: s.name for r in run.results.values() for s in r.signals}
+        payload = briefings.cluster_payload(presenters.cluster_dict(cluster, run, df), names, run.actions, currency(run))
+        return saved_or_new("cluster_briefing", run_id, f"{req.dimension}::{req.value}", payload,
+                            briefings.brief_cluster, req.analyst, req.regenerate)
+
+    @app.get("/api/runs/{run_id}/clusters/briefings")
+    def cluster_briefings(run_id: str, dimension: str, value: str):
+        run_or_404(run_id)
+        return store.outputs("cluster_briefing", run_id, f"{dimension}::{value}")
+
+    def previous_run(run) -> dict | None:
+        earlier = [r for r in store.runs() if r["profile"] == run.meta["profile"]
+                   and r["created_at"] < run.meta["created_at"] and r["run_id"] != run.meta["run_id"]]
+        return max(earlier, key=lambda r: r["created_at"]) if earlier else None
+
+    @app.post("/api/runs/{run_id}/memo", status_code=201)
+    def risk_memo(run_id: str, req: MemoRequest):
+        run, df = watchlist(run_id)
+        summary_now = presenters.summary(run, df, store.latest_reviews(run_id), presenters.quality_report(run.dataset))
+        prev_meta, prev_summary, transitions = previous_run(run), None, None
+        if prev_meta:
+            prev, prev_df = watchlist(prev_meta["run_id"])
+            prev_summary = presenters.summary(prev, prev_df, store.latest_reviews(prev_meta["run_id"]),
+                                              presenters.quality_report(prev.dataset))
+            transitions = briefings.band_transitions(df, prev_df)
+        payload = briefings.memo_payload(summary_now, prev_summary, transitions, currency(run))
+        record = saved_or_new("memo", run_id, "portfolio", payload, briefings.write_memo, req.analyst, req.regenerate)
+        return {**record, "compared_with": prev_meta}
+
+    @app.get("/api/runs/{run_id}/memo")
+    def risk_memos(run_id: str):
+        run_or_404(run_id)
+        return store.outputs("memo", run_id, "portfolio")
+
+    @app.get("/api/runs/{run_id}/memo/{output_id}.md")
+    def risk_memo_markdown(run_id: str, output_id: int):
+        try:
+            record = store.output(output_id)
+        except KeyError:
+            raise HTTPException(404, "Memo not found")
+        if record["kind"] != "memo" or record["run_id"] != run_id:
+            raise HTTPException(404, "Memo not found")
+        text = briefings.memo_markdown(briefings.RiskMemo(**record["output"]))
+        return Response(text, media_type="text/markdown",
+                        headers={"Content-Disposition": f'attachment; filename="risk_memo_{run_id[:8]}.md"'})
+
     @app.get("/api/runs/{run_id}/watchlist.csv")
-    def export_watchlist(run_id: str, q: str = "", band: list[str] = Query(None), main_product: list[str] = Query(None),
-                         segment: list[str] = Query(None), portfolio: list[str] = Query(None),
-                         delinquency_bucket: list[str] = Query(None), review: str = ""):
+    def export_watchlist(run_id: str, params: dict = Depends(watch_params)):
         _, df = watchlist(run_id)
-        filtered = presenters.filter_watchlist(df, dict(q=q, band=band, main_product=main_product, segment=segment,
-                                                        portfolio=portfolio, delinquency_bucket=delinquency_bucket,
-                                                        review=review))
-        out = filtered.drop(columns=["_band_rank", "products"], errors="ignore").copy()
+        filtered = presenters.filter_watchlist(df, params)
+        out = filtered.drop(columns=["_band_rank", "products", "active_signals"], errors="ignore").copy()
         out["top_factors"] = out["top_factors"].apply(lambda fs: "; ".join(f"{f['name']} ({f['points']})" for f in fs))
         buf = io.StringIO()
         out.to_csv(buf, index=False)

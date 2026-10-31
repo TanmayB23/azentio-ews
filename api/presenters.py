@@ -91,6 +91,7 @@ def watchlist_frame(run: Run, latest_reviews: dict[str, dict]) -> pd.DataFrame:
             "monitoring_status": r.monitoring_status,
             "confidence": r.confidence,
             "signals_active": len(active),
+            "active_signals": [s.signal_id for s in active],
             "top_factors": [{"signal_id": s.signal_id, "name": s.name, "points": round(s.points, 1)} for s in active[:3]],
             "summary": r.summary,
             "next_action": run.actions[cid][0].title if run.actions.get(cid) else None,
@@ -107,7 +108,7 @@ def watchlist_frame(run: Run, latest_reviews: dict[str, dict]) -> pd.DataFrame:
     return df.sort_values(["score", "customer_id"], ascending=[False, True], na_position="last").reset_index(drop=True)
 
 
-FILTERS = ("band", "main_product", "segment", "portfolio", "delinquency_bucket", "customer_type", "region")
+FILTERS = ("band", "main_product", "segment", "portfolio", "delinquency_bucket", "customer_type", "region", "industry")
 SORTABLE = {"score", "customer_name", "total_outstanding", "confidence", "current_dpd", "customer_id"}
 
 
@@ -122,6 +123,13 @@ def filter_watchlist(df: pd.DataFrame, params: dict) -> pd.DataFrame:
                 out = out[out["products"].apply(lambda ps: any(v in ps for v in values))]
             else:
                 out = out[out[key].isin(values)]
+    signals = params.get("signals")
+    if signals:
+        out = out[out["active_signals"].apply(lambda active: any(s in active for s in signals))]
+    if params.get("score_min") is not None:
+        out = out[out["score"].fillna(-1) >= params["score_min"]]
+    if params.get("score_max") is not None:
+        out = out[out["score"].notna() & (out["score"] <= params["score_max"])]
     review = params.get("review")
     if review == "unreviewed":
         out = out[out["review_decision"].isna()]
