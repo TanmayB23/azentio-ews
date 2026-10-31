@@ -23,7 +23,7 @@ from ews.contracts import CustomerResult
 from ews.interventions import Recommendation
 from ews.store.db import DECISIONS
 
-PROMPT_VERSION = "case-note-2026-10-31.1"
+PROMPT_VERSION = "case-note-2026-10-31.2"
 DEFAULT_MODEL = "gpt-4.1-mini"
 Decision = Literal["Continue Monitoring", "Requires Investigation", "False Positive", "Escalate for Review"]
 assert set(Decision.__args__) == set(DECISIONS)
@@ -59,7 +59,7 @@ The user message is a JSON record for one customer alert. Write a case note for 
 Rules:
 - Use only facts in the JSON. Do not invent numbers, dates, causes, names or customer details. If something is unknown, say so in data_gaps or caveats.
 - The score runs 0-100 and a higher score means higher risk. Never change or re-derive the score or band, and never predict default.
-- Each key finding cites the IDs it relies on, copied exactly from the input: signal IDs (e.g. "CF01"), evidence IDs (e.g. "R001168" or "2026-07") or action IDs.
+- Each key finding cites the IDs it relies on, copied exactly from the input: signal IDs (e.g. "CF01"), evidence IDs (e.g. "R001168" or "2026-07"), adjustment IDs (e.g. "ADJ1") or action IDs. Cite IDs only, never field names.
 - recommended_actions: choose only from input.recommended_actions by action_id, most urgent first, each with a reason linked to the findings. Never add an action that is not in the input; return an empty list if the input has none.
 - suggested_decision is a suggestion for the analyst, who decides. Escalate for Review fits Critical alerts or roll-forward risk; Requires Investigation fits High alerts or unexplained deterioration; Continue Monitoring fits Medium/Low or recovering customers and insufficient data; False Positive fits alerts where the evidence shows the signals do not reflect real deterioration (for example a documented one-off delay or a seasonal pattern).
 - data_gaps: evidence that is missing or not evaluated, from signals whose status is "Missing data".
@@ -88,7 +88,8 @@ def build_payload(result: CustomerResult, actions: list[Recommendation], profile
                   "currency": profile.get("currency"), "status": result.status, "score": result.score,
                   "band": result.band, "monitoring_status": result.monitoring_status,
                   "confidence": result.confidence, "area_scores": result.pillar_scores,
-                  "summary": result.summary, "adjustments": result.modifiers},
+                  "summary": result.summary,
+                  "adjustments": [{"id": f"ADJ{i}", "text": m} for i, m in enumerate(result.modifiers, 1)]},
         "customer": customer,
         "signals": signals,
         "clusters": clusters,
@@ -119,6 +120,7 @@ def _numbers(text: str) -> set[float]:
 def verify(note: CaseNote, payload: dict) -> tuple[CaseNote, dict]:
     """Drop actions not in the playbook and flag citations or numbers not found in the input."""
     allowed_ids = {s["id"] for s in payload["signals"]} | {a["action_id"] for a in payload["recommended_actions"]}
+    allowed_ids |= {a["id"] for a in payload["alert"]["adjustments"]}
     for s in payload["signals"]:
         allowed_ids |= set(map(str, s["evidence"]))
     action_ids = {a["action_id"] for a in payload["recommended_actions"]}
@@ -162,10 +164,10 @@ def template_note(payload: dict) -> CaseNote:
                              f"({s['points']} points).", cites=[s["id"], *map(str, s["evidence"][:3])])
                 for s in active[:5]]
     for adj in alert["adjustments"][:2]:
-        findings.append(Finding(text=adj, cites=[]))
+        findings.append(Finding(text=adj["text"], cites=[adj["id"]]))
     actions = [ActionPick(action_id=a["action_id"], reason="; ".join(a["reasons"]) or a["title"], cites=[])
                for a in payload["recommended_actions"]]
-    band, adjustments = alert["band"], " ".join(alert["adjustments"])
+    band, adjustments = alert["band"], " ".join(a["text"] for a in alert["adjustments"])
     if alert["status"] == "Insufficient data":
         decision, why = "Continue Monitoring", "Not enough history to assess risk; collect the missing data first."
     elif band == "Critical" or "Roll-forward" in adjustments:
