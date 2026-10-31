@@ -80,3 +80,4 @@ class Cluster:
     top_signals: list[str]
     customer_ids: list[str]
     p_value: float = 1.0                     # one-sided binomial test vs portfolio rate
+    basis: str = "elevated risk"             # or "shared signal CF04 (...)" for early-stage clusters

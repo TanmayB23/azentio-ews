@@ -31,7 +31,7 @@ def main() -> None:
     print("\nClusters")
     for c in detect_clusters(ds, results):
         print(f"  {c.dimension}={c.value}: {c.n_elevated}/{c.n_customers} elevated, lift {c.lift}, "
-              f"p={c.p_value}, signals {c.top_signals}")
+              f"p={c.p_value}, basis: {c.basis}, signals {c.top_signals}")
 
 
 if __name__ == "__main__":
