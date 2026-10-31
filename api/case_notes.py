@@ -15,7 +15,7 @@ from hashlib import sha256
 import json
 import os
 import re
-from typing import Literal, Protocol
+from typing import Literal
 
 from pydantic import BaseModel
 
@@ -23,8 +23,7 @@ from ews.contracts import CustomerResult
 from ews.interventions import Recommendation
 from ews.store.db import DECISIONS
 
-PROMPT_VERSION = "case-note-2026-10-31.2"
-DEFAULT_MODEL = "gpt-4.1-mini"
+PROMPT_VERSION = "case-note-2026-10-31.3"
 Decision = Literal["Continue Monitoring", "Requires Investigation", "False Positive", "Escalate for Review"]
 assert set(Decision.__args__) == set(DECISIONS)
 
@@ -58,7 +57,7 @@ The user message is a JSON record for one customer alert. Write a case note for 
 
 Rules:
 - Use only facts in the JSON. Do not invent numbers, dates, causes, names or customer details. If something is unknown, say so in data_gaps or caveats.
-- The score runs 0-100 and a higher score means higher risk. Never change or re-derive the score or band, and never predict default.
+- The score runs 0-100 and a higher score means higher risk. Never change or re-derive the score or band. Never mention default rates, probabilities of default or expected losses: the system measures deterioration, not default.
 - Each key finding cites the IDs it relies on, copied exactly from the input: signal IDs (e.g. "CF01"), evidence IDs (e.g. "R001168" or "2026-07"), adjustment IDs (e.g. "ADJ1") or action IDs. Cite IDs only, never field names.
 - recommended_actions: choose only from input.recommended_actions by action_id, most urgent first, each with a reason linked to the findings. Never add an action that is not in the input; return an empty list if the input has none.
 - suggested_decision is a suggestion for the analyst, who decides. Escalate for Review fits Critical alerts or roll-forward risk; Requires Investigation fits High alerts or unexplained deterioration; Continue Monitoring fits Medium/Low or recovering customers and insufficient data; False Positive fits alerts where the evidence shows the signals do not reflect real deterioration (for example a documented one-off delay or a seasonal pattern).
@@ -139,9 +138,11 @@ def verify(note: CaseNote, payload: dict) -> tuple[CaseNote, dict]:
     unverified = sorted({n for n in _numbers(text)
                          if n > 12 and not 1990 <= n <= 2100 and n not in known and round(n) not in known})
 
+    from api.ai import forbidden_terms
+    terms = forbidden_terms(text)
     checks = {"unknown_citations": unknown, "dropped_actions": dropped,
-              "unverified_numbers": [int(n) if n == int(n) else n for n in unverified]}
-    checks["status"] = "verified" if not (unknown or dropped or unverified) else "check"
+              "unverified_numbers": [int(n) if n == int(n) else n for n in unverified], "forbidden_terms": terms}
+    checks["status"] = "verified" if not (unknown or dropped or unverified or terms) else "check"
     return note, checks
 
 
@@ -191,67 +192,8 @@ def template_note(payload: dict) -> CaseNote:
 
 
 # --------------------------------------------------------------------------- providers
-class AIUnavailable(Exception):
-    """The provider could not produce a note (configuration, network, refusal or bad output)."""
-
-
-class Provider(Protocol):
-    name: str
-    model: str
-
-    def draft(self, system: str, payload: dict) -> CaseNote: ...
-
-
-class OpenAIProvider:
-    name = "openai"
-
-    def __init__(self, model: str | None = None, api_key: str | None = None):
-        import openai  # imported lazily so the app runs without the package when AI is off
-        self._openai = openai
-        self.model = model or os.environ.get("EWS_AI_MODEL", DEFAULT_MODEL)
-        self.client = openai.OpenAI(api_key=api_key, timeout=60.0, max_retries=2)
-
-    def draft(self, system: str, payload: dict) -> CaseNote:
-        o = self._openai
-        try:
-            completion = self.client.chat.completions.parse(
-                model=self.model,
-                messages=[{"role": "system", "content": system},
-                          {"role": "user", "content": json.dumps(payload, default=str)}],
-                response_format=CaseNote,
-                max_completion_tokens=4000,
-                prompt_cache_key="ews-case-note",
-            )
-        except (o.LengthFinishReasonError, o.ContentFilterFinishReasonError) as e:
-            raise AIUnavailable(f"The model stopped early ({type(e).__name__}).") from e
-        except o.AuthenticationError as e:
-            raise AIUnavailable("OpenAI rejected the API key (OPENAI_API_KEY).") from e
-        except o.NotFoundError as e:
-            raise AIUnavailable(f"Model '{self.model}' is not available to this key; set EWS_AI_MODEL.") from e
-        except o.RateLimitError as e:
-            raise AIUnavailable("OpenAI rate limit or quota reached; try again shortly.") from e
-        except o.APIConnectionError as e:
-            raise AIUnavailable("Could not reach OpenAI.") from e
-        except o.APIStatusError as e:
-            raise AIUnavailable(f"OpenAI returned an error ({e.status_code}).") from e
-        message = completion.choices[0].message
-        if message.refusal:
-            raise AIUnavailable(f"The model declined: {message.refusal}")
-        if message.parsed is None:
-            raise AIUnavailable("The model returned no usable note.")
-        return message.parsed
-
-
-def provider_from_env() -> tuple[Provider | None, str | None]:
-    """Returns (provider, reason it is disabled)."""
-    if os.environ.get("EWS_AI_ENABLED", "1") == "0":
-        return None, "AI drafting is turned off (EWS_AI_ENABLED=0)."
-    if not os.environ.get("OPENAI_API_KEY"):
-        return None, "No OPENAI_API_KEY is set; notes are drafted from rules."
-    try:
-        return OpenAIProvider(), None
-    except ImportError:
-        return None, "The openai package is not installed."
+# shared with the other AI features (api/ai.py); re-exported for existing imports
+from api.ai import AIUnavailable, OpenAIProvider, Provider, provider_from_env  # noqa: E402,F401
 
 
 def draft(provider: Provider | None, payload: dict) -> tuple[CaseNote, dict, str, str | None, str | None]:

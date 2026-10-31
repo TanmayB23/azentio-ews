@@ -48,13 +48,26 @@ class Store:
                 CREATE TABLE IF NOT EXISTS review_ai_notes (
                     review_id INTEGER PRIMARY KEY REFERENCES reviews(review_id),
                     note_id INTEGER NOT NULL REFERENCES ai_notes(note_id));
+                CREATE TABLE IF NOT EXISTS ai_outputs (
+                    output_id INTEGER PRIMARY KEY, kind TEXT NOT NULL, run_id TEXT NOT NULL REFERENCES runs(run_id),
+                    subject TEXT NOT NULL, created_at TEXT NOT NULL, source TEXT NOT NULL, model TEXT,
+                    input_hash TEXT NOT NULL, requested_by TEXT NOT NULL, output_json TEXT NOT NULL,
+                    verification_json TEXT NOT NULL, error TEXT);
+                CREATE INDEX IF NOT EXISTS output_subject ON ai_outputs(kind, run_id, subject, output_id);
+                CREATE TABLE IF NOT EXISTS evidence_decisions (
+                    decision_id INTEGER PRIMARY KEY, alert_id INTEGER NOT NULL REFERENCES alerts(alert_id),
+                    repayment_id TEXT NOT NULL, output_id INTEGER REFERENCES ai_outputs(output_id),
+                    accepted INTEGER NOT NULL CHECK(accepted IN (0, 1)),
+                    note TEXT NOT NULL CHECK(length(trim(note)) > 0),
+                    analyst TEXT NOT NULL CHECK(length(trim(analyst)) > 0), created_at TEXT NOT NULL);
             """)
             version = db.execute("SELECT value FROM meta WHERE key = 'schema_version'").fetchone()
             if version is None:
                 db.execute("INSERT INTO meta VALUES ('schema_version', ?)", (str(SCHEMA_VERSION),))
             elif int(version["value"]) != SCHEMA_VERSION:
                 raise RuntimeError(f"{self.path} uses evidence schema v{version['value']}; expected v{SCHEMA_VERSION}")
-            for table in ("runs", "alerts", "reviews", "ai_notes", "review_ai_notes"):
+            for table in ("runs", "alerts", "reviews", "ai_notes", "review_ai_notes", "ai_outputs",
+                          "evidence_decisions"):
                 for action in ("UPDATE", "DELETE"):
                     db.execute(f"CREATE TRIGGER IF NOT EXISTS {table}_no_{action.lower()} BEFORE {action} ON {table} "
                                "BEGIN SELECT RAISE(ABORT, 'Evidence is append-only'); END")
@@ -143,6 +156,46 @@ class Store:
             return [_note(row) for row in db.execute(
                 "SELECT * FROM ai_notes WHERE alert_id = ? ORDER BY note_id DESC", (alert_id,))]
 
+    def add_output(self, kind: str, run_id: str, subject: str, source: str, model: str | None, input_hash: str,
+                   requested_by: str, output: dict, verification: dict, error: str | None = None) -> dict:
+        with self.connect() as db:
+            cur = db.execute(
+                "INSERT INTO ai_outputs(kind, run_id, subject, created_at, source, model, input_hash, requested_by, "
+                "output_json, verification_json, error) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                (kind, run_id, subject, self.now(), source, model, input_hash, requested_by.strip() or "unknown",
+                 json.dumps(output, allow_nan=False), json.dumps(verification, allow_nan=False), error))
+            return _output(db.execute("SELECT * FROM ai_outputs WHERE output_id = ?", (cur.lastrowid,)).fetchone())
+
+    def outputs(self, kind: str, run_id: str, subject: str | None = None) -> list[dict]:
+        sql, args = "SELECT * FROM ai_outputs WHERE kind = ? AND run_id = ?", [kind, run_id]
+        if subject is not None:
+            sql, args = sql + " AND subject = ?", args + [subject]
+        with self.connect() as db:
+            return [_output(r) for r in db.execute(sql + " ORDER BY output_id DESC", args)]
+
+    def output(self, output_id: int) -> dict:
+        with self.connect() as db:
+            row = db.execute("SELECT * FROM ai_outputs WHERE output_id = ?", (output_id,)).fetchone()
+        if row is None:
+            raise KeyError(output_id)
+        return _output(row)
+
+    def add_evidence_decision(self, alert_id: int, repayment_id: str, accepted: bool, note: str, analyst: str,
+                              output_id: int | None = None) -> dict:
+        if not note.strip() or not analyst.strip():
+            raise ValueError("A note and an analyst name are required")
+        with self.connect() as db:
+            cur = db.execute(
+                "INSERT INTO evidence_decisions(alert_id, repayment_id, output_id, accepted, note, analyst, created_at) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?)",
+                (alert_id, repayment_id, output_id, int(accepted), note.strip(), analyst.strip(), self.now()))
+            return dict(db.execute("SELECT * FROM evidence_decisions WHERE decision_id = ?", (cur.lastrowid,)).fetchone())
+
+    def evidence_decisions(self, alert_id: int) -> list[dict]:
+        with self.connect() as db:
+            return [dict(r) for r in db.execute(
+                "SELECT * FROM evidence_decisions WHERE alert_id = ? ORDER BY decision_id DESC", (alert_id,))]
+
     def latest_reviews(self, run_id: str) -> dict[str, dict]:
         """Latest review per customer in a run (current analyst classification)."""
         with self.connect() as db:
@@ -166,5 +219,12 @@ _REVIEW_SELECT = ("SELECT r.*, l.note_id AS ai_note_id FROM reviews r "
 def _note(row) -> dict:
     d = dict(row)
     d["note"] = json.loads(d.pop("note_json"))
+    d["verification"] = json.loads(d.pop("verification_json"))
+    return d
+
+
+def _output(row) -> dict:
+    d = dict(row)
+    d["output"] = json.loads(d.pop("output_json"))
     d["verification"] = json.loads(d.pop("verification_json"))
     return d

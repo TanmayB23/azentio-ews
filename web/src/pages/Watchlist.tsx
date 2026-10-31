@@ -7,6 +7,8 @@ import { BandPill, Card, Empty, ErrorNote, MultiFilter, ReviewPill, ScoreBar, Sk
 import { date, initials, money, num, pct, profileCurrency } from "../format";
 import { useWorkspace } from "../state";
 import { NoAssessment } from "./Overview";
+import { AskBar } from "../components/AskBar";
+import type { AskResult } from "../types";
 
 const FILTERS: { key: string; label: string }[] = [
   { key: "band", label: "Risk band" },
@@ -16,7 +18,9 @@ const FILTERS: { key: string; label: string }[] = [
   { key: "portfolio", label: "Portfolio" },
   { key: "customer_type", label: "Customer type" },
   { key: "region", label: "Region" },
+  { key: "industry", label: "Industry" },
 ];
+const EXTRA = ["signals", "score_min", "score_max"];   // set by Ask EWS, shown as removable chips
 const PAGE_SIZE = 25;
 
 export function Watchlist() {
@@ -32,7 +36,9 @@ export function Watchlist() {
 
   const filters: Record<string, string[]> = Object.fromEntries(FILTERS.map((f) => [f.key, params.getAll(f.key)]));
   const review = params.get("review") ?? "";
-  const query = { q: params.get("q") ?? "", ...filters, review, sort, order, page, page_size: PAGE_SIZE };
+  const extra = { signals: params.getAll("signals"), score_min: params.get("score_min") ?? undefined,
+    score_max: params.get("score_max") ?? undefined };
+  const query = { q: params.get("q") ?? "", ...filters, ...extra, review, sort, order, page, page_size: PAGE_SIZE };
   const q = useQuery({
     queryKey: ["watchlist", run?.run_id, query], queryFn: () => api.watchlist(run!.run_id, query),
     enabled: !!run, placeholderData: keepPreviousData,
@@ -49,7 +55,15 @@ export function Watchlist() {
     setParams(next, { replace: true });
   };
   const sortBy = (key: string) => update({ sort: key, order: sort === key && order === "desc" ? "asc" : "desc" });
-  const active = FILTERS.some((f) => filters[f.key].length) || review || params.get("q");
+  const active = FILTERS.some((f) => filters[f.key].length) || review || params.get("q") || EXTRA.some((k) => params.get(k));
+  const applyAsk = (r: AskResult) => {
+    const next = new URLSearchParams();
+    for (const [k, v] of Object.entries(r.filters)) {
+      if (Array.isArray(v)) v.forEach((x) => next.append(k, x));
+      else if (v !== null && v !== "" && !(k === "sort" && v === "score") && !(k === "order" && v === "desc")) next.set(k, String(v));
+    }
+    setParams(next, { replace: true });
+  };
 
   if (!run) return <NoAssessment />;
   const cur = profileCurrency(run.profile);
@@ -75,6 +89,7 @@ export function Watchlist() {
 
       <Card className="flush">
         <div style={{ padding: 16, display: "flex", flexDirection: "column", gap: 12, borderBottom: "1px solid var(--border)" }}>
+          <AskBar runId={run.run_id} onFilters={applyAsk} />
           <form className="row wrap" onSubmit={(e) => { e.preventDefault(); update({ q: search.trim() || null }); }}>
             <div className="search" style={{ width: "min(420px, 100%)" }}>
               <Search size={16} aria-hidden />
@@ -94,6 +109,14 @@ export function Watchlist() {
               <MultiFilter key={f.key} label={f.label} options={data?.facets[f.key] ?? []} value={filters[f.key]}
                 onChange={(v) => update({ [f.key]: v })} />
             ))}
+            {extra.signals.map((sid) => (
+              <button key={sid} className="filter-btn active" onClick={() => update({ signals: extra.signals.filter((x) => x !== sid) })}
+                title="Remove this signal filter">Signal {sid} active<X size={13} /></button>
+            ))}
+            {(extra.score_min || extra.score_max) && (
+              <button className="filter-btn active" onClick={() => update({ score_min: null, score_max: null })}>
+                Score {extra.score_min ?? 0}–{extra.score_max ?? 100}<X size={13} /></button>
+            )}
             {active && <button className="btn ghost sm" onClick={() => setParams({}, { replace: true })}><X size={14} />Clear all</button>}
           </div>
         </div>

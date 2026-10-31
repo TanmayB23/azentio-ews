@@ -7,6 +7,7 @@ import { BandPill, Card, Empty, ErrorNote, ReviewPill, Skeleton } from "../compo
 import { clusterBasis, initials, money, num, pct, profileCurrency } from "../format";
 import { useWorkspace } from "../state";
 import { NoAssessment } from "./Overview";
+import { ClusterBriefingCard } from "../components/ClusterBriefing";
 
 export function Portfolio() {
   const { run } = useWorkspace();
@@ -87,6 +88,7 @@ export function Portfolio() {
               <p className="small" style={{ marginTop: 12, color: "#cfe3d8" }}>Most common signals in this group: {selected.top_signal_names.join(", ")}</p>
             </Card>
           )}
+          {selected && <ClusterBriefingCard key={key(selected)} runId={run.run_id} dimension={selected.dimension} value={selected.value} />}
         </div>
       </div>
 

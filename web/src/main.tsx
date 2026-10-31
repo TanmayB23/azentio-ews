@@ -14,6 +14,7 @@ import { DataPage } from "./pages/Data";
 import { Audit } from "./pages/Audit";
 import { SettingsPage } from "./pages/Settings";
 import { Help } from "./pages/Help";
+import { MemoPage } from "./pages/Memo";
 import { Empty } from "./components/ui";
 
 const client = new QueryClient({
@@ -33,6 +34,7 @@ createRoot(document.getElementById("root")!).render(
               <Route path="portfolio" element={<Portfolio />} />
               <Route path="data" element={<DataPage />} />
               <Route path="audit" element={<Audit />} />
+              <Route path="memo" element={<MemoPage />} />
               <Route path="settings" element={<SettingsPage />} />
               <Route path="help" element={<Help />} />
               <Route path="*" element={<Empty title="Page not found">Use the menu to find your way back.</Empty>} />
