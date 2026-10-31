@@ -1,6 +1,6 @@
 import type {
   AIRecord, AskResult, CaseNoteRecord, Cluster, ClusterBriefing, Config, CustomerDetail, DatasetMeta, EvidenceCheck,
-  EvidenceDecision, MappingProposal, Review, RiskMemo, RunMeta, Summary, WatchlistPage,
+  EvidenceDecision, MappingProposal, MLPrediction, Review, RiskMemo, RunMeta, Summary, WatchlistPage,
 } from "./types";
 
 export class ApiError extends Error {
@@ -62,6 +62,7 @@ export const api = {
   watchlist: (run: string, params: WatchParams) => request<WatchlistPage>(`/api/runs/${run}/watchlist${query(params)}`),
   watchlistCsvUrl: (run: string, params: WatchParams) => `/api/runs/${run}/watchlist.csv${query(params)}`,
   clusters: (run: string) => request<Cluster[]>(`/api/runs/${run}/clusters`),
+  mlPrediction: (run: string, cid: string) => request<MLPrediction>(`/api/runs/${run}/customers/${encodeURIComponent(cid)}/ml`),
   customer: (run: string, cid: string) => request<CustomerDetail>(`/api/runs/${run}/customers/${encodeURIComponent(cid)}`),
   alertUrl: (run: string, cid: string) => `/api/runs/${run}/customers/${encodeURIComponent(cid)}/alert.json`,
   addReview: (run: string, cid: string, body: { decision: string; reason: string; analyst: string; ai_note_id?: number | null }) =>

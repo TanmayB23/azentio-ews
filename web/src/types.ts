@@ -121,3 +121,24 @@ export interface MappingProposal {
   files: FileMap[]; notes: string[]; dropped: string[]; missing_required: Record<string, string[]>;
   tables_not_supplied: string[]; targets: Record<string, string[]>; source: string; model: string | null; error: string | null;
 }
+
+export interface MLFactor {
+  signal_id: string; name: string; value: number | null; evaluated: boolean; applicable: boolean;
+  reason: string | null; contribution: number; direction: "increases" | "decreases" | "neutral";
+}
+export interface MLModelMetadata {
+  model_id: string; trained_at: string; algorithm: string; training_data_kind: string;
+  feature_ids: string[]; feature_signatures: Record<string, string>; split: string;
+  calibration: { method: string; slope: number; intercept: number };
+  splits: Record<string, { rows: number; customers: number; positive_rows: number; origin_start: string; origin_end: string; last_label_date: string }>;
+  evaluation: { roc_auc: number; average_precision: number; brier_score: number; log_loss: number;
+    event_rate: number; constant_baseline_brier: number; calibration_bins: { count: number; mean_prediction: number; observed_rate: number }[] };
+  limitations: string[];
+}
+export interface MLPrediction {
+  status: "predicted" | "insufficient_data" | "already_delinquent" | "model_unavailable";
+  probability: number | null; reason: string | null; as_of: string; horizon_end: string;
+  threshold_dpd: number; horizon_months: number; factors: MLFactor[]; model: MLModelMetadata | null;
+  disclaimer: string; prediction_id?: string; model_id?: string; created_at?: string;
+  base_probability?: number; base_log_odds?: number; log_odds?: number; explanation_method?: string;
+}

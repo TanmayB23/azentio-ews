@@ -30,7 +30,26 @@ Then open the app and go to **Data & validation**:
 2. Review the validation report.
 3. Click **Run assessment**.
 
-**Development:** run `python -m api --reload` and, in `web/`, `npm run dev` (http://localhost:5173, with `/api` proxied to the API).
+**Development (from the repository root):**
+
+```powershell
+npm install                            # installs the web dependencies too
+./.venv/Scripts/python -m pip install -r requirements.txt
+```
+
+Start the API in one terminal:
+
+```powershell
+./.venv/Scripts/python -m api --reload  # http://127.0.0.1:8000
+```
+
+Start the front end in a second terminal, also from the repository root:
+
+```powershell
+npm run dev                            # http://localhost:5173
+```
+
+The Vite server proxies `/api` requests to the Python API, so both processes must run. Root-level `npm run build` and `npm run typecheck` also forward to the web app. Running the npm commands directly inside `web/` still works. On macOS/Linux, use `.venv/bin/python` in place of `.venv/Scripts/python`.
 
 | Setting | Default | Purpose |
 |---|---|---|
@@ -116,3 +135,11 @@ scripts/        synthetic data generator
 ```
 
 Not included yet: authentication. Analysts enter their name in Settings and it is recorded on each decision. In production, put the app behind SSO and take the analyst identity from the session.
+
+## Three-month delinquency forecast (ML)
+
+Customer detail now pairs the rule score with a separate gradient-boosting estimate of reaching **30+ DPD within the next three months**, including local TreeSHAP factors. A trained synthetic demonstration artifact is included; retraining is offline with `python -m ews.ml.train`. Install the updated requirements before starting the API.
+
+**Synthetic-data prototype: the method is ready for real data, not evidence of predictive accuracy.** The generated history has very few serious outcomes; held-out diagnostics, counts and limitations are shown in model details. Current 30+ DPD and insufficient-history cases receive an explicit status instead of an invented incident probability. Saved ML forecasts are versioned separately from immutable rule evidence.
+
+See [ML_MODEL.md](ML_MODEL.md) for target construction, point-in-time features, censoring, splits, calibration, reproducibility, API endpoints and validation limitations.
