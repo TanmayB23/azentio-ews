@@ -7,7 +7,7 @@ A credit-risk early warning workspace. It ingests customer, facility, repayment,
 - surfaces a filterable watchlist and portfolio risk clusters;
 - lets analysts record decisions without ever changing the original evidence.
 
-- **Engine** (`ews/engine`): validation, 15 configurable signals, scoring, cluster detection. See [ENGINE.md](ENGINE.md).
+- **Engine** (`ews/engine`): validation, 15 configurable signals, an unusual-behaviour model (isolation forest), scoring, cluster detection. See [ENGINE.md](ENGINE.md).
 - **API** (`api/`): FastAPI service with an append-only SQLite evidence store.
 - **Web app** (`web/`): React + TypeScript single-page app, served by the API.
 

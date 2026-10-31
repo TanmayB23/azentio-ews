@@ -39,9 +39,15 @@ function SignalTable({ signals }: { signals: Signal[] }) {
             {visible.map((s) => (
               <tr key={s.signal_id}>
                 <td style={{ minWidth: 200 }}><strong style={{ fontWeight: 500 }}>{s.name}</strong><div className="muted tiny">{s.signal_id}
-                  {s.evidence.length > 0 && <> · <span title={s.evidence.join(", ")} style={{ textDecoration: "underline dotted", cursor: "help" }}>
+                  {s.pillar === "UB" && s.evaluated && <> · percentile vs similar customers</>}
+                  {s.pillar !== "UB" && s.evidence.length > 0 && <> · <span title={s.evidence.join(", ")} style={{ textDecoration: "underline dotted", cursor: "help" }}>
                     {s.evidence.length} evidence item{s.evidence.length > 1 ? "s" : ""}</span></>}
-                  {s.reason_not_evaluated && <> · {s.reason_not_evaluated}</>}</div></td>
+                  {s.reason_not_evaluated && <> · {s.reason_not_evaluated}</>}</div>
+                  {s.pillar === "UB" && s.evidence.length > 0 && (
+                    <ul className="tiny" style={{ margin: "4px 0 0", paddingLeft: 16, color: "var(--ink-2)" }}>
+                      {s.evidence.map((e) => <li key={e}>{e}</li>)}
+                    </ul>
+                  )}</td>
                 <td className="small">{s.pillar_name}</td>
                 <td className="num">{fmtValue(s.value)}</td>
                 <td className="num muted">{fmtValue(s.trigger)} → {fmtValue(s.saturation)}</td>
@@ -357,7 +363,7 @@ export function CustomerPage() {
       <div className="grid cols-main">
         <div className="stack">
           <CaseNoteCard runId={run.run_id} customerId={r.customer_id} actions={d.recommended_actions} signals={r.signals} onUse={setPrefill} />
-          <Card title="Score breakdown" sub="Higher score = higher risk. Highest area counts in full, the next three add 35%, 15% and 10%.">
+          <Card title="Score breakdown" sub="Higher score = higher risk. Highest area counts in full, the next three add 35%, 15% and 10%; unusual behaviour (ML) adds up to 8 points.">
             <div className="grid cols-2" style={{ gap: 12 }}>
               {pillars.map((p) => {
                 const v = r.pillar_scores[p];
