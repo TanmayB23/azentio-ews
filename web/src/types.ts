@@ -1,7 +1,8 @@
 export type Band = "Critical" | "High" | "Medium" | "Low" | "Insufficient data";
 
 export interface Profile { id: string; description: string; currency: string; as_of: string }
-export interface Config { profiles: Profile[]; decisions: string[]; bands: Band[]; samples: { profile: string; variant: string }[] }
+export interface AIStatus { enabled: boolean; provider: string | null; model: string | null; disabled_reason: string | null; prompt_version: string }
+export interface Config { profiles: Profile[]; decisions: string[]; bands: Band[]; samples: { profile: string; variant: string }[]; ai: AIStatus }
 
 export interface ValidationIssue {
   table: string; record_key: string; field: string | null; issue: string;
@@ -29,6 +30,7 @@ export interface WatchRow {
   current_dpd: number | null; delinquency_bucket: string; score: number | null; band: Band; status: string;
   monitoring_status: string; confidence: number; signals_active: number; top_factors: Factor[]; summary: string;
   review_decision: string | null; reviewed_at: string | null;
+  next_action: string | null; next_action_owner: string | null; next_action_due: string | null; action_count: number;
 }
 export interface Facets { [key: string]: string[] }
 export interface WatchlistPage { total: number; page: number; page_size: number; rows: WatchRow[]; facets: Facets }
@@ -48,6 +50,7 @@ export interface Summary {
   pillar_prevalence: Record<string, number>;
   reviews: { elevated: number; reviewed: number; decisions: Record<string, number> };
   priority: WatchRow[]; clusters: Cluster[]; quality: Quality;
+  actions: { customers_with_actions: number; by_owner: Record<string, number>; by_action: { action_id: string; title: string; owner: string; customers: number }[] };
 }
 
 export interface Signal {
@@ -55,7 +58,22 @@ export interface Signal {
   evaluated: boolean; applicable: boolean; reason_not_evaluated: string | null; value: number | null;
   trigger: number; saturation: number; strength: number; weight: number; points: number; evidence: string[];
 }
-export interface Review { review_id: number; alert_id: number; decision: string; reason: string; analyst: string; created_at: string; customer_id?: string }
+export interface Review { review_id: number; alert_id: number; decision: string; reason: string; analyst: string; created_at: string; customer_id?: string; ai_note_id?: number | null }
+export interface RecommendedAction {
+  action_id: string; title: string; owner: string; priority: number; due_days: number; due_date: string;
+  detail: string; reasons: string[]; cites: string[];
+}
+export interface CaseNote {
+  summary: string; key_findings: { text: string; cites: string[] }[];
+  recommended_actions: { action_id: string; reason: string; cites: string[] }[];
+  questions_for_customer: string[]; data_gaps: string[]; suggested_decision: string;
+  suggested_decision_reason: string; caveats: string[];
+}
+export interface CaseNoteRecord {
+  note_id: number; alert_id: number; created_at: string; source: string; model: string | null; prompt_version: string;
+  requested_by: string; note: CaseNote; error: string | null; cached?: boolean;
+  verification: { status: "verified" | "check"; unknown_citations: string[]; dropped_actions: string[]; unverified_numbers: number[] };
+}
 export type Row = Record<string, string | number | null>;
 export interface CustomerDetail {
   customer: Row; row: WatchRow | null; alert_id: number; reviews: Review[];
@@ -65,5 +83,6 @@ export interface CustomerDetail {
     summary: string; signals: Signal[];
   };
   facilities: Row[]; delinquency: Row[]; repayments: Row[]; transactions: Row[]; exposure: Row[]; sme: Row[];
+  recommended_actions: RecommendedAction[];
   repayment_months: { month: string; worst_dpd: number | null; instalments: number; late: number; partial: number; unpaid: number; amount_due: number | null; amount_paid: number | null }[];
 }
