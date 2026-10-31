@@ -12,6 +12,7 @@ import { useWorkspace } from "../state";
 import type { CustomerDetail, Row, Signal } from "../types";
 import { NoAssessment } from "./Overview";
 import { CaseNoteCard, RecommendedActions, type ReviewPrefill } from "../components/CaseNote";
+import { EvidenceCard } from "../components/EvidenceCard";
 
 const PILLAR_HELP: Record<string, string> = {
   Repayment: "Late, partial and missed instalments; current days past due",
@@ -387,6 +388,7 @@ export function CustomerPage() {
         <div className="stack">
           <RecommendedActions actions={d.recommended_actions} />
           <ReviewPanel d={d} runId={run.run_id} prefill={prefill} />
+          <EvidenceCard runId={run.run_id} customerId={r.customer_id} repayments={d.repayments} />
           <Facilities rows={d.facilities} currency={cur} />
           <Card title="Assessment record" sub="Preserved exactly as scored">
             <div className="stack small" style={{ gap: 6 }}>
