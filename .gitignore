@@ -7,3 +7,10 @@ __pycache__/
 *.pyc
 *.db
 artifacts/ui-check/
+
+# web app
+var/
+web/node_modules/
+web/dist/
+.playwright-mcp/
+web/*.tsbuildinfo
