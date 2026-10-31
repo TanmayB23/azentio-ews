@@ -1,11 +1,11 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "score_scale": {
     "min": 0,
     "max": 100,
     "higher_score_means": "higher credit risk"
   },
-  "scoring_method": "Each signal's strength is interpolated 0..1 between trigger and saturation. Each pillar (RB repayment, CF cash flow, EX exposure, SM business) scores 0-100 as the weighted strength of its evaluated signals. Score = highest pillar + 0.35 x second + 0.15 x third + 0.10 x fourth, capped at 100, then modifiers.",
+  "scoring_method": "Each signal's strength is interpolated 0..1 between trigger and saturation. Each pillar (RB repayment, CF cash flow, EX exposure, SM business) scores 0-100 as the weighted strength of its evaluated signals. Score = highest pillar + 0.35 x second + 0.15 x third + 0.10 x fourth, capped at 100, then modifiers. Unusual behaviour (UB01, isolation forest) then adds up to its weight in points on top.",
   "classification": [
     {
       "category": "Low",
@@ -263,6 +263,21 @@
       "min_observations": 4,
       "pillar": "SM",
       "condition": "Days to collect from customers up 10+ days over the last 6 months (SMEs only)"
+    },
+    {
+      "signal_id": "UB01",
+      "signal_name": "Unusual behaviour (ML)",
+      "scenario": "Emerging and unanticipated patterns",
+      "metric": "unusual_behaviour_percentile",
+      "window_months": 6,
+      "direction": "higher_is_worse",
+      "trigger": 95,
+      "saturation": 99.5,
+      "weight": 8,
+      "requires": "transactions+repayments+exposure",
+      "min_observations": 1,
+      "pillar": "UB",
+      "condition": "Behaviour over the last 6 months is among the most unusual 5% of comparable customers (isolation forest); adds up to 8 points on top of the combined score"
     }
   ]
 }

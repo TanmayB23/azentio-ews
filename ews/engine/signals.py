@@ -202,12 +202,23 @@ def receivable_days_change_in_window(v: CustomerViews, as_of, w, s=None) -> Meas
     return Measure(float(change), len(sm), list(sm["month"]))
 
 
+# ----------------------------- unusual behaviour (ML) ----------------------- #
+def unusual_behaviour_percentile(v: CustomerViews, as_of, w, s=None) -> Measure:
+    a = v.anomaly
+    if a is None:
+        return Measure(None, 0, note="Unusual-behaviour model did not run")
+    if a.percentile is None:
+        return Measure(None, 0, note=a.reason)
+    return Measure(a.percentile, 1, list(a.drivers))
+
+
 METRICS = {fn.__name__: fn for fn in (
     late_instalments_in_window, slope_of_dpd_per_month, partially_paid_instalments_in_window, current_dpd,
     consecutive_months_total_inflows_declining, pct_change_avg_inflow_last3m_vs_prior3m,
     pct_change_avg_balance_last3m_vs_prior3m, months_outflow_gt_inflow, bounced_txns_in_window,
     utilisation_pct_change_in_points, new_facilities_in_window, change_in_obligation_to_inflow_pct_points,
     new_credit_inquiries_90d_latest, tax_filings_late_or_missed_in_window, receivable_days_change_in_window,
+    unusual_behaviour_percentile,
 )}
 
 
