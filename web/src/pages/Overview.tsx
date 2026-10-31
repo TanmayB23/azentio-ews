@@ -94,6 +94,14 @@ export function Overview() {
               <span className="spacer" />
               <strong>{elevated ? Math.round((reviewed / elevated) * 100) : 0}%</strong>
             </div>
+            {s && s.actions.customers_with_actions > 0 && (
+              <div style={{ marginTop: 14, paddingTop: 12, borderTop: "1px solid var(--border)" }}>
+                <div className="stat-label" style={{ marginBottom: 6 }}>Open actions by owner</div>
+                {Object.entries(s.actions.by_owner).map(([owner, n]) => (
+                  <div key={owner} className="row small" style={{ padding: "2px 0" }}><span>{owner}</span><span className="spacer" /><strong className="mono">{n}</strong></div>
+                ))}
+              </div>
+            )}
           </Card>
         </div>
 
