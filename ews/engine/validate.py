@@ -12,7 +12,7 @@ import difflib
 import numpy as np
 import pandas as pd
 
-from ews.contracts import TABLES, Dataset, ValidationIssue
+from ews.contracts import OPTIONAL_TABLES, TABLES, Dataset, ValidationIssue
 
 REQUIRED = {
     "customers": ["customer_id", "customer_type", "employment_or_business_category", "industry", "region",
@@ -30,11 +30,13 @@ REQUIRED = {
     "transactions": ["customer_id", "month", "income_receipts", "other_inflows", "total_inflows",
                      "total_outflows", "avg_balance", "closing_balance", "min_balance", "inflow_txn_count",
                      "bounced_txns"],
+    "sme_indicators": ["customer_id", "month", "tax_reported_turnover", "tax_filing_status", "receivable_days",
+                       "payable_days"],
 }
 NUMERIC = {
     "customers": ["declared_monthly_income"],
-    "facilities": ["sanctioned_amount", "credit_limit", "outstanding_balance", "interest_rate_pct", "tenure_months",
-                   "instalment_amount", "due_day"],
+    "facilities": ["sanctioned_amount", "credit_limit", "outstanding_balance", "interest_rate_pct", "profit_rate_pct",
+                   "tenure_months", "instalment_amount", "due_day"],
     "repayments": ["installment_no", "amount_due", "amount_paid", "dpd"],
     "delinquency": ["current_dpd", "overdue_balance", "max_dpd_12m", "late_instalments_12m",
                     "instalments_30plus_dpd_12m", "partial_payments_12m"],
@@ -42,6 +44,7 @@ NUMERIC = {
                  "utilisation_pct", "monthly_obligations", "external_bureau_obligations", "new_credit_inquiries_90d"],
     "transactions": ["income_receipts", "other_inflows", "total_inflows", "total_outflows", "avg_balance",
                      "closing_balance", "min_balance", "inflow_txn_count", "bounced_txns"],
+    "sme_indicators": ["tax_reported_turnover", "receivable_days", "payable_days"],
 }
 NON_NEGATIVE = {
     "facilities": ["sanctioned_amount", "credit_limit", "outstanding_balance", "instalment_amount"],
@@ -49,11 +52,13 @@ NON_NEGATIVE = {
     "delinquency": ["current_dpd", "overdue_balance"],
     "exposure": ["total_outstanding", "monthly_obligations", "external_bureau_obligations", "new_credit_inquiries_90d"],
     "transactions": ["income_receipts", "other_inflows", "total_outflows", "inflow_txn_count", "bounced_txns"],
+    "sme_indicators": ["tax_reported_turnover", "receivable_days", "payable_days"],
 }
 CUSTOMER_TYPES = ["Individual", "SME"]
 PORTFOLIO_TO_TYPE = {"Retail Banking": "Individual", "SME Banking": "SME"}
 FACILITY_TYPES = ["Term Loan", "Revolving"]
 REPAYMENT_STATUSES = ["Paid On Time", "Paid Late", "Partially Paid", "Overdue", "Missed"]
+TAX_FILING_STATUSES = ["Filed On Time", "Filed Late", "Not Filed"]
 
 
 class _Log:
@@ -81,7 +86,8 @@ def validate(raw: dict[str, pd.DataFrame]) -> Dataset:
     for name in TABLES:
         df = raw.get(name)
         if df is None:
-            log.add(name, "*", None, f"table '{name}' not provided", "error", "kept")
+            if name not in OPTIONAL_TABLES:
+                log.add(name, "*", None, f"table '{name}' not provided", "error", "kept")
             df = pd.DataFrame(columns=REQUIRED[name])
         df = df.copy()
         df.columns = [str(c).strip() for c in df.columns]
@@ -102,6 +108,10 @@ def validate(raw: dict[str, pd.DataFrame]) -> Dataset:
     t["delinquency"] = _delinquency(t["delinquency"], loans, log)
     t["exposure"] = _monthly(t["exposure"], "exposure", cust_ids, log)
     t["transactions"] = _monthly(t["transactions"], "transactions", cust_ids, log)
+    t["sme_indicators"] = _monthly(t["sme_indicators"], "sme_indicators", cust_ids, log)
+    bad = t["sme_indicators"]["tax_filing_status"].notna() &         ~t["sme_indicators"]["tax_filing_status"].isin(TAX_FILING_STATUSES)
+    for k in (t["sme_indicators"]["customer_id"] + "|" + t["sme_indicators"]["month"])[bad]:
+        log.add("sme_indicators", k, "tax_filing_status", "invalid tax_filing_status")
     _exposure_checks(t["exposure"], log)
     _transaction_checks(t["transactions"], log)
 
@@ -116,6 +126,12 @@ def _to_numeric(df, table, key, log):
         if col not in df.columns:
             continue
         num = pd.to_numeric(df[col], errors="coerce")
+        text = df[col].astype("string")
+        separated = df[col].notna() & num.isna() & text.str.fullmatch(r"-?[\d,]+(\.\d+)?").fillna(False)
+        if separated.any():
+            num[separated] = pd.to_numeric(text[separated].str.replace(",", ""), errors="coerce")
+            for k in key[separated]:
+                log.add(table, k, col, f"{col} with thousands separators; parsed as a number", action="repaired")
         bad = df[col].notna() & num.isna()
         for k in key[bad]:
             log.add(table, k, col, f"non-numeric {col}")
@@ -161,6 +177,12 @@ def _customers(df, log):
     for idx in df.index:
         val = types[idx]
         if val in CUSTOMER_TYPES:
+            continue
+        exact = {c.lower(): c for c in CUSTOMER_TYPES}.get(str(val).lower()) if val is not None else None
+        if exact:
+            types[idx] = exact
+            log.add("customers", key[idx], "customer_type", f"customer_type '{val}' in wrong case; set to '{exact}'",
+                    action="repaired")
             continue
         inferred = PORTFOLIO_TO_TYPE.get(df.at[idx, "portfolio_classification"])
         if val is None or pd.isna(val):

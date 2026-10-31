@@ -13,8 +13,9 @@ from typing import Literal
 
 import pandas as pd
 
-TABLES = ("customers", "facilities", "repayments", "delinquency", "exposure", "transactions")
-Pillar = Literal["RB", "CF", "EX"]
+TABLES = ("customers", "facilities", "repayments", "delinquency", "exposure", "transactions", "sme_indicators")
+OPTIONAL_TABLES = ("sme_indicators",)       # absent table = signals not applicable, not an error
+Pillar = Literal["RB", "CF", "EX", "SM"]
 Band = Literal["Low", "Medium", "High", "Critical"]
 
 
